@@ -11,25 +11,17 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'Tuupola\\Middleware\\' => 19,
-            'Tuupola\\Http\\Factory\\' => 21,
-        ),
         'S' => 
         array (
             'Slim\\' => 5,
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
-            'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
         'F' => 
         array (
-            'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
         ),
         'A' => 
@@ -39,40 +31,17 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tuupola\\Middleware\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tuupola/callable-handler/src',
-            1 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
-        ),
-        'Tuupola\\Http\\Factory\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tuupola/http-factory/src',
-        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
-        ),
-        'Psr\\Http\\Server\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-server-handler/src',
-            1 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
-        ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-        'Firebase\\JWT\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'FastRoute\\' => 
         array (
@@ -96,10 +65,6 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
 
     public static $classMap = array (
         'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/App/Controllers/UserController.php',
-        'App\\DAO\\TokensDAO' => __DIR__ . '/../..' . '/App/DAO/TokensDAO.php',
-        'App\\DAO\\UsuariosDAO' => __DIR__ . '/../..' . '/App/DAO/UsuariosDAO.php',
-        'App\\Models\\TokenModel' => __DIR__ . '/../..' . '/App/Models/TokenModel.php',
-        'App\\Models\\UsuarioModel' => __DIR__ . '/../..' . '/App/Models/UsuarioModel.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'FastRoute\\BadRouteException' => __DIR__ . '/..' . '/nikic/fast-route/src/BadRouteException.php',
         'FastRoute\\DataGenerator' => __DIR__ . '/..' . '/nikic/fast-route/src/DataGenerator.php',
@@ -118,12 +83,6 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
         'FastRoute\\RouteCollector' => __DIR__ . '/..' . '/nikic/fast-route/src/RouteCollector.php',
         'FastRoute\\RouteParser' => __DIR__ . '/..' . '/nikic/fast-route/src/RouteParser.php',
         'FastRoute\\RouteParser\\Std' => __DIR__ . '/..' . '/nikic/fast-route/src/RouteParser/Std.php',
-        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
-        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
-        'Firebase\\JWT\\JWK' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWK.php',
-        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
-        'Firebase\\JWT\\Key' => __DIR__ . '/..' . '/firebase/php-jwt/src/Key.php',
-        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'Pimple\\Container' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Container.php',
         'Pimple\\Exception\\ExpectedInvokableException' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Exception/ExpectedInvokableException.php',
         'Pimple\\Exception\\FrozenServiceException' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Exception/FrozenServiceException.php',
@@ -146,28 +105,12 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
         'Psr\\Http\\Message\\MessageInterface' => __DIR__ . '/..' . '/psr/http-message/src/MessageInterface.php',
-        'Psr\\Http\\Message\\RequestFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/RequestFactoryInterface.php',
         'Psr\\Http\\Message\\RequestInterface' => __DIR__ . '/..' . '/psr/http-message/src/RequestInterface.php',
-        'Psr\\Http\\Message\\ResponseFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/ResponseFactoryInterface.php',
         'Psr\\Http\\Message\\ResponseInterface' => __DIR__ . '/..' . '/psr/http-message/src/ResponseInterface.php',
-        'Psr\\Http\\Message\\ServerRequestFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/ServerRequestFactoryInterface.php',
         'Psr\\Http\\Message\\ServerRequestInterface' => __DIR__ . '/..' . '/psr/http-message/src/ServerRequestInterface.php',
-        'Psr\\Http\\Message\\StreamFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/StreamFactoryInterface.php',
         'Psr\\Http\\Message\\StreamInterface' => __DIR__ . '/..' . '/psr/http-message/src/StreamInterface.php',
-        'Psr\\Http\\Message\\UploadedFileFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UploadedFileFactoryInterface.php',
         'Psr\\Http\\Message\\UploadedFileInterface' => __DIR__ . '/..' . '/psr/http-message/src/UploadedFileInterface.php',
-        'Psr\\Http\\Message\\UriFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UriFactoryInterface.php',
         'Psr\\Http\\Message\\UriInterface' => __DIR__ . '/..' . '/psr/http-message/src/UriInterface.php',
-        'Psr\\Http\\Server\\MiddlewareInterface' => __DIR__ . '/..' . '/psr/http-server-middleware/src/MiddlewareInterface.php',
-        'Psr\\Http\\Server\\RequestHandlerInterface' => __DIR__ . '/..' . '/psr/http-server-handler/src/RequestHandlerInterface.php',
-        'Psr\\Log\\AbstractLogger' => __DIR__ . '/..' . '/psr/log/src/AbstractLogger.php',
-        'Psr\\Log\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/log/src/InvalidArgumentException.php',
-        'Psr\\Log\\LogLevel' => __DIR__ . '/..' . '/psr/log/src/LogLevel.php',
-        'Psr\\Log\\LoggerAwareInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerAwareInterface.php',
-        'Psr\\Log\\LoggerAwareTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerAwareTrait.php',
-        'Psr\\Log\\LoggerInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerInterface.php',
-        'Psr\\Log\\LoggerTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerTrait.php',
-        'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/src/NullLogger.php',
         'Slim\\App' => __DIR__ . '/..' . '/slim/slim/Slim/App.php',
         'Slim\\CallableResolver' => __DIR__ . '/..' . '/slim/slim/Slim/CallableResolver.php',
         'Slim\\CallableResolverAwareTrait' => __DIR__ . '/..' . '/slim/slim/Slim/CallableResolverAwareTrait.php',
@@ -216,18 +159,6 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
         'Slim\\Route' => __DIR__ . '/..' . '/slim/slim/Slim/Route.php',
         'Slim\\RouteGroup' => __DIR__ . '/..' . '/slim/slim/Slim/RouteGroup.php',
         'Slim\\Router' => __DIR__ . '/..' . '/slim/slim/Slim/Router.php',
-        'Tuupola\\Http\\Factory\\RequestFactory' => __DIR__ . '/..' . '/tuupola/http-factory/src/RequestFactory.php',
-        'Tuupola\\Http\\Factory\\ResponseFactory' => __DIR__ . '/..' . '/tuupola/http-factory/src/ResponseFactory.php',
-        'Tuupola\\Http\\Factory\\ServerRequestFactory' => __DIR__ . '/..' . '/tuupola/http-factory/src/ServerRequestFactory.php',
-        'Tuupola\\Http\\Factory\\StreamFactory' => __DIR__ . '/..' . '/tuupola/http-factory/src/StreamFactory.php',
-        'Tuupola\\Http\\Factory\\UploadedFileFactory' => __DIR__ . '/..' . '/tuupola/http-factory/src/UploadedFileFactory.php',
-        'Tuupola\\Http\\Factory\\UriFactory' => __DIR__ . '/..' . '/tuupola/http-factory/src/UriFactory.php',
-        'Tuupola\\Middleware\\CallableHandler' => __DIR__ . '/..' . '/tuupola/callable-handler/src/CallableHandler.php',
-        'Tuupola\\Middleware\\DoublePassTrait' => __DIR__ . '/..' . '/tuupola/callable-handler/src/DoublePassTrait.php',
-        'Tuupola\\Middleware\\JwtAuthentication' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication.php',
-        'Tuupola\\Middleware\\JwtAuthentication\\RequestMethodRule' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication/RequestMethodRule.php',
-        'Tuupola\\Middleware\\JwtAuthentication\\RequestPathRule' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication/RequestPathRule.php',
-        'Tuupola\\Middleware\\JwtAuthentication\\RuleInterface' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication/RuleInterface.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
