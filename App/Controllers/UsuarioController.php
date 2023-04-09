@@ -22,6 +22,7 @@ final class UsuarioController{
             return $response->withStatus(401);
 
         $response = $response->withJson([
+            "id" => $usuario->getId(),
             "nome" => $usuario->getNome(),
             "email" => $usuario->getEmail()
         ]);
@@ -56,18 +57,15 @@ final class UsuarioController{
             ->setsenha(password_hash($senha, PASSWORD_DEFAULT));
             $usuario_dao->inserirUsuario($usuario_model);
             $response = $response->withJson([
-                "nome" => $usuario_model->getNome(),
-                "email" => $usuario_model->getEmail()
+                "menssage" => "Success"
             ]);
         }else{
             $response = $response->withJson([
                 "mensagge" => "Usuario ja existe ou senha de confirmar incorreto"
             ]);
         }
-            return $response;
-        
+            return $response;  
     }
-
     public function atualizarUsuario(Request $request, Response $response, array $args): Response {
         $data = $request->getParsedBody();
 

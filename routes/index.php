@@ -1,18 +1,27 @@
 <?php
 
 use function src\{SlimConfiguration};
-use App\Controllers\UsuarioController;
+use App\Controllers\{UsuarioController, AnuncioController};
+
 
 $app = new \Slim\App(SlimConfiguration());
 
-// ==============================================
+// ==============================================================================
 
 $app->get('/', UsuarioController::class . ':allUsuarios');
 $app->post('/login', UsuarioController::class . ':login');
-$app->post('/cadastro', UsuarioController::class . ':inserirUsuario');
-$app->put('/atualizar', UsuarioController::class . ':atualizarUsuario');
+$app->post('/cadastro/usuario', UsuarioController::class . ':inserirUsuario');
+$app->put('/atualizar/usuario', UsuarioController::class . ':atualizarUsuario');
 
-// ==============================================
+// ==============================================================================
+
+$app->get('/anuncios', AnuncioController::class . ':allAnuncios');
+$app->get('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios');
+$app->post('/anuncios/usuario', AnuncioController::class . ':getAnuncioById');
+$app->put('/delete/anuncio' , AnuncioController::class . ':deletarAnuncio');
+
+// ==============================================================================
+
 
 
 $app->run();

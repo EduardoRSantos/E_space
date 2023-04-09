@@ -94,7 +94,7 @@ button{
 
 
     <div class="container" id="teladeperfil">
-    <form action="">
+    <form action="" method="post">
         <div class="form-image">
         <h2>Login</h2>
         <div class="inputBox">
@@ -115,5 +115,6 @@ button{
     crossorigin="anonymous"></script>
   <script src="js/custom.js"></script>
 </body>
+
 
 </html>

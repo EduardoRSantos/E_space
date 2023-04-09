@@ -7,8 +7,7 @@ final class UsuarioModel {
     private $nome;
     private $email;
     private $senha;
-
-
+    
     public function getId(): int {
         return $this->id;
     }
@@ -16,7 +15,6 @@ final class UsuarioModel {
         $this->id = $id;
         return $this;
     }
-
     public function getNome(): string {
         return $this->nome;
     }
