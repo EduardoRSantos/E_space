@@ -58,4 +58,22 @@ class AnuncioDAO extends Conexao{
         $stmt->bindParam('id', $id);
         $stmt->execute();
     }
+    public function atualizarAnuncio(AnuncioModel $anuncio_model): void{
+        $stmt = $this->pdo->prepare("UPDATE anuncios
+            SET 
+            titulo = :titulo, 
+            descricao = :descricao,
+            price = :price,
+            atualizado_em = :atualizado_em
+            WHERE
+            id = :id
+        ;");
+        $stmt->execute([
+            'titulo' => $anuncio_model->getTitulo(),
+            'descricao' => $anuncio_model->getDescricao(),
+            'price' => $anuncio_model->getPrice(),
+            'atualizado_em' => $anuncio_model->getAtualizadoEm(),
+            'id' => $anuncio_model->getId()
+        ]);
+    }
 }

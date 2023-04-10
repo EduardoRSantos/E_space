@@ -1,10 +1,12 @@
 <?php
 
+
+
 use function src\{SlimConfiguration};
 use App\Controllers\{UsuarioController, AnuncioController};
 
 
-$app = new \Slim\App(SlimConfiguration());
+$app = new \Slim\App();
 
 // ==============================================================================
 
@@ -18,10 +20,9 @@ $app->put('/atualizar/usuario', UsuarioController::class . ':atualizarUsuario');
 $app->get('/anuncios', AnuncioController::class . ':allAnuncios');
 $app->get('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios');
 $app->post('/anuncios/usuario', AnuncioController::class . ':getAnuncioById');
-$app->put('/delete/anuncio' , AnuncioController::class . ':deletarAnuncio');
+$app->delete('/delete/anuncio' , AnuncioController::class . ':deletarAnuncio');
+$app->put('/atualizar/anuncio', AnuncioController::class . ':atualizarAnuncio');
 
 // ==============================================================================
-
-
 
 $app->run();
