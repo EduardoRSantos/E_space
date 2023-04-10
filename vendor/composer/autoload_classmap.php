@@ -6,12 +6,16 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
     'App\\Controllers\\AnuncioController' => $baseDir . '/App/Controllers/AnuncioController.php',
     'App\\Controllers\\UsuarioController' => $baseDir . '/App/Controllers/UsuarioController.php',
     'App\\DAO\\AnuncioDAO' => $baseDir . '/App/DAO/AnuncioDAO.php',
     'App\\DAO\\UsuariosDAO' => $baseDir . '/App/DAO/UsuariosDAO.php',
     'App\\Models\\AnuncioModel' => $baseDir . '/App/Models/AnuncioModel.php',
     'App\\Models\\UsuarioModel' => $baseDir . '/App/Models/UsuarioModel.php',
+=======
+    'App\\Controllers\\UserController' => $baseDir . '/App/Controllers/UserController.php',
+>>>>>>> 913c0f5ee8b24496143ca2fd815895c2968f677b
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'FastRoute\\BadRouteException' => $vendorDir . '/nikic/fast-route/src/BadRouteException.php',
     'FastRoute\\DataGenerator' => $vendorDir . '/nikic/fast-route/src/DataGenerator.php',

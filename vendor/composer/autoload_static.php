@@ -64,12 +64,16 @@ class ComposerStaticInit4fb6ec6651df5952e33d7aae0c9ac606
     );
 
     public static $classMap = array (
+<<<<<<< HEAD
         'App\\Controllers\\AnuncioController' => __DIR__ . '/../..' . '/App/Controllers/AnuncioController.php',
         'App\\Controllers\\UsuarioController' => __DIR__ . '/../..' . '/App/Controllers/UsuarioController.php',
         'App\\DAO\\AnuncioDAO' => __DIR__ . '/../..' . '/App/DAO/AnuncioDAO.php',
         'App\\DAO\\UsuariosDAO' => __DIR__ . '/../..' . '/App/DAO/UsuariosDAO.php',
         'App\\Models\\AnuncioModel' => __DIR__ . '/../..' . '/App/Models/AnuncioModel.php',
         'App\\Models\\UsuarioModel' => __DIR__ . '/../..' . '/App/Models/UsuarioModel.php',
+=======
+        'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/App/Controllers/UserController.php',
+>>>>>>> 913c0f5ee8b24496143ca2fd815895c2968f677b
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'FastRoute\\BadRouteException' => __DIR__ . '/..' . '/nikic/fast-route/src/BadRouteException.php',
         'FastRoute\\DataGenerator' => __DIR__ . '/..' . '/nikic/fast-route/src/DataGenerator.php',
