@@ -1,104 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-    <title>Makaan - Real Estate HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Template Stylesheet -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-<style>
-#submit{
-    background-color: rgb(255, 255, 255);
-    border: none;
-    padding: 10px;
-    width: 30%;
-    border-radius: 10px;
-}
-#perfil{
-    background-color: #1C1C1C;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 40px;
-    border-radius: 10px;
-    color: white;
-}
-body{ 
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, #5398BE,#5623A9);
-}
-.box{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    width: 40%;
-}
-fieldset{
+    <title>Tela de Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-}
-.inputUser{
-    background: none;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: white;
-    font-size: 15px;
-}
-#nome{
-border-radius: 10px;
-border: none;
-padding: 10px;
-width: 50%;
-}
-#email{
-border-radius: 10px;
-border: none;
-padding: 10px;
-width: 50%;
-}
-#telefone{
-border-radius: 10px;
-border: none;
-padding: 10px;
-width: 50%;
-}
-#senha{
-border-radius: 10px;
-border: none;
-padding: 10px;
-width: 50%;
-}
-#datanascimento{
-border-radius: 10px;
-border: none;
-padding: 10px;
-width: 30%;
-}
-</style>
 </head>
 <body id="body">
     <div class="box" id="perfil">
@@ -149,4 +55,3 @@ width: 30%;
     </div>
 </body>
 </html>
-
