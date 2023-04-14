@@ -148,4 +148,35 @@ button{
     crossorigin="anonymous"></script>
   <script src="js/custom.js"></script>
 </body>
+<?php 
+if(!empty($_POST['email'])){
+$body = [
+    'nome' => $_POST['nome'],
+    'email' => $_POST['email'],
+    'senha' => $_POST['senha'],
+];
+
+$json = json_encode($body);
+
+$curl = curl_init();
+curl_setopt_array($curl, [
+    CURLOPT_URL => 'http://localhost/e_space/routes/index.php/cadastro/usuario',
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => $json,
+    CURLOPT_HTTPHEADER => array(
+        "Content-Type: application/json; charset=UTF-8"
+    )
+]);
+
+$responde = curl_exec($curl);
+
+
+curl_close($curl);
+
+$array = json_decode($responde, true);
+
+var_dump($array);
+}
+?>
 </html>

@@ -62,7 +62,7 @@
                         <a href="contact.html" class="nav-item nav-link">Perfil</a>                           
                     </div>                
                     <div>   
-                    <a href="http://localhost/tccatual/tccatual/pages/teladelogin.php"><button>Login</button></a>
+                    <a href="http://localhost/e_space/pages/teladelogin.php/login"><button>Login</button></a>
                     </div>            
                 </div>          
             </nav>
@@ -848,8 +848,6 @@
             </div>
         </div>
         <!-- Footer End -->
-
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>

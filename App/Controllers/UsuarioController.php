@@ -9,17 +9,20 @@ use App\Models\UsuarioModel;
 final class UsuarioController{
 
     public function login(Request $request, Response $response, array $args): Response {
+        $input = file_get_contents('php://input');
 
-        $data = $request->getParsedBody();
+        $data = json_decode($input, true);
+        
         $email = $data['email'];
         $senha = $data['senha'];
+
         $usuario_dao = new UsuariosDAO();
         $usuario = $usuario_dao->getUsuarioByEmail($email);
         if(is_null($usuario))
-            return $response->withStatus(401);
+            return $response->withJson(['mensagem' => 'email invalido!']);
 
         if(!password_verify($senha, $usuario->getSenha()))
-            return $response->withStatus(401);
+            return $response->withJson(['mensagem' => 'senha invalida!']);
 
         $response = $response->withJson([
             "id" => $usuario->getId(),
@@ -39,7 +42,9 @@ final class UsuarioController{
     }
 
     public function inserirUsuario(Request $request, Response $response, array $args): Response {
-        $data = $request->getParsedBody();
+        $input = file_get_contents('php://input');
+
+        $data = json_decode($input, true);
         
         $usuario_dao = new UsuariosDAO();
         $usuario_model = new UsuarioModel();
@@ -50,7 +55,7 @@ final class UsuarioController{
 
         $usuario = $usuario_dao->getUsuarioByEmail($email);
 
-        if(is_null($usuario) and $senha == $data['senha_confirmar']){
+        if(is_null($usuario)){
             $usuario_model
             ->setNome($name)
             ->setemail($email)
@@ -61,10 +66,10 @@ final class UsuarioController{
             ]);
         }else{
             $response = $response->withJson([
-                "mensagge" => "Usuario ja existe ou senha de confirmar incorreto"
+                "menssage" => "Usuario ja existe ou senha de confirmar incorreto"
             ]);
         }
-            return $response;  
+            return $response;
     }
     public function atualizarUsuario(Request $request, Response $response, array $args): Response {
         $data = $request->getParsedBody();
@@ -81,5 +86,4 @@ final class UsuarioController{
         $response = $response->withJson(['menssage' => 'atualizado com sucesso!']);
         return $response;
     }
-
 }

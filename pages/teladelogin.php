@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 913c0f5ee8b24496143ca2fd815895c2968f677b
 <head>
 <style>
 #email{
@@ -124,9 +121,10 @@ button{
               <label for="senha"></Label>
         <br>
         <input type ="submit" name="submit" id="submit" value="Login">
-        <br><br>
-        <input type ="submit" name="Registrar" id="submit" value="Registra-se">
         </form>
+        <br><br>
+        <button type="button" class="btn btn-primary"><a href="http://localhost/e_space/pages/teladeregistro.php/cadastro/usuario">Button</a></button>
+        
       </div>
 </nav>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -134,8 +132,34 @@ button{
     crossorigin="anonymous"></script>
   <script src="js/custom.js"></script>
 </body>
-<<<<<<< HEAD
+<?php 
+if(!empty($_POST['email'])){
+$body = [
+    'email' => $_POST['email'],
+    'senha' => $_POST['senha']
+];
 
-=======
->>>>>>> 913c0f5ee8b24496143ca2fd815895c2968f677b
+$json = json_encode($body);
+
+$curl = curl_init();
+curl_setopt_array($curl, [
+    CURLOPT_URL => 'http://localhost/e_space/routes/index.php/login',
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => $json,
+    CURLOPT_HTTPHEADER => array(
+        "Content-Type: application/json; charset=UTF-8"
+    )
+]);
+
+$responde = curl_exec($curl);
+
+
+curl_close($curl);
+
+$array = json_decode($responde, true);
+
+var_dump($array);
+}
+?>
 </html>

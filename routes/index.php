@@ -1,21 +1,25 @@
 <?php
 
-
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../src/SlimConfiguration.php';
+require_once __DIR__ . '/../env_.php';
 
 use function src\{SlimConfiguration};
 use App\Controllers\{UsuarioController, AnuncioController};
 
 
-$app = new \Slim\App();
+$app = new \Slim\App(SlimConfiguration());
 
 // ==============================================================================
 
-$app->get('/', UsuarioController::class . ':allUsuarios');
+
+
+$app->get('/usuarios', UsuarioController::class . ':allUsuarios');
 $app->post('/login', UsuarioController::class . ':login');
 $app->post('/cadastro/usuario', UsuarioController::class . ':inserirUsuario');
 $app->put('/atualizar/usuario', UsuarioController::class . ':atualizarUsuario');
 
-// ==============================================================================
+// // ==============================================================================
 
 $app->get('/anuncios', AnuncioController::class . ':allAnuncios');
 $app->get('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios');
