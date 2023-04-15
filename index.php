@@ -10,11 +10,11 @@
   <body>
     <nav>
       <div class="logo">
-        <img src="./img/e-space.png " alt="Logo"/>
+        <img src="./img/e-space.png" alt="Logo"/>
       </div>
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <ul class="menu">
-        <li class="login"><a href="#">Fazer Login</a></li>
+        <li class="login"><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
       </ul>
     </nav>
 
@@ -40,7 +40,7 @@
     <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_5terre.jpg">
-            <img src="../img/casa.png" alt="Cinque Terre" width="600" height="400">
+            <img src="./img/casa.png" alt="Cinque Terre" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -52,7 +52,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_forest.jpg">
-            <img src="../img/casa.png" alt="Forest" width="600" height="400">
+            <img src="./img/casa.png" alt="Forest" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -63,7 +63,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_lights.jpg">
-            <img src="../img/casa.png" alt="Northern Lights" width="600" height="400">
+            <img src="./img/casa.png" alt="Northern Lights" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -74,7 +74,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_mountains.jpg">
-            <img src="../img/casa.png" alt="Mountains" width="600" height="400">
+            <img src="./img/casa.png" alt="Mountains" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -85,7 +85,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_mountains.jpg">
-            <img src="../img/casa.png" alt="Mountains" width="600" height="400">
+            <img src="./img/casa.png" alt="Mountains" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -96,7 +96,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_mountains.jpg">
-            <img src="../img/casa.png" alt="Mountains" width="600" height="400">
+            <img src="./img/casa.png" alt="Mountains" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -107,7 +107,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_mountains.jpg">
-            <img src="../img/casa.png" alt="Mountains" width="600" height="400">
+            <img src="./img/casa.png" alt="Mountains" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>
@@ -118,7 +118,7 @@
       <div class="responsive">
         <div class="galeria">
           <a target="_blank" href="img_mountains.jpg">
-            <img src="../img/casa.png" alt="Mountains" width="600" height="400">
+            <img src="./img/casa.png" alt="Mountains" width="600" height="400">
           </a>
           <h4>NOME DA RESIDENCIA</h4>
           <h4>PREÇO DA CASA</h4>

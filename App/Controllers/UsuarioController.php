@@ -12,17 +12,17 @@ final class UsuarioController{
         $input = file_get_contents('php://input');
 
         $data = json_decode($input, true);
-        
+
         $email = $data['email'];
         $senha = $data['senha'];
-
+        
         $usuario_dao = new UsuariosDAO();
         $usuario = $usuario_dao->getUsuarioByEmail($email);
         if(is_null($usuario))
-            return $response->withJson(['mensagem' => 'email invalido!']);
+            return $response->withStatus(404);
 
         if(!password_verify($senha, $usuario->getSenha()))
-            return $response->withJson(['mensagem' => 'senha invalida!']);
+            return $response->withStatus(401);
 
         $response = $response->withJson([
             "id" => $usuario->getId(),
