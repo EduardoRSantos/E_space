@@ -45,29 +45,29 @@ final class UsuarioController{
         $input = file_get_contents('php://input');
 
         $data = json_decode($input, true);
-        
+  
         $usuario_dao = new UsuariosDAO();
         $usuario_model = new UsuarioModel();
 
-        $name = $data['nome'];
+        $nome = $data['nome'];
         $email = $data['email'];
         $senha = $data['senha'];
+        $telefone = $data['telefone'];
+        $nascimento = $data['nascimento'];
 
         $usuario = $usuario_dao->getUsuarioByEmail($email);
 
         if(is_null($usuario)){
             $usuario_model
-            ->setNome($name)
+            ->setNome($nome)
             ->setemail($email)
-            ->setsenha(password_hash($senha, PASSWORD_DEFAULT));
+            ->setsenha(password_hash($senha, PASSWORD_DEFAULT))
+            ->setTelefone($telefone)
+            ->setNascimento($nascimento);
             $usuario_dao->inserirUsuario($usuario_model);
-            $response = $response->withJson([
-                "menssage" => "Success"
-            ]);
+            $response = $response->withStatus(200);
         }else{
-            $response = $response->withJson([
-                "menssage" => "Usuario ja existe ou senha de confirmar incorreto"
-            ]);
+            $response = $response->withStatus(401);
         }
             return $response;
     }

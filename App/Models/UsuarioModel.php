@@ -7,6 +7,8 @@ final class UsuarioModel {
     private $nome;
     private $email;
     private $senha;
+    private $telefone;
+    private $nascimento;
     
     public function getId(): int {
         return $this->id;
@@ -36,6 +38,23 @@ final class UsuarioModel {
     }
     public function setSenha(string $senha): self {
         $this->senha = $senha;
+        return $this;
+    }
+    public function getTelefone(): string {
+        return $this->telefone;
+    }
+
+    public function setTelefone($telefone): self {
+        $this->telefone = $telefone;
+        return $this;
+    }
+
+    public function getNascimento(): string {
+        return $this->nascimento;
+    }
+
+    public function setNascimento($nascimento): self {
+        $this->nascimento = $nascimento;
         return $this;
     }
 }

@@ -47,12 +47,16 @@ class UsuariosDAO extends Conexao{
             null,
             :nome,
             :email,
-            :senha
+            :senha,
+            :telefone,
+            :nascimento
         );');
         $stmt->execute([
             'nome' => $user->getNome(),
             'senha' => $user->getSenha(),
             'email' => $user->getEmail(),
+            'telefone' => $user->getTelefone(),
+            'nascimento' => $user->getNascimento()
         ]);   
     }
 
