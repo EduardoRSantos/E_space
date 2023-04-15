@@ -14,6 +14,12 @@
       </div>
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <ul class="menu">
+        <li class="login"><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
+      </ul>
+      <ul class="menu">
+        <li class="login"><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
+      </ul>
+      <ul class="menu">
         <li class="login"><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
       </ul>
     </nav>
@@ -23,7 +29,7 @@
       <input type="search" name="" id="" size="50" placeholder="Realizar Pesquisa" />
       <button type="submit">Pesquisar</button>
     </div>
-        <!-- PESQUISAR -->
+
 
     <!-- SELEÇÃO -->
     <form class="form">

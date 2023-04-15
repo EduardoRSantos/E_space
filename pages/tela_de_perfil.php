@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+<?php session_start(); ?>
 <head>
     <meta charset="utf-8">
     <title>Tela de Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-
 </head>
 <body id="body">
     <div class="box" id="perfil">
@@ -42,11 +42,6 @@
                 <input type="radio" id="outros" name="genero" value="outros" required>
                 <label for="outros">Outros</label>
                 </p>
-                <div class="inputBox">
-                     <label for="datanascimento">Data de Nascimento</Label>
-                    <br>
-                    <input type="date" name="datanascimento" id="datanascimento"  required>
-                </div>
                 <br>
                 <input type ="submit" name="submit" id="submit" value="Salvar">
                 <a href="http://localhost/tccatual/tccatual/pages/teladelogin.php"></a>
@@ -54,4 +49,13 @@
         </form>
     </div>
 </body>
+<?php 
+
+if(!empty($_SESSION)){
+    
+    print_r($_SESSION);
+}
+
+
+?>
 </html>

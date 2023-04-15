@@ -1,33 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php
-// Inicializa a sessão.
-// Se estiver sendo usado session_name("something"), não esqueça de usá-lo agora!
-session_start();
-
-// Apaga todas as variáveis da sessão
-$_SESSION = array();
-
-// Se é preciso matar a sessão, então os cookies de sessão também devem ser apagados.
-// Nota: Isto destruirá a sessão, e não apenas os dados!
-if (ini_get("session.use_cookies")) {
-  $params = session_get_cookie_params();
-  setcookie(
-    session_name(),
-    '',
-    time() - 42000,
-    $params["path"],
-    $params["domain"],
-    $params["secure"],
-    $params["httponly"]
-  );
-}
-
-// Por último, destrói a sessão
-session_destroy();
-
-?>
-
+  <?php 
+  session_start();
+  $_SESSION = array();
+  ?>
 <head>
   <meta charset="utf-8">
   <title>Tela de Login</title>
@@ -95,7 +71,8 @@ if (!empty($_POST['email'])) {
   if (!empty($array)) { 
     $_SESSION['id'] = $array['id'];
     $_SESSION['nome'] = $array['nome'];
-    $_SESSION['email'] = $array['email']; ?>
+    $_SESSION['email'] = $array['email'];
+    $_SESSION['telefone'] = $array['telefone']; ?>
     <script type="text/javascript">
       Swal.fire({
         icon: 'success',

@@ -27,20 +27,19 @@ final class UsuarioController{
         $response = $response->withJson([
             "id" => $usuario->getId(),
             "nome" => $usuario->getNome(),
-            "email" => $usuario->getEmail()
+            "email" => $usuario->getEmail(),
+            "senha" => $usuario->getSenha(),
+            "telefone" => $usuario->getTelefone()
         ]);
         return $response;
     }
 
     public function allUsuarios(Request $request, Response $response, array $args): Response {
-
         $usuario_dao = new UsuariosDAO();
         $usuario = $usuario_dao->allUsuarios();
         $response = $response->withJson($usuario);
-        return $response;
-        
+        return $response;    
     }
-
     public function inserirUsuario(Request $request, Response $response, array $args): Response {
         $input = file_get_contents('php://input');
 
@@ -53,7 +52,6 @@ final class UsuarioController{
         $email = $data['email'];
         $senha = $data['senha'];
         $telefone = $data['telefone'];
-        $nascimento = $data['nascimento'];
 
         $usuario = $usuario_dao->getUsuarioByEmail($email);
 
@@ -62,8 +60,7 @@ final class UsuarioController{
             ->setNome($nome)
             ->setemail($email)
             ->setsenha(password_hash($senha, PASSWORD_DEFAULT))
-            ->setTelefone($telefone)
-            ->setNascimento($nascimento);
+            ->setTelefone($telefone);
             $usuario_dao->inserirUsuario($usuario_model);
             $response = $response->withStatus(200);
         }else{

@@ -15,7 +15,8 @@ class UsuariosDAO extends Conexao{
             id,
             nome,
             email,
-            senha
+            senha,
+            telefone
             FROM usuarios
             where email = :email
         ');
@@ -29,7 +30,8 @@ class UsuariosDAO extends Conexao{
         $usuario->setId($usuarios[0]['id'])
             ->setNome($usuarios[0]['nome'])
             ->setEmail($usuarios[0]['email'])
-            ->setSenha($usuarios[0]['senha']);
+            ->setSenha($usuarios[0]['senha'])
+            ->setTelefone($usuarios[0]['telefone']);
         return $usuario;
 
     }
@@ -48,15 +50,13 @@ class UsuariosDAO extends Conexao{
             :nome,
             :email,
             :senha,
-            :telefone,
-            :nascimento
+            :telefone
         );');
         $stmt->execute([
             'nome' => $user->getNome(),
             'senha' => $user->getSenha(),
             'email' => $user->getEmail(),
-            'telefone' => $user->getTelefone(),
-            'nascimento' => $user->getNascimento()
+            'telefone' => $user->getTelefone()
         ]);   
     }
 

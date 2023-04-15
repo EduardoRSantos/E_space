@@ -37,9 +37,6 @@
                                     <br>
                                     <input type="tel" placeholder="Telefone" name="telefone" id="telefone" required>
                               </div>
-                              <br>
-                              <label for="birthday"></label>
-                              <input type="date" id="nascimento" name="nascimento">
                         </div>
                         <br>
                         <input type="submit" name="submit" id="submit" value="Registrar">
@@ -60,14 +57,12 @@ if (!empty($_POST['email'])) {
       $senha = $_POST['senha'];
       $senha_confirmar = $_POST['senha_confirmar'];
       $telefone = $_POST['telefone'];
-      $nascimento = $_POST['nascimento'];
 
       $body = [
             'nome' => $nome,
             'email' => $email,
             'senha' => $senha,
-            'telefone' => $telefone,
-            'nascimento' => $nascimento
+            'telefone' => $telefone
       ];
 
       $json = json_encode($body);
