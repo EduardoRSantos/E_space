@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php session_start(); ?>
+
 <head>
     <meta charset="utf-8">
     <title>Tela de Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
+
 <body id="body">
     <div class="box" id="perfil">
         <form method="POST">
-        <h2>Perfil</h2>
+            <h2>Perfil</h2>
+            <br>
+            <div class="inputBox">
+                <label for="nome">Nome Completo</Label>
                 <br>
-                <div class="inputBox">
-                    <label for="nome">Nome Completo</Label>
-                    <br>
-                    <input type="text" name="nome" id="nome" required> 
-                </div>
+                <label for="nome"><?= $_SESSION['nome'] ?></Label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="email">E-mail</Label>
                 <br>
-                <div class="inputBox">
-                    <label for="email">E-mail</Label>
-                    <br>
-                    <input type="email" name="email" id="email"  required>    
-                </div>
+                <label for="email"><?= $_SESSION['email'] ?></Label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="telefone">Telefone</Label>
                 <br>
-                <div class="inputBox">
-                    <label for="telefone">Telefone</Label>
-                    <br>
-                    <input type="tel" name="telefone" id="telefone"  required>    
-                </div>
+                <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="senha">Senha</Label>
                 <br>
-                <div class="inputBox">
-                    <label for="senha">Senha</Label>
-                    <br>
-                    <input type="password" name="senha" id="senha"  required>  
-                </div>
-                <p>Sexo
-                <input type="radio" id="feminino" name="genero" value="feminino" required>
-                <label for="feminino">Feminino</label>
-                <input type="radio" id="Masculino" name="genero" value="Masculino" required>
-                <label for="Masculino">Masculino</label>
-                <input type="radio" id="outros" name="genero" value="outros" required>
-                <label for="outros">Outros</label>
-                </p>
+                <label for="senha">***************</Label>
+            </div>
+            <br>
+            </fieldset>
+        </form>
+    </div>
+    <div class="box" id="perfil">
+        <form method="POST">
+            <h2>Perfil</h2>
+            <br>
+            <div class="inputBox">
+                <label for="nome">Nome Completo</Label>
                 <br>
-                <input type ="submit" name="submit" id="submit" value="Salvar">
-                <a href="http://localhost/tccatual/tccatual/pages/teladelogin.php"></a>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="email">E-mail</Label>
+                <br>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="telefone">Telefone</Label>
+                <br>
+                <input type="tel" name="telefone" id="telefone" required>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="senha">Senha</Label>
+                <br>
+                <input type="password" name="senha" id="senha" required>
+            </div>
+            <br>
+            <input type="submit" name="submit" id="submit" value="Salvar">
             </fieldset>
         </form>
     </div>
 </body>
-<?php 
-
-if(!empty($_SESSION)){
-    
-    print_r($_SESSION);
-}
-
-
-?>
 </html>
