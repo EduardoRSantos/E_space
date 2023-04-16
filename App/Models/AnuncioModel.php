@@ -9,7 +9,8 @@ final class AnuncioModel{
     private $id_usuario;
     private $titulo;
     private $descricao;
-    private $price;
+    private $preco;
+    private $cep;
     private $criado_em;
     private $atualizado_em;
 
@@ -43,11 +44,19 @@ final class AnuncioModel{
         $this->descricao = $descricao;
         return $this;
     }
-    public function getPrice(){
-        return $this->price;
+    public function getPreco(){
+        return $this->preco;
     }
-    public function setPrice($price){
-        $this->price = $price;
+    public function setPreco($preco){
+        $this->preco = $preco;
+        return $this;
+    }
+
+    public function getCep(){
+        return  $this->cep;
+    }
+    public function setCep($cep) {
+        $this->cep = $cep;
         return $this;
     }
     public function getCriadoEm(){

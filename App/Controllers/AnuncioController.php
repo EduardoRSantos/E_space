@@ -21,7 +21,10 @@ final class AnuncioController{
     }
 
     public function inserirAnuncios(Request $request, Response $response, $args): Response{
-        $data = $request->getParsedBody();
+        $input = file_get_contents('php://input');
+
+        $data = json_decode($input, true);
+
         $anuncio_model = new AnuncioModel();
         $anuncioDAO = new AnuncioDAO();
         $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
@@ -30,13 +33,14 @@ final class AnuncioController{
         ->setIdUsuario($data['id_usuario'])
         ->setTitulo($data['titulo'])
         ->setDescricao($data['descricao'])
-        ->setprice($data['price'])
+        ->setpreco($data['preco'])
+        ->setCep($data['cep'])
         ->setCriadoEm($time->format('Y-m-d H:i:s'))
         ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
 
-        $result = $anuncioDAO->inserirAnuncio($anuncio_model);
+        $anuncioDAO->inserirAnuncio($anuncio_model);
 
-        $response = $response->withJson(['menssge' => "sucess"]);
+        $response = $response->withStatus(200);
 
         return $response;
         
@@ -69,7 +73,7 @@ final class AnuncioController{
         ->setId($data['id'])
         ->setTitulo($data['titulo'])
         ->setDescricao($data['descricao'])
-        ->setprice($data['price'])
+        ->setprice($data['preco'])
         ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
 
         $anuncioDAO->atualizarAnuncio($anuncio_model);

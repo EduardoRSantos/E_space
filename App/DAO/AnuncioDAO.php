@@ -25,7 +25,8 @@ class AnuncioDAO extends Conexao{
                 :id_usuario,
                 :titulo,
                 :descricao,
-                :price,
+                :preco,
+                :cep,
                 :criado_em,
                 :atualizado_em
             )
@@ -34,7 +35,8 @@ class AnuncioDAO extends Conexao{
             'id_usuario' => $anuncio_model->getIdUsuario(),
             'titulo' => $anuncio_model->getTitulo(),
             'descricao' => $anuncio_model->getDescricao(),
-            'price' => $anuncio_model->getPrice(),
+            'preco' => $anuncio_model->getPreco(),
+            'cep' => $anuncio_model->getCep(),
             'criado_em' => $anuncio_model->getCriadoEm(),
             'atualizado_em' => $anuncio_model->getAtualizadoEm()
         ]);
@@ -63,7 +65,7 @@ class AnuncioDAO extends Conexao{
             SET 
             titulo = :titulo, 
             descricao = :descricao,
-            price = :price,
+            preco = :preco,
             atualizado_em = :atualizado_em
             WHERE
             id = :id
@@ -71,7 +73,7 @@ class AnuncioDAO extends Conexao{
         $stmt->execute([
             'titulo' => $anuncio_model->getTitulo(),
             'descricao' => $anuncio_model->getDescricao(),
-            'price' => $anuncio_model->getPrice(),
+            'preco' => $anuncio_model->getPreco(),
             'atualizado_em' => $anuncio_model->getAtualizadoEm(),
             'id' => $anuncio_model->getId()
         ]);

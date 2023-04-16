@@ -49,17 +49,15 @@ if (!empty($_POST['email'])) {
 
   $json = json_encode($body);
 
-  $headers = array(
-    'Content-Type: application/json'
-  );
-
   $curl = curl_init();
   curl_setopt_array($curl, [
     CURLOPT_URL => 'http://localhost/E_space/routes/index.php/login',
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POSTFIELDS => $json,
-    CURLOPT_HTTPHEADER => $headers
+    CURLOPT_HTTPHEADER => [
+      'Content-Type: application/json'
+    ]
   ]);
 
   $response = curl_exec($curl);
