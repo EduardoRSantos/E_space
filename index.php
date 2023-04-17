@@ -10,19 +10,15 @@
 </head>
 
 <body>
-  <nav>
+<nav>
     <div class="logo">
       <img src="./img/e-space.png" alt="Logo" />
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <li class="login"><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
-    </ul>
-    <ul class="menu">
-      <li class="login"><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
-    </ul>
-    <ul class="menu">
-      <li class="login"><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
+      <li class=""><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
+      <li class=""><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
+      <li class=""><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
     </ul>
   </nav>
 
