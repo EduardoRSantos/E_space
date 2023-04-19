@@ -28,18 +28,6 @@
     <button type="submit">Pesquisar</button>
   </div>
 
-
-  <!-- SELEÇÃO -->
-  <form class="form">
-    <h5>ORDENAR POR</h5>
-    <select name="plataforma">
-      <option value="crescente">Preço Crescente</option>
-      <option value="decrescente">Preço Decrescente</option>
-    </select>
-  </form>
-  <!-- SELEÇÃO -->
-
-  <!-- GALERIA D EFOTOS -->
   <?php
 
   $curl = curl_init();
@@ -55,9 +43,7 @@
 
   curl_close($curl);
 
-  foreach ($data as $key) {
-
-  ?>
+  foreach ($data as $key): ?>
     <div class="responsive">
       <div class="galeria">
         <a target="_blank" href="img_5terre.jpg">
@@ -71,8 +57,7 @@
         <button>ALUGAR</button>
       </div>
     </div>
-
-  <?php } ?>
+    <?php endforeach; ?>
 </body>
 
 </html>

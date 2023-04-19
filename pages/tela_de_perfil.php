@@ -6,50 +6,62 @@
     <meta charset="utf-8">
     <title>Tela de Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body id="body">
-    <?php if (!empty($_SESSION)) { ?>
-    <div class="box" id="perfil">
-        <form method="POST">
-            <h2>Perfil</h2>
-            <br>
-            <div class="inputBox">
-                <label for="nome">Nome Completo</Label>
+    <?php if (isset($_SESSION)) { ?>
+        <div class="box" id="perfil">
+            <form method="POST">
+                <h2>Perfil</h2>
                 <br>
-                <label for="nome"><?= $_SESSION['nome'] ?></Label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <label for="email">E-mail</Label>
+                <div class="inputBox">
+                    <label for="nome">Nome Completo</Label>
+                    <br>
+                    <label for="nome"><?= $_SESSION['nome'] ?></Label>
+                </div>
                 <br>
-                <label for="email"><?= $_SESSION['email'] ?></Label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <label for="telefone">Telefone</Label>
+                <div class="inputBox">
+                    <label for="email">E-mail</Label>
+                    <br>
+                    <label for="email"><?= $_SESSION['email'] ?></Label>
+                </div>
                 <br>
-                <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <label for="senha">Senha</Label>
+                <div class="inputBox">
+                    <label for="telefone">Telefone</Label>
+                    <br>
+                    <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
+                </div>
                 <br>
-                <label for="senha">***************</Label>
-            </div>
-            <br>
-            </fieldset>
-        </form>
-    </div>
+                <br>
+                </fieldset>
+            </form>
+        </div>
+    <?php }else { ?>
+        <script type="text/javascript">
+        Swal.fire({
+            title: 'Ops!',
+            text: 'Antes faça login',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = "../index.php";
+            }
+        })
+    </script>
     <?php } ?>
     <div class="box" id="perfil">
-        <form method="POST">
+    <form action="salvar_imagem.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="imagem">
+    <input type="submit" value="Enviar">
+    </form>
+        <!-- <form method="POST" enctype="multipart/form-data">
             <h2>Perfil</h2>
             <br>
             <div class="inputBox">
                 <label for="nome">Imagem perfil</Label>
                 <br>
-                <input type="file" name="" id="img1" placeholder="O melhor e-mail" required>
+                <input type="file" name="imagem" id="img1" placeholder="O melhor e-mail" required>
             </div>
             <br>
             <div class="inputBox">
@@ -67,27 +79,8 @@
             <br>
             <input type="submit" name="submit" id="submit" value="Salvar">
             </fieldset>
-        </form>
+        </form> -->
     </div>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
-<?php 
-if (!empty($_SESSION)) {
-    if (!empty($_POST['nome'])) {
-
-    }
-}else{ ?>
-<script type="text/javascript">
-        Swal.fire({
-            title: 'Ops!',
-            text: 'Antes faça login',
-            icon: 'error',
-            confirmButtonText: 'Ok'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = "../index.php";
-            }
-        })
-    </script>
-<?php } ?>
 </html>

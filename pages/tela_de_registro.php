@@ -58,6 +58,20 @@ if (!empty($_POST['email'])) {
       $senha_confirmar = $_POST['senha_confirmar'];
       $telefone = $_POST['telefone'];
 
+      if ($senha != $senha_confirmar) { ?>
+            <script type="text/javascript">
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Senha',
+                        text: 'conferir se está correta',
+                        confirmButtonText: 'Ok'
+                  }).then((result) => {
+                        if (result.isConfirmed) {
+                              location.href = "../pages/tela_de_registro.php";
+                        }
+                  })
+            </script>
+      <?php }else {
       $body = [
             'nome' => $nome,
             'email' => $email,
@@ -67,16 +81,14 @@ if (!empty($_POST['email'])) {
 
       $json = json_encode($body);
 
-      $headers = array(
-            'Content-Type: application/json'
-      );
-
       $curl = curl_init();
       curl_setopt_array($curl, [
             CURLOPT_URL => 'http://localhost/E_space/routes/index.php/cadastro/usuario',
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $json,
-            CURLOPT_HTTPHEADER => $headers
+            CURLOPT_HTTPHEADER => [
+                  'Content-Type: application/json'
+            ]
       ]);
 
       curl_exec($curl);
@@ -85,36 +97,37 @@ if (!empty($_POST['email'])) {
 
       curl_close($curl);
 
-      if($http_code == 200){ ?>
-      <script type="text/javascript">
-      Swal.fire({
-        icon: 'success',
-        title: 'Sucesso',
-        text: 'Cadastro feito!',
-        confirmButtonText: 'Ok'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = "../pages/tela_de_login.php";
-        }
-      })
-    </script>
+      if ($http_code == 200) { ?>
+            <script type="text/javascript">
+                  Swal.fire({
+                        icon: 'success',
+                        title: 'Sucesso',
+                        text: 'Cadastro feito!',
+                        confirmButtonText: 'Ok'
+                  }).then((result) => {
+                        if (result.isConfirmed) {
+                              location.href = "../pages/tela_de_login.php";
+                        }
+                  })
+            </script>
 
-     <?php }else { ?>
+      <?php } else { ?>
 
-      <script type="text/javascript">
-      Swal.fire({
-        icon: 'error',
-        title: 'Triste',
-        text: 'Email ja cadastrado!',
-        confirmButtonText: 'Ok'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = "../pages/tela_de_registro.php";
-        }
-      })
-    </script>
+            <script type="text/javascript">
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Triste',
+                        text: 'Email ja cadastrado!',
+                        confirmButtonText: 'Ok'
+                  }).then((result) => {
+                        if (result.isConfirmed) {
+                              location.href = "../pages/tela_de_registro.php";
+                        }
+                  })
+            </script>
 
-      <?php }
+<?php }
+}
 }
 ?>
 
