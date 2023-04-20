@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<nav>
+  <nav>
     <div class="logo">
       <img src="./img/e-space.png" alt="Logo" />
     </div>
@@ -22,7 +22,6 @@
     </ul>
   </nav>
 
-  <!-- PESQUISAR -->
   <div class="pesquisar">
     <input type="search" name="" id="" size="50" placeholder="Realizar Pesquisa" />
     <button type="submit">Pesquisar</button>
@@ -43,21 +42,24 @@
 
   curl_close($curl);
 
-  foreach ($data as $key): ?>
+  foreach ($data as $key) : ?>
     <div class="responsive">
       <div class="galeria">
         <a target="_blank" href="img_5terre.jpg">
           <img src="./img/casa.png" alt="Cinque Terre" width="600" height="400">
         </a>
         <h4><?= $key['titulo'] ?></h4>
-        <h4><?= $key['preco'] ?></h4>
         <h4><?= $key['descricao'] ?></h4>
+        <h4><?= $key['preco'] ?></h4>
+        <h4><?= $key['localizacao'] ?></h4>
         <h4><?= $key['cep'] ?></h4>
+        <h4><?= $key['numero'] ?></h4>
+        <h4><?= $key['quantidade_pessoas'] ?></h4>
         <h4><?= $key['criado_em'] ?></h4>
-        <button>ALUGAR</button>
-      </div>
-    </div>
-    <?php endforeach; ?>
+        <h4><?= $key['atualizado_em'] ?></h4>
+       <button>Botao</button>
+
+  <?php endforeach; ?>
 </body>
 
 </html>

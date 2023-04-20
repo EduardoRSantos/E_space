@@ -34,7 +34,10 @@ final class AnuncioController{
         ->setTitulo($data['titulo'])
         ->setDescricao($data['descricao'])
         ->setpreco($data['preco'])
+        ->setLocalizacao($data['localizacao'])
         ->setCep($data['cep'])
+        ->setNumero($data['numero'])
+        ->setQuantidadePessoas($data['quantidade_pessoas'])
         ->setCriadoEm($time->format('Y-m-d H:i:s'))
         ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
 

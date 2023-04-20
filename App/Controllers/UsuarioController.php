@@ -9,6 +9,7 @@ use App\Models\UsuarioModel;
 final class UsuarioController{
 
     public function login(Request $request, Response $response, array $args): Response {
+        
         $input = file_get_contents('php://input');
 
         $data = json_decode($input, true);
@@ -40,6 +41,7 @@ final class UsuarioController{
         $response = $response->withJson($usuario);
         return $response;    
     }
+
     public function inserirUsuario(Request $request, Response $response, array $args): Response {
         $input = file_get_contents('php://input');
 

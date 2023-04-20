@@ -12,8 +12,6 @@ $app = new \Slim\App(SlimConfiguration());
 
 // ==============================================================================
 
-
-
 $app->get('/usuarios', UsuarioController::class . ':allUsuarios');
 $app->post('/login', UsuarioController::class . ':login');
 $app->post('/cadastro/usuario', UsuarioController::class . ':inserirUsuario');

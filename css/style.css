@@ -6,11 +6,21 @@
 list-style-type: none;
 
 }
-#buttonanuncio{
-
-  
+#quantidadedepessoas{
   position: absolute;
   top: 225%;
+  padding: 5px;
+  width: 400px;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+
+}
+
+
+#buttonanuncio{
+  position: absolute;
+  top: 260%;
   padding: 5px;
   width: 400px;
   left: 50%;

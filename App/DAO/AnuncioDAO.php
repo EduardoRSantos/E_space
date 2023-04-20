@@ -21,12 +21,15 @@ class AnuncioDAO extends Conexao{
         $stmt = $this->pdo->prepare("INSERT INTO anuncios
             VALUES
             (
-                default,
+                null,
                 :id_usuario,
                 :titulo,
                 :descricao,
                 :preco,
+                :localizacao,
                 :cep,
+                :numero,
+                :quantidade_pessoas,
                 :criado_em,
                 :atualizado_em
             )
@@ -36,7 +39,10 @@ class AnuncioDAO extends Conexao{
             'titulo' => $anuncio_model->getTitulo(),
             'descricao' => $anuncio_model->getDescricao(),
             'preco' => $anuncio_model->getPreco(),
+            'localizacao' => $anuncio_model->getLocalizacao(),
             'cep' => $anuncio_model->getCep(),
+            'numero' => $anuncio_model->getNumero(),
+            'quantidade_pessoas' => $anuncio_model->getQuantidadePessoas(),
             'criado_em' => $anuncio_model->getCriadoEm(),
             'atualizado_em' => $anuncio_model->getAtualizadoEm()
         ]);

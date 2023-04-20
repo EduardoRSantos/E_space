@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php session_start(); ?>
-
 <head>
     <meta charset="utf-8">
     <title>Tela de Login</title>
@@ -9,7 +8,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body id="body">
-    <?php if (isset($_SESSION)) { ?>
+    <?php if (!empty($_SESSION)) { ?>
         <div class="box" id="perfil">
             <form method="POST">
                 <h2>Perfil</h2>
@@ -36,7 +35,7 @@
                 </fieldset>
             </form>
         </div>
-    <?php }else { ?>
+<?php }else{ ?>
         <script type="text/javascript">
         Swal.fire({
             title: 'Ops!',
@@ -49,12 +48,14 @@
             }
         })
     </script>
-    <?php } ?>
+<?php } ?>
     <div class="box" id="perfil">
-    <form action="salvar_imagem.php" method="post" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
     <input type="file" name="imagem">
     <input type="submit" value="Enviar">
     </form>
+
+
         <!-- <form method="POST" enctype="multipart/form-data">
             <h2>Perfil</h2>
             <br>
