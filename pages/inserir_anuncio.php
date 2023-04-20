@@ -56,6 +56,14 @@
                 <input type="number" placeholder="quantpessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
                 <label for="quantidadedepessoas"></Label>
             </div>
+            <div class="quant">
+                <input type="number" placeholder="quantpessoas" name="quantidadedepessoas" id="quantidadedepessoas" class="inputUser" required>
+                <label for="quantidadedepessoas"></Label>
+            </div>
+
+
+
+
             <input type="submit" name="submit" id="buttonanuncio" value="Anunciar">
         </form>
     </section>

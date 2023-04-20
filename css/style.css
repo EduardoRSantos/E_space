@@ -7,6 +7,23 @@ list-style-type: none;
 
 }
 #quantidadedepessoas{
+<<<<<<< HEAD
+=======
+  position: absolute;
+  top: 225%;
+  padding: 5px;
+  width: 400px;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+
+}
+
+
+#buttonanuncio{
+
+  
+>>>>>>> c4a37d5f54619ae7fdb0f2cf58addffb47ebdf99
   position: absolute;
   top: 225%;
   padding: 5px;
