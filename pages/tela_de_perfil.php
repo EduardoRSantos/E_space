@@ -12,125 +12,158 @@
 <body id="body">
     <?php if (!empty($_SESSION)) { ?>
         <div class="box" id="perfil">
-            <form method="POST">
-                <h2>Perfil</h2>
-                <br>
-                <div class="inputBox">
-                    <label for="nome">Nome Completo</Label>
-                    <br>
-                    <label for="nome"><?= $_SESSION['nome'] ?></Label>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <label for="email">E-mail</Label>
-                    <br>
-                    <label for="email"><?= $_SESSION['email'] ?></Label>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <label for="telefone">Telefone</Label>
-                    <br>
-                    <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
-                </div>
-                <br>
-                <br>
-                </fieldset>
-            </form>
-        </div>
-    <?php } else { ?>
-        
-        <script type="text/javascript">
-            Swal.fire({
-                title: 'Ops!',
-                text: 'Antes faça login',
-                icon: 'error',
-                confirmButtonText: 'Ok'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    location.href = "../index.php";
-                }
-            })
-        </script>
-
-    <?php } ?>
-    <div class="box" id="perfil">
-        <form method="POST" enctype="multipart/form-data">
             <h2>Perfil</h2>
-            <br>
-            <div class="inputBox">
-            <input type="file" name="imagem">
-            </div>
             <br>
             <div class="inputBox">
                 <label for="nome">Nome Completo</Label>
                 <br>
-                <input type="text" name="nome" id="nome" required>
+                <label for="nome"><?= $_SESSION['nome'] ?></Label>
+            </div>
+            <br>
+            <div class="inputBox">
+                <label for="email">E-mail</Label>
+                <br>
+                <label for="email"><?= $_SESSION['email'] ?></Label>
             </div>
             <br>
             <div class="inputBox">
                 <label for="telefone">Telefone</Label>
                 <br>
-                <input type="text" name="telefone" id="telefone" required>
+                <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
             </div>
             <br>
             <br>
-            <input type="submit" name="submit" id="submit" value="Salvar">
-        </form>
+            </fieldset>
+        </div>
+        <div class="box" id="perfil">
+            <form method="POST" enctype="multipart/form-data">
+                <h2>Perfil</h2>
+                <br>
+                <div class="inputBox">
+                    <input type="file" name="imagem">
+                </div>
+                <input type="submit" name="submit" id="submit" value="Salvar">
+            </form>
+
+            <form method="POST">
+                <br>
+                <div class="inputBox">
+                    <label for="nome">Nome Completo</Label>
+                    <br>
+                    <input type="text" name="nome" id="nome" value="<?= $_SESSION['nome'] ?>" required>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <label for="telefone">Telefone</Label>
+                    <br>
+                    <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
+                </div>
+                <br>
+                <br>
+                <input type="submit" name="submit" id="submit" value="Salvar">
+            </form>
+
+        <?php } else { ?>
+            <script type="text/javascript">
+                Swal.fire({
+                    title: 'Ops!',
+                    text: 'Antes faça login',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "../index.php";
+                    }
+                })
+            </script>
         <?php
+    }
 
-        if (!empty($_POST['nome'])) {
+    if (!empty($_FILES['imagem'])) {
 
-            $arquivo = $_FILES["imagem"];
-            $pasta = "../imagens/";
-            $nome_imagen = $arquivo["name"];
-            $novo_nome_imagem = uniqid();
-            $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
-            $href_imagen_mover = "$pasta$novo_nome_imagem.$extensao";
-            $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
-            $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen_mover);
+        $arquivo = $_FILES["imagem"];
+        $nome_imagen = $arquivo["name"];
+        $novo_nome_imagem = uniqid();
+        $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
+        $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
+        $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+        $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen_mover);
 
-            if ($verify) {
-                $nome = $_POST["nome"];
-                $telefone = $_POST["telefone"];
-                $id = $_SESSION["id"];
+        if ($verify) {
+            $id = $_SESSION["id"];
 
-                $body = [
-                    'referencia_imagen' => $href_imagen_upa,
-                    'nome' => $nome,
-                    'telefone' => $telefone,
-                    'id' => $id
-                ];
+            $body = [
+                'referencia_imagen' => $href_imagen_upa,
+                'id' => $id
+            ];
 
-                $json = json_encode($body);
+            $json = json_encode($body);
 
-                $curl = curl_init();
-                curl_setopt_array($curl, [
-                    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario',
-                    CURLOPT_CUSTOMREQUEST => "PUT",
-                    CURLOPT_POSTFIELDS => $json,
-                    CURLOPT_HTTPHEADER => [
-                        'Content-Type: application/json'
-                    ]
-                ]);
+            $curl = curl_init();
+            curl_setopt_array($curl, [
+                CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario/imagen',
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $json,
+                CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/json'
+                ]
+            ]);
 
-                curl_exec($curl);
+            curl_exec($curl);
 
-                $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-                curl_close($curl);
+            curl_close($curl);
 
-                if($http_code == 200)
-                    $_SESSION['nome'] = $nome;
-                    $_SESSION['telefone'] = $telefone;
-                    echo "boa";
+            if ($http_code == 200)
+                echo "ok";
 
-                if($http_code == 403)
-                    echo "ruim";
-            }
+            if ($http_code == 403)
+                echo "ruim";
         }
+    }
+
+    if (!empty($_POST['nome'])) {
+
+        $nome = $_POST["nome"];
+        $telefone = $_POST["telefone"];
+        $id = $_SESSION["id"];
+
+        $body = [
+            'nome' => $nome,
+            'telefone' => $telefone,
+            'id' => $id
+        ];
+
+        $json = json_encode($body);
+
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario',
+            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_POSTFIELDS => $json,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json'
+            ]
+        ]);
+
+        curl_exec($curl);
+
+        $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        curl_close($curl);
+
+        if ($http_code == 200)
+            $_SESSION['nome'] = $nome;
+        $_SESSION['telefone'] = $telefone;
+        echo "ok2";
+
+        if ($http_code == 403)
+            echo "ruim2";
+    }
 
         ?>
-    </div>
+        </div>
 
 </body>
 

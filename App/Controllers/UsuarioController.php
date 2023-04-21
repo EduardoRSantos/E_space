@@ -11,8 +11,12 @@ use DateTimeZone;
 final class UsuarioController{
 
     public function getImagenPerfil(Request $request, Response $response, $args): Response{
+        $input = file_get_contents('php://input');
+
+        $data = json_decode($input, true);
+        $id = $data['id'];
         $upload_imagen = new UploadImagensDAO();
-        $result = $upload_imagen->getImageById(1);
+        $result = $upload_imagen->getImageById($id);
         $response = $response->withJson($result);
         return $response;
     }
@@ -78,31 +82,48 @@ final class UsuarioController{
         }
             return $response;
     }
-    public function atualizarUsuario(Request $request, Response $response, array $args): Response {
+    public function atualizarUsuarioImagen(Request $request, Response $response, array $args): Response {
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
-        $nome = $data['nome'];
-        $telefone = $data['telefone'];
+
         $id = $data['id'];
 
-        $usuario_dao = new UsuariosDAO();
         $upload_imagen = new UploadImagensDAO();
-        $usuario_model = new usuarioModel();
 
         $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
 
-        $usuario_model
-        ->setNome($nome)
-        ->setEmail($telefone)
-        ->setId($id);
         $result = $upload_imagen->inserir_imagen_perfil($id, $data['referencia_imagen'],$time->format('Y-m-d H:i:s'));
 
-        $usuario_dao->atualizarUsuario($usuario_model);
         if($result)
             $response = $response->withStatus(200);
         else
             $response = $response->withStatus(403);
 
+        return $response;
+    }
+
+    public function atualizarUsuario(Request $request, Response $response, array $args): Response {
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+
+        $nome = $data['nome'];
+        $telefone = $data['telefone'];
+        $id = $data['id'];
+
+        $usuario_dao = new UsuariosDAO();
+        $usuario_model = new usuarioModel();
+
+        $usuario_model
+        ->setNome($nome)
+        ->setTelefone($telefone)
+        ->setId($id);
+        $result = $usuario_dao->atualizarUsuario($usuario_model);
+
+        if ($result)
+            $response = $response->withStatus(200);
+            return $response;
+        
+        $response = $response->withStatus(403);
         return $response;
     }
 }

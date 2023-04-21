@@ -23,11 +23,39 @@
       <li class=""><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <li class=""><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <li class=""><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
-      <?php if(!empty($data)){ ?>
+      <?php 
+      if(!empty($_SESSION)){
+      $id = $_SESSION['id'];
+      
+      $body = [
+        'id' => $id,
+      ];
+
+      $json = json_encode($body, true);
+
+      $curl = curl_init();
+      curl_setopt_array($curl, [
+        CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POSTFIELDS => $json,
+        CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/json'
+                ]
+      ]);
+    
+      $response = curl_exec($curl);
+    
+      $data = json_decode($response, true);
+    
+      curl_close($curl);
+
+      if(!empty($data)){ ?>
         <li><img src="<?= $data[0]['path'] ?>" alt="" width="100" height="100"></li>
        <?php }else { ?>
        <li><img src="#" alt="default"></li>
-      <?php } ?>
+      <?php }
+      } ?>
     </ul>
   </nav>
   <!-- PESQUISAR -->
@@ -165,12 +193,6 @@
 <?php 
   endforeach; 
 ?>
-
-
-
-
-
-
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

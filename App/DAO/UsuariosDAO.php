@@ -1,19 +1,22 @@
 <?php
 
 namespace App\DAO;
+
 use App\Models\UsuarioModel;
 
-class UsuariosDAO extends Conexao{
+class UsuariosDAO extends Conexao
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
-
     }
 
 
 
-    
-    public function getUsuarioByEmail(string $email): ?UsuarioModel{
+
+    public function getUsuarioByEmail(string $email): ?UsuarioModel
+    {
         $stmt = $this->pdo->prepare('SELECT 
             id,
             nome,
@@ -23,11 +26,11 @@ class UsuariosDAO extends Conexao{
             FROM usuarios
             where email = :email
         ');
-        $stmt->bindParam('email',$email);
+        $stmt->bindParam('email', $email);
         $stmt->execute();
         $usuarios = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        if(count($usuarios) === 0)
+        if (count($usuarios) === 0)
             return null;
         $usuario = new UsuarioModel();
         $usuario->setId($usuarios[0]['id'])
@@ -36,19 +39,20 @@ class UsuariosDAO extends Conexao{
             ->setSenha($usuarios[0]['senha'])
             ->setTelefone($usuarios[0]['telefone']);
         return $usuario;
-
     }
 
-    public function allUsuarios(): array{
+    public function allUsuarios(): array
+    {
         $user = $this->pdo
             ->query("SELECT * FROM usuarios")
             ->fetchAll(\PDO::FETCH_ASSOC);
         return $user;
     }
 
-    public function inserirUsuario(UsuarioModel $user): void{
+    public function inserirUsuario(UsuarioModel $user): void
+    {
         $stmt = $this->pdo
-        ->prepare('INSERT INTO usuarios VALUES(
+            ->prepare('INSERT INTO usuarios VALUES(
             null,
             :nome,
             :email,
@@ -60,20 +64,27 @@ class UsuariosDAO extends Conexao{
             'senha' => $user->getSenha(),
             'email' => $user->getEmail(),
             'telefone' => $user->getTelefone()
-        ]);   
+        ]);
     }
 
-    public function atualizarUsuario(UsuarioModel $user): void {
+    public function atualizarUsuario(UsuarioModel $user): bool
+    {
+
         $stmt = $this->pdo
-        ->prepare('UPDATE usuarios SET
+            ->prepare('UPDATE usuarios SET
             nome = :nome,
             telefone = :telefone
             WHERE id = :id;
         ');
-        $stmt->execute([
+        $result = $stmt->execute([
             'nome' => $user->getNome(),
             'telefone' => $user->getTelefone(),
             'id' => $user->getId()
         ]);
+
+        if ($result)
+            return true;
+
+        return false;
     }
 }

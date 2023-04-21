@@ -17,17 +17,9 @@
     <section class="estrutura_da_tela">
         <h1>Inserir Anúncio</h1>
         <form method="POST">
-            <!-- <div id="divid">
+            <div id="divid">
                 <input type="file" name="" id="img1" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-                <input type="file" name="" id="email_usuario" placeholder="O melhor e-mail" required>
-            </div> -->
-            
+            </div>
             <div class="container">
                 <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
@@ -45,40 +37,26 @@
                 <label for="localizacao"></Label>
             </div>
             <div class="cep">
-                <input type="number" placeholder="cep" name="cep" id="cep" class="inputUser" required>
+                <input type="text" placeholder="cep" name="cep" id="cep" class="inputUser" required>
                 <label for="cep"></Label>
             </div>
             <div>
                 <input type="number" placeholder="Numero" name="numero" id="numero" class="inputUser" required>
                 <label for="numero"></Label>
             </div>
-<<<<<<< HEAD
-            <div class="info">
-                <input type="text" placeholder="info_anuncio" name="descricao" id="info_anuncio" class="inputUser" required>
-                <label for="info_anuncio"></Label>
-=======
             <div class="quant">
                 <input type="number" placeholder="quantpessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
                 <label for="quantidadedepessoas"></Label>
->>>>>>> 67fb2895e8923c012ce9e048556c281c27320542
-            </div>
-			<div class="quant">
-                <input type="number" placeholder="quantpessoas" name="quantidade_de_pessoas" id="quantidade_de_pessoas" class="inputUser" required>
-                <label for="quantidade_de_pessoas"></Label>
             </div>
             <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
         </form>
     </section>
-    
-    <section>
-<!-- Modal -->
-
-
-    </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="../js/mascaras.js"></script>
 </body>
 <?php
-
 
 
 if (!empty($_SESSION)) {
