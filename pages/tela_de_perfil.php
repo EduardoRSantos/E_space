@@ -83,8 +83,9 @@
             $nome_imagen = $arquivo["name"];
             $novo_nome_imagem = uniqid();
             $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
-            $href_imagen = "$pasta$novo_nome_imagem.$extensao";
-            $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen);
+            $href_imagen_mover = "$pasta$novo_nome_imagem.$extensao";
+            $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+            $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen_mover);
 
             if ($verify) {
                 $nome = $_POST["nome"];
@@ -92,7 +93,7 @@
                 $id = $_SESSION["id"];
 
                 $body = [
-                    'referencia_imagen' => $href_imagen,
+                    'referencia_imagen' => $href_imagen_upa,
                     'nome' => $nome,
                     'telefone' => $telefone,
                     'id' => $id

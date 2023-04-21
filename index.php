@@ -10,6 +10,26 @@
 </head>
 
 <body>
+  <?php 
+  if(!empty($_SESSION)){
+  
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_RETURNTRANSFER => true,
+    ]);
+  
+    $response  = curl_exec($curl);
+  
+    $data = json_decode($response, true);
+
+    curl_close($curl);
+  
+    $imagen =  $data[0]['path'];
+ 
+  }
+  ?>
   <nav>
     <div class="logo">
       <img src="./img/e-space.png" alt="Logo" />
@@ -19,6 +39,11 @@
       <li class=""><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <li class=""><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <li class=""><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
+      <?php if(!empty($data)){ ?>
+        <li><img src="<?= $data[0]['path'] ?>" alt="" width="100" height="100"></li>
+       <?php }else { ?>
+       <li><img src="#" alt="default"></li>
+      <?php } ?>
     </ul>
   </nav>
 
@@ -60,13 +85,7 @@
        <button>Botao</button>
       </div>
       </div>
-  <?php endforeach; 
-
-  if(!empty($_SESSION)){
-  
-  
- 
-  } ?>
+  <?php endforeach; ?>
 </body>
 
 </html>
