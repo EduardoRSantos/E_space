@@ -3,11 +3,19 @@
 namespace App\Controllers;
 
 use Psr\Http\Message\{ResponseInterface as Response,ServerRequestInterface as Request};
-use App\DAO\UsuariosDAO;
+use App\DAO\{UsuariosDAO, UploadImagensDAO};
 use App\Models\UsuarioModel;
+use DateTime;
+use DateTimeZone;
 
 final class UsuarioController{
 
+    public function getImagenPerfil(Request $request, Response $response, $args): Response{
+        $upload_imagen = new UploadImagensDAO();
+        $result = $upload_imagen->getImageById(1);
+        $response = $response->withJson($result);
+        return $response;
+    }
     public function login(Request $request, Response $response, array $args): Response {
         
         $input = file_get_contents('php://input');
@@ -71,18 +79,30 @@ final class UsuarioController{
             return $response;
     }
     public function atualizarUsuario(Request $request, Response $response, array $args): Response {
-        $data = $request->getParsedBody();
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+        $nome = $data['nome'];
+        $telefone = $data['telefone'];
+        $id = $data['id'];
 
         $usuario_dao = new UsuariosDAO();
+        $upload_imagen = new UploadImagensDAO();
         $usuario_model = new usuarioModel();
-        $usuario_model
-        ->setNome($data['nome'])
-        ->setEmail($data['email'])
-        ->setSenha(password_hash($data['senha'], PASSWORD_DEFAULT))
-        ->setId($data['id']);
-        $usuario_dao->atualizarUsuario($usuario_model);
 
-        $response = $response->withJson(['menssage' => 'atualizado com sucesso!']);
+        $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+
+        $usuario_model
+        ->setNome($nome)
+        ->setEmail($telefone)
+        ->setId($id);
+        $result = $upload_imagen->inserir_imagen_perfil($id, $data['referencia_imagen'],$time->format('Y-m-d H:i:s'));
+
+        $usuario_dao->atualizarUsuario($usuario_model);
+        if($result)
+            $response = $response->withStatus(200);
+        else
+            $response = $response->withStatus(403);
+
         return $response;
     }
 }

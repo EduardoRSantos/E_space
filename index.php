@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php session_start(); ?>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,7 +60,13 @@
        <button>Botao</button>
       </div>
       </div>
-  <?php endforeach; ?>
+  <?php endforeach; 
+
+  if(!empty($_SESSION)){
+  
+  
+ 
+  } ?>
 </body>
 
 </html>

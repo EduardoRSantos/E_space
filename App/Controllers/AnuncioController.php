@@ -4,16 +4,17 @@
 namespace App\Controllers;
 
 use Psr\Http\Message\{ResponseInterface as Response,ServerRequestInterface as Request};
-use App\DAO\AnuncioDAO;
+use App\DAO\{AnuncioDAO, UploadImagensDAO};
 use App\Models\AnuncioModel;
 use DateTime;
 use DateTimeZone;
 
 final class AnuncioController{
-
+    
     public function allAnuncios(Request $request, Response $response, $args): Response{
 
         $anuncioDAO = new AnuncioDAO();
+        $upload_imagen = new UploadImagensDAO();
         $anuncios = $anuncioDAO->allAnuncio();
         $response = $response->withJson($anuncios);
         return $response;
@@ -76,7 +77,7 @@ final class AnuncioController{
         ->setId($data['id'])
         ->setTitulo($data['titulo'])
         ->setDescricao($data['descricao'])
-        ->setprice($data['preco'])
+        ->setpreco($data['preco'])
         ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
 
         $anuncioDAO->atualizarAnuncio($anuncio_model);
