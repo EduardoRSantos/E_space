@@ -10,6 +10,9 @@ class UsuariosDAO extends Conexao{
 
     }
 
+
+
+    
     public function getUsuarioByEmail(string $email): ?UsuarioModel{
         $stmt = $this->pdo->prepare('SELECT 
             id,
