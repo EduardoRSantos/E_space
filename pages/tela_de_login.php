@@ -7,7 +7,9 @@
 <head>
   <meta charset="utf-8">
   <title>Tela de Login</title>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <style>
+        <?php include '../css/style_tela_de_login.css'; ?>
+    </style>
 
 </head>
 
