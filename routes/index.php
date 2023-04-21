@@ -10,9 +10,9 @@ use App\Controllers\{UsuarioController, AnuncioController};
 
 $app = new \Slim\App(SlimConfiguration());
 
+
+$app->get('/imagem', UsuarioController::class . ':getImagenPerfil');
 // ==============================================================================
-
-
 
 $app->get('/usuarios', UsuarioController::class . ':allUsuarios');
 $app->post('/login', UsuarioController::class . ':login');

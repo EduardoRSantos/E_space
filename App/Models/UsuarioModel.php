@@ -40,7 +40,7 @@ final class UsuarioModel {
         $this->senha = $senha;
         return $this;
     }
-    public function getTelefone(): string {
+    public function getTelefone() {
         return $this->telefone;
     }
 
@@ -49,7 +49,7 @@ final class UsuarioModel {
         return $this;
     }
 
-    public function getNascimento(): string {
+    public function getNascimento(){
         return $this->nascimento;
     }
 

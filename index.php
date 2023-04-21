@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php session_start(); ?>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,6 +23,11 @@
       <li class=""><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <li class=""><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <li class=""><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
+      <?php if(!empty($data)){ ?>
+        <li><img src="<?= $data[0]['path'] ?>" alt="" width="100" height="100"></li>
+       <?php }else { ?>
+       <li><img src="#" alt="default"></li>
+      <?php } ?>
     </ul>
   </nav>
   <!-- PESQUISAR -->

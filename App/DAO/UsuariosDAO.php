@@ -64,14 +64,12 @@ class UsuariosDAO extends Conexao{
         $stmt = $this->pdo
         ->prepare('UPDATE usuarios SET
             nome = :nome,
-            email = :email,
-            senha = :senha
+            telefone = :telefone
             WHERE id = :id;
         ');
         $stmt->execute([
             'nome' => $user->getNome(),
-            'senha' => $user->getSenha(),
-            'email' => $user->getEmail(),
+            'telefone' => $user->getTelefone(),
             'id' => $user->getId()
         ]);
     }

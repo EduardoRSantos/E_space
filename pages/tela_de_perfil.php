@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body id="body">
-    <?php if (isset($_SESSION)) { ?>
+    <?php if (!empty($_SESSION)) { ?>
         <div class="box" id="perfil">
             <form method="POST">
                 <h2>Perfil</h2>
@@ -36,32 +37,26 @@
                 </fieldset>
             </form>
         </div>
-    <?php }else { ?>
+    <?php } else { ?>
         <script type="text/javascript">
-        Swal.fire({
-            title: 'Ops!',
-            text: 'Antes faça login',
-            icon: 'error',
-            confirmButtonText: 'Ok'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = "../index.php";
-            }
-        })
-    </script>
+            Swal.fire({
+                title: 'Ops!',
+                text: 'Antes faça login',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = "../index.php";
+                }
+            })
+        </script>
     <?php } ?>
     <div class="box" id="perfil">
-    <form action="salvar_imagem.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="imagem">
-    <input type="submit" value="Enviar">
-    </form>
-        <!-- <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             <h2>Perfil</h2>
             <br>
             <div class="inputBox">
-                <label for="nome">Imagem perfil</Label>
-                <br>
-                <input type="file" name="imagem" id="img1" placeholder="O melhor e-mail" required>
+            <input type="file" name="imagem">
             </div>
             <br>
             <div class="inputBox">
@@ -73,14 +68,68 @@
             <div class="inputBox">
                 <label for="telefone">Telefone</Label>
                 <br>
-                <input type="tel" name="telefone" id="telefone" required>
+                <input type="text" name="telefone" id="telefone" required>
             </div>
             <br>
             <br>
             <input type="submit" name="submit" id="submit" value="Salvar">
-            </fieldset>
-        </form> -->
+        </form>
+        <?php
+
+        if (!empty($_POST['nome'])) {
+
+            $arquivo = $_FILES["imagem"];
+            $pasta = "../imagens/";
+            $nome_imagen = $arquivo["name"];
+            $novo_nome_imagem = uniqid();
+            $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
+            $href_imagen_mover = "$pasta$novo_nome_imagem.$extensao";
+            $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+            $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen_mover);
+
+            if ($verify) {
+                $nome = $_POST["nome"];
+                $telefone = $_POST["telefone"];
+                $id = $_SESSION["id"];
+
+                $body = [
+                    'referencia_imagen' => $href_imagen_upa,
+                    'nome' => $nome,
+                    'telefone' => $telefone,
+                    'id' => $id
+                ];
+
+                $json = json_encode($body);
+
+                $curl = curl_init();
+                curl_setopt_array($curl, [
+                    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario',
+                    CURLOPT_CUSTOMREQUEST => "PUT",
+                    CURLOPT_POSTFIELDS => $json,
+                    CURLOPT_HTTPHEADER => [
+                        'Content-Type: application/json'
+                    ]
+                ]);
+
+                curl_exec($curl);
+
+                $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+                curl_close($curl);
+
+                if($http_code == 200)
+                    $_SESSION['nome'] = $nome;
+                    $_SESSION['telefone'] = $telefone;
+                    echo "boa";
+
+                if($http_code == 403)
+                    echo "ruim";
+            }
+        }
+
+        ?>
     </div>
-    
+
 </body>
+
 </html>
