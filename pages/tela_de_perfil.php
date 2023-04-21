@@ -38,6 +38,7 @@
             </form>
         </div>
     <?php } else { ?>
+        
         <script type="text/javascript">
             Swal.fire({
                 title: 'Ops!',
@@ -50,6 +51,7 @@
                 }
             })
         </script>
+
     <?php } ?>
     <div class="box" id="perfil">
         <form method="POST" enctype="multipart/form-data">
