@@ -4,181 +4,23 @@
   padding: 0;
   box-sizing:border-box;
 list-style-type: none;
-
 }
-#quantidadedepessoas{
-  position: absolute;
-  top: 225%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-
+#nav1{
+  background-color: black;
 }
-
-
-#buttonanuncio{
-
-  
-  position: absolute;
-  top: 225%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-
-#info{
-  position: absolute;
-  top: 205%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-
-
-
-#numero{
-  position: absolute;
-  top: 185%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-
-
-
-#cep{
-  position: absolute;
-  top: 165%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-
-
-
-
-
-
-#localizacao{
-  position: absolute;
-  top: 145%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-
-
-
-
-#titulo{
-  position: absolute;
-  top: 108%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-  
-}
-
 .inputUser{
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
 .inputSenha{
   margin-bottom: 5px;
 }
-
-#preco{
-  position: absolute;
-  top: 125%;
-  padding: 5px;
-  width: 400px;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-.s{
-  background-color: rgb(0, 0, 0);
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1px;
-  border-radius: 10px;
-  color: white;
-  width: 99%;
-}
-
 #sectionid{
   background-color: black;
 }
-
-
-#bodyinseriranuncio{
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(45deg, #5398BE,#5623A9);
-}
-
-#email{
-  border-radius: 10px;
-  border: none;
-  padding: 5px;
-  width: 100%;
-  align-items: center;
-  }
-  #senha{
-  border-radius: 10px;
-  border: none;
-  padding: 5px;
-  width: 100%;
-  align-items: center;
-  }
-  #submit{
-  background-color: rgb(39, 126, 240);
-  border: none;
-  height: 25px;
-  text-align: center;
-  font-weight: 800;
-  color: white;
-  max-width: 100%;
-  width: 180px;
-  margin-bottom: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  }
-
   #submit:hover{
     background-color: rgb(28, 92, 175);
   }
-  button{
-    
-    background-color: rgb(39, 126, 240);
-    border: none;
-    height: 25px;
-    text-align: center;
-    font-weight: 800;
-    color: white;
-    max-width: 100%;
-    width: 180px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
   button:hover{
     background-color: rgb(53, 153, 247);
     color: white;
@@ -188,22 +30,6 @@ list-style-type: none;
     padding: 15px;
     border-radius: 10px;
   }
-  #teladeperfil{
-    background-color: rgb(233, 233, 233);
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    align-items: center;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    padding: 80px;
-    border-radius: 10px;
-    color: rgb(24, 24, 24);
-  }
-  #perfil {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, #5398BE,#5623A9);
-  }
   #imagem-perfil {
     width: 150px;
     height: 150px;
@@ -211,24 +37,3 @@ list-style-type: none;
     object-fit: cover;
     margin-top: 20px;
   }
-  #nome {
-    margin-top: 15px;
-    border-radius: 10px;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    align-items: center;
-  }
-  #telefone{
-    border-radius: 10px;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    align-items: center;
-    }
-    #datanascimento{
-      border-radius: 10px;
-      border: none;
-      padding: 10px;
-      width: 30%;
-      }

@@ -4,7 +4,7 @@
 <head>
       <meta charset="utf-8">
       <title>Tela de Registro</title>
-      <link rel="stylesheet" type="text/css" href="../css/style.css">
+      <link rel="stylesheet" type="text/css" href="../css/style_tela_de_registro.css">
 
 </head>
 

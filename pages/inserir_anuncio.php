@@ -9,12 +9,12 @@
     <meta charset="utf-8">
     <title>Inserir Anúncio</title>
     <style>
-        <?php include '../css/style.css'; ?>
+        <?php include '../css/style_tela_inserir_anuncio.css'; ?>
     </style>
 </head>
 
 <body>
-    <section class="s">
+    <section class="estrutura_da_tela">
         <h1>Inserir Anúncio</h1>
         <form method="POST">
             <!-- <div id="divid">
@@ -48,26 +48,26 @@
                 <label for="numero"></Label>
             </div>
             <div class="info">
-                <input type="text" placeholder="info" name="descricao" id="info" class="inputUser" required>
-                <label for="info"></Label>
+                <input type="text" placeholder="info_anuncio" name="descricao" id="info_anuncio" class="inputUser" required>
+                <label for="info_anuncio"></Label>
             </div>
-            <div class="quant">
-                <input type="number" placeholder="quantpessoas" name="quantidadedepessoas" id="quantidadedepessoas" class="inputUser" required>
-                <label for="quantidadedepessoas"></Label>
+			<div class="quant">
+                <input type="number" placeholder="quantpessoas" name="quantidade_de_pessoas" id="quantidade_de_pessoas" class="inputUser" required>
+                <label for="quantidade_de_pessoas"></Label>
             </div>
-
-
-
-
-            <input type="submit" name="submit" id="buttonanuncio" value="Anunciar">
+            <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
         </form>
     </section>
+    
     <section>
+<!-- Modal -->
+
 
     </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <?php
+
 
 
 if (!empty($_SESSION)) {
