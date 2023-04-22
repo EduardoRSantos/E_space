@@ -12,7 +12,7 @@ class AnuncioDAO extends Conexao{
 
     public function allAnuncio(){
         $anuncios = $this->pdo
-        ->query("SELECT * FROM anuncios")
+        ->query("SELECT * FROM anuncios as a inner join usuarios as u on a.id_usuario = u.id;")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }

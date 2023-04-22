@@ -17,9 +17,9 @@
     <section class="estrutura_da_tela">
         <h1>Inserir Anúncio</h1>
         <form method="POST">
-            <div id="divid">
+            <!-- <div id="divid">
                 <input type="file" name="" id="img1" placeholder="O melhor e-mail" required>
-            </div>
+            </div> -->
             <div class="container">
                 <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>

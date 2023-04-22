@@ -89,7 +89,6 @@
       </a>
       <h4><?= $key['titulo'] ?></h4>
       <h4><?= $key['preco'] ?></h4>
-      <h4><?= $key['descricao'] ?></h4>
       <h4><?= $key['cep'] ?></h4>
       <h4><?= $key['criado_em'] ?></h4>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $key['id'] ?>">ALUGAR</button>
@@ -107,11 +106,9 @@
           </button>
         </div>
         <div class="modal-body">
-          <h4><?= $key['titulo'] ?></h4>
-          <h4><?= $key['preco'] ?></h4>
+        <h4><?= $key['nome'] ?></h4>
+          <h4><?= $key['telefone'] ?></h4>
           <h4><?= $key['descricao'] ?></h4>
-          <h4><?= $key['cep'] ?></h4>
-          <h4><?= $key['criado_em'] ?></h4>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
