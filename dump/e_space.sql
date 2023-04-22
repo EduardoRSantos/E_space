@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Abr-2023 às 02:56
+-- Tempo de geração: 23-Abr-2023 às 01:50
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -44,6 +44,19 @@ CREATE TABLE `anuncios` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `imagens_de_anucnios`
+--
+
+CREATE TABLE `imagens_de_anucnios` (
+  `id` int(11) NOT NULL,
+  `id_anuncio` int(11) NOT NULL,
+  `path` varchar(255) DEFAULT NULL,
+  `data_upload` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `imagens_de_usuarios`
 --
 
@@ -53,14 +66,6 @@ CREATE TABLE `imagens_de_usuarios` (
   `path` varchar(255) DEFAULT NULL,
   `data_upload` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Extraindo dados da tabela `imagens_de_usuarios`
---
-
-INSERT INTO `imagens_de_usuarios` (`id`, `id_usuario`, `path`, `data_upload`) VALUES
-(1, 1, './imagens/6442dad94ab95.jpg', '2023-04-21 15:50:01'),
-(2, 2, './imagens/64432e8c9813a.jpg', '2023-04-21 21:47:08');
 
 -- --------------------------------------------------------
 
@@ -77,14 +82,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`) VALUES
-(1, 'Eduardo Ramos', 'edu@gmail.com', '$2y$10$zoKvDVSSnpN.N28F/5AQyOsStYZ..Cuqu7QX8mdcl5nxtCOa2fkBa', '(99) 99999-9999'),
-(2, 'Eduardo ', 'd@gmail.com', '$2y$10$5Vr5LAtWV3qC40xEkeYqv.fbN3nc7XX30cRCptYzEiPefnKXlJCYy', '(00) 00000-0000');
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -92,6 +89,12 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`) VALUES
 -- Índices para tabela `anuncios`
 --
 ALTER TABLE `anuncios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `imagens_de_anucnios`
+--
+ALTER TABLE `imagens_de_anucnios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -117,16 +120,22 @@ ALTER TABLE `anuncios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `imagens_de_anucnios`
+--
+ALTER TABLE `imagens_de_anucnios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `imagens_de_usuarios`
 --
 ALTER TABLE `imagens_de_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
