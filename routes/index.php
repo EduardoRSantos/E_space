@@ -29,7 +29,7 @@ $app->post('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios')
 $app->post('/anuncios/usuario', AnuncioController::class . ':getAnuncioById');
 $app->delete('/delete/anuncio' , AnuncioController::class . ':deletarAnuncio');
 $app->put('/atualizar/anuncio', AnuncioController::class . ':atualizarAnuncio');
-
+$app->get('/anuncios/pesquisa' , AnuncioController::class . ':pesquisa');
 // ==============================================================================
 
 $app->run();

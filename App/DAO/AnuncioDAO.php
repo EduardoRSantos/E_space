@@ -10,9 +10,24 @@ class AnuncioDAO extends Conexao{
         parent::__construct();
     }
 
+    public function AnuncioPesquisa($pesquisa){
+        $anuncios = $this->pdo
+        ->query("SELECT * FROM anuncios as a 
+        inner join 
+        usuarios as u 
+        on a.id_usuario = u.id
+        WHERE
+        titulo LIKE '%$pesquisa%' OR
+        preco LIKE '%$pesquisa%' OR
+        localizacao LIKE '%$pesquisa%' OR
+        cep LIKE '%$pesquisa%'
+        ;")
+        ->fetchAll(\PDO::FETCH_ASSOC);
+        return $anuncios;
+    }
     public function allAnuncio(){
         $anuncios = $this->pdo
-        ->query("SELECT * FROM anuncios as a inner join usuarios as u on a.id_usuario = u.id;")
+        ->query("SELECT * FROM anuncios as a inner join usuarios as u on a.id_usuario = u.id GROUP BY a.id DESC;")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }

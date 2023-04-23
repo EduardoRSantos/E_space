@@ -10,11 +10,23 @@ use DateTime;
 use DateTimeZone;
 
 final class AnuncioController{
+    public function pesquisa(Request $request, Response $response, $args): Response{
+        $input = file_get_contents('php://input');
+
+        $data = json_decode($input, true);
+        
+        $pesquisa = $data['pesquisa'];
+        $anuncioDAO = new AnuncioDAO();
+
+        $anuncios = $anuncioDAO->AnuncioPesquisa($pesquisa);
+        $response = $response->withJson($anuncios);
+        return $response;
+
+    }
     
     public function allAnuncios(Request $request, Response $response, $args): Response{
 
         $anuncioDAO = new AnuncioDAO();
-        $upload_imagen = new UploadImagensDAO();
         $anuncios = $anuncioDAO->allAnuncio();
         $response = $response->withJson($anuncios);
         return $response;
