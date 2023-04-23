@@ -65,6 +65,11 @@
                 <br>
                 <input type="submit" name="submit" id="submit" value="Salvar">
             </form>
+            <br>
+            <br>
+            <form action="sair.php" method="post">
+                <input type="submit" value="Sair">
+            </form>
 
         <?php } else { ?>
             <script type="text/javascript">
@@ -79,24 +84,85 @@
                     }
                 })
             </script>
-        <?php
-    }
+            <?php
+        }
 
-    if (!empty($_FILES['imagem'])) {
+        if (!empty($_FILES['imagem'])) {
 
-        $arquivo = $_FILES["imagem"];
-        $nome_imagen = $arquivo["name"];
-        $novo_nome_imagem = uniqid();
-        $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
-        $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
-        $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
-        $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen_mover);
+            $arquivo = $_FILES["imagem"];
+            $nome_imagen = $arquivo["name"];
+            $novo_nome_imagem = uniqid();
+            $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
+            $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
+            $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+            $verify = move_uploaded_file($arquivo["tmp_name"], $href_imagen_mover);
 
-        if ($verify) {
+            if ($verify) {
+                $id = $_SESSION["id"];
+
+                $body = [
+                    'referencia_imagen' => $href_imagen_upa,
+                    'id' => $id
+                ];
+
+                $json = json_encode($body);
+
+                $curl = curl_init();
+                curl_setopt_array($curl, [
+                    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario/imagen',
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => $json,
+                    CURLOPT_HTTPHEADER => [
+                        'Content-Type: application/json'
+                    ]
+                ]);
+
+                curl_exec($curl);
+
+                $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+                curl_close($curl);
+
+                if ($http_code == 200) { ?>
+                    <script type="text/javascript">
+                        Swal.fire({
+                            title: 'OK!',
+                            text: 'Salvo com sucesso',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.href = "../pages/tela_de_perfil.php";
+                            }
+                        })
+                    </script>
+                <?php }
+                if ($http_code == 403) { ?>
+                    <script type="text/javascript">
+                        Swal.fire({
+                            title: 'Ops!',
+                            text: 'Ocorreu um error, tente novamente',
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.href = "../pages/tela_de_perfil.php";
+                            }
+                        })
+                    </script>
+                <?php    }
+            }
+        }
+
+        if (!empty($_POST['nome'])) {
+
+            $nome = $_POST["nome"];
+            $telefone = $_POST["telefone"];
             $id = $_SESSION["id"];
 
             $body = [
-                'referencia_imagen' => $href_imagen_upa,
+                'nome' => $nome,
+                'telefone' => $telefone,
                 'id' => $id
             ];
 
@@ -104,8 +170,8 @@
 
             $curl = curl_init();
             curl_setopt_array($curl, [
-                CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario/imagen',
-                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario',
+                CURLOPT_CUSTOMREQUEST => "PUT",
                 CURLOPT_POSTFIELDS => $json,
                 CURLOPT_HTTPHEADER => [
                     'Content-Type: application/json'
@@ -118,54 +184,38 @@
 
             curl_close($curl);
 
-            if ($http_code == 200)
-                echo "ok";
+            if ($http_code == 200) {
+                $_SESSION['nome'] = $nome;
+                $_SESSION['telefone'] = $telefone; ?>
+                <script type="text/javascript">
+                    Swal.fire({
+                        title: 'OK!',
+                        text: 'Salvo com sucesso',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "../pages/tela_de_perfil.php";
+                        }
+                    })
+                </script>
 
-            if ($http_code == 403)
-                echo "ruim";
-        }
-    }
-
-    if (!empty($_POST['nome'])) {
-
-        $nome = $_POST["nome"];
-        $telefone = $_POST["telefone"];
-        $id = $_SESSION["id"];
-
-        $body = [
-            'nome' => $nome,
-            'telefone' => $telefone,
-            'id' => $id
-        ];
-
-        $json = json_encode($body);
-
-        $curl = curl_init();
-        curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/atualizar/usuario',
-            CURLOPT_CUSTOMREQUEST => "PUT",
-            CURLOPT_POSTFIELDS => $json,
-            CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json'
-            ]
-        ]);
-
-        curl_exec($curl);
-
-        $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-        curl_close($curl);
-
-        if ($http_code == 200)
-            $_SESSION['nome'] = $nome;
-        $_SESSION['telefone'] = $telefone;
-        echo "ok2";
-
-        if ($http_code == 403)
-            echo "ruim2";
-    }
-
-        ?>
+            <?php }
+            if ($http_code == 403){ ?>
+            <script type="text/javascript">
+                Swal.fire({
+                    title: 'Ops!',
+                    text: 'Ocorreu um error, tente novamente',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "../pages/tela_de_perfil.php";
+                    }
+                })
+            </script>
+        <?php }
+    } ?>
         </div>
 
 </body>
