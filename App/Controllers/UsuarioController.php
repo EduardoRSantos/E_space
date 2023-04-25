@@ -92,7 +92,7 @@ final class UsuarioController{
 
         $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
 
-        $result = $upload_imagen->inserir_imagen_perfil($id, $data['referencia_imagen'],$time->format('Y-m-d H:i:s'));
+        $result = $upload_imagen->inserirImagenPerfil($id, $data['referencia_imagen'],$time->format('Y-m-d H:i:s'));
 
         if($result)
             $response = $response->withStatus(200);

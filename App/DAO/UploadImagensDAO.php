@@ -8,7 +8,7 @@ class UploadImagensDAO extends Conexao {
         parent::__construct();
     }
 
-    public function inserir_imagen_perfil($id_usuario, $path, $data_upload): bool{
+    public function inserirImagenPerfil($id_usuario, $path, $data_upload): bool{
         $stmt = $this->pdo->prepare("INSERT INTO imagens_de_usuarios
             VALUES
             (
@@ -29,6 +29,27 @@ class UploadImagensDAO extends Conexao {
         return false;
     }
 
+    public function inserirImagenAnuncio($id_anuncio, $path, $data_upload): bool{
+        $stmt = $this->pdo->prepare("INSERT INTO imagens_de_anucios
+        VALUES
+        (
+            null,
+            :id_usuario,
+            :path,
+            :data_upload
+        )
+    ;");
+    $result = $stmt->execute([
+        'id_usuario' => $id_anuncio,
+        'path' => $path,
+        'data_upload' => $data_upload
+    ]);
+    if($result)
+        return true;
+        
+    return false;
+    }
+
     public function getImageById($id_usuario): array{
         $stmt = $this->pdo->prepare("SELECT * FROM imagens_de_usuarios WHERE id_usuario = :id_usuario ORDER BY id DESC LIMIT 1;");
         $stmt->bindParam('id_usuario',$id_usuario);
@@ -37,5 +58,8 @@ class UploadImagensDAO extends Conexao {
     
         return $result;
     }
+
+
+
 }
 

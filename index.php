@@ -100,7 +100,7 @@
 
       endforeach;
     } else {
-      echo "nao encontrado!";
+      echo "Nenhum anuncio encontrado!";
     }
   } else {
 

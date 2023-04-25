@@ -10,7 +10,7 @@ class AnuncioDAO extends Conexao{
         parent::__construct();
     }
 
-    public function AnuncioPesquisa($pesquisa){
+    public function anuncioPesquisa($pesquisa){
         $anuncios = $this->pdo
         ->query("SELECT * FROM anuncios as a 
         inner join 
@@ -32,7 +32,7 @@ class AnuncioDAO extends Conexao{
         return $anuncios;
     }
 
-    public function inserirAnuncio(AnuncioModel $anuncio_model): void {
+    public function inserirAnuncio(AnuncioModel $anuncio_model): int {
         $stmt = $this->pdo->prepare("INSERT INTO anuncios
             VALUES
             (
@@ -49,7 +49,7 @@ class AnuncioDAO extends Conexao{
                 :atualizado_em
             )
         ;");
-        $stmt->execute([
+        $result = $stmt->execute([
             'id_usuario' => $anuncio_model->getIdUsuario(),
             'titulo' => $anuncio_model->getTitulo(),
             'descricao' => $anuncio_model->getDescricao(),
@@ -61,6 +61,11 @@ class AnuncioDAO extends Conexao{
             'criado_em' => $anuncio_model->getCriadoEm(),
             'atualizado_em' => $anuncio_model->getAtualizadoEm()
         ]);
+        $id = 0;
+        if($result)
+            $id = $this->pdo->lastInsertId();
+
+        return $id;
     }
 
     public function getAnuncioById($id_usuario): array{

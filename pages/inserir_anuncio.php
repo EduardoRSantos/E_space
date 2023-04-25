@@ -16,10 +16,10 @@
 <body>
     <section class="estrutura_da_tela">
         <h1>Inserir Anúncio</h1>
-        <form method="POST">
-            <!-- <div id="divid">
-                <input type="file" name="" id="img1" placeholder="O melhor e-mail" required>
-            </div> -->
+        <form method="POST"enctype="multipart/form-data">
+            <div id="divid">
+                <input type="file" multiple name="imagens[]" id="img1" required>
+            </div>
             <div class="container">
                 <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
@@ -61,7 +61,7 @@
 
 if (!empty($_SESSION)) {
     if (!empty($_POST['titulo'])) {
-
+        
         $titulo = $_POST['titulo'];
         $descricao = $_POST['descricao'];
         $preco = $_POST['preco'];
@@ -70,7 +70,7 @@ if (!empty($_SESSION)) {
         $numero = $_POST['numero'];
         $quantidade_pessoas = $_POST['quantidade_pessoas'];
 
-        $body = [
+        $anuncio = [
             'id_usuario' => $_SESSION['id'],
             'titulo' => $titulo,
             'descricao' => $descricao,
@@ -80,6 +80,22 @@ if (!empty($_SESSION)) {
             'numero' => $numero,
             'quantidade_pessoas' => $quantidade_pessoas
         ];
+
+        $body = [
+            0 => $anuncio
+        ];
+
+        $imagens = $_FILES['imagens'];
+        foreach($imagens['name'] as $index => $imagem){
+
+                $nome_imagen = $imagens['name'][$index];
+                $novo_nome_imagem = uniqid();
+                $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
+                $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
+                $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+                $verify = move_uploaded_file($imagens['tmp_name'][$index], $href_imagen_mover);
+                $body["imagem" . $index+1] = $href_imagen_upa;
+        }
 
         $json = json_encode($body);
 
@@ -124,9 +140,7 @@ if (!empty($_SESSION)) {
                     }
                 })
             </script>
-    <?php }
-    }
-} else { ?>
+    <?php } } } else { ?>
 
     <script type="text/javascript">
         Swal.fire({
