@@ -117,8 +117,7 @@
 
     curl_close($curl);
 
-
-    foreach ($data as $key) :
+    foreach ($data as $anuncio) :
 
       include 'anuncios.php';
 

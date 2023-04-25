@@ -27,7 +27,12 @@ class AnuncioDAO extends Conexao{
     }
     public function allAnuncio(){
         $anuncios = $this->pdo
-        ->query("SELECT * FROM anuncios as a inner join usuarios as u on a.id_usuario = u.id GROUP BY a.id DESC;")
+        ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anucios.path SEPARATOR ';') AS imagens
+        FROM anuncios
+        JOIN usuarios ON anuncios.id_usuario = usuarios.id
+        JOIN imagens_de_anucios ON anuncios.id = imagens_de_anucios.id_anuncio
+        GROUP BY anuncios.id
+        ORDER BY anuncios.id DESC")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }

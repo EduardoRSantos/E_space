@@ -16,7 +16,7 @@ final class UsuarioController{
         $data = json_decode($input, true);
         $id = $data['id'];
         $upload_imagen = new UploadImagensDAO();
-        $result = $upload_imagen->getImageById($id);
+        $result = $upload_imagen->getImageUsuarioById($id);
         $response = $response->withJson($result);
         return $response;
     }
