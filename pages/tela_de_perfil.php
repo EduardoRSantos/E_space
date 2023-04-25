@@ -14,36 +14,34 @@
 
 <body id="body">
     <?php if (!empty($_SESSION)) { ?>
-        <div class="box" id="perfil">
+        <div class="box1" id="perfil">
             <h2>Perfil</h2>
             <br>
             <div class="inputBox">
-                <label for="nome">Nome Completo</Label>
+                <label for="nome"><strong>Nome Completo</strong></Label>
                 <br>
                 <label for="nome"><?= $_SESSION['nome'] ?></Label>
             </div>
             <br>
             <div class="inputBox">
-                <label for="email">E-mail</Label>
+                <label for="email"><strong>E-mail</strong></Label>
                 <br>
                 <label for="email"><?= $_SESSION['email'] ?></Label>
             </div>
             <br>
             <div class="inputBox">
-                <label for="telefone">Telefone</Label>
+                <label for="telefone"><strong>Telefone</strong></Label>
                 <br>
                 <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
             </div>
-            <br>
-            <br>
             </fieldset>
         </div>
-        <div class="box" id="perfil">
-            <form method="POST" enctype="multipart/form-data">
+        <div class="box2" id="perfil">
+            <form class="file" method="POST" enctype="multipart/form-data">
                 <h2>Perfil</h2>
                 <br>
                 <div class="inputBox">
-                    <input type="file" name="imagem">
+                    <input class="file" type="file" name="imagem">
                 </div>
                 <input type="submit" name="submit" id="submit" value="Salvar">
             </form>
@@ -61,13 +59,12 @@
                     <br>
                     <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
                 </div>
-                <br>
-                <br>
                 <input type="submit" name="submit" id="submit" value="Salvar">
             </form>
             <br>
             <br>
-            <form action="sair.php" method="post">
+            <hr>
+            <form class="sair" action="sair.php" method="post">
                 <input type="submit" value="Sair">
             </form>
 

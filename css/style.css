@@ -37,3 +37,89 @@ list-style-type: none;
     object-fit: cover;
     margin-top: 20px;
   }
+
+
+  #body{
+    align-items: center;
+    text-align: center;
+    display: block;
+    word-wrap: break-word;
+
+
+  }
+
+
+  .box1{
+    word-wrap: break-word;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(191, 228, 228);
+    font-family: Montserrat;
+  }
+
+  
+  .box2{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+    font-size: 20px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(191, 228, 228);
+    font-family: Montserrat;
+    max-width: 100%;
+  }
+
+  
+  #submit{
+    background-color: rgb(10, 102, 206);
+    border-bottom: none;
+    border-style: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 50%;
+    max-width: 185px;
+    cursor: pointer;
+
+  }
+
+  .sair>input{
+    background-color: rgb(10, 102, 206);
+    border-bottom: none;
+    border-style: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+    max-width: 185px;
+  }
+
+   #telefone{
+    border-color: black;
+    max-width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: ridge;
+   }
+
+   #nome{
+    border-radius: 10px;
+    border-color: black;
+    max-width: 100%;
+    padding: 5px;
+    border-style: ridge;
+   }
