@@ -20,11 +20,11 @@
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <li class=""><a href="http://localhost/E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
+      <li class=""><a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <?php if (empty($_SESSION)) { ?>
-        <li class=""><a href="http://localhost/E_space/pages/tela_de_login.php">Fazer Login</a></li>
+        <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <?php } ?>
-      <li class=""><a href="http://localhost/E_space/pages/tela_de_perfil.php">perfil</a></li>
+      <li class=""><a href="../E_space/pages/tela_de_perfil.php">perfil</a></li>
 
       <?php
       if (!empty($_SESSION)) {
@@ -38,7 +38,7 @@
 
         $curl = curl_init();
         curl_setopt_array($curl, [
-          CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+          CURLOPT_URL => '../E_space/routes/index.php/imagem',
           CURLOPT_CUSTOMREQUEST => "GET",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_POSTFIELDS => $json,
@@ -70,6 +70,7 @@
   </form>
   <?php
   if (!isset($_POST['pesquisar'])) {
+
     $curl = curl_init();
     curl_setopt_array($curl, [
       CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
@@ -89,10 +90,11 @@
 
     endforeach;
   } else {
+
     $pesquisar = $_POST['pesquisar'];
     $json = json_encode(['pesquisar' => $pesquisar], true);
-    $curl = curl_init();
 
+    $curl = curl_init();
     curl_setopt_array($curl, [
       CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
       CURLOPT_CUSTOMREQUEST => "GET",
@@ -114,9 +116,9 @@
         include 'anuncios.php';
 
       endforeach;
-    } else { 
+    } else {
       echo "Nenhum anuncio encontrado!";
-   }
+    }
   }
 
   ?>
