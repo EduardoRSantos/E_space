@@ -30,7 +30,7 @@ class UploadImagensDAO extends Conexao {
     }
 
     public function inserirImagenAnuncio($id_anuncio, $path, $data_upload): bool{
-        $stmt = $this->pdo->prepare("INSERT INTO imagens_de_anucios
+        $stmt = $this->pdo->prepare("INSERT INTO imagens_de_anuncios
         VALUES
         (
             null,
@@ -60,7 +60,7 @@ class UploadImagensDAO extends Conexao {
     }
 
     public function getImageAnuncioById($id_anuncio): array{
-        $stmt = $this->pdo->prepare("SELECT * FROM imagens_de_anucios WHERE id_anuncio = :id_anuncio;");
+        $stmt = $this->pdo->prepare("SELECT * FROM imagens_de_anuncios WHERE id_anuncio = :id_anuncio;");
         $stmt->bindParam('id_anuncio',$id_anuncio);
         $stmt->execute();
         $imagem_anuncio = $stmt->fetchAll(\PDO::FETCH_ASSOC);

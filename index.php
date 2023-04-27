@@ -69,41 +69,7 @@
     </div>
   </form>
   <?php
-  if (!empty($_POST['pesquisar'])) {
-    $pesquisa = $_POST['pesquisar'];
-
-    $json = json_encode(['pesquisa' => $pesquisa], true);
-
-    $curl = curl_init();
-
-    curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_POSTFIELDS => $json,
-      CURLOPT_HTTPHEADER => [
-        'Content-Type: application/json'
-      ]
-    ]);
-
-    $response = curl_exec($curl);
-
-    $data = json_decode($response, true);
-
-    curl_close($curl);
-
-    if (!empty($data)) {
-
-      foreach ($data as $key) :
-
-        include 'anuncios.php';
-
-      endforeach;
-    } else {
-      echo "Nenhum anuncio encontrado!";
-    }
-  } else {
-
+  if (!isset($_POST['pesquisar'])) {
     $curl = curl_init();
     curl_setopt_array($curl, [
       CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
@@ -122,7 +88,37 @@
       include 'anuncios.php';
 
     endforeach;
+  } else {
+    $pesquisar = $_POST['pesquisar'];
+    $json = json_encode(['pesquisar' => $pesquisar], true);
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_POSTFIELDS => $json,
+      CURLOPT_HTTPHEADER => [
+        'Content-Type: application/json'
+      ]
+    ]);
+
+    $response = curl_exec($curl);
+
+    $data = json_decode($response, true);
+    $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+    if ($http_code != 404) {
+      foreach ($data as $anuncio) :
+
+        include 'anuncios.php';
+
+      endforeach;
+    } else { 
+      echo "Nenhum anuncio encontrado!";
+   }
   }
+
   ?>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

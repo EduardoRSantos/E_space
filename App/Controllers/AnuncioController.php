@@ -16,13 +16,16 @@ final class AnuncioController
         $input = file_get_contents('php://input');
 
         $data = json_decode($input, true);
-
-        $pesquisa = $data['pesquisa'];
+        $pesquisar = $data['pesquisar'];
         $anuncioDAO = new AnuncioDAO();
-
-        $anuncios = $anuncioDAO->anuncioPesquisa($pesquisa);
-        $response = $response->withJson($anuncios);
+        $anuncios = $anuncioDAO->anuncioPesquisa($pesquisar);
+        if(count($anuncios) > 0){
+            $response = $response->withJson($anuncios);
+        }else {
+            $response = $response->withStatus(404);
+        }
         return $response;
+
     }
 
     public function allAnuncios(Request $request, Response $response, $args): Response
