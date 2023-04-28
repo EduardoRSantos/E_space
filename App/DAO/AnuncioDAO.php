@@ -10,29 +10,34 @@ class AnuncioDAO extends Conexao{
         parent::__construct();
     }
 
-    public function AnuncioPesquisa($pesquisa){
+    public function anuncioPesquisa($pesquisar){
         $anuncios = $this->pdo
-        ->query("SELECT * FROM anuncios as a 
-        inner join 
-        usuarios as u 
-        on a.id_usuario = u.id
-        WHERE
-        titulo LIKE '%$pesquisa%' OR
-        preco LIKE '%$pesquisa%' OR
-        localizacao LIKE '%$pesquisa%' OR
-        cep LIKE '%$pesquisa%'
-        ;")
+        ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
+        FROM anuncios
+        JOIN usuarios ON anuncios.id_usuario = usuarios.id
+        JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
+        GROUP BY anuncios.id
+		HAVING anuncios.titulo LIKE '%$pesquisar%' OR
+        anuncios.cep  LIKE '%$pesquisar%' OR 
+        anuncios.preco  LIKE '%$pesquisar%' OR
+        anuncios.localizacao  LIKE '%$pesquisar%' OR
+        quantidade_pessoas LIKE '%$pesquisar%';")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }
     public function allAnuncio(){
         $anuncios = $this->pdo
-        ->query("SELECT * FROM anuncios as a inner join usuarios as u on a.id_usuario = u.id GROUP BY a.id DESC;")
+        ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
+        FROM anuncios
+        JOIN usuarios ON anuncios.id_usuario = usuarios.id
+        JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
+        GROUP BY anuncios.id
+        ORDER BY anuncios.id DESC")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }
 
-    public function inserirAnuncio(AnuncioModel $anuncio_model): void {
+    public function inserirAnuncio(AnuncioModel $anuncio_model): int {
         $stmt = $this->pdo->prepare("INSERT INTO anuncios
             VALUES
             (
@@ -49,7 +54,7 @@ class AnuncioDAO extends Conexao{
                 :atualizado_em
             )
         ;");
-        $stmt->execute([
+        $result = $stmt->execute([
             'id_usuario' => $anuncio_model->getIdUsuario(),
             'titulo' => $anuncio_model->getTitulo(),
             'descricao' => $anuncio_model->getDescricao(),
@@ -61,6 +66,11 @@ class AnuncioDAO extends Conexao{
             'criado_em' => $anuncio_model->getCriadoEm(),
             'atualizado_em' => $anuncio_model->getAtualizadoEm()
         ]);
+        $id = 0;
+        if($result)
+            $id = $this->pdo->lastInsertId();
+
+        return $id;
     }
 
     public function getAnuncioById($id_usuario): array{

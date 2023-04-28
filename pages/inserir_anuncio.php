@@ -15,6 +15,7 @@
 
 <body>
     <section class="estrutura_da_tela">
+<<<<<<< HEAD
     <h1 class="inserir">Inserir Anúncios</h1>
     <form  method="post">
  
@@ -45,6 +46,43 @@
   <button type="submit">Enviar</button>
 </form>
 
+=======
+        <h1>Inserir Anúncio</h1>
+        <form method="POST"enctype="multipart/form-data">
+            <div id="divid">
+                <input type="file" multiple name="imagens[]" id="img1" required>
+            </div>
+            <div class="container">
+                <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
+                <label for="titulo"></Label>
+            </div>
+            <div class="info">
+                <input type="text" placeholder="Descricao" name="descricao" id="info" class="inputUser" required>
+                <label for="info"></Label>
+            </div>
+            <div class="preco">
+                <input type="number" placeholder="Preço R$" name="preco" id="preco" class="inputUser" required>
+                <label for="preco"></Label>
+            </div>
+            <div class="container">
+                <input type="text" placeholder="localizacão" name="localizacao" id="localizacao" class="inputUser" required>
+                <label for="localizacao"></Label>
+            </div>
+            <div class="cep">
+                <input type="text" placeholder="cep" name="cep" id="cep" class="inputUser" required>
+                <label for="cep"></Label>
+            </div>
+            <div>
+                <input type="number" placeholder="Numero" name="numero" id="numero" class="inputUser" required>
+                <label for="numero"></Label>
+            </div>
+            <div class="quant">
+                <input type="number" placeholder="quantpessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
+                <label for="quantidadedepessoas"></Label>
+            </div>
+            <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
+        </form>
+>>>>>>> 8886fefd849c9ed0d95d15d2d863f98cce2fcc88
     </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -56,7 +94,7 @@
 
 if (!empty($_SESSION)) {
     if (!empty($_POST['titulo'])) {
-
+        
         $titulo = $_POST['titulo'];
         $descricao = $_POST['descricao'];
         $preco = $_POST['preco'];
@@ -65,7 +103,7 @@ if (!empty($_SESSION)) {
         $numero = $_POST['numero'];
         $quantidade_pessoas = $_POST['quantidade_pessoas'];
 
-        $body = [
+        $anuncio = [
             'id_usuario' => $_SESSION['id'],
             'titulo' => $titulo,
             'descricao' => $descricao,
@@ -75,6 +113,22 @@ if (!empty($_SESSION)) {
             'numero' => $numero,
             'quantidade_pessoas' => $quantidade_pessoas
         ];
+
+        $body = [
+            0 => $anuncio
+        ];
+
+        $imagens = $_FILES['imagens'];
+        foreach($imagens['name'] as $index => $imagem){
+
+                $nome_imagen = $imagens['name'][$index];
+                $novo_nome_imagem = uniqid();
+                $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
+                $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
+                $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+                $verify = move_uploaded_file($imagens['tmp_name'][$index], $href_imagen_mover);
+                $body["imagem" . $index+1] = $href_imagen_upa;
+        }
 
         $json = json_encode($body);
 
@@ -119,9 +173,7 @@ if (!empty($_SESSION)) {
                     }
                 })
             </script>
-    <?php }
-    }
-} else { ?>
+    <?php } } } else { ?>
 
     <script type="text/javascript">
         Swal.fire({

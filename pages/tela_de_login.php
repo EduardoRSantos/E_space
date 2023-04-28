@@ -30,7 +30,11 @@
           <input type="submit" name="submit" id="submit" value="Login">
           <br><br>
     </form>
+<<<<<<< HEAD
     <button class="registrobuttom"><a href="http://localhost/E_space/pages/tela_de_registro.php">Registra-se</a></button>
+=======
+    <button><a href="../pages/tela_de_registro.php">Registra-se</a></button>
+>>>>>>> 8886fefd849c9ed0d95d15d2d863f98cce2fcc88
   </div>
   </nav>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
