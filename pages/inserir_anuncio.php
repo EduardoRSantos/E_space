@@ -15,41 +15,36 @@
 
 <body>
     <section class="estrutura_da_tela">
-        <h1>Inserir Anúncio</h1>
-        <form method="POST">
-            <!-- <div id="divid">
-                <input type="file" name="" id="img1" placeholder="O melhor e-mail" required>
-            </div> -->
-            <div class="container">
-                <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
-                <label for="titulo"></Label>
-            </div>
-            <div class="info">
-                <input type="text" placeholder="Descricao" name="descricao" id="info" class="inputUser" required>
-                <label for="info"></Label>
-            </div>
-            <div class="preco">
-                <input type="number" placeholder="Preço R$" name="preco" id="preco" class="inputUser" required>
-                <label for="preco"></Label>
-            </div>
-            <div class="container">
-                <input type="text" placeholder="localizacão" name="localizacao" id="localizacao" class="inputUser" required>
-                <label for="localizacao"></Label>
-            </div>
-            <div class="cep">
-                <input type="text" placeholder="cep" name="cep" id="cep" class="inputUser" required>
-                <label for="cep"></Label>
-            </div>
-            <div>
-                <input type="number" placeholder="Numero" name="numero" id="numero" class="inputUser" required>
-                <label for="numero"></Label>
-            </div>
-            <div class="quant">
-                <input type="number" placeholder="quantpessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
-                <label for="quantidadedepessoas"></Label>
-            </div>
-            <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
-        </form>
+    <h1 class="inserir">Inserir Anúncios</h1>
+    <form  method="post">
+ 
+  <div>
+    <label for="imagem">Selecione uma imagem:</label>
+    <input type="file" id="imagem" name="imagem">
+  </div>
+  <div>
+    <label for="titulo">Título do Anúncio:</label>
+    <input type="text" id="titulo" name="titulo">
+  </div>
+  <div>
+    <label for="preco">Preço:</label>
+    <input type="text" id="preco" name="preco">
+  </div>
+  <div>
+    <label for="localizacao">Localização:</label>
+    <input type="text" id="localizacao" name="localizacao">
+  </div>
+  <div>
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep">
+  </div>
+  <div>
+    <label for="numero">Número de telefone:</label>
+    <input type="text" id="numero" name="numero">
+  </div>
+  <button type="submit">Enviar</button>
+</form>
+
     </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
