@@ -1,10 +1,83 @@
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box;
-list-style-type: none;
+/* Estilos básicos para o layout do formulário */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
+<<<<<<< HEAD
+
+.estrutura_da_tela .inserir{
+  font-size: 30px;
+  text-align: center; 
+  font-family: Montserrat;
+  margin-top: 15px;
+}
+
+.form-group {
+
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0066cc;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilos para o botão de envio de imagem */
+input[type="file"] {
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1px;
+  cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+/* Estilos para o layout responsivo */
+@media screen and (max-width: 500px) {
+  form {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+=======
 #teladeperfil{
     background-color: rgb(0, 0, 0);
     position: absolute;
@@ -63,3 +136,4 @@ list-style-type: none;
         width: 100%;
         align-items: center;
         }
+>>>>>>> dd2503225440b53378aa2f0f916dd4889e925306
