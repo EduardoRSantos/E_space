@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Abr-2023 às 01:50
+-- Tempo de geração: 27-Abr-2023 às 04:46
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -44,10 +44,10 @@ CREATE TABLE `anuncios` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imagens_de_anucnios`
+-- Estrutura da tabela `imagens_de_anuncios`
 --
 
-CREATE TABLE `imagens_de_anucnios` (
+CREATE TABLE `imagens_de_anuncios` (
   `id` int(11) NOT NULL,
   `id_anuncio` int(11) NOT NULL,
   `path` varchar(255) DEFAULT NULL,
@@ -92,9 +92,9 @@ ALTER TABLE `anuncios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `imagens_de_anucnios`
+-- Índices para tabela `imagens_de_anuncios`
 --
-ALTER TABLE `imagens_de_anucnios`
+ALTER TABLE `imagens_de_anuncios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -120,9 +120,9 @@ ALTER TABLE `anuncios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `imagens_de_anucnios`
+-- AUTO_INCREMENT de tabela `imagens_de_anuncios`
 --
-ALTER TABLE `imagens_de_anucnios`
+ALTER TABLE `imagens_de_anuncios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
