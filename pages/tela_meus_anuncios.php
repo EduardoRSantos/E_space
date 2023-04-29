@@ -12,28 +12,28 @@
     
     <section class="anuncios">
       <div class="anuncio">
-        <img src="../img/casa.png" alt="Anúncio 1">
+        <img src="../img/anuncio1.png" alt="Anúncio 1">
         <h2>Anúncio 1</h2>
         <p>Descrição do anúncio 1.</p>
         <a href="#">Saiba mais</a>
       </div>
       
       <div class="anuncio">
-        <img src="../img/casa.png" alt="Anúncio 2">
+        <img src="../img/anuncio2.png" alt="Anúncio 2">
         <h2>Anúncio 2</h2>
         <p>Descrição do anúncio 2.</p>
         <a href="#">Saiba mais</a>
       </div>
       
       <div class="anuncio">
-        <img src="../img/casa.png" alt="Anúncio 3">
+        <img src="../img/anuncio3.png" alt="Anúncio 3">
         <h2>Anúncio 3</h2>
         <p>Descrição do anúncio 3.</p>
         <a href="#">Saiba mais</a>
       </div>
       
       <div class="anuncio">
-        <img src="../img/casa.png" alt="Anúncio 4">
+        <img src="../img/anuncio1.png alt="Anúncio 4">
         <h2>Anúncio 4</h2>
         <p>Descrição do anúncio 4.</p>
         <a href="#">Saiba mais</a>
@@ -42,14 +42,14 @@
       </div>
       
       <div class="anuncio">
-        <img src="../img/casa.png" alt="Anúncio 5">
+        <img src="../img/anuncio2.png" alt="Anúncio 5">
         <h2>Anúncio 5</h2>
         <p>Descrição do anúncio 5.</p>
         <a href="#">Saiba mais</a>
       </div>
       
       <div class="anuncio">
-        <img src="../img/casa.png" alt="Anúncio 6">
+        <img src="../img/anuncio3.png" alt="Anúncio 6">
         <h2>Anúncio 6</h2>
         <p>Descrição do anúncio 6.</p>
         <a href="#">Saiba mais</a>

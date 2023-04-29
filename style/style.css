@@ -2,6 +2,83 @@ body{
 
   font-family: Montserrat;
 }
+
+
+/* CARROSEL */
+header {
+	background-color: #4CAF50;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 36px;
+	margin: 0;
+}
+
+p {
+	font-size: 18px;
+	margin: 0;
+}
+
+.carousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  flex: auto;
+
+}
+
+.carousel-item img{
+  margin-top: 5px;
+  width: 300px;
+  max-width: 100%;
+  cursor: pointer;
+  transition: 500ms;
+
+}
+
+.carousel-item img:hover{
+  width: 320px;
+}
+/* CARROSEL */
+
+
+/* PERFIL */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+
+}
+
+#profile-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 210px;
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  z-index: 1;
+  display: none;
+}
+
+#profile-options.show {
+  display: block;
+}
+
+
+/* PERFIL */
+
+
 /* NAVBAR */
 .popup {
   display: none;
@@ -41,6 +118,7 @@ body{
 
 
 nav {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,6 +179,9 @@ nav {
   border-radius: 5px;
 }
 
+.pesquisar{
+  cursor: pointer;
+}
 
 .pesquisar, input, button{
   margin-top: 30px;
@@ -110,7 +191,8 @@ nav {
   padding: 8px;
   min-width: 5px;
   margin-bottom: 50px;
-  background-color: rgb(177, 208, 255);
+
+  
 }
 
 button{
