@@ -15,38 +15,6 @@
 
 <body>
     <section class="estrutura_da_tela">
-<<<<<<< HEAD
-    <h1 class="inserir">Inserir Anúncios</h1>
-    <form  method="post">
- 
-  <div>
-    <label for="imagem">Selecione uma imagem:</label>
-    <input type="file" id="imagem" name="imagem">
-  </div>
-  <div>
-    <label for="titulo">Título do Anúncio:</label>
-    <input type="text" id="titulo" name="titulo">
-  </div>
-  <div>
-    <label for="preco">Preço:</label>
-    <input type="text" id="preco" name="preco">
-  </div>
-  <div>
-    <label for="localizacao">Localização:</label>
-    <input type="text" id="localizacao" name="localizacao">
-  </div>
-  <div>
-    <label for="cep">CEP:</label>
-    <input type="text" id="cep" name="cep">
-  </div>
-  <div>
-    <label for="numero">Número de telefone:</label>
-    <input type="text" id="numero" name="numero">
-  </div>
-  <button type="submit">Enviar</button>
-</form>
-
-=======
         <h1>Inserir Anúncio</h1>
         <form method="POST"enctype="multipart/form-data">
             <div id="divid">
@@ -82,7 +50,6 @@
             </div>
             <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
         </form>
->>>>>>> 8886fefd849c9ed0d95d15d2d863f98cce2fcc88
     </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

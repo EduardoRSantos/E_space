@@ -3,7 +3,7 @@
         <a target="_blank" href="img_5terre.jpg">
           <img src="./img/casa.png" alt="Cinque Terre" width="800" height="600">
         </a>
-        <h4><?= $anuncio['titulo'] ?></h4>
+        <h4>titulo: <?= $anuncio['titulo'] ?></h4>
         <h4><?= $anuncio['preco'] ?></h4>
         <h4><?= $anuncio['cep'] ?></h4>
         <h4><?= $anuncio['criado_em'] ?></h4>
@@ -39,7 +39,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-body">
-            <!-- carousel -->
+
             <div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
               <ol class='carousel-indicators'>
                 <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>
@@ -49,11 +49,12 @@
                 <li data-target='#carouselExampleIndicators' data-slide-to='<?= $i; ?>'></li>
                 <?php endfor; ?>
               </ol>
-              < class='carousel-inner'>
               <div class='carousel-item active'>
                   <img class='img-size' src='https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80' alt='First slide' />
                 </div>
-                <?php foreach ($imagens as $imagem) : ?>
+                <?php foreach ($imagens as $imagem) : 
+                  echo $imagem;
+                  ?>
                   <img class='img-size' src='<?= $imagem ?>' alt='Second slide' />
                 <?php endforeach; ?>
               </div>
