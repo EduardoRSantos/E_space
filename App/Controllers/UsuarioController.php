@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use Psr\Http\Message\{ResponseInterface as Response,ServerRequestInterface as Request};
-use App\DAO\{UsuariosDAO, UploadImagensDAO};
+use App\DAO\{UsuariosDAO, ImagensDAO};
 use App\Models\UsuarioModel;
 use DateTime;
 use DateTimeZone;
@@ -15,7 +15,7 @@ final class UsuarioController{
 
         $data = json_decode($input, true);
         $id = $data['id'];
-        $upload_imagen = new UploadImagensDAO();
+        $upload_imagen = new ImagensDAO();
         $result = $upload_imagen->getImageUsuarioById($id);
         $response = $response->withJson($result);
         return $response;
@@ -28,9 +28,10 @@ final class UsuarioController{
 
         $email = $data['email'];
         $senha = $data['senha'];
-        
+  
         $usuario_dao = new UsuariosDAO();
         $usuario = $usuario_dao->getUsuarioByEmail($email);
+
         if(is_null($usuario))
             return $response->withStatus(404);
 
@@ -41,8 +42,8 @@ final class UsuarioController{
             "id" => $usuario->getId(),
             "nome" => $usuario->getNome(),
             "email" => $usuario->getEmail(),
-            "senha" => $usuario->getSenha(),
-            "telefone" => $usuario->getTelefone()
+            "telefone" => $usuario->getTelefone(),
+            "tipo_de_conta" => $usuario->getTipoDeConta()
         ]);
         return $response;
     }
@@ -88,7 +89,7 @@ final class UsuarioController{
 
         $id = $data['id'];
 
-        $upload_imagen = new UploadImagensDAO();
+        $upload_imagen = new ImagensDAO();
 
         $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
 

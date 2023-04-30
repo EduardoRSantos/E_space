@@ -9,6 +9,7 @@ final class UsuarioModel {
     private $senha;
     private $telefone;
     private $nascimento;
+    private $tipo_de_conta;
     
     public function getId(): int {
         return $this->id;
@@ -55,6 +56,14 @@ final class UsuarioModel {
 
     public function setNascimento($nascimento): self {
         $this->nascimento = $nascimento;
+        return $this;
+    }
+
+    public function getTipoDeConta(){
+        return $this->tipo_de_conta;
+    }
+    public function setTipoDeConta($tipo_de_conta): self{
+        $this->tipo_de_conta = $tipo_de_conta;
         return $this;
     }
 }

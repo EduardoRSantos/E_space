@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Abr-2023 às 04:46
+-- Tempo de geração: 30-Abr-2023 às 16:50
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -38,7 +38,8 @@ CREATE TABLE `anuncios` (
   `numero` int(11) DEFAULT NULL,
   `quantidade_pessoas` int(11) DEFAULT NULL,
   `criado_em` datetime DEFAULT NULL,
-  `atualizado_em` datetime DEFAULT NULL
+  `atualizado_em` datetime DEFAULT NULL,
+  `autorizacao` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -78,8 +79,16 @@ CREATE TABLE `usuarios` (
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `telefone` varchar(255) NOT NULL
+  `telefone` varchar(255) NOT NULL,
+  `tipo_de_conta` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`, `tipo_de_conta`) VALUES
+(1, 'Eduardo', 'edu@gmail.com', '$2y$10$ci2UG02jK7GzV905tEhPdO1iwVZmnTuQArDK1zMz.MpUppzmWOJB6', '(11) 11111-1111', 'adm');
 
 --
 -- Índices para tabelas despejadas
@@ -135,7 +144,7 @@ ALTER TABLE `imagens_de_usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

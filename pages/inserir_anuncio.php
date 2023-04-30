@@ -118,7 +118,7 @@ if (!empty($_SESSION)) {
             <script type="text/javascript">
                 Swal.fire({
                     title: 'Sucesso',
-                    text: 'Anuncio postado',
+                    text: 'Breve seu anuncio sera avaliado, Obrigado!',
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 }).then((result) => {

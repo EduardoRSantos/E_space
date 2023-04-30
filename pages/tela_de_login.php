@@ -65,19 +65,23 @@ if (!empty($_POST['email'])) {
   $response = curl_exec($curl);
 
   $array = json_decode($response, true);
+
   $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
   curl_close($curl);
+
   if (!empty($array)) { 
     $_SESSION['id'] = $array['id'];
     $_SESSION['nome'] = $array['nome'];
     $_SESSION['email'] = $array['email'];
-    $_SESSION['telefone'] = $array['telefone']; ?>
+    $_SESSION['telefone'] = $array['telefone'];
+    $_SESSION['tipo_conta'] = $array['tipo_de_conta'];
+     ?>
     <script type="text/javascript">
       Swal.fire({
-        icon: 'success',
-        title: 'Ola',
+        title: 'OK',
         text: 'Bem vindo!',
+        icon: 'success',
         confirmButtonText: 'Ok'
       }).then((result) => {
         if (result.isConfirmed) {

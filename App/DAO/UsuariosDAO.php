@@ -17,19 +17,12 @@ class UsuariosDAO extends Conexao
 
     public function getUsuarioByEmail(string $email): ?UsuarioModel
     {
-        $stmt = $this->pdo->prepare('SELECT 
-            id,
-            nome,
-            email,
-            senha,
-            telefone
-            FROM usuarios
-            where email = :email
-        ');
+        $stmt = $this->pdo->prepare('SELECT * FROM usuarios where email = :email;');
         $stmt->bindParam('email', $email);
         $stmt->execute();
         $usuarios = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
+        
+        
         if (count($usuarios) === 0)
             return null;
         $usuario = new UsuarioModel();
@@ -37,7 +30,9 @@ class UsuariosDAO extends Conexao
             ->setNome($usuarios[0]['nome'])
             ->setEmail($usuarios[0]['email'])
             ->setSenha($usuarios[0]['senha'])
-            ->setTelefone($usuarios[0]['telefone']);
+            ->setTelefone($usuarios[0]['telefone'])
+            ->setTipoDeConta($usuarios[0]['tipo_de_conta']);
+            
         return $usuario;
     }
 
@@ -57,13 +52,15 @@ class UsuariosDAO extends Conexao
             :nome,
             :email,
             :senha,
-            :telefone
+            :telefone,
+            :usuario
         );');
         $stmt->execute([
             'nome' => $user->getNome(),
             'senha' => $user->getSenha(),
             'email' => $user->getEmail(),
-            'telefone' => $user->getTelefone()
+            'telefone' => $user->getTelefone(),
+            'usuario' => 'usuario'
         ]);
     }
 

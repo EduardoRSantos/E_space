@@ -16,22 +16,37 @@ class AnuncioDAO extends Conexao{
         FROM anuncios
         JOIN usuarios ON anuncios.id_usuario = usuarios.id
         JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
+        WHERE autorizacao = 1
         GROUP BY anuncios.id
 		HAVING anuncios.titulo LIKE '%$pesquisar%' OR
         anuncios.cep  LIKE '%$pesquisar%' OR 
         anuncios.preco  LIKE '%$pesquisar%' OR
         anuncios.localizacao  LIKE '%$pesquisar%' OR
-        quantidade_pessoas LIKE '%$pesquisar%';")
+        quantidade_pessoas LIKE '%$pesquisar%' OR
+        autorizacao = 1;")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }
-    public function allAnuncio(){
+    public function allAnuncioAvaliado(){
         $anuncios = $this->pdo
         ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
         FROM anuncios
         JOIN usuarios ON anuncios.id_usuario = usuarios.id
         JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
         GROUP BY anuncios.id
+        HAVING autorizacao = 1
+        ORDER BY anuncios.id DESC")
+        ->fetchAll(\PDO::FETCH_ASSOC);
+        return $anuncios;
+    }
+    public function allAnuncioAvaliar(){
+        $anuncios = $this->pdo
+        ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
+        FROM anuncios
+        JOIN usuarios ON anuncios.id_usuario = usuarios.id
+        JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
+        GROUP BY anuncios.id
+        HAVING autorizacao = 0
         ORDER BY anuncios.id DESC")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
@@ -51,7 +66,8 @@ class AnuncioDAO extends Conexao{
                 :numero,
                 :quantidade_pessoas,
                 :criado_em,
-                :atualizado_em
+                :atualizado_em,
+                0
             )
         ;");
         $result = $stmt->execute([
@@ -108,5 +124,15 @@ class AnuncioDAO extends Conexao{
             'atualizado_em' => $anuncio_model->getAtualizadoEm(),
             'id' => $anuncio_model->getId()
         ]);
+    }
+    public function avaliacaoAceita($id){
+        $stmt = $this->pdo->prepare("UPDATE anuncios
+            SET
+            autorizacao = 1
+            WHERE
+            id = :id
+        ");
+        $stmt->bindParam('id', $id);
+        $stmt->execute();
     }
 }

@@ -2,12 +2,21 @@
 
 namespace App\DAO;
 
-class UploadImagensDAO extends Conexao {
+class ImagensDAO extends Conexao {
 
     public function __construct(){
         parent::__construct();
     }
 
+
+    public function deleteImagensAnuncio($id_anuncio){
+        $stmt = $this->pdo->prepare("DELETE FROM imagens_de_anuncios
+        where
+        id_anuncio = :id;      
+    ");
+    $stmt->bindParam('id', $id_anuncio);
+    $stmt->execute();
+    }
     public function inserirImagenPerfil($id_usuario, $path, $data_upload): bool{
         $stmt = $this->pdo->prepare("INSERT INTO imagens_de_usuarios
             VALUES

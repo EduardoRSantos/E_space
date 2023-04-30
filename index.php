@@ -20,6 +20,9 @@
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
+      <?php if(!empty($_SESSION['tipo_conta']) == 'usuario'){ ?>
+        <li class=""><a href="./avaliar_anuncios/anuncios_avaliar.php">Avaliação de Anuncios</a></li>
+        <?php } ?>
       <li class=""><a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <?php if (empty($_SESSION)) { ?>
         <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
@@ -61,7 +64,7 @@
       } ?>
     </ul>
   </nav>
-  <!-- PESQUISAR -->
+
   <form method="post">
     <div class="pesquisar">
       <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" />
@@ -84,11 +87,13 @@
 
     curl_close($curl);
 
-    foreach ($data as $anuncio) :
+    if (!empty($data)) {
+      foreach ($data as $anuncio) :
 
-      include 'anuncios.php';
+        include 'anuncios.php';
 
-    endforeach;
+      endforeach;
+    }
   } else {
 
     $pesquisar = $_POST['pesquisar'];
