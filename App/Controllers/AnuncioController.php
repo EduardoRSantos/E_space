@@ -12,6 +12,16 @@ use DateTimeZone;
 final class AnuncioController
 {
 
+    public function getAnuncioUsuario(Request $request, Response $response, $args): Response{
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+        $id = $data['id'];
+
+        $anuncioDAO = new AnuncioDAO();
+        $anuncios = $anuncioDAO->getAnuncioUsuario($id);
+        $response = $response->withJson($anuncios);
+        return $response;
+    }
 
     public function avaliacaoAnuncio(Request $request, Response $response, $args): Response
     {
@@ -41,12 +51,8 @@ final class AnuncioController
         $pesquisar = $data['pesquisar'];
         $anuncioDAO = new AnuncioDAO();
         $anuncios = $anuncioDAO->anuncioPesquisa($pesquisar);
-
-        if (count($anuncios) > 0 and $anuncios[0]['autorizacao'] == 1) {
-            $response = $response->withJson($anuncios);
-        } else {
-            $response = $response->withStatus(404);
-        }
+        $response = $response->withJson($anuncios);
+        
         return $response;
     }
 
@@ -111,41 +117,6 @@ final class AnuncioController
         return $response;
     }
 
-    public function getAnuncioById(Request $request, Response $response, $args): Response
-    {
-        $data = $request->getParsedBody();
+    
 
-        $anuncioDAO = new AnuncioDAO();
-        $anuncios = $anuncioDAO->getAnuncioById($data['id']);
-        $response = $response->withJson($anuncios);
-        return $response;
-    }
-
-    public function deletarAnuncio(Request $request, Response $response, $args): Response
-    {
-        $data = $request->getParsedBody();
-        $anuncioDAO = new AnuncioDAO();
-        $anuncioDAO->deletarAnuncio($data['id']);
-        $response = $response->withJson(['menssage' => 'sucess']);
-        return $response;
-    }
-
-    public function atualizarAnuncio(Request $request, Response $response, $args): Response
-    {
-        $data = $request->getParsedBody();
-        $anuncioDAO = new AnuncioDAO();
-        $anuncio_model = new AnuncioModel();
-        $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-
-        $anuncio_model
-            ->setId($data['id'])
-            ->setTitulo($data['titulo'])
-            ->setDescricao($data['descricao'])
-            ->setpreco($data['preco'])
-            ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
-
-        $anuncioDAO->atualizarAnuncio($anuncio_model);
-        $response = $response->withJson(['menssage' => 'sucess']);
-        return $response;
-    }
 }

@@ -29,10 +29,9 @@ $app->get('/anuncios/avaliar', AnuncioController::class . ':allAnunciosAvaliar')
 $app->get('/anuncios', AnuncioController::class . ':allAnuncios');
 $app->post('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios');
 $app->get('/anuncios/pesquisa' , AnuncioController::class . ':pesquisa');
+$app->get('/anuncios/usuario', AnuncioController::class . ':getAnuncioUsuario');
 
-$app->post('/anuncios/usuario', AnuncioController::class . ':getAnuncioById');
-$app->delete('/delete/anuncio' , AnuncioController::class . ':deletarAnuncio');
-$app->put('/atualizar/anuncio', AnuncioController::class . ':atualizarAnuncio');
+
 // ==============================================================================
 
 $app->run();

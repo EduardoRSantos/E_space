@@ -16,18 +16,30 @@ class AnuncioDAO extends Conexao{
         FROM anuncios
         JOIN usuarios ON anuncios.id_usuario = usuarios.id
         JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
-        WHERE autorizacao = 1
         GROUP BY anuncios.id
 		HAVING anuncios.titulo LIKE '%$pesquisar%' OR
         anuncios.cep  LIKE '%$pesquisar%' OR 
         anuncios.preco  LIKE '%$pesquisar%' OR
         anuncios.localizacao  LIKE '%$pesquisar%' OR
-        quantidade_pessoas LIKE '%$pesquisar%' OR
+        quantidade_pessoas LIKE '%$pesquisar%' &&
         autorizacao = 1;")
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }
-    public function allAnuncioAvaliado(){
+    public function getAnuncioUsuario($id): array{
+        $stmt = $this->pdo
+        ->prepare("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
+        FROM anuncios
+        JOIN usuarios ON anuncios.id_usuario = usuarios.id
+        JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
+        WHERE id_usuario = :id
+        GROUP BY anuncios.id");
+        $stmt->bindParam('id', $id);
+        $stmt->execute();
+        $usuarios = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $usuarios;
+    }
+    public function allAnuncioAvaliado(): array{
         $anuncios = $this->pdo
         ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
         FROM anuncios
@@ -39,7 +51,7 @@ class AnuncioDAO extends Conexao{
         ->fetchAll(\PDO::FETCH_ASSOC);
         return $anuncios;
     }
-    public function allAnuncioAvaliar(){
+    public function allAnuncioAvaliar(): array{
         $anuncios = $this->pdo
         ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
         FROM anuncios
@@ -89,16 +101,6 @@ class AnuncioDAO extends Conexao{
         return $id;
     }
 
-    public function getAnuncioById($id_usuario): array{
-        $stmt = $this->pdo->prepare("SELECT * FROM anuncios 
-            Where 
-            id_usuario = :id_usuario;
-        ");
-        $stmt->bindParam('id_usuario', $id_usuario);
-        $stmt->execute();
-        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
-    }
     public function deletarAnuncio($id): void{
         $stmt = $this->pdo->prepare("DELETE FROM anuncios
             where
@@ -107,25 +109,8 @@ class AnuncioDAO extends Conexao{
         $stmt->bindParam('id', $id);
         $stmt->execute();
     }
-    public function atualizarAnuncio(AnuncioModel $anuncio_model): void{
-        $stmt = $this->pdo->prepare("UPDATE anuncios
-            SET 
-            titulo = :titulo, 
-            descricao = :descricao,
-            preco = :preco,
-            atualizado_em = :atualizado_em
-            WHERE
-            id = :id
-        ;");
-        $stmt->execute([
-            'titulo' => $anuncio_model->getTitulo(),
-            'descricao' => $anuncio_model->getDescricao(),
-            'preco' => $anuncio_model->getPreco(),
-            'atualizado_em' => $anuncio_model->getAtualizadoEm(),
-            'id' => $anuncio_model->getId()
-        ]);
-    }
-    public function avaliacaoAceita($id){
+    
+    public function avaliacaoAceita($id): void{
         $stmt = $this->pdo->prepare("UPDATE anuncios
             SET
             autorizacao = 1

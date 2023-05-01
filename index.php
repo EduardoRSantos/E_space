@@ -27,6 +27,7 @@
       <?php if (empty($_SESSION)) { ?>
         <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <?php } ?>
+      <li class=""><a href="../E_space/pages/tela_meus_anuncios.php">Meus Anúncio</a></li>
       <li class=""><a href="../E_space/pages/tela_de_perfil.php">perfil</a></li>
 
       <?php
@@ -115,14 +116,15 @@
     $data = json_decode($response, true);
     $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     curl_close($curl);
-    if ($http_code != 404) {
+    
+    if(!empty($data)){
       foreach ($data as $anuncio) :
 
         include 'anuncios.php';
 
       endforeach;
-    } else {
-      echo "Nenhum anuncio encontrado!";
+    }else{
+      echo "Anuncio não encontrado";
     }
   }
 
