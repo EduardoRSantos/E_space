@@ -194,7 +194,7 @@ if (!empty($_POST['fazer'])) {
 
     curl_close($curl);
 
-    if ($http_code == 200) { echo 'Success' ?>
+    if ($http_code == 200) { ?>
       <script type="text/javascript">
         Swal.fire({
           title: 'Sucesso',
@@ -207,7 +207,7 @@ if (!empty($_POST['fazer'])) {
           }
         })
       </script>
-    <?php } else if ($http_code == 404) { echo 'error' ?>
+    <?php } else if ($http_code == 404) { ?>
       <script type="text/javascript">
         Swal.fire({
           title: 'Ops!',
