@@ -20,11 +20,15 @@
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <li class="">  <a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
+      <?php if(!empty($_SESSION['tipo_conta']) == 'usuario'){ ?>
+        <li class=""><a href="./avaliar_anuncios/anuncios_avaliar.php">Avaliação de Anuncios</a></li>
+        <?php } ?>
+      <li class=""><a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <?php if (empty($_SESSION)) { ?>
         <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <?php } ?>
-      <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="40" height="40" id="profile-image" src="./img/perfil.png" alt="Profile Image"> </a></li>
+      <li class=""><a href="../E_space/pages/tela_meus_anuncios.php">Meus Anúncio</a></li>
+      <li class=""><a href="../E_space/pages/tela_de_perfil.php">perfil</a></li>
 
       <?php
       if (!empty($_SESSION)) {
@@ -61,7 +65,7 @@
       } ?>
     </ul>
   </nav>
-  <!-- PESQUISAR -->
+
   <form method="post">
     <div class="pesquisar">
       <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" />
@@ -84,11 +88,13 @@
 
     curl_close($curl);
 
-    foreach ($data as $anuncio) :
+    if (!empty($data)) {
+      foreach ($data as $anuncio) :
 
-      include 'anuncios.php';
+        include 'anuncios.php';
 
-    endforeach;
+      endforeach;
+    }
   } else {
 
     $pesquisar = $_POST['pesquisar'];
@@ -110,14 +116,15 @@
     $data = json_decode($response, true);
     $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     curl_close($curl);
-    if ($http_code != 404) {
+    
+    if(!empty($data)){
       foreach ($data as $anuncio) :
 
         include 'anuncios.php';
 
       endforeach;
-    } else {
-      echo "Nenhum anuncio encontrado!";
+    }else{
+      echo "Anuncio não encontrado";
     }
   }
 

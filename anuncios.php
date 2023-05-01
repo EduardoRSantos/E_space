@@ -52,9 +52,7 @@
               <div class='carousel-item active'>
                   <img class='img-size' src='https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80' alt='First slide' />
                 </div>
-                <?php foreach ($imagens as $imagem) : 
-                  echo $imagem;
-                  ?>
+                <?php foreach ($imagens as $imagem) : ?>
                   <img class='img-size' src='<?= $imagem ?>' alt='Second slide' />
                 <?php endforeach; ?>
               </div>

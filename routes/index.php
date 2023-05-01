@@ -24,12 +24,14 @@ $app->put('/atualizar/usuario', UsuarioController::class . ':atualizarUsuario');
 
 // // ==============================================================================
 
+$app->post('/anuncios/avaliacao', AnuncioController::class . ':avaliacaoAnuncio');
+$app->get('/anuncios/avaliar', AnuncioController::class . ':allAnunciosAvaliar');
 $app->get('/anuncios', AnuncioController::class . ':allAnuncios');
 $app->post('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios');
-$app->post('/anuncios/usuario', AnuncioController::class . ':getAnuncioById');
-$app->delete('/delete/anuncio' , AnuncioController::class . ':deletarAnuncio');
-$app->put('/atualizar/anuncio', AnuncioController::class . ':atualizarAnuncio');
 $app->get('/anuncios/pesquisa' , AnuncioController::class . ':pesquisa');
+$app->get('/anuncios/usuario', AnuncioController::class . ':getAnuncioUsuario');
+
+
 // ==============================================================================
 
 $app->run();

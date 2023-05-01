@@ -4,13 +4,45 @@
 namespace App\Controllers;
 
 use Psr\Http\Message\{ResponseInterface as Response, ServerRequestInterface as Request};
-use App\DAO\{AnuncioDAO, UploadImagensDAO};
+use App\DAO\{AnuncioDAO, ImagensDAO};
 use App\Models\AnuncioModel;
 use DateTime;
 use DateTimeZone;
 
 final class AnuncioController
 {
+
+    public function getAnuncioUsuario(Request $request, Response $response, $args): Response{
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+        $id = $data['id'];
+
+        $anuncioDAO = new AnuncioDAO();
+        $anuncios = $anuncioDAO->getAnuncioUsuario($id);
+        $response = $response->withJson($anuncios);
+        return $response;
+    }
+
+    public function avaliacaoAnuncio(Request $request, Response $response, $args): Response
+    {
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+
+        $anuncioDAO = new AnuncioDAO();
+        $imagensDAO = new ImagensDAO();
+        if ($data['avaliacao'] == 'delete') {
+            $anuncioDAO->deletarAnuncio($data['id']);
+            $imagensDAO->deleteImagensAnuncio($data['id']);
+            $response = $response->withStatus(200);
+        } else if ($data['avaliacao'] == 'aceitar') {
+            $anuncioDAO->avaliacaoAceita($data['id']);
+            $response->withStatus(200);
+        } else {
+            $response = $response->withStatus(404);
+        }
+
+        return $response;
+    }
     public function pesquisa(Request $request, Response $response, $args): Response
     {
         $input = file_get_contents('php://input');
@@ -19,21 +51,29 @@ final class AnuncioController
         $pesquisar = $data['pesquisar'];
         $anuncioDAO = new AnuncioDAO();
         $anuncios = $anuncioDAO->anuncioPesquisa($pesquisar);
-        if(count($anuncios) > 0){
-            $response = $response->withJson($anuncios);
-        }else {
-            $response = $response->withStatus(404);
-        }
+        $response = $response->withJson($anuncios);
+        
         return $response;
-
     }
 
     public function allAnuncios(Request $request, Response $response, $args): Response
     {
 
         $anuncioDAO = new AnuncioDAO();
-        $anuncios = $anuncioDAO->allAnuncio();
-        $response = $response->withJson($anuncios);
+        $anuncios = $anuncioDAO->allAnuncioAvaliado();
+        if ($anuncios[0]['autorizacao'] == 1) {
+            $response = $response->withJson($anuncios);
+        }
+        return $response;
+    }
+    public function allAnunciosAvaliar(Request $request, Response $response, $args): Response
+    {
+
+        $anuncioDAO = new AnuncioDAO();
+        $anuncios = $anuncioDAO->allAnuncioAvaliar();
+        if ($anuncios[0]['autorizacao'] == 0) {
+            $response = $response->withJson($anuncios);
+        }
         return $response;
     }
 
@@ -45,7 +85,7 @@ final class AnuncioController
 
         $anuncio_model = new AnuncioModel();
         $anuncioDAO = new AnuncioDAO();
-        $upload_imagen = new UploadImagensDAO();
+        $upload_imagen = new ImagensDAO();
 
         $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
 
@@ -65,7 +105,7 @@ final class AnuncioController
                     ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
                 $id = $anuncioDAO->inserirAnuncio($anuncio_model);
             }
-            if ($id == 0){
+            if ($id == 0) {
                 $response = $response->withStatus(403);
                 return $response;
             }
@@ -77,41 +117,6 @@ final class AnuncioController
         return $response;
     }
 
-    public function getAnuncioById(Request $request, Response $response, $args): Response
-    {
-        $data = $request->getParsedBody();
+    
 
-        $anuncioDAO = new AnuncioDAO();
-        $anuncios = $anuncioDAO->getAnuncioById($data['id']);
-        $response = $response->withJson($anuncios);
-        return $response;
-    }
-
-    public function deletarAnuncio(Request $request, Response $response, $args): Response
-    {
-        $data = $request->getParsedBody();
-        $anuncioDAO = new AnuncioDAO();
-        $anuncioDAO->deletarAnuncio($data['id']);
-        $response = $response->withJson(['menssage' => 'sucess']);
-        return $response;
-    }
-
-    public function atualizarAnuncio(Request $request, Response $response, $args): Response
-    {
-        $data = $request->getParsedBody();
-        $anuncioDAO = new AnuncioDAO();
-        $anuncio_model = new AnuncioModel();
-        $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-
-        $anuncio_model
-            ->setId($data['id'])
-            ->setTitulo($data['titulo'])
-            ->setDescricao($data['descricao'])
-            ->setpreco($data['preco'])
-            ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
-
-        $anuncioDAO->atualizarAnuncio($anuncio_model);
-        $response = $response->withJson(['menssage' => 'sucess']);
-        return $response;
-    }
 }
