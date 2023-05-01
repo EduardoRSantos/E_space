@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '79701dd25ddd250c24711ab67a61975e74dcec4b',
+        'reference' => '26f5235af16301a8b2be57c7fd37930234a7bd7a',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '79701dd25ddd250c24711ab67a61975e74dcec4b',
+            'reference' => '26f5235af16301a8b2be57c7fd37930234a7bd7a',
             'dev_requirement' => false,
         ),
         'nikic/fast-route' => array(

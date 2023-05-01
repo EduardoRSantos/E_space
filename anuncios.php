@@ -3,9 +3,9 @@
         <a target="_blank" href="img_5terre.jpg">
           <img src="./img/casa.png" alt="Cinque Terre" width="800" height="600">
         </a>
-        <h4>titulo: <?= $anuncio['titulo'] ?></h4>
-        <h4><?= $anuncio['preco'] ?></h4>
-        <h4><?= $anuncio['cep'] ?></h4>
+        <h4><strong>Titulo: </strong> <?= $anuncio['titulo'] ?></h4>
+        <h4><strong>Preço: </strong><?= $anuncio['preco'] ?></h4>
+        <h4><strong>Cep: </strong><?= $anuncio['cep'] ?></h4>
         <h4><?= $anuncio['criado_em'] ?></h4>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">ALUGAR</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>

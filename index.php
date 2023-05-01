@@ -20,11 +20,11 @@
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <li class=""><a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
+      <li class="">  <a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
       <?php if (empty($_SESSION)) { ?>
         <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <?php } ?>
-      <li class=""><a href="../E_space/pages/tela_de_perfil.php">perfil</a></li>
+      <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="40" height="40" id="profile-image" src="./img/perfil.png" alt="Profile Image"> </a></li>
 
       <?php
       if (!empty($_SESSION)) {
