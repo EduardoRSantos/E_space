@@ -20,7 +20,7 @@
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <?php if(!empty($_SESSION['tipo_conta']) == 'usuario'){ ?>
+      <?php if(!empty($_SESSION['tipo_conta']) == 'adm'){ ?>
         <li class=""><a href="./avaliar_anuncios/anuncios_avaliar.php">Avaliação de Anuncios</a></li>
         <?php } ?>
       <li class=""><a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
