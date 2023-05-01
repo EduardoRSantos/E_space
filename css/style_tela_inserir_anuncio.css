@@ -7,7 +7,6 @@ form {
   border-radius: 5px;
   background-color: #f9f9f9;
 }
-<<<<<<< HEAD
 
 .estrutura_da_tela .inserir{
   font-size: 30px;
@@ -34,6 +33,7 @@ input[type="file"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-top: 5px;
   font-size: 16px;
 }
 
@@ -53,16 +53,25 @@ button[type="submit"] {
 input[type="file"] {
   position: relative;
   overflow: hidden;
+
 }
 
 input[type="file"]::-webkit-file-upload-button {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  border: none;
+  width: 120px;
+  color: white;
+  font-weight: 700;
+  background-color: #1b84ec;
   height: 100%;
-  font-size: 1px;
+  font-size: 12px;
   cursor: pointer;
+}
+
+.inputUser{
+  padding: 5px;
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
@@ -77,63 +86,3 @@ input[type="file"]::-webkit-file-upload-button:hover {
     padding: 10px;
   }
 }
-=======
-#teladeperfil{
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    align-items: center;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    padding: 80px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-  }
-  #perfil {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, #000000,#5623A9);
-  }
-#email{
-    border-radius: 10px;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    align-items: center;
-    }
-    #senha{
-    border-radius: 10px;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    align-items: center;
-    }
-    #submit{
-    background-color: rgb(39, 126, 240);
-    border: none;
-    height: 25px;
-    text-align: center;
-    font-weight: 800;
-    color: white;
-    max-width: 100%;
-    width: 180px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    }
-    #nome {
-        margin-top: 15px;
-        border-radius: 10px;
-        border: none;
-        padding: 5px;
-        width: 100%;
-        align-items: center;
-      }
-      #telefone{
-        border-radius: 10px;
-        border: none;
-        padding: 5px;
-        width: 100%;
-        align-items: center;
-        }
->>>>>>> dd2503225440b53378aa2f0f916dd4889e925306

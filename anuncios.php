@@ -7,8 +7,8 @@
         <h4><strong>Preço: </strong><?= $anuncio['preco'] ?></h4>
         <h4><strong>Cep: </strong><?= $anuncio['cep'] ?></h4>
         <h4><?= $anuncio['criado_em'] ?></h4>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">ALUGAR</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
+        <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">ALUGAR</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">IMAGENS</button>
       </div>
     </div>
 
