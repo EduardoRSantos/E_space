@@ -68,7 +68,7 @@
 
   <form method="post">
     <div class="pesquisar">
-      <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" />
+      <input  type="text" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" requerid>
       <button type="submit">Pesquisar</button>
     </div>
   </form>
