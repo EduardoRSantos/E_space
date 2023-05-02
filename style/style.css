@@ -29,12 +29,14 @@ html{
 }
 
 .imagem {
+  align-items: center;
   flex: 2;
-  margin-right: 15px;
+
 }
 
 .imagem img {
   width: 100%;
+  align-items: center;
   height: auto;
 }
 
