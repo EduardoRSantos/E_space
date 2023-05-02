@@ -10,6 +10,39 @@ class AnuncioDAO extends Conexao{
         parent::__construct();
     }
 
+    public function anuncioAtualizar(AnuncioModel $anuncio_model): bool {
+         $stmt = $this->pdo->prepare("UPDATE anuncios
+            SET
+            titulo = :titulo,
+            descricao = :descricao,
+            preco = :preco,
+            localizacao = :localizacao,
+            cep = :cep,
+            numero = :numero,
+            quantidade_pessoas = :quantidade_pessoas,
+            atualizado_em = :atualizado_em,
+            autorizacao = 0
+            WHERE 
+            id = :id
+         ;");
+         $result = $stmt->execute([
+            'titulo' => $anuncio_model->getTitulo(),
+            'descricao' => $anuncio_model->getDescricao(),
+            'preco' => $anuncio_model->getPreco(),
+            'localizacao' => $anuncio_model->getLocalizacao(),
+            'cep' => $anuncio_model->getCep(),
+            'numero' => $anuncio_model->getNumero(),
+            'quantidade_pessoas' => $anuncio_model->getAtualizadoEm(),
+            'atualizado_em' => $anuncio_model->getAtualizadoEm(),
+            'id' => $anuncio_model->getId()
+         ]);
+
+         if($result){
+            return True;
+         }
+         return False;
+    }
+
     public function anuncioPesquisa($pesquisar){
         $anuncios = $this->pdo
         ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens

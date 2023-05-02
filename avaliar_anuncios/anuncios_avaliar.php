@@ -97,13 +97,13 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Anuncios de <?= $anuncio['nome'] ?></h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">Anúncios de <?= $anuncio['nome'] ?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <h4>Certeza que deseja excluir o anuncio</h4>
+              <h4>Certeza que deseja negar o anúncio</h4>
             </div>
             <div class="modal-footer">
               <form method="post">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Abr-2023 às 16:50
+-- Tempo de geração: 01-Maio-2023 às 21:46
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -88,7 +88,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`, `tipo_de_conta`) VALUES
-(1, 'Eduardo', 'edu@gmail.com', '$2y$10$ci2UG02jK7GzV905tEhPdO1iwVZmnTuQArDK1zMz.MpUppzmWOJB6', '(11) 11111-1111', 'adm');
+(1, 'Kelvin', 'kelvin@gmail.com', '$2y$10$ywk.pjQmkXTzBrL7mqqQy.1NcPOVyb10Dnl6BtBzKfaujmgJHS9oW', '(11) 11111-1111', 'adm'),
+(2, 'Joabe', 'joabe@gmail.com', '$2y$10$P4oBBUzcUx8qxiXAQwn79O69cwjPBvGQzVjJoXVbAnWbDDrj4DGV6', '(11) 11111-1111', 'adm'),
+(3, 'Eduardo', 'edu@gmail.com', '$2y$10$JIoZZMWqUy0tDgrxw3gmLe9gicUWlLHqkEFV9LO85I2IZz0hLlSHi', '(11) 11111-1111', 'adm');
 
 --
 -- Índices para tabelas despejadas
@@ -144,7 +146,7 @@ ALTER TABLE `imagens_de_usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

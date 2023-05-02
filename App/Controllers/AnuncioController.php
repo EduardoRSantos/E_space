@@ -12,6 +12,42 @@ use DateTimeZone;
 final class AnuncioController
 {
 
+    public function anuncioAtualizar(Request $request, Response $response, $args): Response{
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+        $anuncioDAO = new AnuncioDAO();
+        $anuncio_model = new AnuncioModel();
+        $time = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+        $anuncio_model->setId($data['id'])
+        ->setTitulo($data['titulo'])
+        ->setDescricao($data['descricao'])
+        ->setPreco($data['preco'])
+        ->setLocalizacao($data['localizacao'])
+        ->setCep($data['cep'])
+        ->setNumero($data['numero'])
+        ->setQuantidadePessoas($data['quantidade_pessoas'])
+        ->setAtualizadoEm($time->format('Y-m-d H:i:s'));
+
+        $result = $anuncioDAO->anuncioAtualizar($anuncio_model);
+        if($result){
+            $response = $response->withStatus(200);
+        }else {
+            $response = $response->withStatus(404);
+        }
+        return $response;
+    }
+
+    public function deletarAnuncio(Request $request, Response $response, $args): Response{
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
+        $anuncioDAO = new AnuncioDAO();
+        $imagensDAO = new ImagensDAO();
+        $anuncioDAO->deletarAnuncio($data['id']);
+        $imagensDAO->deleteImagensAnuncio($data['id']);
+        
+        return $response;
+    }
+
     public function getAnuncioUsuario(Request $request, Response $response, $args): Response{
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);

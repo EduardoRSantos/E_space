@@ -20,8 +20,8 @@
     </div>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <?php if(!empty($_SESSION['tipo_conta']) == 'usuario'){ ?>
-        <li class=""><a href="./avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt=""></a></li>
+      <?php if(!empty($_SESSION['tipo_conta']) == 'adm'){ ?>
+        <li class=""><a href="./avaliar_anuncios/anuncios_avaliar.php">Avaliação de Anuncios</a></li>
         <?php } ?>
       <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
       <?php if (empty($_SESSION)) { ?>
