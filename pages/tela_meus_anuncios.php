@@ -133,8 +133,8 @@
       <?php endforeach;
     } else {
       echo "Para criar anuncios "; ?> <a href="../pages/inserir_anuncio.php">Clique aqui!</a> <?php
-                                                                                            }
-                                                                                          } else { ?>
+    }
+ } else { ?>
     <script type="text/javascript">
       Swal.fire({
         title: 'Ops!',
