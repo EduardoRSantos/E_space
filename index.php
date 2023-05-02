@@ -23,12 +23,12 @@
       <?php if(!empty($_SESSION['tipo_conta']) == 'adm'){ ?>
         <li class=""><a href="./avaliar_anuncios/anuncios_avaliar.php">Avaliação de Anuncios</a></li>
         <?php } ?>
-      <li class=""><a href="../E_space/pages/inserir_anuncio.php">Inserir Anúncio</a></li>
+      <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
       <?php if (empty($_SESSION)) { ?>
         <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
       <?php } ?>
-      <li class=""><a href="../E_space/pages/tela_meus_anuncios.php">Meus Anúncio</a></li>
-      <li class=""><a href="../E_space/pages/tela_de_perfil.php">perfil</a></li>
+      <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+      <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
 
       <?php
       if (!empty($_SESSION)) {
@@ -58,7 +58,7 @@
         curl_close($curl);
 
         if (!empty($data)) { ?>
-          <li><img src="<?= $data[0]['path'] ?>" alt="" width="100" height="100"></li>
+          <li><img src="<?= $data[0]['path'] ?>" alt="" width="50" height="50"></li>
         <?php } else { ?>
           <li><img src="#" alt="default"></li>
       <?php }
@@ -72,6 +72,8 @@
       <button type="submit">Pesquisar</button>
     </div>
   </form>
+
+  <hr>
   <?php
   if (!isset($_POST['pesquisar'])) {
 

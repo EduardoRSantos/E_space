@@ -18,9 +18,9 @@
         <h1>Inserir Anúncio</h1>
         <form method="POST"enctype="multipart/form-data">
             <div id="divid">
-                <input type="file" multiple name="imagens[]" id="img1" required>
+                <input type="file"  placeholder="Enviar" multiple name="imagens[]" id="img1" required>
             </div>
-            <div class="container">
+            <div class="">
                 <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
             </div>
@@ -32,7 +32,7 @@
                 <input type="number" placeholder="Preço R$" name="preco" id="preco" class="inputUser" required>
                 <label for="preco"></Label>
             </div>
-            <div class="container">
+            <div class="">
                 <input type="text" placeholder="localizacão" name="localizacao" id="localizacao" class="inputUser" required>
                 <label for="localizacao"></Label>
             </div>
