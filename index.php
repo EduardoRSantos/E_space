@@ -14,7 +14,8 @@
 </head>
 
 <body>
-  <nav>
+  <header>
+      <nav>
     <div class="logo">
       <img src="./img/e-space.png" alt="Logo" />
     </div>
@@ -73,7 +74,23 @@
     </div>
   </form>
 
-  <hr>
+  </header>
+
+
+
+  <main>
+  <section class="conteudo">
+  <div class="imagem">
+    <img src="./img/arte1.png" alt="Descrição da imagem">
+  </div>
+  <div class="texto">
+    <h2>Venha conhecer</h2>
+    <p>A E-Space, uma empresa de <br> 
+    aluguel de espaço para eventos<br>  </p>
+  </div>
+</section>
+
+  </main>
   <?php
   if (!isset($_POST['pesquisar'])) {
 

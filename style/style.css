@@ -1,20 +1,81 @@
+@font-face {
+  font-family:Deli;
+  src: url(../fonts/Deli.ttf);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body{
 
   font-family: Montserrat;
 }
 
+html{
+
+}
+
+/* CONTEUDO */
+
+.conteudo {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.imagem {
+  flex: 2;
+  margin-right: 15px;
+}
+
+.imagem img {
+  width: 100%;
+  height: auto;
+}
+
+
+.texto {
+  font-family:Deli ;
+  flex: 2;
+  margin: 1rem;
+}
+
+.texto h2{
+  font-size: 2.5em;
+  color: rgb(39, 4, 85);
+}
+
+@media only screen and (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+  }
+
+  .imagem {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* CONTEUDO */
+
 
 /* CARROSEL */
 header {
-	background-color: #4CAF50;
+	background-color: #ffffff;
 	color: white;
-	padding: 20px;
-	text-align: center;
+	padding: 1px;
+	text-align: start;
 }
 
 h1 {
 	font-size: 36px;
-	margin: 0;
+
 }
 
 p {
@@ -194,7 +255,7 @@ box-shadow: #4CAF50;
   display: flex;
   padding: 8px;
   min-width: 5px;
-  margin-bottom: 50px;
+  margin-bottom: -55px;
 
   
 }
