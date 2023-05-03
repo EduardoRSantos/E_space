@@ -69,8 +69,8 @@
 
   <form method="post">
     <div class="pesquisar">
-      <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" />
-      <button type="submit">Pesquisar</button>
+      <input type="search" name="pesquisar" id="" size="50"  placeholder="Realizar Pesquisa" />
+      <button  class="botaopequisar"type="submit"><img class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
     </div>
   </form>
 
