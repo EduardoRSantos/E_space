@@ -20,12 +20,20 @@ html{
 
 /* CONTEUDO */
 
+
 .conteudo {
+  width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+} 
+
+.wrapper {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .imagem {
@@ -49,7 +57,7 @@ html{
 
 .texto h2{
   font-size: 2.5em;
-  color: rgb(39, 4, 85);
+  color: rgb(105, 105, 105);
 }
 
 @media only screen and (max-width: 768px) {
@@ -69,6 +77,7 @@ html{
 
 /* CARROSEL */
 header {
+  
 	background-color: #ffffff;
 	color: white;
 	padding: 1px;
@@ -142,8 +151,8 @@ p {
 /* PERFIL */
 
 
-/* NAVBAR */
-.popup {
+/* .navbarheaderBAR */
+.popup {  
   display: none;
   position: fixed;
   z-index: 1;
@@ -180,19 +189,24 @@ p {
 
 
 
-nav {
-  margin-top: 30px;
+.navbarheader {
+  height: 120px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height:1px;
+
   background-color: #ffffff;
   padding: 0 10px;
 }
 
+.searchbarmobile{
+  display: none;
+}
+
 .logo img {
-  height: 30px;
-  width: auto;
+    height: 60px;
+    display: flex;
+    width: 150px;
+    object-fit: cover;
 }
 
 .menu-icon {
@@ -206,13 +220,13 @@ nav {
   justify-content: flex-end;
   align-items: center;
   list-style-type: none;
-  margin-top: -50px;
+height: 100%;
 
 }
 
 .menu li {
   margin: 0 10px;
-  margin-top: 18px;
+  margin-top: -55px;
 }
 
 .menu li:last-child {
@@ -251,13 +265,13 @@ box-shadow: #4CAF50;
 }
 
 .pesquisar, input, button{
-  margin-top: 30px;
+
   align-items: center;
   justify-content: center;
   display: flex;
   padding: 8px;
   min-width: 5px;
-  margin-bottom: -55px;
+
 
   
 }
@@ -410,6 +424,19 @@ float:left;
 @media screen and (max-width: 768px) {
   .menu-icon {
     display: block;
+
+  }
+
+  .searchbarmobile{
+    display: block;
+  }
+
+  .searchbar{
+    display: none;
+  }
+
+  .navbarheader{
+    height: auto;
   }
   
   .menu {
