@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Maio-2023 às 21:46
+-- Tempo de geração: 04-Maio-2023 às 03:59
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -34,7 +34,7 @@ CREATE TABLE `anuncios` (
   `descricao` text DEFAULT NULL,
   `preco` decimal(10,2) DEFAULT NULL,
   `localizacao` varchar(255) DEFAULT NULL,
-  `cep` int(11) DEFAULT NULL,
+  `cep` varchar(20) DEFAULT NULL,
   `numero` int(11) DEFAULT NULL,
   `quantidade_pessoas` int(11) DEFAULT NULL,
   `criado_em` datetime DEFAULT NULL,
@@ -90,7 +90,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`, `tipo_de_conta`) VALUES
 (1, 'Kelvin', 'kelvin@gmail.com', '$2y$10$ywk.pjQmkXTzBrL7mqqQy.1NcPOVyb10Dnl6BtBzKfaujmgJHS9oW', '(11) 11111-1111', 'adm'),
 (2, 'Joabe', 'joabe@gmail.com', '$2y$10$P4oBBUzcUx8qxiXAQwn79O69cwjPBvGQzVjJoXVbAnWbDDrj4DGV6', '(11) 11111-1111', 'adm'),
-(3, 'Eduardo', 'edu@gmail.com', '$2y$10$JIoZZMWqUy0tDgrxw3gmLe9gicUWlLHqkEFV9LO85I2IZz0hLlSHi', '(11) 11111-1111', 'adm');
+(3, 'Eduardo Santos', 'edu@gmail.com', '$2y$10$JIoZZMWqUy0tDgrxw3gmLe9gicUWlLHqkEFV9LO85I2IZz0hLlSHi', '(11) 11111-1111', 'adm'),
+(4, 'Maria', 'maria@gmail.com', '$2y$10$3jdGRHYrwLFmm28JF1JiReLwRtc5x1vBk.axgRCZwIuL1CSbrF24K', '(75) 99999-9991', 'usuario');
 
 --
 -- Índices para tabelas despejadas
@@ -146,7 +147,7 @@ ALTER TABLE `imagens_de_usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

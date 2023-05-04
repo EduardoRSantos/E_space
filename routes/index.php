@@ -22,7 +22,7 @@ $app->post('/cadastro/usuario', UsuarioController::class . ':inserirUsuario');
 $app->post('/atualizar/usuario/imagen', UsuarioController::class . ':atualizarUsuarioImagen');
 $app->put('/atualizar/usuario', UsuarioController::class . ':atualizarUsuario');
 
-// // ==============================================================================
+// ==============================================================================
 
 $app->post('/anuncios/avaliacao', AnuncioController::class . ':avaliacaoAnuncio');
 $app->get('/anuncios/avaliar', AnuncioController::class . ':allAnunciosAvaliar');
@@ -30,11 +30,8 @@ $app->get('/anuncios', AnuncioController::class . ':allAnuncios');
 $app->post('/cadastrar/anuncios', AnuncioController::class . ':inserirAnuncios');
 $app->get('/anuncios/pesquisa' , AnuncioController::class . ':pesquisa');
 $app->get('/anuncios/usuario', AnuncioController::class . ':getAnuncioUsuario');
-
-
 $app->put('/anuncios/atualizar', AnuncioController::class . ':anuncioAtualizar');
 $app->post('/anuncios/delete', AnuncioController::class . ':deletarAnuncio');
-
 
 // ==============================================================================
 
