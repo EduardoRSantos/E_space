@@ -26,15 +26,15 @@
     </div>
   </form>
     <ul class="menu">
-      <?php if(!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm'){ ?>
-        <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt=""></a></li>
+       <?php if(!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm'){ ?>
+        <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
       <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-      <?php if (empty($_SESSION)) { ?>
-        <li class=""><a href="../E_space/pages/tela_de_login.php">Fazer Login</a></li>
-      <?php } ?>
       <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
       <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+      <?php if (empty($_SESSION)) { ?>
+        <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+      <?php } ?>
 
       <?php
       if (!empty($_SESSION)) {
@@ -87,13 +87,18 @@
     <img src="./img/arte1.png" alt="Descrição da imagem">
   </div>
   <div class="texto">
-    <h2>Venha conhecer</h2>
-    <p>A E-Space, uma empresa de <br> 
-    aluguel de espaço para eventos<br>  </p>
+    <h2>Já olhou no E-SPACE?</h2>
+    <br>
+    <p>Seu espaço está aqui!<br> 
+    <br>
+    Aluguéis de espaços para eventos<br>
+      em Feira de Santana-Ba<br>
+  </p>
   </div>
 </section>
 
   </main>
+  <div class="wrapper" >  
   <?php
   if (empty($_POST['pesquisar'])) {
 
@@ -151,6 +156,7 @@
   }
 
   ?>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

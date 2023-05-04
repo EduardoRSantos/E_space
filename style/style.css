@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family:Deli;
   src: url(../fonts/Deli.ttf);
-}
+} */
 
 *{
   padding: 0;
@@ -55,9 +55,37 @@ html{
   margin: 1rem;
 }
 
-.texto h2{
+.texto h2{    
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 2.5em;
+  color: rgb(59, 59, 59);
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+}
+
+.texto  p{  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
   color: rgb(105, 105, 105);
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+}
+
+
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -234,8 +262,7 @@ height: 100%;
 }
 
 .menu a {
-  text-decoration: none;
-  color: #000000;
+  color: #fafafa;
   font-weight: bold;
   border-radius: 5px;
   padding: 8px;
@@ -244,11 +271,32 @@ height: 100%;
 }
 
 .menu a:hover{
+  
+  text-decoration: none;
 box-shadow: #4CAF50;
   transition-duration: 800ms;
   border-radius: 500px;
   margin: 10px;
   width: 200px;
+}
+
+
+.cadastro{
+  background: #007bff;
+  padding: 5px;
+  border-radius: 15px;
+  color: white;
+transition: 800ms;
+}
+
+.cadastro:hover{
+  color: white;
+  background: #063d79;
+}
+
+.cadastro a{
+  list-style-type: none;
+  color: white;
 }
 
 .login a {
@@ -373,7 +421,6 @@ div.desc {
 
  .responsive {
   padding: 0 6px;
-float:left;
   width: 24.99999%;
 
 } 
