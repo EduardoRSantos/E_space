@@ -62,10 +62,10 @@
     
     text-decoration: none;
   box-shadow: #4CAF50;
-    transition-duration: 800ms;
+    /* transition-duration: 800ms; */
     border-radius: 500px;
-    margin: 10px;
-    width: 200px;
+    /* margin: 10px;
+    width: 200px; */
   }
   
   

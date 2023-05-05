@@ -10,63 +10,72 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/mascaras.js"></script>
+    <style>
+           <?php include '../css/navbar.css'; ?>
+    </style>
 </head>
 
-<body id="body">
+<body>
+<?php include '../navbar.php';?>
     <?php if (!empty($_SESSION)) { ?>
-        <div class="box1" id="perfil">
-            <h2>Perfil</h2>
-            <br>
-            <div class="inputBox">
-                <label for="nome"><strong>Nome Completo</strong></Label>
-                <br>
-                <label for="nome"><?= $_SESSION['nome'] ?></Label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <label for="email"><strong>E-mail</strong></Label>
-                <br>
-                <label for="email"><?= $_SESSION['email'] ?></Label>
-            </div>
-            <br>
-            <div class="inputBox">
-                <label for="telefone"><strong>Telefone</strong></Label>
-                <br>
-                <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
-            </div>
-            </fieldset>
-        </div>
-        <div class="box2" id="perfil">
-            <form class="file" method="POST" enctype="multipart/form-data">
-                <h2>Perfil</h2>
-                <br>
-                <div class="inputBox">
-                    <input class="file" type="file" name="imagem">
-                </div>
-                <input type="submit" name="submit" id="submit" value="Salvar">
-            </form>
+        <div class="formulario-de-dados wrapper" >
 
-            <form method="POST">
-                <br>
-                <div class="inputBox">
-                    <label for="nome">Nome Completo</Label>
-                    <br>
-                    <input type="text" name="nome" id="nome" value="<?= $_SESSION['nome'] ?>" required>
+            <div class="tela-perfil">
+                <h2>Dados cadastrados</h2>
+                <br>  
+                <label for="nome"><strong>Nome Completo</strong></Label>
+                <div class="dados">
+                    <label for="nome"><?= $_SESSION['nome'] ?></Label>
                 </div>
                 <br>
-                <div class="inputBox">
-                    <label for="telefone">Telefone</Label>
-                    <br>
-                    <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
+                <label for="email"><strong>E-mail</strong></Label>
+                <div class="dados">
+                    <label for="email"><?= $_SESSION['email'] ?></Label>
                 </div>
-                <input type="submit" name="submit" id="submit" value="Salvar">
-            </form>
-            <br>
-            <br>
-            <hr>
-            <form class="sair" action="sair.php" method="post">
-                <input type="submit" value="Sair">
-            </form>
+                <br>  
+                <label for="telefone"><strong>Telefone</strong></Label>
+                <div class="dados">
+                    <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
+                </div>
+                </fieldset>
+            </div>
+            <div class="editar-foto">
+                <form  class="file"  method="POST" enctype="multipart/form-data">
+                    <img width="50px" src="../img//perfil-alterar.png" alt="" srcset="">
+                    <br>
+                    <div class="file">
+                        <input  type="file" name="imagem">
+                        <input  class="salvar" type="submit" name="submit" id="submit" value="Salvar">
+                    </div>
+            
+                </form>
+                <br>
+                <hr>
+                <form class="editar-dados" method="POST">
+                    <br>
+                    <div class="dados">
+                        <label for="nome">Nome Completo</Label>
+                        <br>
+                        <input type="text" name="nome" id="nome" value="<?= $_SESSION['nome'] ?>" required>
+                    </div>
+                    <br>
+                    <div class="dados">
+                        <label for="telefone">Telefone</Label>
+                        <br>
+                        <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
+                    </div>
+                    <br>
+                    <div class="salvar-dados" >
+                    <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
+                    </div>
+            
+                </form>
+                <br>
+                <br>
+                <form class="sair-tela" action="sair.php" method="post">
+                    <input type="submit" value="Sair">
+                </form>
+        </div>
 
         <?php } else { ?>
             <script type="text/javascript">
