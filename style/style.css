@@ -378,6 +378,7 @@ div.galeria>h4{
   background-color: #256927;
   border-radius: 5px;
 margin: 5px;
+display: block;
 padding: 2px;
 font-size: 18px;
 text-align: start;
@@ -397,10 +398,6 @@ div.galeria>h4:hover{
   color: black;
   border: 1px solid black;
   text-align: center;
-}
-
-div.galeria:hover {
-
 }
 
 div.galeria img {

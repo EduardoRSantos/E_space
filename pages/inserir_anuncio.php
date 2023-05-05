@@ -3,50 +3,54 @@
 <?php session_start(); ?>
 
 <head>
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <meta charset="utf-8">
     <title>Inserir Anúncio</title>
     <style>
         <?php include '../css/style_tela_inserir_anuncio.css'; ?>
+        <?php include '../css/navbar.css'; ?>
     </style>
 </head>
 
 <body>
+<?php include '../navbar.php';?>
     <section class="estrutura_da_tela">
-        <h1>Inserir Anúncio</h1>
-        <form method="POST"enctype="multipart/form-data">
-            <div id="divid">
-                <input type="file"  placeholder="Enviar" multiple name="imagens[]" id="img1" required>
+        <h1 class="titulo" >Inserir Anúncio</h1>
+        <form class="form" method="POST"enctype="multipart/form-data">
+            <div id="">
+                <input class="inputUser" type="file"  placeholder="Enviar" multiple name="imagens[]" id="img1" required>
             </div>
-            <div class="">
-                <input type="text" placeholder="Titulo" name="titulo" id="titulo" class="inputUser" required>
+            <div class="campotexto">
+                <input type="text" placeholder="Título" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
             </div>
-            <div class="info">
-                <input type="text" placeholder="Descricao" name="descricao" id="info" class="inputUser" required>
-                <label for="info"></Label>
-            </div>
-            <div class="preco">
-                <input type="number" placeholder="Preço R$" name="preco" id="preco" class="inputUser" required>
+            <div class="campotexto">
+                <input type="number" placeholder=" Preço: R$" name="preco" id="preco" class="inputUser" required>
                 <label for="preco"></Label>
             </div>
-            <div class="">
-                <input type="text" placeholder="localizacão" name="localizacao" id="localizacao" class="inputUser" required>
+            <div class="campotexto">
+                <input type="text" placeholder="Localização" name="localizacao" id="localizacao" class="inputUser" required>
                 <label for="localizacao"></Label>
             </div>
-            <div class="cep">
-                <input type="text" placeholder="cep" name="cep" id="cep" class="inputUser" required>
+            <div class="campotexto">
+                <input type="text" placeholder="Cep" name="cep" id="cep" class="inputUser" required>
                 <label for="cep"></Label>
             </div>
-            <div>
-                <input type="number" placeholder="Numero" name="numero" id="numero" class="inputUser" required>
+            <div class="campotexto">
+                <input type="number" placeholder="Número" name="numero" id="numero" class="inputUser" required>
                 <label for="numero"></Label>
             </div>
-            <div class="quant">
-                <input type="number" placeholder="quantpessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
+            <div class="campotexto">
+                <input type="number" placeholder="Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
                 <label for="quantidadedepessoas"></Label>
+            </div>
+            <div class="campotexto">
+                <input type="text" placeholder="Descricao" name="descricao" id="info" class="inputUser" required>
+                <label for="info"></Label>
             </div>
             <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
         </form>

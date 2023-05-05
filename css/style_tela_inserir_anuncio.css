@@ -1,5 +1,5 @@
 /* Estilos básicos para o layout do formulário */
-form {
+.estrutura_da_tela .inserir, .form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -7,12 +7,12 @@ form {
   border-radius: 5px;
   background-color: #f9f9f9;
 }
+.titulo{
+  text-align: center;
+}
 
-.estrutura_da_tela .inserir{
-  font-size: 30px;
-  text-align: center; 
-  font-family: Montserrat;
-  margin-top: 15px;
+.inputUser{
+  border-radius: 5px;
 }
 
 .form-group {
@@ -26,18 +26,17 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="file"] {
+.inputUser[type="text"],
+.inputUser[type="file"] {
   display: block;
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   margin-top: 5px;
   font-size: 16px;
 }
 
-button[type="submit"] {
+[type="submit"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -50,13 +49,13 @@ button[type="submit"] {
 }
 
 /* Estilos para o botão de envio de imagem */
-input[type="file"] {
+.inputUser [type="file"] {
   position: relative;
   overflow: hidden;
 
 }
 
-input[type="file"]::-webkit-file-upload-button {
+.inputUser [type="file"]::-webkit-file-upload-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -74,7 +73,7 @@ input[type="file"]::-webkit-file-upload-button {
   padding: 5px;
 }
 
-input[type="file"]::-webkit-file-upload-button:hover {
+.inputUser [type="file"]::-webkit-file-upload-button:hover {
   background-color: #0066cc;
   color: #fff;
 }
