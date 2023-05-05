@@ -276,26 +276,31 @@ height: 100%;
 box-shadow: #4CAF50;
   transition-duration: 800ms;
   border-radius: 500px;
-  margin: 10px;
-  width: 200px;
+  /* margin: 10px;
+  width: 200px; */
 }
 
 
 .cadastro{
-  background: #007bff;
+  border: 1px solid #007bff;
   padding: 5px;
   border-radius: 15px;
-  color: white;
+  color: #007bff;
 transition: 800ms;
 }
 
 .cadastro:hover{
+  border: 1px solid white;
   color: white;
-  background: #063d79;
+  background: #0d498a;
 }
 
 .cadastro a{
   list-style-type: none;
+  color: #007bff;
+}
+
+.cadastro a:hover{
   color: white;
 }
 
@@ -378,7 +383,6 @@ div.galeria>h4{
   background-color: #256927;
   border-radius: 5px;
 margin: 5px;
-display: block;
 padding: 2px;
 font-size: 18px;
 text-align: start;
@@ -399,6 +403,7 @@ div.galeria>h4:hover{
   border: 1px solid black;
   text-align: center;
 }
+
 
 div.galeria img {
   width: 100%;
