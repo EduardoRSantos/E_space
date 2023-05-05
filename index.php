@@ -17,7 +17,7 @@
   <header>
       <nav class="navbarheader wrapper" >
     <div class="logo">
-      <img  src="./img/logo.png" alt="Logo" />
+    <a href="../E_space/index.php"><img  src="./img/logo.png" alt="Logo" /></a>
     </div>
     <form class="searchbar" method="post">
     <div class="pesquisar">
