@@ -368,6 +368,7 @@ input{
 
 /* GALERIA  */
 div.galeria {
+  margin: 5px;
 border: 1px solid black;
 background-color: #ffffff;
 border-radius: 10px;
@@ -380,10 +381,12 @@ flex-direction: row;
 }
 
 div.galeria>h4{
-  background-color: #256927;
+
+  color: black;
+  border: 1px solid #007bff;
   border-radius: 5px;
 margin: 5px;
-padding: 2px;
+padding: 5px;
 font-size: 18px;
 text-align: start;
 align-items: center;
@@ -424,8 +427,18 @@ div.desc {
  .responsive {
   padding: 0 6px;
   width: 24.99999%;
-
 } 
+
+.anuncios{
+  color: white;
+  font-family: Montserrat ;
+  padding: 0.5rem;
+  background-color: #741e96;
+}
+
+.anuncios h1{
+  font-size: 1.5rem;
+}
 
 @media only screen and (max-width: 700px) {
   .responsive {

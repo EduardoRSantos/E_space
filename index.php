@@ -98,10 +98,10 @@
 </section>
 
   </main>
-  <div class="wrapper" >  
+  <div class="anuncios wrapper" >  
     <div class="column" >
 
-
+<h1 class="text-center" >ANÚNCIOS RECENTES</h1>
   <?php
   if (empty($_POST['pesquisar'])) {
 
