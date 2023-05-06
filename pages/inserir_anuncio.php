@@ -3,26 +3,29 @@
 <?php session_start(); ?>
 
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/imagens.js"></script>
     <title>Inserir Anúncio</title>
     <style>
-        <?php include '../css/style_tela_inserir_anuncio.css'; ?>
-        <?php include '../css/navbar.css'; ?>
+        <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?>
     </style>
 </head>
 
 <body>
-<?php include '../navbar.php';?>
-    <section class="estrutura_da_tela " >
-        <h1 class="titulo" >Inserir Anúncio</h1>
-        <form class="form wrapper" method="POST"enctype="multipart/form-data">
+    <?php include '../navbar.php'; ?>
+    <section class="estrutura_da_tela ">
+        <h1 class="titulo">Inserir Anúncio</h1>
+        <form class="form wrapper" method="POST" enctype="multipart/form-data">
             <div id="">
-                <input  class="inputUser" type="image"  placeholder="Enviar" accept="image/jpeg, image/png, image/jpg"  multiple name="imagens[]" id="img1" required>
+                <label for="images">Escolha várias imagens:</label>
+                <input class="inputUser" type="file" id="images" name="imagens[]" multiple onchange="previewImages(this);" required>
+                <br>
+                <div id="preview"></div>
             </div>
             <div class="campotexto">
                 <input type="text" placeholder="Título" name="titulo" id="titulo" class="inputUser" required>
@@ -49,7 +52,7 @@
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
-                <input class="descricao" type="text" placeholder="Descricao" name="descricao" id="info"  required>
+                <input class="descricao" type="text" placeholder="Descricao" name="descricao" id="info" required>
                 <label for="info"></Label>
             </div>
             <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">
@@ -91,15 +94,15 @@ if (!empty($_SESSION)) {
         ];
 
         $imagens = $_FILES['imagens'];
-        foreach($imagens['name'] as $index => $imagem){
+        foreach ($imagens['name'] as $index => $imagem) {
 
-                $nome_imagen = $imagens['name'][$index];
-                $novo_nome_imagem = uniqid();
-                $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
-                $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
-                $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
-                $verify = move_uploaded_file($imagens['tmp_name'][$index], $href_imagen_mover);
-                $body["imagem" . $index+1] = $href_imagen_upa;
+            $nome_imagen = $imagens['name'][$index];
+            $novo_nome_imagem = uniqid();
+            $extensao = strtolower(pathinfo($nome_imagen, PATHINFO_EXTENSION));
+            $href_imagen_mover = "../imagens/$novo_nome_imagem.$extensao";
+            $href_imagen_upa = "./imagens/$novo_nome_imagem.$extensao";
+            $verify = move_uploaded_file($imagens['tmp_name'][$index], $href_imagen_mover);
+            $body["imagem" . $index + 1] = $href_imagen_upa;
         }
 
         $json = json_encode($body);
@@ -145,7 +148,9 @@ if (!empty($_SESSION)) {
                     }
                 })
             </script>
-    <?php } } } else { ?>
+    <?php }
+    }
+} else { ?>
 
     <script type="text/javascript">
         Swal.fire({
