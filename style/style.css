@@ -21,8 +21,7 @@ html{
 /* CONTEUDO */
 
 .main-home{
-  background: rgb(164,246,255);
-  background: linear-gradient(180deg, rgba(164,246,255,1) 0%, rgba(255,255,255,1) 100%);
+background-color: #f1f1f1;
 }
 
 
@@ -435,7 +434,7 @@ div.desc {
 } 
 
 .anuncios{
-  color: white;
+  color: rgb(10, 10, 10);
   font-family: Montserrat ;
   padding: 0.5rem;
   background-color: #ffffff;

@@ -12,7 +12,8 @@
     <script src="../js/imagens.js"></script>
     <title>Inserir Anúncio</title>
     <style>
-        <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?>
+        <?php include '../css/style_tela_inserir_anuncio.css'; ?>
+        <?php include '../css/navbar.css'; ?>
     </style>
 </head>
 
@@ -21,18 +22,17 @@
     <section class="estrutura_da_tela ">
         <h1 class="titulo">Inserir Anúncio</h1>
         <form class="form wrapper" method="POST" enctype="multipart/form-data">
-            <div id="">
-                <label for="images">Escolha várias imagens:</label>
-                <input class="inputUser" type="file" id="images" name="imagens[]" multiple onchange="previewImages(this);" required>
-                <br>
-                <div id="preview"></div>
+            <div class="inserir-imagem">
+                <label for="images">Adicionar Fotos</label>
+                <input  accept="image/png, image/jpeg"  class="inputUserArquivos" type="file" id="images" name="imagens[]" multiple onchange="previewImages(this);"  required>
+                <div  id="preview"></div>
             </div>
             <div class="campotexto">
                 <input type="text" placeholder="Título" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder=" Preço: R$" name="preco" id="preco" class="inputUser" required>
+                <input type="number" placeholder=" R$" name="preco" id="preco" class="inputUser" required>
                 <label for="preco"></Label>
             </div>
             <div class="campotexto">
@@ -44,11 +44,11 @@
                 <label for="cep"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder="Número" name="numero" id="numero" class="inputUser" required>
+                <input type="number" placeholder=" Número" name="numero" id="numero" class="inputUser" required>
                 <label for="numero"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder="Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
+                <input type="number" placeholder=" Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
