@@ -21,7 +21,8 @@ html{
 /* CONTEUDO */
 
 .main-home{
-  background-color: #adeef5;
+  background: rgb(164,246,255);
+  background: linear-gradient(180deg, rgba(164,246,255,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 
