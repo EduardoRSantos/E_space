@@ -18,11 +18,11 @@
 
 <body>
 <?php include '../navbar.php';?>
-    <section class="estrutura_da_tela">
+    <section class="estrutura_da_tela " >
         <h1 class="titulo" >Inserir Anúncio</h1>
-        <form class="form" method="POST"enctype="multipart/form-data">
+        <form class="form wrapper" method="POST"enctype="multipart/form-data">
             <div id="">
-                <input class="inputUser" type="file"  placeholder="Enviar" multiple name="imagens[]" id="img1" required>
+                <input  class="inputUser" type="image"  placeholder="Enviar" accept="image/jpeg, image/png, image/jpg"  multiple name="imagens[]" id="img1" required>
             </div>
             <div class="campotexto">
                 <input type="text" placeholder="Título" name="titulo" id="titulo" class="inputUser" required>
@@ -49,16 +49,17 @@
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
-                <input type="text" placeholder="Descricao" name="descricao" id="info" class="inputUser" required>
+                <input class="descricao" type="text" placeholder="Descricao" name="descricao" id="info"  required>
                 <label for="info"></Label>
             </div>
-            <input type="submit" name="submit" id="button_anuncio" value="Anunciar">
+            <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">
         </form>
     </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/mascaras.js"></script>
+    <script src="../js/js.js"></script>
 </body>
 <?php
 

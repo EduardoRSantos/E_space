@@ -29,7 +29,7 @@ label {
 .inputUser[type="text"],
 .inputUser[type="file"] {
   display: block;
-  width: 100%;
+
   padding: 10px;
   border-radius: 5px;
   margin-top: 5px;
@@ -71,11 +71,27 @@ label {
 
 .inputUser{
   padding: 5px;
+  width: 500px;
+  max-width: 100%;
 }
 
 .inputUser [type="file"]::-webkit-file-upload-button:hover {
   background-color: #0066cc;
   color: #fff;
+}
+
+.campotexto .descricao{
+  padding-bottom: 180px;
+  width: 31.1rem;
+  height: 12.5rem;
+  max-width: 100%;
+  border-radius: 0px;
+}
+
+.anunciar{
+  width: 31.1rem;
+  height: 2.5rem;
+  max-width: 100%;
 }
 
 /* Estilos para o layout responsivo */
