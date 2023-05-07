@@ -16,7 +16,7 @@
             <p ><?= $anuncio['preco'] ?></p>
           </div>
         <div class="rental-buttons">
-          <button type="button" class="btn btn-primary" data-toggle="modal" ///data-target="#modalInfo <?= $anuncio['id'] ?> ">ALUGAR</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo <?= $anuncio['id'] ?> ">ALUGAR</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">IMAGENS</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">+ INFORMAÇÕES</button>
         </div>
@@ -29,12 +29,12 @@
     <div class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <!-- <div class=".header-modal">
+          <div class=".header-modal">
             <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div> -->
+          </div>
           <div class="body-modal">
             <h4><strong>NOME:</strong> <?= $anuncio['nome'] ?></h4>
             <h4><strong>TEL:</strong> <?= $anuncio['telefone'] ?></h4>
@@ -56,16 +56,16 @@
           <div class="body">
             <div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
               <ol class='carousel-indicators'>
-                <!-- <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li> -->
+                <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>
                 <?php 
                 $imagens = explode(';', $anuncio['imagens']);
                 for($i=0; $i < count($imagens); $i++) : ?>
-                <!-- <li data-target='#carouselExampleIndicators' data-slide-to='<?= $i; ?>'></li> -->
+                <li data-target='#carouselExampleIndicators' data-slide-to='<?= $i; ?>'></li>
                 <?php endfor; ?>
               </ol>
-              <!-- <div class='carousel-item active'>
+              <div class='carousel-item active'>
                   <img class='img-size' src='' alt='First slide' />
-                </div> -->
+                </div>
                 <?php foreach ($imagens as $imagem) : ?>
                   <img class='img-size' src='<?= $imagem ?>' alt='Second slide' />
                 <?php endforeach; ?>
