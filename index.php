@@ -148,7 +148,7 @@
     
     if(!empty($data)){
       foreach ($data as $anuncio) :
-        $imagens = explode(';', $anuncio['imagens']);
+        
         include 'anuncios.php';
 
       endforeach;
