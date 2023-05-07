@@ -1,3 +1,4 @@
+<div class="anuncios wrapper" >
 <section class="rental-section">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
@@ -24,6 +25,7 @@
     </div>
   </div>
 </section>
+</div>
 
 
     <div class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
