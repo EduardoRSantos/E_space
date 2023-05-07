@@ -21,7 +21,8 @@ html{
 /* CONTEUDO */
 
 .main-home{
-background-color: #f1f1f1;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,250,255,1) 100%);
 }
 
 
@@ -69,6 +70,7 @@ background-color: #f1f1f1;
 }
 
 .texto  p{  
+  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   color: rgb(105, 105, 105);
