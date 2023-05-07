@@ -485,6 +485,174 @@ div.desc {
 
   /* GALERIA  */
 
+  .rental-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+    padding: 40px 20px;
+  }
+  
+  .rental-container {
+    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+  }
+  
+  .rental-ad {
+    flex: 1 1 300px;
+    margin-right: 20px;
+  }
+  
+  .rental-ad img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .rental-details {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .rental-details h2 {
+    text-align: start;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .rental-details p {
+    text-align: start;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .rental-price {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .rental-price p {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .rental-price img{
+    margin: 2px;
+    width: 2rem;
+  }
+
+
+
+
+  .rental-price ,.localizacao ,.dinheiro{
+  flex: 1;
+  text-align: center;
+white-space: nowrap;
+
+
+}
+
+.localizacao{
+}
+
+
+  .localizacao img, p{
+    object-fit: contain;
+  }
+  .dinheiro img, p{
+    justify-content: center;
+    align-items: center;
+text-align: center;
+    object-fit: contain;
+    font-size: 10px;
+  }
+
+
+
+
+
+
+
+  .rental-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin: 0.2rem;
+margin-right: 2rem;
+  }
+  
+  .rental-buttons button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 2px;
+  }
+  
+  @media (max-width: 600px) {
+    .rental-container {
+      flex-direction: column;
+    }
+  
+    .rental-ad {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .rental-details {
+      margin-bottom: 20px;
+    }
+  }
+
+
+  
+
+  .body-modal, .footer-modal{
+    margin: 5px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .body-modal, h4>strong{
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  .anuncio-modal{
+    background: #0000009f;
+  }
+
+  .footer-modal>button{
+    color: black;
+    font-weight: 700;
+    border: 1px solid dodgerblue;
+    background: none;
+    border-radius: 25px;
+  }
+
+/* SLIDE MODAL  */
+
+.slide-modal{
+  margin: 0.5rem;
+  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+  /* ANUNCIOS  */
 /* Responsividade */
 
 @media screen and (max-width: 768px) {
@@ -527,4 +695,12 @@ div.desc {
   #menu-toggle:checked + .menu {
     display: block;
   }
+  .rental-price ,.localizacao ,.dinheiro{
+    text-align: center;
+    display: block
+  
+  }
+
 }
+
+
