@@ -97,70 +97,74 @@
   </div>
 </section>
 
+<div class="anuncios wrapper">
+      <div class="">
 
-  <div class="anuncios wrapper" >  
-    <div class="column" >
-
-<h1 class="text-center" >ANÚNCIOS RECENTES</h1>
-  <?php
-  if (empty($_POST['pesquisar'])) {
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_RETURNTRANSFER => true,
-    ]);
-
-    $response = curl_exec($curl);
-
-    $data = json_decode($response, true);
-
-    curl_close($curl);
-
-    if (!empty($data)) {
-      foreach ($data as $anuncio) :
-
-        include 'anuncios.php';
-
-      endforeach;
-    }
-  } else {
-
-    $pesquisar = $_POST['pesquisar'];
-    $json = json_encode(['pesquisar' => $pesquisar], true);
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_POSTFIELDS => $json,
-      CURLOPT_HTTPHEADER => [
-        'Content-Type: application/json'
-      ]
-    ]);
-
-    $response = curl_exec($curl);
-
-    $data = json_decode($response, true);
-    $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-    curl_close($curl);
-    
-    if(!empty($data)){
-      foreach ($data as $anuncio) :
-
-        include 'anuncios.php';
-
-      endforeach;
-    }else{
-      echo "Anuncio não encontrado";
-    }
-  }
-
-  ?>
+        <h1 class="text-center" >ANÚNCIOS RECENTES</h1>
+          <?php
+          if (empty($_POST['pesquisar'])) {
+        
+            $curl = curl_init();
+            curl_setopt_array($curl, [
+              CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
+              CURLOPT_CUSTOMREQUEST => "GET",
+              CURLOPT_RETURNTRANSFER => true,
+            ]);
+        
+            $response = curl_exec($curl);
+        
+            $data = json_decode($response, true);
+        
+            curl_close($curl);
+        
+            if (!empty($data)) {
+              foreach ($data as $anuncio) :
+        
+                include 'anuncios.php';
+        
+              endforeach;
+            }
+          } else {
+        
+            $pesquisar = $_POST['pesquisar'];
+            $json = json_encode(['pesquisar' => $pesquisar], true);
+        
+            $curl = curl_init();
+            curl_setopt_array($curl, [
+              CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
+              CURLOPT_CUSTOMREQUEST => "GET",
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_POSTFIELDS => $json,
+              CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json'
+              ]
+            ]);
+        
+            $response = curl_exec($curl);
+        
+            $data = json_decode($response, true);
+            $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            
+            if(!empty($data)){
+              foreach ($data as $anuncio) :
+                
+                include 'anuncios.php';
+        
+              endforeach;
+            }else{
+              echo "Anuncio não encontrado";
+            }
+          }
+        
+          ?>
+           
       </div>
-  </div>
+</div>
+
+
+
+
   </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -2,7 +2,8 @@
 <section class="rental-section">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
-      <img src="./img/casa3.jfif" alt="Cinque Terre" width="800" height="600">
+      <?php $imagens = explode(';', $anuncio['imagens']); ?>
+      <img src="<?= $imagens[0] ?>" alt="Cinque Terre" width="800" height="600">
     </div>
     <div class="rental-details">
       <h2><?= $anuncio['titulo'] ?></h2>
@@ -60,7 +61,7 @@
               <ol class='carousel-indicators'>
                 <!-- <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li> -->
                 <?php 
-                $imagens = explode(';', $anuncio['imagens']);
+                
                 for($i=0; $i < count($imagens); $i++) : ?>
                 <!-- <li data-target='#carouselExampleIndicators' data-slide-to='<?= $i; ?>'></li> -->
                 <?php endfor; ?>
