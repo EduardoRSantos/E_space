@@ -1,3 +1,4 @@
+
 <div class="anuncios wrapper" >
 <section class="rental-section">
   <div class="rental-container">
@@ -80,4 +81,3 @@
           </div>
         </div>
       </div>
-    </div>
