@@ -97,6 +97,46 @@
   </div>
 </section>
 
+<section class="anuncios-recentes">
+  
+    <h2 class="text-center" >Anúncios em Destaque</h2>
+  <div class="container wrapper">
+  
+    <div class="box">
+      <img src="./img/casa3.jfif" alt="Imagem do anúncio 1">
+      <h2>Aniversário</h2>
+      <p>Preço: R$ 100,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif" alt="Imagem do anúncio 2">
+      <h2>Eventos</h2>
+      <p>Preço: R$ 200,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 3">
+      <h2>Casamento</h2>
+      <p>Preço: R$ 300,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 4">
+      <h2>Almoço</h2>
+      <p>Preço: R$ 400,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 5">
+      <h2>Parque</h2>
+      <p>Preço: R$ 500,00</p>
+    </div>
+    <div class="box">
+      <img  src="./img/casa3.jfif"  alt="Imagem do anúncio 6">
+      <h2>Restaurante</h2>
+      <p>Preço: R$ 600,00</p>
+    </div>
+  </div>
+</section>
+
+
+
 <div class="anuncios wrapper">
       <div class="">
 

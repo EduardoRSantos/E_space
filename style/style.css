@@ -18,96 +18,6 @@ html{
 
 }
 
-/* CONTEUDO */
-
-.main-home{
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,250,255,1) 100%);
-}
-
-
-.conteudo {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-} 
-
-.wrapper {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.imagem {
-  align-items: center;
-  flex: 2;
-
-}
-
-.imagem img {
-  width: 100%;
-  align-items: center;
-  height: auto;
-}
-
-
-.texto {
-  font-family:Deli ;
-  flex: 2;
-  margin: 1rem;
-}
-
-.texto h2{    
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 2.5em;
-  color: rgb(59, 59, 59);
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-iteration-count: initial;
-}
-
-.texto  p{  
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
-  color: rgb(105, 105, 105);
-  animation-duration: 2.5s;
-  animation-name: slidein;
-  animation-iteration-count: initial;
-}
-
-
-
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .conteudo {
-    flex-direction: column;
-  }
-
-  .imagem {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-}
-
-
-/* CONTEUDO */
-
 
 /* CARROSEL */
 header {
@@ -221,7 +131,7 @@ p {
 }
 
 
-
+/* NAVBAR */
 
 .navbarheader {
   height: 120px;
@@ -329,10 +239,7 @@ transition: 800ms;
   justify-content: center;
   display: flex;
   padding: 8px;
-  min-width: 5px;
-
-
-  
+  min-width: 5px; 
 }
 
 .botaopequisar{
@@ -361,9 +268,101 @@ input{
   border-style: inset;
 }
 
+/* NAVBAR */
 
 
-/* SELEÇÃO */
+/* CONTEUDO */
+
+.main-home{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,250,255,1) 100%);
+}
+
+
+.conteudo {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} 
+
+.wrapper {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.imagem {
+  align-items: center;
+  flex: 2;
+
+}
+
+.imagem img {
+  width: 100%;
+  align-items: center;
+  height: auto;
+}
+
+
+.texto {
+  font-family:Deli ;
+  flex: 2;
+  margin: 1rem;
+}
+
+.texto h2{    
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2.5em;
+  color: rgb(59, 59, 59);
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+}
+
+.texto  p{  
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  color: rgb(105, 105, 105);
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+}
+
+
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+  }
+
+  .imagem {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* CONTEUDO */
+
+/* 
+
 
 .form{
   margin: 10px;
@@ -372,7 +371,7 @@ input{
 } 
 
 
-/* GALERIA  */
+
 div.galeria {
   margin: 5px;
 border: 1px solid black;
@@ -433,7 +432,7 @@ div.desc {
  .responsive {
   padding: 0 6px;
   width: 24.99999%;
-} 
+}  */
 
 .anuncios{
   color: rgb(10, 10, 10);
@@ -445,7 +444,7 @@ div.desc {
 .anuncios h1{
   font-size: 1.5rem;
 }
-
+/* 
 @media only screen and (max-width: 700px) {
   .responsive {
     width: 49.99999%;
@@ -483,9 +482,9 @@ div.desc {
 .galeria h4{
   margin: 15px;
   margin-top: 15px;
-}
+} */
 
-  /* GALERIA  */
+  /* TELA ANUNCIOS  */
 
   .rental-section {
     display: flex;
@@ -564,8 +563,6 @@ white-space: nowrap;
 
 }
 
-.localizacao{
-}
 
 
   .localizacao img, p{
@@ -603,7 +600,8 @@ margin-right: 2rem;
     font-size: 12px;
     margin: 0 2px;
   }
-  
+
+   
   @media (max-width: 600px) {
     .rental-container {
       flex-direction: column;
@@ -618,6 +616,85 @@ margin-right: 2rem;
       margin-bottom: 20px;
     }
   }
+  
+
+  
+/*  TELA ANUNCIOS  */
+
+/* TELA RECENTES  */
+/* Configurações da div principal */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 80px;
+  background-color: #f2f2f2;
+}
+
+/* Configurações das divs dos anúncios */
+.box {
+  position: relative;
+  width: 300px;
+  height: 240px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+}
+
+/* Configurações das imagens dos anúncios */
+.box img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* Configurações dos títulos dos anúncios */
+.box h2 {
+  margin: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Configurações dos preços dos anúncios */
+.box p {
+  margin: 20px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Configurações da animação de carregamento infinito */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+/* TELA RECENTES */
+ 
 
 
   

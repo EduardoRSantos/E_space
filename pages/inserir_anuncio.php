@@ -31,8 +31,8 @@
                 <input type="text" placeholder="Título" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
             </div>
-            <div class="campotexto">
-                <input type="number" placeholder=" R$" name="preco" id="preco" class="inputUser" required>
+            <div class="campotexto ">
+                <input  type="number" placeholder=" R$" name="preco" id="preco" class="inputUser" required>
                 <label for="preco"></Label>
             </div>
             <div class="campotexto">
