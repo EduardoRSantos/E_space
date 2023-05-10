@@ -100,13 +100,11 @@
 <section class="anuncios-destaque wrapper">
   
 <div class="botoes-anuncios text-center" >
-
-  <h2 class="text-center" >Anúncios em Destaque</h2>
-
-    
-    <button>Botão 1</button>
-
-</div>
+  
+  
+  </div>
+  
+    <h2 class="text-center" >Anúncios em Destaque</h2>
   <div class="container">
   
     <div class="box">
