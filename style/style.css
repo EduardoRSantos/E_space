@@ -875,7 +875,8 @@ border-left: 8px solid #3498db ;
   }
   .rental-price ,.localizacao ,.dinheiro{
     text-align: center;
-    display: block
+    display: block;
+    width: 100%;
   
   }
 
