@@ -97,14 +97,31 @@
   </div>
 </section>
 
+<!-- DESKTOP -->
+<section class="campo-itens wrapper">
+<div class="button-container">
+		<button class="principal"> informações adicionais</button>
+		<button>Tour virtual</button>
+		<button>Redes Sociais</button>
+	</div>
+</section>
+
+<!-- DESKTOP -->
+
+<!-- MOBILE -->
+<section class="campo-itens-mobile wrapper">
+<div class="button-container">
+		<button class="principal"> informações adicionais</button>
+		<button>Tour virtual</button>
+		<button>Redes Sociais</button>
+	</div>
+</section>
+
+<!-- MOBILE -->
+
+<h3 class="texto-destaque wrapper" >Anúncios em Destaque</h3>
 <section class="anuncios-destaque wrapper">
   
-<div class="botoes-anuncios text-center" >
-  
-  
-  </div>
-  
-    <h2 class="text-center" >Anúncios em Destaque</h2>
   <div class="container">
   
     <div class="box">
@@ -142,7 +159,7 @@
 
 <section class="anuncios-destaque-mobile wrapper">
   
-    <h2 class="text-center" >Anúncios em Destaque</h2>
+  <!-- <h2 class="text-center" >Anúncios em Destaque</h2> -->
   <div class="container wrapper">
   
     <div class="box">
@@ -180,10 +197,10 @@
 
 
 
+<h3 class=" wrapper text-recentes" >Anúncio Recentes</h3>
 <div class="anuncios wrapper">
       <div class="anuncios-recentes">
 
-        <h1 class="text-center" >ANÚNCIOS RECENTES</h1>
           <?php
           if (empty($_POST['pesquisar'])) {
         
@@ -253,6 +270,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./js/js.js"></script>
 
 </body>
 
