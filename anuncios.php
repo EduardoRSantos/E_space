@@ -3,8 +3,8 @@
 <section class="rental-section">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
-      <?php $imagens = explode(';', $anuncio['imagens']); ?>
-      <img src="<?= $imagens[0] ?>" alt="Cinque Terre" width="800" height="600">
+      <?php $img = explode(';', $anuncio['imagens']); ?>
+      <img src="<?= $img[0] ?>" alt="Cinque Terre" width="800" height="600">
     </div>
     <div class="rental-details">
       <h2><?= $anuncio['titulo'] ?></h2>
@@ -59,18 +59,10 @@
         <div class="slide-modal">
           <div class="body">
             <div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
-              <ol class='carousel-indicators'>
-                <!-- <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li> -->
                 <?php 
-                
-                for($i=0; $i < count($imagens); $i++) : ?>
-                <!-- <li data-target='#carouselExampleIndicators' data-slide-to='<?= $i; ?>'></li> -->
-                <?php endfor; ?>
-              </ol>
-              <!-- <div class='carousel-item active'>
-                  <img class='img-size' src='' alt='First slide' />
-                </div> -->
-                <?php foreach ($imagens as $imagem) : ?>
+                $imagens = explode(';', $anuncio['imagens']);
+                foreach ($imagens as $imagem) : 
+                ?>
                   <img class='img-size' src='<?= $imagem ?>' alt='Second slide' />
                 <?php endforeach; ?>
               </div>
