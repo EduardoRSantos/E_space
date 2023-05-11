@@ -52,7 +52,8 @@
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
-                <input class="descricao" type="text" placeholder="Descricao" name="descricao" id="info" required>
+                <input class="descricao" type="text" placeholder="Descricao" name="descricao" id="info"
+                maxlength="100" required>
                 <label for="info"></Label>
             </div>
             <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">

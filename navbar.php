@@ -50,7 +50,7 @@
         curl_close($curl);
 
         if (!empty($data)) { ?>
-          <li><img src=".<?= $data[0]['path'] ?>" alt="" width="50" height="50"></li>
+          <li><img style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="50" height="50"></li>
         <?php }
       } ?>
     </ul>
