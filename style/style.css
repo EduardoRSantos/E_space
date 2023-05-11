@@ -888,6 +888,141 @@ border-left: 8px solid #3498db ;
     margin-right: 10px;
   }
   
+/* FOOTER  */
+
+
+/* AVALIAR ANUNCIOS */
+
+.conteudoan-details{
+  flex: 1 1 300px;
+  text-align: start;
+  width: 40px;
+}
+
+
+.conteudoan-section {
+  display: block;
+  justify-content: start;
+  height: auto;
+  padding: 40px 20px;
+  object-fit: cover;
+}
+
+.conteudoan-container {
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.conteudoan-ad {
+  flex: 1 1 300px;
+  margin-right: 20px;
+}
+
+.conteudoan-ad img {
+  width: 100%;
+  height: auto;
+}
+
+.conteudoan-details {
+  
+  flex: 1 1 300px;
+  text-align: start;
+  font-family: Poppins;
+}
+
+.conteudoan-details>h4 {
+  margin-left: 5px;
+  padding-left: 5px;
+border-left: 8px solid black;
+  text-align: start;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.conteudoan-details p {
+  text-align: start;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.conteudoan-price {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.conteudoan-price p {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.conteudoan-price img{
+  margin: 2px;
+  width: 2rem;
+}
+
+
+
+
+.conteudoan-price ,.localizacao ,.dinheiro{
+flex: 1;
+text-align: center;
+white-space: nowrap;
+
+
+}
+
+
+
+.localizacao img, p{
+  object-fit: contain;
+}
+.dinheiro img, p{
+  justify-content: center;
+  align-items: center;
+text-align: center;
+  object-fit: contain;
+  font-size: 10px;
+}
+
+
+.conteudoan-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin: 0.2rem;
+margin-right: 2rem;
+}
+
+.conteudoan-buttons button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0 2px;
+}
+
+
+/* AVALIAR ANUNCIOS */
+
+
+
+
+
+
   @media only screen and (max-width: 768px) {
     .container {
       flex-direction: column;
