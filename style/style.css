@@ -540,6 +540,15 @@ div.desc {
     font-size: 16px;
     margin-bottom: 20px;
   }
+
+  .limite-chars{
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
   
   .rental-price {
     display: flex;
@@ -698,13 +707,10 @@ margin-right: 2rem;
 
 }
 
-.anuncios-destaque>h2{
-  text-align: center;
-  align-items: center;
-  padding: 1.5rem;
-  font-size: 25px;
+.anuncios-destaque h2{
+
+  font-size: 5px;
   white-space: nowrap;
-  text-align: center;
 }
 
 .texto-destaque{

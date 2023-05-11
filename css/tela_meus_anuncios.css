@@ -255,7 +255,28 @@ margin-right: 2rem;
     font-size: 12px;
     margin: 0 2px;
   }
+
+  .limite-chars{
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+  }
   
+  .limite-chars.postado{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+  }
+
+  .limite-chars-descricao{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+  }
+
   @media (max-width: 600px) {
     .rental-container {
       flex-direction: column;

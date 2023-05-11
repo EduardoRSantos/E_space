@@ -8,7 +8,7 @@
     </div>
     <div class="rental-details">
       <h2><?= $anuncio['titulo'] ?></h2>
-      <p><?= $anuncio['descricao'] ?></p>
+      <p class="limite-chars" ><?= $anuncio['descricao'] ?></p>
       <div class="rental-price">
           <div class="localizacao d-flex w-100" >
           <img  src="./img/localizacao.png" alt="" srcset="">
