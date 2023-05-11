@@ -1,79 +1,358 @@
 *{
-    margin: 0%;
-    padding: 0;
-    box-sizing: border-box;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  color: #fff;
+}
+
+section.anuncios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.anuncio {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+}
+
+.anuncio img {
+  border-radius: 4px;
+  display: block;
+  height: 200px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.anuncio h2 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.anuncio p {
+  margin: 0;
+}
+
+.anuncio a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 3px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.anuncio a:hover {
+  background-color: #666;
+}
+
+
+.anuncios{
+  color: rgb(10, 10, 10);
+  font-family: Montserrat ;
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+
+.anuncios h1{
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 2px 0;
   }
-  
-  header {
-    background-color: #333;
-    color: #fff;
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.galeria>button{
+  background-color: dodgerblue;
+  margin-top: 10px;
+  width: 100px;
+  border-style: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 800;
+  margin: 15px;
+}
+
+.galeria>button:hover{
+  background-color: rgb(6, 111, 216);
+}
+
+.galeria h4{
+  margin: 15px;
+  margin-top: 15px;
+}
+
+  /* GALERIA  */
+
+
+  .postado{
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
     padding: 5px;
+    border-radius: 2px;
+    background-color:dodgerblue;
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+    
   }
   
-  section.anuncios {
+  .aguardar{
+    background-color:rgb(47, 160, 107);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .rental-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+    padding: 40px 20px;
+  }
+  
+  .rental-container {
+    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 800px;
   }
   
-  .anuncio {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    margin: 20px;
-    padding: 20px;
-    width: 300px;
+  .rental-ad {
+    flex: 1 1 300px;
+    margin-right: 20px;
   }
   
-  .anuncio img {
-    border-radius: 4px;
-    display: block;
-    height: 200px;
-    margin-bottom: 10px;
+  .rental-ad img {
     width: 100%;
+    height: auto;
   }
   
-  .anuncio h2 {
-    font-size: 20px;
-    margin: 0 0 10px;
-  }
-  
-  .anuncio p {
-    margin: 0;
-  }
-  
-  .anuncio a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 3px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 12px;
-  }
-  
-  .anuncio a:hover {
-    background-color: #666;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+  .rental-details {
+    flex: 1 1 300px;
     text-align: center;
   }
   
+  .rental-details h2 {
+    text-align: start;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .rental-details p {
+    text-align: start;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .rental-price {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .rental-price p {
+    padding-top: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .rental-price img{
+    margin: 5px;
+    width: 1.5rem;
+  }
+
+
+
+
+  .rental-price ,.localizacao ,.dinheiro{
+  flex: 1;
+  text-align: center;
+white-space: nowrap;
+
+
+}
+
+
+  .localizacao img, p{
+    object-fit: contain;
+  }
+  .dinheiro img, p{
+    justify-content: center;
+    align-items: center;
+text-align: center;
+    object-fit: contain;
+    font-size: 10px;
+  }
+
+
+
+
+
+
+
+  .rental-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin: 0.2rem;
+margin-right: 2rem;
+  }
+  
+  .rental-buttons button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 2px;
+  }
+  
+  @media (max-width: 600px) {
+    .rental-container {
+      flex-direction: column;
+    }
+  
+    .rental-ad {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .rental-details {
+      margin-bottom: 20px;
+    }
+  }
+
+
+  
+
+  .body-modal, .footer-modal{
+    margin: 5px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .body-modal, h4>strong{
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  .anuncio-modal{
+    background: #0000009f;
+  }
+
+  .footer-modal>button{
+    color: black;
+    font-weight: 700;
+    border: 1px solid dodgerblue;
+    background: none;
+    border-radius: 25px;
+  }
+
+/* SLIDE MODAL  */
+
+.slide-modal{
+  margin: 0.5rem;
+  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+  /* ANUNCIOS  */
+/* Responsividade */
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+
+  }
+
+  .searchbarmobile{
+    display: block;
+  }
+
+  .searchbar{
+    display: none;
+  }
+
+  .navbarheader{
+    height: auto;
+  }
+  
+  .menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .menu li:last-child {
+    margin-bottom: 0;
+  }
+  
+  #menu-toggle:checked + .menu {
+    display: block;
+  }
+  .rental-price ,.localizacao ,.dinheiro{
+    text-align: center;
+    display: block
+  
+  }
+
+}

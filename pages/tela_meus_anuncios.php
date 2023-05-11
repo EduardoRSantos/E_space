@@ -10,145 +10,174 @@
   <link rel="stylesheet" href="./pages/modal/modal_carousel.css" />
   <link rel="stylesheet" href="../css/tela_meus_anuncios.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+        <?php include '../css/navbar.css'; ?>
+    </style>
+
 </head>
 
 <body>
+<?php include '../navbar.php'; ?>
   <header>
     <h1>Meus Anúncios</h1>
   </header>
 
-  <?php
 
-  if (!empty($_SESSION)) {
-    $id = $_SESSION['id'];
+  <main class="meus-anuncios">
 
-    $body = [
-      'id' => $id,
-    ];
-
-    $json = json_encode($body, true);
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/usuario',
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_POSTFIELDS => $json,
-      CURLOPT_HTTPHEADER => [
-        'Content-Type: application/json'
-      ]
-    ]);
-
-    $response = curl_exec($curl);
-
-    $data = json_decode($response, true);
-
-    curl_close($curl);
-
-    if (!empty($data)) {
-      foreach ($data as $anuncio) :
-        $imagens = explode(';', $anuncio['imagens']); ?>
-        <div class="anuncio">
-          <div class="responsive">
-            <div class="galeria">
-              <a target="_blank" href="img_5terre.jpg">
-                <img src="./img/casa.png" alt="Cinque Terre" width="800" height="600">
-              </a>
-              <?php if ($anuncio['autorizacao'] == 0) { ?>
-                <h4>Aguarde a avaliação, logo seu anúncio sera postado</h4>
-              <?php } else { ?>
-                <h4>Anúncio postado</h4>
-              <?php } ?>
-
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditar<?= $anuncio['id'] ?>">Editar</button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEcluir<?= $anuncio['id'] ?>">Excluir</button>
-            </div>
+    <?php
+  
+    if (!empty($_SESSION)) {
+      $id = $_SESSION['id'];
+  
+      $body = [
+        'id' => $id,
+      ];
+  
+      $json = json_encode($body, true);
+  
+      $curl = curl_init();
+      curl_setopt_array($curl, [
+        CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/usuario',
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POSTFIELDS => $json,
+        CURLOPT_HTTPHEADER => [
+          'Content-Type: application/json'
+        ]
+      ]);
+  
+      $response = curl_exec($curl);
+  
+      $data = json_decode($response, true);
+  
+      curl_close($curl);
+  
+  
+   if (!empty($data)) {
+        foreach ($data as $anuncio) :
+          $imagens = explode(';', $anuncio['imagens']); ?>
+            <div class="anuncios wrapper" >
+<section class="rental-section">
+  <div class="rental-container">
+    <div target="_blank" class="rental-ad">
+      <img src="../img/casa3.jfif" alt="Cinque Terre" width="800" height="600">
+    </div>
+    <div class="rental-details">
+    <?php if ($anuncio['autorizacao'] == 0) { ?>
+                  <h4 class="aguardar" >Aguarde a avaliação, logo seu anúncio sera postado!</h4>
+                <?php } else { ?>
+                  <h4 class="postado">Anúncio postado!</h4>
+                <?php } ?>
+                <h2><?= $anuncio['titulo'] ?></h2>
+      <p><?= $anuncio['descricao'] ?></p>
+  
+      <div class="rental-price">
+          <div class="localizacao d-flex w-100" >
+          <img  src="../img/localizacao.png" alt="" srcset="">
+          <p ><?= $anuncio['localizacao'] ?></p>
           </div>
+          <div class="dinheiro d-flex w-100" >
+            <img width="50px" src="../img/dinheiro.png" alt="">
+            <p ><?= $anuncio['preco'] ?></p>
+          </div>
+        <div class="rental-buttons">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditar<?= $anuncio['id'] ?>">Editar</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEcluir<?= $anuncio['id'] ?>">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
 
-          <!-- modal de editar -->
-          <div class="modal fade" id="modalEditar<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Anúncio</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+            
+  
+            <!-- modal de editar -->
+            <div class="modal fade" id="modalEditar<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Anúncio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form method="post">
+                    <div class="modal-body">
+                      <input type="hidden" value="salvar" name="fazer">
+                      <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
+                      <br>
+                      <p>titulo: <input type="text" name="titulo" value="<?= $anuncio['titulo'] ?>"></p>
+                      <br>
+                      <p>preco: <input type="number" name="preco" value="<?= $anuncio['preco'] ?>"></p>
+                      <br>
+                      <p>localizacao: <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>"></p>
+                      <br>
+                      <p>cep: <input type="text"name="cep" id="cep" value="<?= $anuncio['cep'] ?>" ></p>
+                      <br>
+                      <p>numero: <input type="number" name="numero" value="<?= $anuncio['numero'] ?>"></p>
+                      <br>
+                      <p>quantidade_pessoas: <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>"></p>
+                      <br>
+                      <p>Criado: <?= $anuncio['criado_em'] ?></p>
+                      <br>
+                      <p>Ultima atualização: <?= $anuncio['atualizado_em'] ?></p>
+                      <br>
+                      <p>descricao: <input type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-success">Salvar</button>
+                    </div>
+                  </form>
                 </div>
-                <form method="post">
-                  <div class="modal-body">
-                    <input type="hidden" value="salvar" name="fazer">
-                    <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
-                    <br>
-                    <p>titulo: <input type="text" name="titulo" value="<?= $anuncio['titulo'] ?>"></p>
-                    <br>
-                    <p>preco: <input type="number" name="preco" value="<?= $anuncio['preco'] ?>"></p>
-                    <br>
-                    <p>localizacao: <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>"></p>
-                    <br>
-                    <p>cep: <input type="text"name="cep" id="cep" value="<?= $anuncio['cep'] ?>" ></p>
-                    <br>
-                    <p>numero: <input type="number" name="numero" value="<?= $anuncio['numero'] ?>"></p>
-                    <br>
-                    <p>quantidade_pessoas: <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>"></p>
-                    <br>
-                    <p>Criado: <?= $anuncio['criado_em'] ?></p>
-                    <br>
-                    <p>Ultima atualização: <?= $anuncio['atualizado_em'] ?></p>
-                    <br>
-                    <p>descricao: <input type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"></p>
+              </div>
+            </div>
+  
+            <!-- excluir -->
+            <div class="modal fade" id="modalEcluir<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Anúncio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                  </div>
-                </form>
+                  <form method="post">
+                    <div class="modal-body">
+                      <input type="hidden" value="excluir" name="fazer">
+                      <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
+                      <p>Certeza que deseja excluir o anúncio</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-danger">excluir</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- excluir -->
-          <div class="modal fade" id="modalEcluir<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Anúncio</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form method="post">
-                  <div class="modal-body">
-                    <input type="hidden" value="excluir" name="fazer">
-                    <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
-                    <p>Certeza que deseja excluir o anúncio</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger">excluir</button>
-                  </div>
-                </form>
-              </div>
-            </div>
           </div>
-        </div>
-        </div>
-      <?php endforeach;
-    } else {
-      echo "Para criar anuncios "; ?> <a href="../pages/inserir_anuncio.php">Clique aqui!</a> <?php
-    }
- } else { ?>
-    <script type="text/javascript">
-      Swal.fire({
-        title: 'Ops!',
-        text: 'Antes faça login',
-        icon: 'error',
-        confirmButtonText: 'Ok'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = "../index.php";
-        }
-      })
-    </script>
-  <?php  } ?>
+        <?php endforeach;
+      } else {
+        echo "Para criar anuncios "; ?> <a href="../pages/inserir_anuncio.php">Clique aqui!</a> <?php
+      }
+   } else { ?>
+      <script type="text/javascript">
+        Swal.fire({
+          title: 'Ops!',
+          text: 'Antes faça login',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.href = "../index.php";
+          }
+        })
+      </script>
+    <?php  } ?>
+  </main>
   <footer>
     <p>&copy; 2023 Meus Anúncios. Todos os direitos reservados.</p>
   </footer>

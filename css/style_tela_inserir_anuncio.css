@@ -94,6 +94,33 @@ label {
   max-width: 100%;
 }
 
+.inserir-imagem ,.inputUserArquivos input{
+float: right;
+width: 27.5rem;
+max-width: 100%;
+}
+
+.inserir-imagem label{
+  text-align: center;
+}
+
+#preview{
+  margin: 4px;
+  overflow-x: scroll;
+  height: 200px;
+    border: 1px solid black ;
+   width: 27.2rem;
+  height: 15rem;
+  max-width: 100%;
+  background-color:rgb(255, 255, 255);	
+  display: flex;
+  z-index: 6;
+}
+
+.inputUserArquivos {
+  border: none;
+}
+
 /* Estilos para o layout responsivo */
 @media screen and (max-width: 500px) {
   form {

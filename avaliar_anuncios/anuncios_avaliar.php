@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <?php session_start() ?>
 
 <head>
   <meta charset="UTF-8" />
@@ -9,9 +10,13 @@
   <link rel="stylesheet" href="../pages/modal/modal_carousel.css" />
   <link rel="stylesheet" href="../style/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+        <?php include '../css/navbar.css'; ?>
+    </style>
 </head>
 
 <body>
+<?php include '../navbar.php'; ?>
   <?php
   $curl = curl_init();
   curl_setopt_array($curl, [

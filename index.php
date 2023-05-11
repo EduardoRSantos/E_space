@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>E-space</title>
   <link rel="stylesheet" href="./pages/modal/modal_carousel.css" />
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -97,75 +97,205 @@
   </div>
 </section>
 
+<!-- DESKTOP -->
+<section class="campo-itens wrapper">
+<div class="button-container">
+		<button class="principal"> informações adicionais</button>
+		<button>Tour virtual</button>
+		<button>Redes Sociais</button>
+	</div>
+</section>
 
-  <div class="anuncios wrapper" >  
-    <div class="column" >
+<!-- DESKTOP -->
 
-<h1 class="text-center" >ANÚNCIOS RECENTES</h1>
-  <?php
-  if (empty($_POST['pesquisar'])) {
+<!-- MOBILE -->
+<section class="campo-itens-mobile wrapper">
+<div class="button-container">
+		<button class="principal"> informações adicionais</button>
+		<button>Tour virtual</button>
+		<button>Redes Sociais</button>
+	</div>
+</section>
 
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_RETURNTRANSFER => true,
-    ]);
+<!-- MOBILE -->
 
-    $response = curl_exec($curl);
-
-    $data = json_decode($response, true);
-
-    curl_close($curl);
-
-    if (!empty($data)) {
-      foreach ($data as $anuncio) :
-
-        include 'anuncios.php';
-
-      endforeach;
-    }
-  } else {
-
-    $pesquisar = $_POST['pesquisar'];
-    $json = json_encode(['pesquisar' => $pesquisar], true);
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_POSTFIELDS => $json,
-      CURLOPT_HTTPHEADER => [
-        'Content-Type: application/json'
-      ]
-    ]);
-
-    $response = curl_exec($curl);
-
-    $data = json_decode($response, true);
-    $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-    curl_close($curl);
-    
-    if(!empty($data)){
-      foreach ($data as $anuncio) :
-
-        include 'anuncios.php';
-
-      endforeach;
-    }else{
-      echo "Anuncio não encontrado";
-    }
-  }
-
-  ?>
-      </div>
+<h3 class="texto-destaque wrapper" >Anúncios em Destaque</h3>
+<section class="anuncios-destaque wrapper">
+  
+  <div class="container">
+  
+    <div class="box">
+      <img src="./img/casa3.jfif" alt="Imagem do anúncio 1">
+      <h2>Aniversário</h2>
+      <p>Preço: R$ 100,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif" alt="Imagem do anúncio 2">
+      <h2>Eventos</h2>
+      <p>Preço: R$ 200,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 3">
+      <h2>Casamento</h2>
+      <p>Preço: R$ 300,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 4">
+      <h2>Almoço</h2>
+      <p>Preço: R$ 400,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 5">
+      <h2>Parque</h2>
+      <p>Preço: R$ 500,00</p>
+    </div>
+    <div class="box">
+      <img  src="./img/casa3.jfif"  alt="Imagem do anúncio 6">
+      <h2>Restaurante</h2>
+      <p>Preço: R$ 600,00</p>
+    </div>
   </div>
+</section>
+
+<section class="anuncios-destaque-mobile wrapper">
+  
+  <!-- <h2 class="text-center" >Anúncios em Destaque</h2> -->
+  <div class="container wrapper">
+  
+    <div class="box">
+      <img src="./img/casa3.jfif" alt="Imagem do anúncio 1">
+      <h2>Aniversário</h2>
+      <p>Preço: R$ 100,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif" alt="Imagem do anúncio 2">
+      <h2>Eventos</h2>
+      <p>Preço: R$ 200,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 3">
+      <h2>Casamento</h2>
+      <p>Preço: R$ 300,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 4">
+      <h2>Almoço</h2>
+      <p>Preço: R$ 400,00</p>
+    </div>
+    <div class="box">
+      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 5">
+      <h2>Parque</h2>
+      <p>Preço: R$ 500,00</p>
+    </div>
+    <div class="box">
+      <img  src="./img/casa3.jfif"  alt="Imagem do anúncio 6">
+      <h2>Restaurante</h2>
+      <p>Preço: R$ 600,00</p>
+    </div>
+  </div>
+</section>
+
+
+
+<h3 class=" wrapper text-recentes" >Anúncio Recentes</h3>
+<div class="anuncios wrapper">
+      <div class="anuncios-recentes">
+
+          <?php
+          if (empty($_POST['pesquisar'])) {
+        
+            $curl = curl_init();
+            curl_setopt_array($curl, [
+              CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
+              CURLOPT_CUSTOMREQUEST => "GET",
+              CURLOPT_RETURNTRANSFER => true,
+            ]);
+        
+            $response = curl_exec($curl);
+        
+            $data = json_decode($response, true);
+        
+            curl_close($curl);
+        
+            if (!empty($data)) {
+              foreach ($data as $anuncio) :
+        
+                include 'anuncios.php';
+        
+              endforeach;
+            }
+          } else {
+        
+            $pesquisar = $_POST['pesquisar'];
+            $json = json_encode(['pesquisar' => $pesquisar], true);
+        
+            $curl = curl_init();
+            curl_setopt_array($curl, [
+              CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
+              CURLOPT_CUSTOMREQUEST => "GET",
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_POSTFIELDS => $json,
+              CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json'
+              ]
+            ]);
+        
+            $response = curl_exec($curl);
+        
+            $data = json_decode($response, true);
+            $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            
+            if(!empty($data)){
+              foreach ($data as $anuncio) :
+                
+                include 'anuncios.php';
+        
+              endforeach;
+            }else{
+              echo "Anuncio não encontrado";
+            }
+          }
+        
+          ?>
+           
+      </div>
+</div>
+
+
+
+
   </main>
+
+  <footer>
+  <div class="container main-footer">
+    <div class="footer-logo">
+      <img src="./img/arte1.png " alt="Logo da empresa">
+    </div>
+    <div class="footer-links">
+      <h3>Links úteis</h3>
+      <ul>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h3>Redes sociais</h3>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./js/js.js"></script>
 
 </body>
 
