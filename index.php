@@ -15,252 +15,234 @@
 
 <body>
   <header>
-      <nav class="navbarheader wrapper" >
-    <div class="logo">
-    <a href="../E_space/index.php"><img  src="./img/logo.png" alt="Logo" /></a>
-    </div>
-    <form class="searchbar" method="post">
-    <div class="pesquisar">
-      <input type="search" name="pesquisar" id="" size="50"  placeholder="Realizar Pesquisa" required/>
-      <button  class="botaopequisar"type="submit"><img class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
-    </div>
-  </form>
-    <ul class="menu">
-       <?php if(!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm'){ ?>
-        <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+    <nav class="navbarheader wrapper">
+      <div class="logo">
+        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
+      </div>
+      <form class="searchbar" method="post">
+        <div class="pesquisar">
+          <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
+          <button class="botaopequisar" type="submit"><img class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
+        </div>
+      </form>
+      <ul class="menu">
+        <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
+          <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
-      
-      <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-      <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-      <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
-      <?php if (empty($_SESSION)) { ?>
-      <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
-      <?php } ?>
-      
 
-      <?php
-      if (!empty($_SESSION)) {
-        $id = $_SESSION['id'];
+        <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <?php if (empty($_SESSION)) { ?>
+          <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+        <?php } ?>
 
-        $body = [
-          'id' => $id,
-        ];
 
-        $json = json_encode($body, true);
+        <?php
+        if (!empty($_SESSION)) {
+          $id = $_SESSION['id'];
 
-        $curl = curl_init();
-        curl_setopt_array($curl, [
-          CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
-          CURLOPT_CUSTOMREQUEST => "GET",
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_POSTFIELDS => $json,
-          CURLOPT_HTTPHEADER => [
-            'Content-Type: application/json'
-          ]
-        ]);
+          $body = [
+            'id' => $id,
+          ];
 
-        $response = curl_exec($curl);
+          $json = json_encode($body, true);
 
-        $data = json_decode($response, true);
+          $curl = curl_init();
+          curl_setopt_array($curl, [
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => $json,
+            CURLOPT_HTTPHEADER => [
+              'Content-Type: application/json'
+            ]
+          ]);
 
-        curl_close($curl);
+          $response = curl_exec($curl);
 
-        if (!empty($data)) { ?>
-          <li><img src="<?= $data[0]['path'] ?>" alt="" width="50" height="50"></li>
+          $data = json_decode($response, true);
+
+          curl_close($curl);
+
+          if (!empty($data)) { ?>
+            <li><img src="<?= $data[0]['path'] ?>" alt="" width="50" height="50"></li>
         <?php }
-      } ?>
-    </ul>
-  </nav>
+        } ?>
+      </ul>
+    </nav>
 
-  <form class="searchbarmobile" method="post">
-    <div class="pesquisar">
-      <input type="search" name="pesquisar" id="" size="50"  placeholder="Realizar Pesquisa" required/>
-      <button  class="botaopequisar"type="submit"><img class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
-    </div>
-  </form>
+    <form class="searchbarmobile" method="post">
+      <div class="pesquisar">
+        <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
+        <button class="botaopequisar" type="submit"><img class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
+      </div>
+    </form>
 
   </header>
 
   <main class="main-home">
-  <section class="conteudo wrapper">
-  <div class="imagem">
-    <img src="./img/arte1.png" alt="Descrição da imagem">
-  </div>
-  <div class="texto">
-    <h2>Já olhou no E-SPACE?</h2>
-    <br>
-    <p>Seu espaço está aqui!<br> 
-    <br>
-    Aluguéis de espaços para eventos<br>
-      em Feira de Santana-Ba<br>
-  </p>
-  </div>
-</section>
+    <section class="conteudo wrapper">
+      <div class="imagem">
+        <img src="./img/arte1.png" alt="Descrição da imagem">
+      </div>
+      <div class="texto">
+        <h2>Já olhou no E-SPACE?</h2>
+        <br>
+        <p>Seu espaço está aqui!<br>
+          <br>
+          Aluguéis de espaços para eventos<br>
+          em Feira de Santana-Ba<br>
+        </p>
+      </div>
+    </section>
 
-<!-- DESKTOP -->
-<section class="campo-itens wrapper">
-<div class="button-container">
-		<button class="principal"> informações adicionais</button>
-		<button>Tour virtual</button>
-		<button>Redes Sociais</button>
-	</div>
-</section>
+    <!-- DESKTOP -->
+    <section class="campo-itens wrapper">
+      <div class="button-container">
+        <button class="principal"> informações adicionais</button>
+        <button>Tour virtual</button>
+        <button>Redes Sociais</button>
+      </div>
+    </section>
 
-<!-- DESKTOP -->
+    <!-- DESKTOP -->
 
-<!-- MOBILE -->
-<section class="campo-itens-mobile wrapper">
-<div class="button-container">
-		<button class="principal"> informações adicionais</button>
-		<button>Tour virtual</button>
-		<button>Redes Sociais</button>
-	</div>
-</section>
-
-<!-- MOBILE -->
-
-<h3 class="texto-destaque wrapper" >Anúncios em Destaque</h3>
-<section class="anuncios-destaque wrapper">
-  
-  <div class="container">
-  
-    <div class="box">
-      <img src="./img/casa3.jfif" alt="Imagem do anúncio 1">
-      <h2>Aniversário</h2>
-      <p>Preço: R$ 100,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif" alt="Imagem do anúncio 2">
-      <h2>Eventos</h2>
-      <p>Preço: R$ 200,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 3">
-      <h2>Casamento</h2>
-      <p>Preço: R$ 300,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 4">
-      <h2>Almoço</h2>
-      <p>Preço: R$ 400,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 5">
-      <h2>Parque</h2>
-      <p>Preço: R$ 500,00</p>
-    </div>
-    <div class="box">
-      <img  src="./img/casa3.jfif"  alt="Imagem do anúncio 6">
-      <h2>Restaurante</h2>
-      <p>Preço: R$ 600,00</p>
-    </div>
-  </div>
-</section>
-
-<section class="anuncios-destaque-mobile wrapper">
-  
-  <!-- <h2 class="text-center" >Anúncios em Destaque</h2> -->
-  <div class="container wrapper">
-  
-    <div class="box">
-      <img src="./img/casa3.jfif" alt="Imagem do anúncio 1">
-      <h2>Aniversário</h2>
-      <p>Preço: R$ 100,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif" alt="Imagem do anúncio 2">
-      <h2>Eventos</h2>
-      <p>Preço: R$ 200,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 3">
-      <h2>Casamento</h2>
-      <p>Preço: R$ 300,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 4">
-      <h2>Almoço</h2>
-      <p>Preço: R$ 400,00</p>
-    </div>
-    <div class="box">
-      <img src="./img/casa3.jfif"  alt="Imagem do anúncio 5">
-      <h2>Parque</h2>
-      <p>Preço: R$ 500,00</p>
-    </div>
-    <div class="box">
-      <img  src="./img/casa3.jfif"  alt="Imagem do anúncio 6">
-      <h2>Restaurante</h2>
-      <p>Preço: R$ 600,00</p>
-    </div>
-  </div>
-</section>
+    <!-- MOBILE -->
+    <section class="campo-itens-mobile wrapper">
+      <div class="button-container">
+        <button class="principal"> informações adicionais</button>
+        <button>Tour virtual</button>
+        <button>Redes Sociais</button>
+      </div>
+    </section>
 
 
+    <?php
 
-<h3 class=" wrapper text-recentes" >Anúncio Recentes</h3>
-<div class="anuncios wrapper">
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/destaque',
+      CURLOPT_CUSTOMREQUEST => "GET",
+      CURLOPT_RETURNTRANSFER => true,
+    ]);
+
+    $response = curl_exec($curl);
+
+    $data = json_decode($response, true);
+
+    curl_close($curl);
+
+    
+    ?>
+
+    <!-- MOBILE -->
+
+    <h3 class="texto-destaque wrapper">Anúncios em Destaque</h3>
+    <section class="anuncios-destaque wrapper">
+
+      <div class="container">
+        <?php
+        
+        if(!empty($data)){
+        foreach ($data as $anuncio) :
+          $img = explode(';', $anuncio['imagens']);
+        ?>
+          <div class="box">
+            <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
+            <h2><?= $anuncio['titulo'] ?></h2>
+            <p>Preço: R$ <?= $anuncio['preco'] ?></p>
+          </div>
+        <?php
+        endforeach; }
+        ?>
+    </section>
+
+    <section class="anuncios-destaque-mobile wrapper">
+
+      <!-- <h2 class="text-center" >Anúncios em Destaque</h2> -->
+      <div class="container wrapper">
+
+        <?php
+        foreach ($data as $anuncio) :
+          $img = explode(';', $anuncio['imagens']);
+        ?>
+          <div class="box">
+            <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
+            <h2><?= $anuncio['titulo'] ?></h2>
+            <p>Preço: R$ <?= $anuncio['preco'] ?></p>
+          </div>
+        <?php
+        endforeach; 
+        ?>
+      </div>
+    </section>
+
+    <h3 class=" wrapper text-recentes">Anúncio Recentes</h3>
+    <div class="anuncios wrapper">
       <div class="anuncios-recentes">
 
-          <?php
-          if (empty($_POST['pesquisar'])) {
-        
-            $curl = curl_init();
-            curl_setopt_array($curl, [
-              CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
-              CURLOPT_CUSTOMREQUEST => "GET",
-              CURLOPT_RETURNTRANSFER => true,
-            ]);
-        
-            $response = curl_exec($curl);
-        
-            $data = json_decode($response, true);
-        
-            curl_close($curl);
-        
-            if (!empty($data)) {
-              foreach ($data as $anuncio) :
-        
-                include 'anuncios.php';
-        
-              endforeach;
-            }
-          } else {
-        
-            $pesquisar = $_POST['pesquisar'];
-            $json = json_encode(['pesquisar' => $pesquisar], true);
-        
-            $curl = curl_init();
-            curl_setopt_array($curl, [
-              CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
-              CURLOPT_CUSTOMREQUEST => "GET",
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_POSTFIELDS => $json,
-              CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json'
-              ]
-            ]);
-        
-            $response = curl_exec($curl);
-        
-            $data = json_decode($response, true);
-            $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-            
-            if(!empty($data)){
-              foreach ($data as $anuncio) :
-                
-                include 'anuncios.php';
-        
-              endforeach;
-            }else{
-              echo "Anuncio não encontrado";
-            }
+        <?php
+        if (empty($_POST['pesquisar'])) {
+
+          $curl = curl_init();
+          curl_setopt_array($curl, [
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_RETURNTRANSFER => true,
+          ]);
+
+          $response = curl_exec($curl);
+
+          $data = json_decode($response, true);
+
+          curl_close($curl);
+
+          if (!empty($data)) {
+            foreach ($data as $anuncio) :
+
+              include 'anuncios.php';
+
+            endforeach;
           }
-        
-          ?>
-           
+        } else {
+
+          $pesquisar = $_POST['pesquisar'];
+          $json = json_encode(['pesquisar' => $pesquisar], true);
+
+          $curl = curl_init();
+          curl_setopt_array($curl, [
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => $json,
+            CURLOPT_HTTPHEADER => [
+              'Content-Type: application/json'
+            ]
+          ]);
+
+          $response = curl_exec($curl);
+
+          $data = json_decode($response, true);
+          $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+          curl_close($curl);
+
+          if (!empty($data)) {
+            foreach ($data as $anuncio) :
+
+              include 'anuncios.php';
+
+            endforeach;
+          } else {
+            echo "Anuncio não encontrado";
+          }
+        }
+
+        ?>
+
       </div>
-</div>
+    </div>
 
 
 
@@ -268,28 +250,28 @@
   </main>
 
   <footer>
-  <div class="container main-footer">
-    <div class="footer-logo">
-      <img src="./img/arte1.png " alt="Logo da empresa">
+    <div class="container main-footer">
+      <div class="footer-logo">
+        <img src="./img/arte1.png " alt="Logo da empresa">
+      </div>
+      <div class="footer-links">
+        <h3>Links úteis</h3>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes sociais</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-links">
-      <h3>Links úteis</h3>
-      <ul>
-        <li><a href="#">Sobre nós</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </div>
-    <div class="footer-social">
-      <h3>Redes sociais</h3>
-      <ul>
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

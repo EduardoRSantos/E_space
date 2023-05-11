@@ -2,7 +2,7 @@
 
 namespace App\DAO;
 
-use App\Models\AnuncioModel;
+use App\Models\{AnuncioModel, AnuncioDestaqueModel};
 
 class AnuncioDAO extends Conexao{
 
@@ -10,6 +10,20 @@ class AnuncioDAO extends Conexao{
         parent::__construct();
     }
 
+    public function anunciosById($id)
+    {
+        
+        $stmt = $this->pdo->prepare("SELECT anuncios.autorizacao ,anuncios.titulo, anuncios.preco, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
+        FROM anuncios
+        JOIN usuarios ON anuncios.id_usuario = usuarios.id
+        JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
+        WHERE anuncios.id = :id
+        having anuncios.autorizacao = 1;");
+        $stmt->bindParam('id', $id);
+        $stmt->execute();
+        $anuncio_destaque = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $anuncio_destaque;
+    }
     public function anuncioAtualizar(AnuncioModel $anuncio_model): bool {
          $stmt = $this->pdo->prepare("UPDATE anuncios
             SET
