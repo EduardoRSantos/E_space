@@ -35,22 +35,35 @@
     foreach ($data as $anuncio) :
       $imagens = explode(';', $anuncio['imagens']);
   ?>
-
-      <div class="responsive">
-        <div class="galeria">
-          <a target="_blank" href="img_5terre.jpg">
-            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre" width="800" height="600">
+      <section class="conteudoan-section ">
+  <div class="conteudoan-container wrapper">
+  <a target="_blank" href="img_5terre.jpg">
+            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre" width="300" height="300">
           </a>
-          <h4><?= $anuncio['titulo'] ?></h4>
+    <div class="conteudoan-details ">
+    <h4><?= $anuncio['titulo'] ?></h4>
           <h4><?= $anuncio['preco'] ?></h4>
           <h4><?= $anuncio['cep'] ?></h4>
           <h4><?= $anuncio['criado_em'] ?></h4>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">ALUGAR</button>
+      <div class="conteudoan-price">
+          <!-- <div class="localizacao d-flex w-100" >
+          <img  src="../img/localizacao.png" alt="" srcset="">
+          <p ><?= $anuncio['localizacao'] ?></p>
+          </div>
+          <div class="dinheiro d-flex w-100" >
+            <img width="50px" src="../img/dinheiro.png" alt="">
+            <p ><?= $anuncio['preco'] ?></p>
+          </div> -->
+        <div class="conteudoan-buttons">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Chat</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceita</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
         </div>
       </div>
+    </div>
+  </div>
+</section>
       <!-- usuario -->
       <div class="modal fade" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

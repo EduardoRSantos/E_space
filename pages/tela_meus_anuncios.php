@@ -65,12 +65,12 @@
     </div>
     <div class="rental-details">
     <?php if ($anuncio['autorizacao'] == 0) { ?>
-                  <h4 class="aguardar" >Aguarde a avaliação, logo seu anúncio sera postado!</h4>
+                  <h4 class="aguardar limite-chars" >Aguarde a avaliação, logo seu anúncio sera postado!</h4>
                 <?php } else { ?>
-                  <h4 class="postado">Anúncio postado!</h4>
+                  <h4 class="limite-chars postado">Anúncio postado!</h4>
                 <?php } ?>
                 <h2><?= $anuncio['titulo'] ?></h2>
-      <p><?= $anuncio['descricao'] ?></p>
+      <p class="limite-chars-descricao" ><?= $anuncio['descricao'] ?></p>
   
       <div class="rental-price">
           <div class="localizacao d-flex w-100" >
