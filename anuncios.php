@@ -19,9 +19,9 @@
             <p ><?= $anuncio['preco'] ?></p>
           </div>
         <div class="rental-buttons">
-          <button type="button" class="btn btn-primary" data-toggle="modal" ///data-target="#modalInfo <?= $anuncio['id'] ?> ">ALUGAR</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">IMAGENS</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">+ INFORMAÇÕES</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" ///data-target="#modalInfo <?= $anuncio['id'] ?> ">Mensagem</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">Imagens</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">+ Informações</button>
         </div>
       </div>
     </div>
