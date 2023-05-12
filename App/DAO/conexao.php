@@ -2,17 +2,17 @@
 
 namespace App\DAO;
 use PDO;
-abstract class Conexao{
+abstract class conexaoBack{
  
     protected $pdo;
 
     public function __construct(){
 
-        $host = "containers-us-west-147.railway.app";
-        $port = "6602";
-        $user = "root";
-        $pass = "IpCJ3MdhZrQBSa7wyTi5";
-        $dbname = "railway";
+        $host = getenv('E_SPACE_HOST');
+        $port = getenv('E_SPACE_PORT');
+        $user = getenv('E_SPACE_USER');
+        $pass = "";
+        $dbname = getenv('E_SPACE_DBNAME');
 
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 

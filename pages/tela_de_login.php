@@ -54,7 +54,7 @@ if (!empty($_POST['email'])) {
 
   $curl = curl_init();
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://espace-production.up.railway.app/routes/index.php/login',
+    CURLOPT_URL => 'http://localhost/routes/index.php/login',
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POSTFIELDS => $json,
