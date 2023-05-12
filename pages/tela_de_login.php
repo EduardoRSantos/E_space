@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <?php 
-  session_start();
+  <?php session_start();
   $_SESSION = array();
   ?>
 <head>

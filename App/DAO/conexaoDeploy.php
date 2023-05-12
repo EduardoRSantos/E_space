@@ -2,17 +2,17 @@
 
 namespace App\DAO;
 use PDO;
-abstract class conexaoGetEnv{
+abstract class Conexao{
  
     protected $pdo;
 
     public function __construct(){
 
-        $host = getenv('E_SPACE_HOST');
-        $port = getenv('E_SPACE_PORT');
-        $user = getenv('E_SPACE_USER');
-        $pass = "";
-        $dbname = getenv('E_SPACE_DBNAME');
+        $host = $_ENV["DB_HOST"];
+        $port = $_ENV["DB_PORT"];
+        $user = $_ENV["DB_USER"];
+        $pass = $_ENV["DB_PASS"];
+        $dbname = $_ENV["DB_NAME"];
 
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
