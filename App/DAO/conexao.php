@@ -2,7 +2,7 @@
 
 namespace App\DAO;
 use PDO;
-abstract class conexaoBack{
+abstract class Conexao{
  
     protected $pdo;
 

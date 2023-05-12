@@ -1,10 +1,9 @@
-<?php session_start(); 
-$_SESSION = array(); 
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
-  
+  <?php 
+  session_start();
+  $_SESSION = array();
+  ?>
 <head>
   <meta charset="utf-8">
   <title>Tela de Login</title>
@@ -54,7 +53,7 @@ if (!empty($_POST['email'])) {
 
   $curl = curl_init();
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://localhost/routes/index.php/login',
+    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/login',
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POSTFIELDS => $json,
