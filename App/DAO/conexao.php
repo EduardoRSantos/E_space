@@ -8,11 +8,11 @@ abstract class Conexao{
 
     public function __construct(){
 
-        $host = $_ENV["DB_HOST"];
-        $port = $_ENV["DB_PORT"];
-        $user = $_ENV["DB_USER"];
-        $pass = $_ENV["DB_PASS"];
-        $dbname = $_ENV["DB_NAME"];
+        $host = "containers-us-west-147.railway.app";
+        $port = "6602";
+        $user = "root";
+        $pass = "IpCJ3MdhZrQBSa7wyTi5";
+        $dbname = "railway";
 
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
