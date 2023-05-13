@@ -1,8 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php session_start(); ?>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -67,8 +66,7 @@
           curl_close($curl);
 
           if (!empty($data)) { ?>
-            <li><img style="border-radius: 50%;"
-width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
+            <li><img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt=""></li>
         <?php }
         } ?>
       </ul>
@@ -89,47 +87,52 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
   <main class="main-home">
     <section class="conteudo wrapper">
-      
+
       <div class="imagem">
         <img src="./img/arte1.png" alt="Descrição da imagem">
-      </div>
-     <div class="texto">
-     <div class="chat">
-  <div class="chat-header">
-    <span>Joabe</span>
-  </div>
-  <div class="chat-body">
-    <div class="message">
-      <p>Já olhou no E-SPACE?</p>
-    </div>
-    <div class="message">
-      <p>Seu espaço está aqui!</p>
-    </div>
-    <div class="message">
-      <p>em Feira de Santana-Ba</p>
-    </div>
-    <div class="typing-indicator">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <div class="chat-footer">
-    <input type="text" placeholder="Digite sua mensagem...">
-    <button>Enviar</button>
-  </div>
-  <button type="button" class="share-button">Compartilhar nas redes sociais</button>
 
       </div>
-      <!-- <h2>Já olhou no E-SPACE?</h2>
+      <div class="texto">
+        <div class="chat">
+          <div class="chat-header">
+            <?php if (!empty($_SESSION)) { ?>
+              <p><?= $_SESSION['nome'] ?></p>
+            <?php } else { ?>
+              <p>E-space</p>
+            <?php } ?>
+          </div>
+          <div class="chat-body">
+            <div class="message">
+              <p>Já olhou no E-SPACE?</p>
+            </div>
+            <div class="message">
+              <p>Seu espaço está aqui!</p>
+            </div>
+            <div class="message">
+              <p>em Feira de Santana-Ba</p>
+            </div>
+            <div class="typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
+          </div>
+          <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+
+        </div>
+        <!-- <h2>Já olhou no E-SPACE?</h2>
         <br>
         <p>Seu espaço está aqui!<br>
           <br>
           Aluguéis de espaços para eventos<br>
           em Feira de Santana-Ba<br>
         </p>  -->
-      </div> 
-      
+      </div>
+
 
     </section>
 
@@ -170,7 +173,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
     curl_close($curl);
 
-    
+
     ?>
 
     <!-- MOBILE -->
@@ -180,18 +183,19 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
       <div class="container">
         <?php
-        
-        if(!empty($data)){
-        foreach ($data as $anuncio) :
-          $img = explode(';', $anuncio['imagens']);
+
+        if (!empty($data)) {
+          foreach ($data as $anuncio) :
+            $img = explode(';', $anuncio['imagens']);
         ?>
-          <div class="box">
-            <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
-            <h2><?= $anuncio['titulo'] ?></h2>
-            <p>Preço: R$ <?= $anuncio['preco'] ?></p>
-          </div>
+            <div class="box">
+              <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
+              <h2><?= $anuncio['titulo'] ?></h2>
+              <p>Preço: R$ <?= $anuncio['preco'] ?></p>
+            </div>
         <?php
-        endforeach; }
+          endforeach;
+        }
         ?>
     </section>
 
@@ -210,7 +214,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
             <p>Preço: R$ <?= $anuncio['preco'] ?></p>
           </div>
         <?php
-        endforeach; 
+        endforeach;
         ?>
       </div>
     </section>
