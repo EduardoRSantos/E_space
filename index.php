@@ -97,16 +97,20 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
      <div class="chat">
   <div class="chat-header">
     <span>Joabe</span>
+    <span class="online-dot"></span>
   </div>
   <div class="chat-body">
     <div class="message">
       <p>Já olhou no E-SPACE?</p>
+      <span class="last-seen">20:15</span>
     </div>
     <div class="message">
       <p>Seu espaço está aqui!</p>
+      <span class="last-seen">20:15</span>
     </div>
     <div class="message">
       <p>em Feira de Santana-Ba</p>
+      <span class="last-seen">20:16</span>
     </div>
     <div class="typing-indicator">
       <span></span>
@@ -119,16 +123,8 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
     <button>Enviar</button>
   </div>
   <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+</div>
 
-      </div>
-      <!-- <h2>Já olhou no E-SPACE?</h2>
-        <br>
-        <p>Seu espaço está aqui!<br>
-          <br>
-          Aluguéis de espaços para eventos<br>
-          em Feira de Santana-Ba<br>
-        </p>  -->
-      </div> 
       
 
     </section>
@@ -136,7 +132,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
     <!-- DESKTOP -->
     <section class="campo-itens wrapper">
       <div class="button-container">
-        <button class="principal"> informações adicionais</button>
+        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
