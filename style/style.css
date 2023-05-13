@@ -21,7 +21,7 @@ html{
 
 /* CARROSEL */
 header {
-  
+ margin-bottom: -50px;
 	background-color: #ffffff;
 	color: white;
 	padding: 1px;
@@ -272,10 +272,31 @@ input{
 
 /* NAVBAR */
 
+.online-dot {
+  display: inline-block;
+  width: 9px;
+  margin-bottom: 1px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: green;
+  margin-left: 5px;
+}
+
+
+.last-seen {
+  position: relative;
+  bottom: 5px;
+  float: right;
+  margin-top: -10px;
+  font-size: 0.8em;
+  color: rgb(77, 77, 77);
+}
+
+
 .chat {
   margin-bottom: 150px;
   width: 400px;
-  height: 300px;
+  height: 310px;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -291,17 +312,17 @@ input{
   color: #414141;
   padding: 10px;
   font-size: 20px;
-  font-weight: 150;
+  font-weight: 450;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .chat-body {
-  padding: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height:  180px;
+  height:  200px;
 }
 
 
@@ -311,9 +332,9 @@ input{
   text-align: center;
   height: 35px;
   background-color: #fff;
-  padding: 5px;
+  padding: 3px;
   max-width: 70%;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 
 }
 
@@ -409,11 +430,12 @@ input{
 
 .imagem {
   align-items: center;
-  flex: 2;
-
+  flex: 2.0;
+  margin-bottom: 80px;
 }
 
 .imagem img {
+
   width: 100%;
   align-items: center;
   height: auto;
