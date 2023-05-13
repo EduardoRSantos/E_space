@@ -96,9 +96,9 @@
         <div class="chat">
           <div class="chat-header">
             <?php if (!empty($_SESSION)) { ?>
-              <p><?= $_SESSION['nome'] ?></p>
+              <span><?= $_SESSION['nome'] ?></span>
             <?php } else { ?>
-              <p>E-space</p>
+              <span>E-space</span>
             <?php } ?>
           </div>
           <div class="chat-body">
