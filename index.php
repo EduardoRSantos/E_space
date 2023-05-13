@@ -83,20 +83,54 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
   </header>
 
+
+
+
+
   <main class="main-home">
     <section class="conteudo wrapper">
+      
       <div class="imagem">
         <img src="./img/arte1.png" alt="Descrição da imagem">
       </div>
-      <div class="texto">
-        <h2>Já olhou no E-SPACE?</h2>
+     <div class="texto">
+     <div class="chat">
+  <div class="chat-header">
+    <span>Joabe</span>
+  </div>
+  <div class="chat-body">
+    <div class="message">
+      <p>Já olhou no E-SPACE?</p>
+    </div>
+    <div class="message">
+      <p>Seu espaço está aqui!</p>
+    </div>
+    <div class="message">
+      <p>em Feira de Santana-Ba</p>
+    </div>
+    <div class="typing-indicator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" placeholder="Digite sua mensagem...">
+    <button>Enviar</button>
+  </div>
+  <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+
+      </div>
+      <!-- <h2>Já olhou no E-SPACE?</h2>
         <br>
         <p>Seu espaço está aqui!<br>
           <br>
           Aluguéis de espaços para eventos<br>
           em Feira de Santana-Ba<br>
-        </p>
-      </div>
+        </p>  -->
+      </div> 
+      
+
     </section>
 
     <!-- DESKTOP -->

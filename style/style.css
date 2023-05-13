@@ -272,6 +272,117 @@ input{
 
 /* NAVBAR */
 
+.chat {
+  margin-bottom: 150px;
+  width: 400px;
+  height: 300px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.chat-header {
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
+  color: #414141;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 150;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height:  180px;
+}
+
+
+.message {
+  border-radius: 5px 5px 0px 5px;
+  border: 1px solid rgb(236, 236, 236);
+  text-align: center;
+  height: 35px;
+  background-color: #fff;
+  padding: 5px;
+  max-width: 70%;
+  margin-bottom: 10px;
+
+}
+
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.typing-indicator span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 5px;
+  animation: typing 1s infinite;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(2px);
+  }
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+.chat-footer input[type="text"] {
+  flex: 1;
+  padding: 10px 20px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  
+}
+
+.chat-footer button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  text-align: center;
+  padding: 10px 20px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.share-button{
+  border: 1px solid #1d738d;
+  display: flex;
+  background: local;
+  border-radius: 5px;
+  color: #5378a3;
+  align-items: center;
+}
+
 
 /* CONTEUDO */
 
@@ -288,7 +399,6 @@ input{
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 } 
 
 .wrapper {
@@ -311,7 +421,7 @@ input{
 
 
 .texto {
-  font-family:Deli ;
+  font-family:Montserrat ;
   flex: 2;
   margin: 1rem;
 }
@@ -340,7 +450,7 @@ input{
 
 @keyframes slidein {
   from {
-    margin-left: 100%;
+    margin-left: 20%;
     width: 300%;
   }
 
