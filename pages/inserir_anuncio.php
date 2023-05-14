@@ -112,7 +112,7 @@ if (!empty($_SESSION)) {
 
         $curl = curl_init();
         curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/cadastrar/anuncios',
+            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/cadastrar/anuncios',
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $json,
             CURLOPT_HTTPHEADER => [

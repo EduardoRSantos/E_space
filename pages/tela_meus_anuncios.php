@@ -41,7 +41,7 @@
   
       $curl = curl_init();
       curl_setopt_array($curl, [
-        CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/usuario',
+        CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/usuario',
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POSTFIELDS => $json,
@@ -214,7 +214,7 @@ if (!empty($_POST['fazer'])) {
 
     $curl = curl_init();
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/atualizar',
+      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/atualizar',
       CURLOPT_CUSTOMREQUEST => "PUT",
       CURLOPT_POSTFIELDS => $json,
       CURLOPT_HTTPHEADER => [
@@ -261,7 +261,7 @@ if (!empty($_POST['fazer'])) {
 
     $curl = curl_init();
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/delete',
+      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/delete',
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POSTFIELDS => $json,
       CURLOPT_HTTPHEADER => [
