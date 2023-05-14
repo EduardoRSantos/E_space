@@ -9,11 +9,18 @@ $dbname = getenv('E_SPACE_DBNAME');
 
 $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
+try{
 $pdo = new PDO($dsn, $user, $pass);
 $pdo->setAttribute(
     \PDO::ATTR_ERRMODE,
     \PDO::ERRMODE_EXCEPTION
 );
+echo 'true';
+}catch(PDOException $e){
+  echo "Error: " . $e->getMessage();
+}
+
+
 
 
 $anuncios = $pdo
