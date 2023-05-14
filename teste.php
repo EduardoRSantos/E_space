@@ -1,4 +1,5 @@
 <?php
+use PDO;
 
 $host = getenv('E_SPACE_HOST');
 $port = getenv('E_SPACE_PORT');
