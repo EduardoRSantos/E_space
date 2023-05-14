@@ -22,7 +22,7 @@
 <body>
 <?php include '../navbar.php'; ?>
   <header>
-    <h1>Meus Anúncios</h1>
+  <h3 class="texto-meus-anuncios wrapper">Anúncios em Destaque</h3>
   </header>
 
 
@@ -56,15 +56,16 @@
   
       curl_close($curl);
   
+
   
    if (!empty($data)) {
         foreach ($data as $anuncio) :
           $imagens = explode(';', $anuncio['imagens']); ?>
-            <div class="anuncios wrapper" >
-<section class="rental-section">
+            <div class="anuncios " >
+<section class="rental-section wrapper">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
-      <img src="../img/casa3.jfif" alt="Cinque Terre" width="800" height="600">
+      <img src="../img/casa3.jfif" alt="Cinque Terre">
     </div>
     <div class="rental-details">
     <?php if ($anuncio['autorizacao'] == 0) { ?>

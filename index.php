@@ -148,8 +148,8 @@
     <!-- DESKTOP -->
 
     <!-- MOBILE -->
-    <section class="campo-itens-mobile wrapper">
-      <div class="button-container">
+    <section class="campo-itens-mobile">
+      <div class="button-container wrapper">
         <button class="principal"> informações adicionais</button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
@@ -190,7 +190,7 @@
         ?>
             <div class="box">
               <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
-              <h2><?= $anuncio['titulo'] ?></h2>
+              <h2 class="limite-destaques"><?= $anuncio['titulo'] ?></h2>
               <p>Preço: R$ <?= $anuncio['preco'] ?></p>
             </div>
         <?php
