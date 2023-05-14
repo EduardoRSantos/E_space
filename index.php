@@ -205,6 +205,7 @@
       <div class="container wrapper">
 
         <?php
+        if (!empty($data)) {
         foreach ($data as $anuncio) :
           $img = explode(';', $anuncio['imagens']);
         ?>
@@ -215,6 +216,7 @@
           </div>
         <?php
         endforeach;
+      }
         ?>
       </div>
     </section>
