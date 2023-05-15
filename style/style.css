@@ -269,8 +269,38 @@ input{
 }
 
 
+logo-desktop{
+  display: block;
+}
+
 
 /* NAVBAR */
+
+
+/* NAVBAR MOBILE */
+
+.pos-f-t-mobile{
+  background: none;
+  background-color: none;
+  display: none;
+}
+
+.mobile-button>button {
+
+  font-weight: 500;
+  color: white;
+  background: #007bff;
+position: relative;
+  border-radius: 10px;
+  width: 100%;
+  margin: 3px;
+  border: none;
+  text-decoration: none;
+}
+
+
+
+/* NAVBAR MOBILE */
 
 .online-dot {
   display: inline-block;
@@ -483,6 +513,11 @@ input{
 }
 
 @media only screen and (max-width: 768px) {
+
+  .pos-f-t-mobile{
+    display: block;
+  }
+
   .conteudo {
     flex-direction: column;
   }
@@ -680,6 +715,15 @@ div.desc {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 300px;
+  }
+
+  .limite-destaques{
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 260px;
   }
   
   .rental-price {
@@ -1179,12 +1223,23 @@ margin-right: 2rem;
 /* Responsividade */
 
 @media screen and (max-width: 768px) {
+
+  .logo-desktop{
+    display: none;
+  }
+
+.botaopequisar{
+  width: 35px;
+  height: 35px;
+}
+
   .menu-icon {
     display: block;
 
   }
 
   .searchbarmobile{
+    width: 100%;
     display: block;
   }
 
@@ -1256,6 +1311,7 @@ margin-right: 2rem;
     margin: 5px;
     width: 100%;
   }
+  
 
 }
   

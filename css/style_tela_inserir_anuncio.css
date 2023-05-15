@@ -125,6 +125,7 @@ max-width: 100%;
 
 /* Estilos para o layout responsivo */
 @media screen and (max-width: 500px) {
+  
   form {
     max-width: 100%;
     padding: 10px;
