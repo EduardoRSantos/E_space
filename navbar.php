@@ -1,4 +1,32 @@
 <header>
+<div class="pos-f-t-mobile">
+  <div class="collapse" id="navbarToggleExternalContent">
+    
+    <div class="mobile-button bg-white p-4">
+      <button class=""><a class="text-light" href="../avaliar_anuncios/anuncios_avaliar.php">Avaliar anuncios</a></button>
+      <button class=""><a  class="text-white" href="../pages/inserir_anuncio.php">Meus anuncios</a></button>
+      <button class=""><a class="text-white" href="../pages/tela_meus_anuncios.php">Inserir anuncio</a></button>
+      <button class=""><a  class="text-white" href="../pages/tela_de_perfil.php">Perfil</a></button>
+    
+      <form class="searchbarmobile" method="post">
+      <div class="pesquisar">
+        <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
+        <button class="botaopequisar" type="submit"><img  class="lupa" src="../img/lupa.png" alt="" srcset=""></button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+  <nav class="navbar navbar-light bg-white">
+  <div class="logo">
+        <a href="../index.php"><img src="../img/logo.png" alt="Logo" /></a>
+      </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
       <nav class="navbarheader wrapper" >
     <div class="logo">
       <a href="../index.php"><img  src="../img/logo.png" alt="Logo" /></a>

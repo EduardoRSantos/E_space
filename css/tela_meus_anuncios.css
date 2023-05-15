@@ -22,6 +22,17 @@ section.anuncios {
   margin: 20px 0;
 }
 
+
+.texto-meus-anuncios {
+  padding: 5px 20px;
+  text-align: start;
+border-left: 8px solid #3498db ;
+  color: #15415f;
+  font-size: 1.4rem;
+  font-family: Montserrat;
+}
+
+
 .anuncio {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
@@ -142,22 +153,22 @@ section.anuncios {
   }
 
   .rental-section {
-    display: flex;
+    display: block;
     justify-content: start;
     align-items: center;
     height: auto;
-    padding: 40px 20px;
+    padding: 20px 0px 15px 0px;
   }
   
   .rental-container {
-    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: #f2f2f2;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 2px;
     max-width: 800px;
   }
   
@@ -279,17 +290,34 @@ margin-right: 2rem;
 
   @media (max-width: 600px) {
     .rental-container {
-      flex-direction: column;
+      align-items: center;
+      margin: 3.8rem;
+      justify-content: center;
+ 
     }
   
-    .rental-ad {
+    .rental-ad, img {
       margin-right: 0;
-      margin-bottom: 20px;
+      max-width: 300px;
+
     }
   
     .rental-details {
-      margin-bottom: 20px;
+      justify-content: start;
+      align-items: start;
+      margin-top: 10px;
+      max-width: 100px;
     }
+   
+
+    .rental-buttons{
+      align-items: start;
+      justify-content: start;
+
+    }
+
+  
+
   }
 
 
@@ -376,4 +404,112 @@ margin-right: 2rem;
   
   }
 
+  .rental-details{
+    max-width: 300px;
+  }
+
 }
+
+
+@media (max-width: 320px) {
+  .rental-container {
+    align-items: center;
+    margin: 1.0rem;
+    justify-content: center;
+
+  }
+
+  .rental-ad, img {
+    margin-right: 0;
+    max-width: 300px;
+
+  }
+
+  .rental-details {
+    justify-content: start;
+    align-items: start;
+    margin-top: 10px;
+    max-width: 240px;
+    min-height: 150px;
+  }
+ 
+
+  .rental-buttons{
+    align-items: start;
+    justify-content: start;
+
+  }
+
+
+
+}
+
+
+@media (max-width: 375px) {
+  .rental-container {
+    align-items: center;
+    margin: 1.0rem;
+    justify-content: center;
+
+  }
+
+  .rental-ad, img {
+    margin-right: 0;
+    max-width: 300px;
+
+  }
+
+  .rental-details {
+    justify-content: start;
+    align-items: start;
+    margin-top: 10px;
+    max-width: 500px;
+    min-width: 100px;
+  }
+ 
+
+  .rental-buttons{
+    align-items: start;
+    justify-content: start;
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 425px) {
+  .rental-container {
+    align-items: center;
+    margin: 1.0rem;
+    justify-content: center;
+
+  }
+
+  .rental-ad, img {
+    margin-right: 0;
+    max-width: 300px;
+
+  }
+
+  .rental-details {
+    justify-content: start;
+    align-items: start;
+    margin-top: 10px;
+    max-width: 300px;
+    min-width: 100px;
+  }
+ 
+
+  .rental-buttons{
+    align-items: start;
+    justify-content: start;
+
+  }
+
+
+
+}
+

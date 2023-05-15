@@ -1,8 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php session_start(); ?>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,9 +15,53 @@
 
 <body>
   <header>
+  <!-- <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="logo">
+        <a href="../index.php"><img src="./img/logo.png" alt="Logo" /></a>
+      </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div> -->
+<div class="pos-f-t-mobile">
+  <div class="collapse" id="navbarToggleExternalContent">
+    
+    <div class="mobile-button  bg-white p-4">
+      <button class=""><a class="text-light" href="../avaliar_anuncios/anuncios_avaliar.php">Avaliar anuncios</a></button>
+      <button class=""><a  class="text-white" href="../pages/inserir_anuncio.php">Meus anuncios</a></button>
+      <button class=""><a class="text-white" href="../pages/tela_meus_anuncios.php">Inserir anuncio</a></button>
+      <button class=""><a  class="text-white" href="../pages/tela_de_perfil.php">Perfil</a></button>
+    
+      <form class="searchbarmobile" method="post">
+      <div class="pesquisar">
+        <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
+        <button class="botaopequisar" type="submit"><img  class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+  <nav class="navbar navbar-light bg-white">
+  <div class="logo">
+        <a href="../index.php"><img src="./img/logo.png" alt="Logo" /></a>
+      </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
     <nav class="navbarheader wrapper">
       <div class="logo">
-        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
+        <a href="../index.php"><img src="./img/logo.png" alt="Logo" /></a>
       </div>
       <form class="searchbar" method="post">
         <div class="pesquisar">
@@ -28,14 +71,14 @@
       </form>
       <ul class="menu">
         <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
-          <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+          <li class=""><a href="../avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
 
-        <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-        <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-        <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <li class=""><a href="../pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li class=""><a href="../pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li class=""><a href="../pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+          <li class="cadastro"><a href="../pages/tela_de_login.php">Fazer Login </a></li>
         <?php } ?>
 
 
@@ -51,7 +94,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/imagem',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $json,
@@ -67,19 +110,23 @@
           curl_close($curl);
 
           if (!empty($data)) { ?>
-            <li><img style="border-radius: 50%;"
-width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
+            <li><img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt=""></li>
         <?php }
         } ?>
       </ul>
     </nav>
 
-    <form class="searchbarmobile" method="post">
+
+    <!-- COMENTEI NÃO APAGA -->
+
+    <!-- <form class="searchbarmobile" method="post">
       <div class="pesquisar">
         <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
         <button class="botaopequisar" type="submit"><img class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
       </div>
-    </form>
+    </form> -->
+
+  
 
   </header>
 
@@ -89,50 +136,59 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
   <main class="main-home">
     <section class="conteudo wrapper">
-      
+
       <div class="imagem">
         <img src="./img/arte1.png" alt="Descrição da imagem">
-      </div>
-     <div class="texto">
-     <div class="chat">
-  <div class="chat-header">
-    <span>Joabe</span>
-    <span class="online-dot"></span>
-  </div>
-  <div class="chat-body">
-    <div class="message">
-      <p>Já olhou no E-SPACE?</p>
-      <span class="last-seen">20:15</span>
-    </div>
-    <div class="message">
-      <p>Seu espaço está aqui!</p>
-      <span class="last-seen">20:15</span>
-    </div>
-    <div class="message">
-      <p>em Feira de Santana-Ba</p>
-      <span class="last-seen">20:16</span>
-    </div>
-    <div class="typing-indicator">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <div class="chat-footer">
-    <input type="text" placeholder="Digite sua mensagem...">
-    <button>Enviar</button>
-  </div>
-  <button type="button" class="share-button">Compartilhar nas redes sociais</button>
-</div>
 
-      
+      </div>
+      <div class="texto">
+        <div class="chat">
+          <div class="chat-header">
+            <?php if (!empty($_SESSION)) { ?>
+              <span><?= $_SESSION['nome'] ?></span>
+            <?php } else { ?>
+              <span>E-space</span>
+            <?php } ?>
+          </div>
+          <div class="chat-body">
+            <div class="message">
+              <p>Já olhou no E-SPACE?</p>
+            </div>
+            <div class="message">
+              <p>Seu espaço está aqui!</p>
+            </div>
+            <div class="message">
+              <p>em Feira de Santana-Ba</p>
+            </div>
+            <div class="typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
+          </div>
+          <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+
+        </div>
+        <!-- <h2>Já olhou no E-SPACE?</h2>
+        <br>
+        <p>Seu espaço está aqui!<br>
+          <br>
+          Aluguéis de espaços para eventos<br>
+          em Feira de Santana-Ba<br>
+        </p>  -->
+      </div>
+
 
     </section>
 
     <!-- DESKTOP -->
     <section class="campo-itens wrapper">
       <div class="button-container">
-        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
+        <button class="principal"><a class="" href="http://www.espace.kinghost.net/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
@@ -141,8 +197,8 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
     <!-- DESKTOP -->
 
     <!-- MOBILE -->
-    <section class="campo-itens-mobile wrapper">
-      <div class="button-container">
+    <section class="campo-itens-mobile">
+      <div class="button-container wrapper">
         <button class="principal"> informações adicionais</button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
@@ -155,7 +211,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/destaque',
+      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/destaque',
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_RETURNTRANSFER => true,
     ]);
@@ -166,7 +222,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
     curl_close($curl);
 
-    
+
     ?>
 
     <!-- MOBILE -->
@@ -176,18 +232,19 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
       <div class="container">
         <?php
-        
-        if(!empty($data)){
-        foreach ($data as $anuncio) :
-          $img = explode(';', $anuncio['imagens']);
+
+        if (!empty($data)) {
+          foreach ($data as $anuncio) :
+            $img = explode(';', $anuncio['imagens']);
         ?>
-          <div class="box">
-            <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
-            <h2><?= $anuncio['titulo'] ?></h2>
-            <p>Preço: R$ <?= $anuncio['preco'] ?></p>
-          </div>
+            <div class="box">
+              <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
+              <h2 class="limite-destaques"><?= $anuncio['titulo'] ?></h2>
+              <p>Preço: R$ <?= $anuncio['preco'] ?></p>
+            </div>
         <?php
-        endforeach; }
+          endforeach;
+        }
         ?>
     </section>
 
@@ -206,7 +263,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
             <p>Preço: R$ <?= $anuncio['preco'] ?></p>
           </div>
         <?php
-        endforeach; 
+        endforeach;
         ?>
       </div>
     </section>
@@ -220,7 +277,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
+            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
           ]);
@@ -245,7 +302,7 @@ width="35" height="35" src="<?= $data[0]['path'] ?>" alt="" ></li>
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
+            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/pesquisa',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $json,

@@ -22,7 +22,7 @@
 <body>
 <?php include '../navbar.php'; ?>
   <header>
-    <h1>Meus Anúncios</h1>
+  <h3 class="texto-meus-anuncios wrapper">Anúncios em Destaque</h3>
   </header>
 
 
@@ -41,7 +41,7 @@
   
       $curl = curl_init();
       curl_setopt_array($curl, [
-        CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/usuario',
+        CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/usuario',
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POSTFIELDS => $json,
@@ -56,15 +56,16 @@
   
       curl_close($curl);
   
+
   
    if (!empty($data)) {
         foreach ($data as $anuncio) :
           $imagens = explode(';', $anuncio['imagens']); ?>
-            <div class="anuncios wrapper" >
-<section class="rental-section">
+            <div class="anuncios " >
+<section class="rental-section wrapper">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
-      <img src="../img/casa3.jfif" alt="Cinque Terre" width="800" height="600">
+      <img src="../img/casa3.jfif" alt="Cinque Terre">
     </div>
     <div class="rental-details">
     <?php if ($anuncio['autorizacao'] == 0) { ?>
@@ -181,9 +182,6 @@
       </script>
     <?php  } ?>
   </main>
-  <footer>
-    <p>&copy; 2023 Meus Anúncios. Todos os direitos reservados.</p>
-  </footer>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -213,7 +211,7 @@ if (!empty($_POST['fazer'])) {
 
     $curl = curl_init();
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/atualizar',
+      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/atualizar',
       CURLOPT_CUSTOMREQUEST => "PUT",
       CURLOPT_POSTFIELDS => $json,
       CURLOPT_HTTPHEADER => [
@@ -260,7 +258,7 @@ if (!empty($_POST['fazer'])) {
 
     $curl = curl_init();
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/delete',
+      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/delete',
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POSTFIELDS => $json,
       CURLOPT_HTTPHEADER => [

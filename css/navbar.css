@@ -136,9 +136,39 @@
   }
   
   
+/* NAVBAR MOBILE */
+
+.pos-f-t-mobile{
+  background: none;
+  background-color: none;
+  display: none;
+}
+
+.mobile-button>button {
+
+  font-weight: 500;
+  color: white;
+  background: #007bff;
+position: relative;
+  border-radius: 10px;
+  width: 100%;
+  margin: 3px;
+  border: none;
+  text-decoration: none;
+}
+
+
+
+/* NAVBAR MOBILE */
+
+  
 /* Responsividade */
 
 @media screen and (max-width: 768px) {
+
+  .pos-f-t-mobile{
+    display: block;
+  }
     .menu-icon {
       display: block;
   
