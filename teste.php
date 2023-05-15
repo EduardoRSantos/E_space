@@ -1,7 +1,8 @@
 <?php
 
-use App\DAO\Conexao;
+require_once './App/DAO/conexao.php';
 
+use App\DAO\Conexao;
 
 class teste extends Conexao{
 
