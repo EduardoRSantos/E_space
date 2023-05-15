@@ -11,8 +11,14 @@ abstract class Conexao{
         $host = getenv('E_SPACE_HOST');
         $port = getenv('E_SPACE_PORT');
         $user = getenv('E_SPACE_USER');
-        $pass = "";
+        $pass = getenv('E_SPACE_PASSWORD');
         $dbname = getenv('E_SPACE_DBNAME');
+
+        // $host = getenv('E_SPACE_HOST');
+        // $port = getenv('E_SPACE_PORT');
+        // $user = getenv('E_SPACE_USER');
+        // $pass = "";
+        // $dbname = getenv('E_SPACE_DBNAME');
 
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
