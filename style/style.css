@@ -716,6 +716,15 @@ div.desc {
     text-overflow: ellipsis;
     max-width: 300px;
   }
+
+  .limite-destaques{
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 260px;
+  }
   
   .rental-price {
     display: flex;

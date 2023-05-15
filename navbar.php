@@ -46,7 +46,7 @@
       <li class=""><a href="../pages/tela_meus_anuncios.php"><img width="30" src="../img/anuncio.png" alt=""></a></li>
       <li class=""><a href="../pages/tela_de_perfil.php"><img width="30" src="../img/perfil.png" alt=""></a></li>
       <?php if (empty($_SESSION)) { ?>
-      <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+      <li class="cadastro"><a href="../pages/tela_de_login.php">Fazer Login </a></li>
       <?php } ?>
       
 
@@ -62,7 +62,7 @@
 
         $curl = curl_init();
         curl_setopt_array($curl, [
-          CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+          CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/imagem',
           CURLOPT_CUSTOMREQUEST => "GET",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_POSTFIELDS => $json,

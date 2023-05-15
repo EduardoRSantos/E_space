@@ -183,6 +183,7 @@
       </div>
 
 
+
     </section>
 
     <!-- DESKTOP -->
@@ -254,6 +255,7 @@
       <div class="container wrapper">
 
         <?php
+        if (!empty($data)) {
         foreach ($data as $anuncio) :
           $img = explode(';', $anuncio['imagens']);
         ?>
@@ -263,7 +265,7 @@
             <p>Preço: R$ <?= $anuncio['preco'] ?></p>
           </div>
         <?php
-        endforeach;
+        endforeach; 
         ?>
       </div>
     </section>
@@ -277,7 +279,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios',
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
           ]);
