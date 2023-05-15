@@ -1,29 +1,18 @@
 <?php
-use PDO;
 
-$host = getenv('E_SPACE_HOST');
-$port = getenv('E_SPACE_PORT');
-$user = getenv('E_SPACE_USER');
-$pass = getenv('E_SPACE_PASSWORD');
-$dbname = getenv('E_SPACE_DBNAME');
+use App\DAO\Conexao;
 
-$dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
-try{
-$pdo = new PDO($dsn, $user, $pass);
-$pdo->setAttribute(
-    \PDO::ATTR_ERRMODE,
-    \PDO::ERRMODE_EXCEPTION
-);
-echo 'true';
-}catch(PDOException $e){
-  echo "Error: " . $e->getMessage();
-}
+class teste extends Conexao{
+
+    public function __construct(){
+      parent::__construct();
+    }
 
 
 
-
-$anuncios = $pdo
+public function teste123(){
+$anuncios = $this->pdo
         ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
         FROM anuncios
         JOIN usuarios ON anuncios.id_usuario = usuarios.id
@@ -33,3 +22,9 @@ $anuncios = $pdo
         ORDER BY anuncios.id DESC")
         ->fetchAll(\PDO::FETCH_ASSOC);
 var_dump($anuncios);
+}
+
+}
+
+$teste = new teste();
+$teste->teste123();
