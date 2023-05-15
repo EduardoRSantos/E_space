@@ -1,26 +1,32 @@
 <?php
 
-require_once './App/DAO/conexao.php';
+        $servername = getenv('E_SPACE_PORT'); // Nome do servidor MySQL (padrão: localhost)
+        $username = getenv('E_SPACE_USER'); // Nome de usuário do MySQL
+        $password = getenv('E_SPACE_PASSWORD'); // Senha do MySQL
+        $dbname = getenv('E_SPACE_DBNAME'); // Nome do banco de dados
+        $port = getenv('E_SPACE_PORT'); // Número da porta do MySQL
+        
+        // Cria a conexão
+        $conn = new mysqli($servername, $username, $password, $dbname, $port);
+        
+        // Verifica a conexão
+        if ($conn->connect_error) {
+            die("Falha na conexão: " . $conn->connect_error);
+        }
 
-use App\DAO\Conexao;
+// Executa uma consulta (exemplo)
+$sql = "SELECT * FROM usuarios";
+$result = $conn->query($sql);
 
-class teste extends Conexao{
-
-    public function __construct(){
-      parent::__construct();
+// Verifica se a consulta retornou resultados
+if ($result->num_rows > 0) {
+    // Percorre os dados retornados
+    while ($row = $result->fetch_assoc()) {
+        echo "Campo1: " . $row["id"] . ", Campo2: " . $row["nome"] . "<br>";
     }
-
-
-
-public function teste123(): array{
-$anuncios = $this->pdo
-        ->query("SELECT * FROM usuarios;")
-        ->fetchAll(\PDO::FETCH_ASSOC);
-return $anuncios;
+} else {
+    echo "Nenhum resultado encontrado.";
 }
 
-}
-
-$teste = new teste();
-$anuncio = $teste->teste123();
-var_dump($anuncio);
+// Fecha a conexão
+$conn->close();
