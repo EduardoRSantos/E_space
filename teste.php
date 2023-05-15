@@ -12,20 +12,15 @@ class teste extends Conexao{
 
 
 
-public function teste123(){
+public function teste123(): array{
 $anuncios = $this->pdo
-        ->query("SELECT anuncios.*, usuarios.nome, usuarios.telefone, GROUP_CONCAT(imagens_de_anuncios.path SEPARATOR ';') AS imagens
-        FROM anuncios
-        JOIN usuarios ON anuncios.id_usuario = usuarios.id
-        JOIN imagens_de_anuncios ON anuncios.id = imagens_de_anuncios.id_anuncio
-        GROUP BY anuncios.id
-        HAVING autorizacao = 1
-        ORDER BY anuncios.id DESC")
+        ->query("SELECT * FROM usuarios;")
         ->fetchAll(\PDO::FETCH_ASSOC);
-var_dump($anuncios);
+return $anuncios;
 }
 
 }
 
 $teste = new teste();
-$teste->teste123();
+$anuncio = $teste->teste123();
+var_dump($anuncio);
