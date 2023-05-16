@@ -117,7 +117,7 @@
 
                 $curl = curl_init();
                 curl_setopt_array($curl, [
-                    CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/atualizar/usuario/imagen',
+                    CURLOPT_URL => 'http://localhost/E_space/E_space/routes/index.php/atualizar/usuario/imagen',
                     CURLOPT_CUSTOMREQUEST => "POST",
                     CURLOPT_POSTFIELDS => $json,
                     CURLOPT_HTTPHEADER => [
@@ -178,7 +178,7 @@
 
             $curl = curl_init();
             curl_setopt_array($curl, [
-                CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/atualizar/usuario',
+                CURLOPT_URL => 'http://localhost/E_space/E_space/routes/index.php/atualizar/usuario',
                 CURLOPT_CUSTOMREQUEST => "PUT",
                 CURLOPT_POSTFIELDS => $json,
                 CURLOPT_HTTPHEADER => [
