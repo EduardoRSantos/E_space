@@ -1,32 +1,28 @@
 <?php
+ 
+ $host = "mysql.espace.kinghost.net";
+ $port = "3306";
+ $user = "espace";
+ $pass = "espace2710";
+ $dbname = "espace";
+    
 
-        $servername = getenv('E_SPACE_PORT'); // Nome do servidor MySQL (padrão: localhost)
-        $username = getenv('E_SPACE_USER'); // Nome de usuário do MySQL
-        $password = getenv('E_SPACE_PASSWORD'); // Senha do MySQL
-        $dbname = getenv('E_SPACE_DBNAME'); // Nome do banco de dados
-        $port = getenv('E_SPACE_PORT'); // Número da porta do MySQL
-        
-        // Cria a conexão
-        $conn = new mysqli($servername, $username, $password, $dbname, $port);
-        
-        // Verifica a conexão
-        if ($conn->connect_error) {
-            die("Falha na conexão: " . $conn->connect_error);
-        }
+    // $host = getenv('E_SPACE_HOST');
+    // $port = getenv('E_SPACE_PORT');
+    // $user = getenv('E_SPACE_USER');
+    // $pass = "";
+    // $dbname = getenv('E_SPACE_DBNAME');
 
-// Executa uma consulta (exemplo)
-$sql = "SELECT * FROM usuarios";
-$result = $conn->query($sql);
+    $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
-// Verifica se a consulta retornou resultados
-if ($result->num_rows > 0) {
-    // Percorre os dados retornados
-    while ($row = $result->fetch_assoc()) {
-        echo "Campo1: " . $row["id"] . ", Campo2: " . $row["nome"] . "<br>";
-    }
-} else {
-    echo "Nenhum resultado encontrado.";
-}
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(
+        \PDO::ATTR_ERRMODE,
+        \PDO::ERRMODE_EXCEPTION
+    );
 
-// Fecha a conexão
-$conn->close();
+    $user = $pdo
+            ->query("SELECT * FROM usuarios")
+            ->fetchAll(\PDO::FETCH_ASSOC);
+
+var_dump($user);
