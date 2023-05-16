@@ -60,6 +60,33 @@
             <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">
         </form>
     </section>
+
+    
+  <footer>
+    <div class="container main-footer">
+      <div class="footer-logo">
+        <img src="../img/arte1.png " alt="Logo da empresa">
+      </div>
+      <div class="footer-links">
+        <h3>Links úteis</h3>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes sociais</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
