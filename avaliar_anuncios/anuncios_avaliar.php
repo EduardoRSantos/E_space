@@ -20,7 +20,7 @@
   <?php
   $curl = curl_init();
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/avaliar',
+    CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/avaliar',
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_RETURNTRANSFER => true,
   ]);
@@ -195,7 +195,7 @@ if (isset($_POST['id'])) {
 
   $curl = curl_init();
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/avaliacao',
+    CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/avaliacao',
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => $json,
     CURLOPT_HTTPHEADER => [
