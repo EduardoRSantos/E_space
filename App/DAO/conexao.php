@@ -18,12 +18,6 @@ abstract class Conexao
         $pass = "espace2710";
         $dbname = "espace";
 
-        // $host = getenv('E_SPACE_HOST');
-        // $port = getenv('E_SPACE_PORT');
-        // $user = getenv('E_SPACE_USER');
-        // $pass = "";
-        // $dbname = getenv('E_SPACE_DBNAME');
-
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
         $this->pdo = new PDO($dsn, $user, $pass);

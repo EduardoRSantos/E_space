@@ -30,7 +30,7 @@
           <input type="submit" name="submit" id="submit" value="Login">
           <br><br>
     </form>
-    <button><a href="../tela_de_registro.php">Registra-se</a></button>
+    <button><a href="../pages/tela_de_registro.php">Registra-se</a></button>
   </div>
   </nav>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -53,7 +53,7 @@ if (!empty($_POST['email'])) {
 
   $curl = curl_init();
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'mysql.espace.kinghost.net/routes/index.php/login',
+    CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/login',
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POSTFIELDS => $json,
