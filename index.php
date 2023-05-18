@@ -253,7 +253,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios',
+            CURLOPT_URL => 'http://www.espace.kinghost.net/a/routes/index.php/anuncios',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
           ]);
