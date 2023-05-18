@@ -12,11 +12,11 @@ abstract class Conexao
     public function __construct()
     {
 
-        $host = "127.0.0.1";
+        $host = "mysql.espace.kinghost.net";
         $port = "3306";
-        $user = "root";
-        $pass = "";
-        $dbname = "e_space";
+        $user = "espace";
+        $pass = "espace2710";
+        $dbname = "espace";
 
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 
