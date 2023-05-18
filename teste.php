@@ -32,7 +32,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://www.espace.kinghost.net/index.php/routes/index.php/usuarios',
+    CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/usuarios',
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_RETURNTRANSFER => true,
 ]);
