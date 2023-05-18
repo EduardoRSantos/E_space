@@ -185,7 +185,7 @@
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/destaque',
+      CURLOPT_URL => '../a/routes/index.php/anuncios/destaque',
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_RETURNTRANSFER => true,
     ]);
@@ -253,7 +253,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/a/routes/index.php/anuncios',
+            CURLOPT_URL => '../a/routes/index.php/anuncios',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
           ]);
@@ -278,7 +278,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/pesquisa',
+            CURLOPT_URL => '../a/routes/index.php/anuncios/pesquisa',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $json,
