@@ -42,3 +42,5 @@ $response = curl_exec($curl);
 $data = json_decode($response, true);
 
 curl_close($curl);
+
+var_dump($data);
