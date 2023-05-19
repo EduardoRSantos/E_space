@@ -1,5 +1,7 @@
 <?php
 
+require_once './routes/index.php';
+
 // $host = "mysql.espace.kinghost.net";
 // $port = "3306";
 // $user = "espace";
@@ -31,16 +33,16 @@
 
 // $curl = curl_init();
 
-// curl_setopt_array($curl, [
+//     curl_setopt_array($curl, [
 //     CURLOPT_URL => 'http://localhost/E_space/routes/index.php/usuarios',
 //     CURLOPT_CUSTOMREQUEST => "GET",
 //     CURLOPT_RETURNTRANSFER => true,
-// ]);
+//     ]);
 
-// $response = curl_exec($curl);
+//     $response = curl_exec($curl);
 
-// $data = json_decode($response, true);
+//     $data = json_decode($response, true);
 
-// curl_close($curl);
+//     curl_close($curl);
 
 // var_dump($data);

@@ -14,21 +14,15 @@ final class AnuncioController
     public function anunciosById(Request $request, Response $response, $args): Response{
 
         $anuncioDAO = new AnuncioDAO();
+        $anuncio_destaque0 = $anuncioDAO->anunciosById(0);
         $anuncio_destaque1 = $anuncioDAO->anunciosById(1);
         $anuncio_destaque2 = $anuncioDAO->anunciosById(2);
         $anuncio_destaque3 = $anuncioDAO->anunciosById(3);
         $anuncio_destaque4 = $anuncioDAO->anunciosById(4);
         $anuncio_destaque5 = $anuncioDAO->anunciosById(5);
         $anuncio_destaque6 = $anuncioDAO->anunciosById(6);
-        $anuncio_destaque7 = $anuncioDAO->anunciosById(7);
-        $body = array_merge(
-            $anuncio_destaque1, 
-            $anuncio_destaque2,
-            $anuncio_destaque3,
-            $anuncio_destaque4, 
-            $anuncio_destaque5, 
-            $anuncio_destaque6, 
-            $anuncio_destaque7);
+
+        $body = array_merge($anuncio_destaque0, $anuncio_destaque1, $anuncio_destaque2, $anuncio_destaque3, $anuncio_destaque4, $anuncio_destaque5, $anuncio_destaque6);
 
         $response = $response->withJson($body);
         return $response;
@@ -118,7 +112,7 @@ final class AnuncioController
 
         $anuncioDAO = new AnuncioDAO();
         $anuncios = $anuncioDAO->allAnuncioAvaliado();
-        if ($anuncios[0]['autorizacao'] == 1) {
+        if (count($anuncios) > 0 && $anuncios[0]['autorizacao'] == 1) {
             $response = $response->withJson($anuncios);
         }
         return $response;
@@ -128,7 +122,7 @@ final class AnuncioController
 
         $anuncioDAO = new AnuncioDAO();
         $anuncios = $anuncioDAO->allAnuncioAvaliar();
-        if ($anuncios[0]['autorizacao'] == 0) {
+        if (count($anuncios) > 0 && $anuncios[0]['autorizacao'] == 0) {
             $response = $response->withJson($anuncios);
         }
         return $response;
