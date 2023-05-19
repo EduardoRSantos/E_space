@@ -49,10 +49,10 @@ final class UsuarioController{
     }
 
     public function allUsuarios(Request $request, Response $response, array $args): Response {
-        $usuario_dao = new UsuariosDAO();
-        $usuario = $usuario_dao->allUsuarios();
-        $response = $response->withJson($usuario);
-        // $response = $response->withJson(["menssage" => "True"]);
+        // $usuario_dao = new UsuariosDAO();
+        // $usuario = $usuario_dao->allUsuarios();
+        // $response = $response->withJson($usuario);
+        $response = $response->withJson(["menssage" => "True"]);
         return $response;    
     }
 
