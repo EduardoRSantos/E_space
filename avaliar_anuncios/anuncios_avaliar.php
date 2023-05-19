@@ -38,7 +38,7 @@
       <section class="conteudoan-section ">
   <div class="conteudoan-container wrapper">
   <a target="_blank" href="img_5terre.jpg">
-            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre" width="300" height="300">
+            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre" width="300" height="200">
           </a>
     <div class="conteudoan-details ">
     <h4><?= $anuncio['titulo'] ?></h4>

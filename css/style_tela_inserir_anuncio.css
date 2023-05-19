@@ -8,7 +8,14 @@
   background-color: #f9f9f9;
 }
 .titulo{
-  text-align: center;
+  padding-top: 15px;
+    padding: 5px 20px;
+  text-align: start;
+border-left: 8px solid #3498db ;
+  color: #15415f;
+  font-size: 1.4rem;
+  font-family: Montserrat;
+  text-align: start;
 }
 
 .inputUser{
@@ -29,8 +36,6 @@ label {
 .inputUser[type="text"],
 .inputUser[type="file"] {
   display: block;
-
-  padding: 10px;
   border-radius: 5px;
   margin-top: 5px;
   font-size: 16px;

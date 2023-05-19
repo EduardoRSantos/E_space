@@ -22,7 +22,7 @@
 <body>
     <?php include '../navbar.php'; ?>
     <section class="estrutura_da_tela ">
-        <h1 class="titulo">Inserir Anúncio</h1>
+        <h2 class="titulo wrapper">Inserir Anúncio</h2>
         <form class="form wrapper" method="POST" enctype="multipart/form-data">
             <div class="inserir-imagem">
                 <label for="images">Adicionar Fotos</label>
@@ -55,7 +55,7 @@
             </div>
             <div class="campotexto">
                 <textarea class="descricao limite-chars" type="text" placeholder="Descricao" name="descricao" id="info"
-                maxlength="280" required></textarea>
+                maxlength="450" required></textarea>
                 <label for="info"></Label>
             </div>
             <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">

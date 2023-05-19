@@ -9,40 +9,22 @@
 </head>
 
 <body id="perfil">
-      <div class="container" id="teladeperfil">
-            <form method="POST">
-                  <div class="form-image">
-                        <h2>Registra-se</h2>
-                        <div class="inputBox">
-                              <input type="text" placeholder="Nome Completo" name="nome" id="nome" class="inputUser" required>
-                              <label for="nome"></Label>
-                        </div>
-                        <br>
-                        <div class="inputBox">
-                              <input type="email" placeholder="E-mail" name="email" id="email" class="inputUser" required>
-                              <label for="email"></Label>
-                        </div>
-                        <br>
-                        <div class="inputBox">
-                              <input type="password" placeholder="Senha" name="senha" id="senha" class="inputUser" required>
-                              <label for="senha"></Label>
-                        </div>
-                        <br>
-                        <div class="inputBox">
-                              <input type="password" placeholder="Confirmar Senha" name="senha_confirmar" id="senha" class="inputUser" required>
-                              <label for="senha"></Label>
-                              <br>
-                              <div class="inputBox">
-                                    <label for="telefone"></Label>
-                                    <br>
-                                    <input type="tel" placeholder="Telefone" name="telefone" id="telefone" required>
-                              </div>
-                        </div>
-                        <br>
-                        <input type="submit" name="submit" id="submit" value="Registrar">
-            </form>
-      </div>
-      </nav>
+<div class="page">
+        <form method="POST" class="formRegistro">
+            <h1>Registra-se</h1>
+            <p>Digite os seus dados de cadastro no campo.</p>
+            <input type="text" placeholder="Nome Completo" name="nome" id="nome" class="inputUser"  autofocus="true" required/>
+            <input type="email" placeholder="Digite o seu e-mail" name="email" id="email" class="inputUser"  autofocus="true" required/>
+            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" />
+            <input type="password" placeholder="Confirme a sua senha" name="senha_confirmar" id="senha" class="inputUser" />
+            <input type="tel" placeholder="Telefone" name="telefone" id="telefone" class="inputUser" />
+            <a href="/">Esqueci minha senha</a>
+            <input type="submit" name="submit" id="submit" value="Acessar" class="btn" />
+            <br>
+           <label for="registrar">Já tem conta ? <a href="../pages/tela_de_login.php">Fazer Login</a></label>
+        </form>
+    </div>
+
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       <script src="js/custom.js"></script>
