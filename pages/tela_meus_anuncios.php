@@ -22,7 +22,7 @@
 <body>
 <?php include '../navbar.php'; ?>
   <header>
-    <h1>Meus Anúncios</h1>
+  <h3 class="texto-meus-anuncios wrapper">Anúncios em Destaque</h3>
   </header>
 
 
@@ -56,15 +56,16 @@
   
       curl_close($curl);
   
+
   
    if (!empty($data)) {
         foreach ($data as $anuncio) :
           $imagens = explode(';', $anuncio['imagens']); ?>
-            <div class="anuncios wrapper" >
-<section class="rental-section">
+            <div class="anuncios " >
+<section class="rental-section wrapper">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
-      <img src="../img/casa3.jfif" alt="Cinque Terre" width="800" height="600">
+      <img src="../img/casa3.jfif" alt="Cinque Terre">
     </div>
     <div class="rental-details">
     <?php if ($anuncio['autorizacao'] == 0) { ?>
@@ -181,8 +182,29 @@
       </script>
     <?php  } ?>
   </main>
+
   <footer>
-    <p>&copy; 2023 Meus Anúncios. Todos os direitos reservados.</p>
+    <div class="container main-footer">
+      <div class="footer-logo">
+        <img src="../img/arte1.png " alt="Logo da empresa">
+      </div>
+      <div class="footer-links">
+        <h3>Links úteis</h3>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes sociais</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

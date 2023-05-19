@@ -21,7 +21,8 @@ html{
 
 /* CARROSEL */
 header {
- margin-bottom: -50px;
+  margin-bottom: -5px; 
+ /* margin-bottom: -50px; */
 	background-color: #ffffff;
 	color: white;
 	padding: 1px;
@@ -137,7 +138,6 @@ p {
   height: 120px;
   display: flex;
   justify-content: space-between;
-
   background-color: #ffffff;
   padding: 0 10px;
 }
@@ -441,7 +441,6 @@ position: relative;
 
 .main-home{
   padding-bottom: 15px;
-
 
 }
 
