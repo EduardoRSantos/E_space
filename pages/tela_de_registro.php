@@ -87,7 +87,7 @@ if (!empty($_POST['email'])) {
 
             $curl = curl_init();
             curl_setopt_array($curl, [
-                  CURLOPT_URL => 'http://localhost/E_space/E_space/routes/index.php/cadastro/usuario',
+                  CURLOPT_URL => 'http://localhost/E_space/routes/index.php/cadastro/usuario',
                   CURLOPT_CUSTOMREQUEST => "POST",
                   CURLOPT_POSTFIELDS => $json,
                   CURLOPT_HTTPHEADER => [

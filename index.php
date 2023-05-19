@@ -84,7 +84,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/imagem',
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $json,
@@ -162,7 +162,7 @@
     <!-- DESKTOP -->
     <section class="campo-itens wrapper">
       <div class="button-container">
-        <button class="principal"><a class="" href="http://www.espace.kinghost.net/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
+        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
@@ -185,7 +185,7 @@
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/destaque',
+      CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/destaque',
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_RETURNTRANSFER => true,
     ]);
@@ -253,7 +253,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios',
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
           ]);
@@ -278,7 +278,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/routes/index.php/anuncios/pesquisa',
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/pesquisa',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $json,
