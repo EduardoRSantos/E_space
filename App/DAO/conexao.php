@@ -1,18 +1,22 @@
 <?php
 
 namespace App\DAO;
+
 use PDO;
-abstract class Conexao{
- 
+
+abstract class Conexao
+{
+
     protected $pdo;
 
-    public function __construct(){
+    public function __construct()
+    {
 
-        $host = getenv('E_SPACE_HOST');
-        $port = getenv('E_SPACE_PORT');
-        $user = getenv('E_SPACE_USER');
-        $pass = "";
-        $dbname = getenv('E_SPACE_DBNAME');
+        $host = "mysql.espace.kinghost.net";
+        $port = "3306";
+        $user = "espace";
+        $pass = "espace2710";
+        $dbname = "espace";
 
         $dsn = "mysql:host={$host};dbname={$dbname};port={$port}";
 

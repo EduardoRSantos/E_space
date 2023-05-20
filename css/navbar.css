@@ -6,13 +6,26 @@
 }
 
 .wrapper {
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
-  }
-  
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 .navbarheader {
-    height: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #ffffff;
+  padding: 0 10px;
+}
+
+.searchbarmobile{
+  display: none;
+}
+
+.logo img {
+    height: 70px;
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
@@ -61,127 +74,189 @@
     padding: 8px;
     font-size: 15px;
     width: 150px;
-  }
+    object-fit: cover;
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+height: 100%;
+
+}
+
+.menu li {
+  margin: 0 10px;
+  margin-top: -55px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  color: #fafafa;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
+  width: 150px;
+}
+
+.menu a:hover{
   
-  .menu a:hover{
-    
-    text-decoration: none;
-  box-shadow: #4CAF50;
-    /* transition-duration: 800ms; */
-    border-radius: 500px;
-    /* margin: 10px;
-    width: 200px; */
-  }
-  
-  
-  .cadastro{
-    background: #007bff;
-    padding: 5px;
-    border-radius: 15px;
-    color: white;
-  transition: 800ms;
-  }
-  
-  .cadastro:hover{
-    color: white;
-    background: #063d79;
-  }
-  
-  .cadastro a{
-    list-style-type: none;
-    color: white;
-  }
-  
-  .login a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .pesquisar{
-    cursor: pointer;
-  }
-  
-  .pesquisar, input, button{
-  
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 8px;
-    min-width: 5px;
-  }
-  
-  .botaopequisar{
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0.5rem;
-    background-color:white;
-    border-radius: 2rem;
-    border: 1px solid rgb(1, 90, 206);
-  }
-  
-  .lupa{
-    width:1.5rem;
-    height: 1.5rem;
-  }
-  
-  button{
-    border: 1px solid;
-    cursor: pointer;
-  
-  }
-  
-  input{
-    border: 0.1rem solid rgb(1, 90, 206);
-    border-radius: 2rem;
-    border-style: inset;
-  }
-  
-  
+  text-decoration: none;
+box-shadow: #4CAF50;
+  /* transition-duration: 800ms; */
+  border-radius: 500px;
+  /* margin: 10px;
+  width: 200px; */
+}
+
+
+.cadastro{
+  background: #007bff;
+  padding: 5px;
+  border-radius: 15px;
+  color: white;
+transition: 800ms;
+}
+
+.cadastro:hover{
+  color: white;
+  background: #063d79;
+}
+
+.cadastro a{
+  list-style-type: none;
+  color: white;
+}
+
+.login a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.pesquisar{
+  cursor: pointer;
+}
+
+.pesquisar, input, button{
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 8px;
+  min-width: 5px;
+}
+
+.botaopequisar{
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0.5rem;
+  background-color:white;
+  border-radius: 2rem;
+  border: 1px solid rgb(1, 90, 206);
+}
+
+.lupa{
+  width:1.5rem;
+  height: 1.5rem;
+}
+
+button{
+  border: 1px solid;
+  cursor: pointer;
+
+}
+
+input{
+  border: 0.1rem solid rgb(1, 90, 206);
+  border-radius: 2rem;
+  border-style: inset;
+}
+
+
+/* NAVBAR MOBILE */
+
+.pos-f-t-mobile{
+background: none;
+background-color: none;
+display: none;
+}
+
+.mobile-button>button {
+
+font-weight: 500;
+color: white;
+background: #007bff;
+position: relative;
+border-radius: 10px;
+width: 100%;
+margin: 3px;
+border: none;
+text-decoration: none;
+}
+
+
+
+/* NAVBAR MOBILE */
+
 /* Responsividade */
 
 @media screen and (max-width: 768px) {
-    .menu-icon {
-      display: block;
-  
-    }
-  
-    .searchbarmobile{
-      display: block;
-    }
-  
-    .searchbar{
-      display: none;
-    }
-  
-    .navbarheader{
-      height: auto;
-    }
-    
-    .menu {
-      display: none;
-      position: absolute;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      text-align: center;
-    }
-    
-    .menu li {
-      display: block;
-      margin: 10px 0;
-    }
-    
-    .menu li:last-child {
-      margin-bottom: 0;
-    }
-    
-    #menu-toggle:checked + .menu {
-      display: block;
-    }
+
+.pos-f-t-mobile{
+  display: block;
+}
+  .menu-icon {
+    display: block;
+
+  }
+
+  .searchbarmobile{
+    display: block;
+  }
+
+  .searchbar{
+    display: none;
+  }
+
+  .navbarheader{
+    height: auto;
   }
   
+  .menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .menu li:last-child {
+    margin-bottom: 0;
+  }
+  
+  #menu-toggle:checked + .menu {
+    display: block;
+  }
+}
