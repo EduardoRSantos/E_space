@@ -7,7 +7,7 @@
       <img src="<?= $img[0] ?>" alt="Cinque Terre" width="800" height="600">
     </div>
     <div class="rental-details">
-      <h2><?= $anuncio['titulo'] ?></h2>
+      <h2 class="limite-chars-title" ><?= $anuncio['titulo'] ?></h2>
       <p class="limite-chars" ><?= $anuncio['descricao'] ?></p>
       <div class="rental-price">
           <div class="localizacao d-flex w-100" >
@@ -19,9 +19,9 @@
             <p ><?= $anuncio['preco'] ?></p>
           </div>
         <div class="rental-buttons">
-          <button type="button" class="btn btn-primary" data-toggle="modal" ///data-target="#modalInfo <?= $anuncio['id'] ?> ">Mensagem</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">Imagens</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">+ Informações</button>
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo <?= $anuncio['id'] ?>">Mensagem</button>
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">Imagens</button>
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>"><a href="./pages/mais_informacoes.php">+ Informações</a></button>
         </div>
       </div>
     </div>
@@ -46,8 +46,8 @@
             <h4><?= $anuncio['criado_em'] ?></h4>
           </div>
           <div class="footer-modal">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-success">Salvar</button>
+        
+            <button type="button" class="btn btn-success">Fechar</button>
           </div>
         </div>
       </div>
@@ -67,9 +67,6 @@
                 <?php endforeach; ?>
               </div>
             </div>
-          </div>
-          <div class="footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

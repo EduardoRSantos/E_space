@@ -22,7 +22,7 @@
 <body>
 <?php include '../navbar.php'; ?>
   <header>
-    <h1>Meus Anúncios</h1>
+  <h2 class="titulo wrapper">Meus anuncios</h2>
   </header>
 
 
@@ -111,23 +111,23 @@
                       <input type="hidden" value="salvar" name="fazer">
                       <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
                       <br>
-                      <p>titulo: <input type="text" name="titulo" value="<?= $anuncio['titulo'] ?>"></p>
+                      <p>Titulo: <input type="text" name="titulo" value="<?= $anuncio['titulo'] ?>"></p>
                       <br>
-                      <p>preco: <input type="number" name="preco" value="<?= $anuncio['preco'] ?>"></p>
+                      <p>Preco: <input type="number" name="preco" value="<?= $anuncio['preco'] ?>"></p>
                       <br>
-                      <p>localizacao: <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>"></p>
+                      <p>Localizacao: <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>"></p>
                       <br>
-                      <p>cep: <input type="text"name="cep" id="cep" value="<?= $anuncio['cep'] ?>" ></p>
+                      <p>Cep: <input type="text"name="cep" id="cep" value="<?= $anuncio['cep'] ?>" ></p>
                       <br>
-                      <p>numero: <input type="number" name="numero" value="<?= $anuncio['numero'] ?>"></p>
+                      <p>Numero: <input type="number" name="numero" value="<?= $anuncio['numero'] ?>"></p>
                       <br>
-                      <p>quantidade_pessoas: <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>"></p>
+                      <p>Quantida de Pessoas: <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>"></p>
                       <br>
                       <p>Criado: <?= $anuncio['criado_em'] ?></p>
                       <br>
                       <p>Ultima atualização: <?= $anuncio['atualizado_em'] ?></p>
                       <br>
-                      <p>descricao: <input type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"></p>
+                      <p>Descricao: <input class="descricao-meus" type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"></p>
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-success">Salvar</button>

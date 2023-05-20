@@ -46,5 +46,18 @@ setTimeout(function() {
 }, 1000);
 
 
+// Obtém todas as imagens dentro do carrossel
+const imagens = document.querySelectorAll('.carrossel .imagem img');
+
+// Adiciona um evento de clique a cada imagem
+imagens.forEach(imagem => {
+  imagem.addEventListener('click', () => {
+    // Remove a classe 'ampliada' de todas as imagens
+    imagens.forEach(imagem => imagem.classList.remove('ampliada'));
+    
+    // Adiciona a classe 'ampliada' à imagem clicada
+    imagem.classList.add('ampliada');
+  });
+});
 
 

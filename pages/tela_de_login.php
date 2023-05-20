@@ -13,26 +13,19 @@
 
 </head>
 
-<body id="perfil">
-  <div class="container" id="teladeperfil">
-    <form method="POST">
-      <div class="form-image">
-        <h2>Login</h2>
-        <div class="inputBox">
-          <input type="email" placeholder="E-mail" name="email" id="email" class="inputUser" required>
-          <label for="email"></Label>
-          <br>
-        </div>
-        <div class="inputBox">
-          <input type="password" placeholder="Senha" name="senha" id="senha" class="inputUser" required>
-          <label for="senha"></Label>
-          <br>
-          <input type="submit" name="submit" id="submit" value="Login">
-          <br><br>
-    </form>
-    <button><a href="../pages/tela_de_registro.php">Registra-se</a></button>
-  </div>
-  </nav>
+<body>
+<div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Login</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <input type="email" placeholder="Digite o seu e-mail" name="email" id="email" class="inputUser" required autofocus="true" />
+            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" />
+            <input type="submit" name="submit" id="submit" value="Acessar" class="btn" />
+            <br>
+           <label for="login">Não tem conta ? <a href="../pages/tela_de_registro.php">Registra-se</a></label>
+        </form>
+    </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="js/custom.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

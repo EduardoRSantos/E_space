@@ -49,23 +49,22 @@
 
 <section class="services">
   <div class="container">
-    <h2>Nossos Serviços</h2>
     <ul>
       <li>
-        <h3>Serviço 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar lorem eget orci ultrices, ac sodales felis pulvinar. Donec id lorem vel nibh sollicitudin commodo.</p>
+        <h3>Serviços de Decoração</h3>
+        <p>Ofereça opções de catering para os eventos realizados nos espaços, seja através de um serviço próprio ou por meio de parcerias com empresas de catering. Isso pode incluir fornecer refeições completas, buffet, coquetéis e opções personalizadas de acordo com as necessidades dos clientes.</p>
       </li>
       <li>
-        <h3>Serviço 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar lorem eget orci ultrices, ac sodales felis pulvinar. Donec id lorem vel nibh sollicitudin commodo.</p>
+        <h3>Serviços de Audiovisual</h3>
+        <p>Forneça serviços de decoração para os eventos, incluindo arranjos florais, iluminação, mobiliário e decoração temática. Isso pode ajudar os clientes a criar a atmosfera desejada e personalizar o espaço de acordo com o tipo de evento.</p>
       </li>
       <li>
-        <h3>Serviço 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar lorem eget orci ultrices, ac sodales felis pulvinar. Donec id lorem vel nibh sollicitudin commodo.</p>
+        <h3>Coordenação de Eventos</h3>
+        <p>Ofereça serviços de áudio, vídeo e iluminação para eventos que exigem equipamentos audiovisuais profissionais. Isso inclui projeção de tela, sistemas de som, iluminação cênica e equipamentos de apresentação para conferências, palestras e eventos corporativos.</p>
       </li>
       <li>
-        <h3>Serviço 4</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar lorem eget orci ultrices, ac sodales felis pulvinar. Donec id lorem vel nibh sollicitudin commodo.</p>
+        <h3>Serviço de Catering</h3>
+        <p>Proporcione serviços de coordenação de eventos, ajudando os clientes a planejar e executar seus eventos com sucesso. Isso pode envolver a coordenação de fornecedores, gerenciamento de logística, cronograma de eventos e supervisão geral para garantir que tudo ocorra sem problemas.</p>
       </li>
     </ul>
   </div>

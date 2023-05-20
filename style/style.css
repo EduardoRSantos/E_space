@@ -7,11 +7,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  
 }
 
 body{
 
-  font-family: Montserrat;
+	font-family: Poppins;
 }
 
 html{
@@ -269,8 +271,40 @@ input{
 }
 
 
+logo-desktop{
+  display: block;
+}
+
 
 /* NAVBAR */
+
+
+/* NAVBAR MOBILE */
+
+.pos-f-t-mobile{
+  background: none;
+  background-color: none;
+  display: none;
+}
+
+.mobile-button>button {
+
+  font-weight: 500;
+  color: white;
+  background: #007bff;
+position: relative;
+  border-radius: 10px;
+  width: 100%;
+  margin: 3px;
+  border: none;
+  text-decoration: none;
+}
+
+
+
+/* NAVBAR MOBILE */
+
+
 
 .online-dot {
   display: inline-block;
@@ -409,8 +443,8 @@ input{
 
 .main-home{
   padding-bottom: 15px;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,250,255,1) 100%);
+
+
 }
 
 
@@ -483,6 +517,11 @@ input{
 }
 
 @media only screen and (max-width: 768px) {
+
+  .pos-f-t-mobile{
+    display: block;
+  }
+
   .conteudo {
     flex-direction: column;
   }
@@ -499,15 +538,11 @@ input{
 .anuncios-recentes{
 
 margin-top: 0.5rem;
-border-right: 20px solid #1a8596;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  background-color: #ffffff;
 }
 
 .anuncios{
   color: rgb(10, 10, 10);
   font-family: Montserrat;
-  background-color: #f2f2f2;
   
 }
 
@@ -632,15 +667,17 @@ div.desc {
     align-items: center;
     height: auto;
     padding: 40px 20px;
+    min-zoom: 20px;
   }
   
   .rental-container {
-    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    
+
     padding: 20px;
     border-radius: 10px;
     max-width: 800px;
@@ -654,6 +691,9 @@ div.desc {
   .rental-ad img {
     width: 100%;
     height: auto;
+    width: 350px; /* Largura fixa */
+    height: 190px; /* Altura fixa */
+    object-fit: cover;
   }
   
   .rental-details {
@@ -680,6 +720,24 @@ div.desc {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 300px;
+  }
+
+  .limite-destaques{
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 260px;
+  }
+
+  .limite-chars-title{
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
   }
   
   .rental-price {
@@ -739,17 +797,28 @@ margin: 0.2rem;
 margin-right: 2rem;
   }
   
-  .rental-buttons button {
-    background-color: #333;
+  .rental-buttons>button {
+  
     color: #fff;
     border: none;
+    font-weight: 500;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
-    margin: 0 2px;
+    font-size: 13px;
+    margin: 0 3px;
+    border: 1px solid black;
+    background: none;
+    color: rgb(94, 94, 94);
+    border: 1px solid #1a8596;
   }
 
+  .rental-buttons>button:hover{
+    animation: both;
+    transform-style: flat;
+    transition-duration: 550ms;
+    background-color: #1a8596;
+  }
    
   @media (max-width: 600px) {
     .rental-container {
@@ -787,10 +856,10 @@ margin-right: 2rem;
 			justify-content: space-around;
       flex-wrap: nowrap;
       display: flex;
-      border-right: 20px solid #1a8596;
       padding:2rem;
       margin-bottom: 5.5rem;
-       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+       box-shadow: 0 0 1px rgba(0, 0, 0, 1.1);
 		}
 
 		.button-container>button {
@@ -827,8 +896,6 @@ margin-right: 2rem;
   margin-top: 0.5rem;
   flex-wrap: nowrap;
  display: flex;
-  background-color: #1a8596;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .anuncios-destaque, .titulo{
@@ -859,9 +926,9 @@ border-left: 8px solid #3498db ;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 4.2rem;
   padding: 80px;
-  background-color: #f2f2f2;
+
 }
 
 /* Configurações das divs dos anúncios */
@@ -871,7 +938,7 @@ border-left: 8px solid #3498db ;
   height: 240px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -1047,13 +1114,12 @@ border-left: 8px solid #3498db ;
 }
 
 .conteudoan-container {
-  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 20px;
+  justify-content: start;
+  align-items: start;
+  padding: 10px;
   border-radius: 10px;
   max-width: 800px;
 }
@@ -1064,23 +1130,26 @@ border-left: 8px solid #3498db ;
 }
 
 .conteudoan-ad img {
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
   width: 100%;
   height: auto;
 }
 
 .conteudoan-details {
-  
+
   flex: 1 1 300px;
   text-align: start;
   font-family: Poppins;
 }
 
 .conteudoan-details>h4 {
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
   margin-left: 5px;
-  padding-left: 5px;
+  padding-left: 10px;
 border-left: 8px solid black;
   text-align: start;
   font-size: 24px;
+width:330px;
   margin-bottom: 10px;
 }
 
@@ -1136,16 +1205,19 @@ text-align: center;
 
 .conteudoan-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: block;
+  margin-top:15px;
 margin: 0.2rem;
 margin-right: 2rem;
 }
 
 .conteudoan-buttons button {
-  background-color: #333;
+
+  background-color: #1885b8;
   color: #fff;
   border: none;
+;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -1155,6 +1227,12 @@ margin-right: 2rem;
 
 
 /* AVALIAR ANUNCIOS */
+
+/* carrosel */
+
+
+
+/* carrosel */
 
 
 
@@ -1178,13 +1256,40 @@ margin-right: 2rem;
   /* FOOTER */
 /* Responsividade */
 
+
 @media screen and (max-width: 768px) {
+  
+
+  .rental-ad img {
+    width: 100%;
+    height: auto;
+    width: 320px; /* Largura fixa */
+    height: 280px; /* Altura fixa */
+    object-fit: cover;
+  }
+
+  .pos-f-t-mobile{
+    display: block;
+  }
+    .menu-icon {
+      display: block;
+    }
+  .logo-desktop{
+    display: none;
+  }
+
+.botaopequisar{
+  width: 35px;
+  height: 35px;
+}
+
   .menu-icon {
     display: block;
 
   }
 
   .searchbarmobile{
+    width: 100%;
     display: block;
   }
 
@@ -1226,16 +1331,23 @@ margin-right: 2rem;
   }
 
   .anuncios-destaque-mobile{
-    margin-top: 8px;
-    margin-bottom: 5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background-color: #f2f2f2;
-    border-right: 20px solid #1a8596;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+width: 100%;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
     display: block;
   }
 
   .anuncios-destaque{
     display: none;
+  }
+
+  .container{
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+    display: flex;
   }
 
   .campo-itens{
@@ -1256,6 +1368,7 @@ margin-right: 2rem;
     margin: 5px;
     width: 100%;
   }
+  
 
 }
   

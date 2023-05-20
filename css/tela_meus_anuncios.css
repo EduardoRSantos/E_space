@@ -140,6 +140,7 @@ section.anuncios {
     font-size: 1rem;
     text-align: left;
   }
+  /* TELA ANUNCIOS  */
 
   .rental-section {
     display: flex;
@@ -147,16 +148,18 @@ section.anuncios {
     align-items: center;
     height: auto;
     padding: 40px 20px;
+    min-zoom: 20px;
   }
   
   .rental-container {
-    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
-    padding: 15px;
+    
+
+    padding: 20px;
     border-radius: 10px;
     max-width: 800px;
   }
@@ -169,6 +172,9 @@ section.anuncios {
   .rental-ad img {
     width: 100%;
     height: auto;
+    width: 350px; /* Largura fixa */
+    height: 235px; /* Altura fixa */
+    object-fit: cover;
   }
   
   .rental-details {
@@ -178,15 +184,24 @@ section.anuncios {
   
   .rental-details h2 {
     text-align: start;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
   .rental-details p {
     text-align: start;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+  }
+
+
+  .limite-chars-descricao{
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
   }
   
   .rental-price {
@@ -197,15 +212,15 @@ section.anuncios {
   }
   
   .rental-price p {
-    padding-top: 9px;
-    font-size: 16px;
+    padding-top: 20px;
+    font-size: 20px;
     font-weight: bold;
     margin-right: 10px;
   }
   
   .rental-price img{
-    margin: 5px;
-    width: 1.5rem;
+    margin: 2px;
+    width: 2rem;
   }
 
 
@@ -218,6 +233,7 @@ white-space: nowrap;
 
 
 }
+
 
 
   .localizacao img, p{
@@ -256,42 +272,55 @@ margin-right: 2rem;
     margin: 0 2px;
   }
 
-  .limite-chars{
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 400px;
-  }
-  
-  .limite-chars.postado{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 400px;
-  }
+  .titulo{
+  padding-top: 15px;
+    padding: 5px 20px;
+  text-align: start;
+border-left: 8px solid #3498db ;
+  color: #15415f;
+  font-size: 1.4rem;
 
-  .limite-chars-descricao{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 400px;
-  }
+  font-family: Montserrat;
+  text-align: start;
+}
 
+   
   @media (max-width: 600px) {
+    
+   
     .rental-container {
-      flex-direction: column;
+      float: left;
+      flex-wrap: wrap;
+      flex-direction: row;
     }
   
     .rental-ad {
+      top: 0;
+      left: 0;
       margin-right: 0;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
     }
   
     .rental-details {
       margin-bottom: 20px;
     }
-  }
 
+    .rental-details>p{
+      display: none;
+    }
+
+    .rental-buttons{
+      float: left;
+    }
+
+    .aguardar{
+    width: 50vh;
+    }
+  }
+  
+
+  
+/*  TELA ANUNCIOS  */
 
   
 
@@ -331,9 +360,36 @@ margin-right: 2rem;
 /* Responsividade */
 
 @media screen and (max-width: 768px) {
+
+  .rental-price{
+    margin-top: -25px;
+  }
+
+
+  .rental-section{
+
+    width: 100%;
+   display: flex;   
+  }
+
+  .postado{
+    white-space: wrap;
+    max-width: 350px;
+    }
+
+  .aguardar{
+    white-space: wrap;
+    max-width: 350px;
+    width: 100%;
+    }
   .menu-icon {
     display: block;
 
+  }
+
+  .rental-details{
+width: 0px;
+background-color: #666;
   }
 
   .searchbarmobile{
@@ -376,4 +432,30 @@ margin-right: 2rem;
   
   }
 
+  .rental-details>p{
+    display: none;
+  }
+
+  .rental-price{
+    flex-wrap: nowrap;
+  }
+
+}
+
+.modal-content>.modal-body{
+  justify-content: start;
+  align-items: start;
+}
+
+
+.modal-body>p{
+  font-family: Poppins;
+  font-size: 20px;
+  align-items: start;
+  text-align: start;
+}
+
+
+.descricao-meus>input{
+  height: 100%;
 }

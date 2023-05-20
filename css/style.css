@@ -4,21 +4,31 @@
   padding: 0;
   box-sizing:border-box;
 text-decoration: none;
+  font-family: Montserrat;
+
 }
 
+.titulo{
+  padding-top: 15px;
+    padding: 5px 20px;
+  text-align: start;
+border-left: 8px solid #3498db ;
+  color: #15415f;
+  font-size: 1.4rem;
+font-weight: 500px;
+  text-align: start;
+}
 
 .formulario-de-dados{
   align-self: center;
-display: flex;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: aliceblue;
+display: block;
+font-family: Montserrat;
+
+  color: rgb(32, 32, 32);
   border-radius: 15px;
-  background-color: rgb(53, 53, 53);
 }
 
  .tela-perfil{
-  width: 80vw;
-  height: 25vh;
   align-items: center;
   text-align: center;
   padding: 15px;
@@ -30,60 +40,83 @@ display: flex;
 }
 
 .tela-perfil .dados{
-  background-color: aliceblue;
+
   width: 100%;
-  font-size: 1.1rem;
+
   padding: 0.5rem;
   align-items: center;
   color: black;
 }
 
 .editar-foto{
-  align-items: center;
-  text-align: center;
+  align-items: start;
+  text-align: start;
   padding: 15px;
   justify-content: center;
 }
 
 .editar-foto ,input{
-  background-color: aliceblue;
+
   width: 100%;
-  font-size: 1.1rem;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  font-size: 1.0rem;
   align-items: center;
   color: black;
-  border: 1px solid black;
 }
+
+
 
 .file>input{
   border:none;
 }
 
 .file>.salvar{
-  background: #007bff;
-  color: white;
+  max-width: 140px;
+  border:none;
+background: #15415f;
+color: rgb(247, 247, 247);
   cursor: pointer;
 }
 
 
 .editar-dados{
-  display: block;
+  
   text-align: left;
 }
 
 .salvar-dados>.salvar{
-  background: #007bff;
-  color: white;
+  background: #15415f;
+  max-width: 100px;
+  color: rgb(247, 247, 247);
   cursor: pointer;
-  border: none;
 }
 
-.sair-tela input{
-  background: #007bff;
-  color: white;
+
+
+.sair-tela>input{
+  max-width: 100px;
+  color: rgb(247, 247, 247);
   cursor: pointer;
+  background: #15415f;
+}
+
+.dados>input{
   border: none;
+  max-width: 300px;
+}
+
+
+
+hr{
+  width: 120px;  
+  border: 1px solid rgb(221, 221, 221);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .formulario-de-dados{
+    display: flex;
+  }
+
 }
 
 

@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: Poppins;
+}
+
+
+body{
+
 }
 
 /* Estilos básicos para o layout do formulário */
@@ -98,6 +104,10 @@ label {
   border-radius: 0px;
 }
 
+.campotexto-title{
+  margin-bottom: 55px;
+}
+
 
 
 .anunciar{
@@ -107,7 +117,6 @@ label {
 }
 
 .inserir-imagem ,.inputUserArquivos input{
-float: right;
 width: 27.5rem;
 max-width: 100%;
 }
@@ -132,6 +141,104 @@ max-width: 100%;
 .inputUserArquivos {
   border: none;
 }
+
+.gallery {
+  display: flex;
+}
+
+.main-photo-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.main-photo {
+  border-radius: 10px;
+  width:435px;
+  max-width: 100%;
+  height: auto;
+}
+
+.thumbnails {
+
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  width: 100px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+
+.botao-anuncio {
+display: flex;
+}
+
+
+
+.botao-anuncio button{
+  gap: 15px;
+  background-color: white;
+  border: 1px solid #1a8596;
+  color: #1a8596;
+text-align: center;
+align-items: center;
+  border-radius: 30px;
+  
+}
+
+.botao-anuncio button:hover{
+  align-items: center;
+  color: white;
+  text-align: start;
+  background-color: #1a8596;
+
+}
+
+
+.botao-anuncio img{
+  object-fit: cover;
+  width: 25px;
+}
+
+.botao-seguro button{
+  font-size: 10px;
+  white-space: nowrap;
+  width: 100px;
+  height: 20px;
+  background-color: #1a8596;
+    border: 1px solid #1a8596;
+  color: #ffffff;
+text-align: center;
+align-items: center;
+  border-radius: 30px;
+}
+
+.botao-seguro button:hover{
+  color: #1a8596;
+  background-color: #ffffff;
+}
+
+
+.campotexto-detalhes, 
+.campotexto-localizacao, p{
+  font-size: 1.1rem;
+}
+
+.campotexto-detalhes, 
+.campotexto-localizacao, h2{
+  font-size: 1.6rem;
+}
+
+
+hr{
+  width: 120px;
+  border: 1px solid rgb(221, 221, 221);
+}
+
+
 
 /* Estilos para o layout responsivo */
 @media screen and (max-width: 500px) {

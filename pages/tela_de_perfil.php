@@ -20,9 +20,10 @@
 <?php include '../navbar.php';?>
     <?php if (!empty($_SESSION)) { ?>
         <div class="formulario-de-dados wrapper" >
+            <h2 class="titulo wrapper">Dados cadastrados</h2>
 
             <div class="tela-perfil">
-                <h2>Dados cadastrados</h2>
+     
                 <br>  
                 <label for="nome"><strong>Nome Completo</strong></Label>
                 <div class="dados">
@@ -40,28 +41,37 @@
                 </div>
                 </fieldset>
             </div>
+            <hr>
+<br>
+            <h2 class="titulo wrapper">Editar dados</h2>
+            
             <div class="editar-foto">
+            <br>
                 <form  class="file"  method="POST" enctype="multipart/form-data">
-                    <img width="50px" src="../img//perfil-alterar.png" alt="" srcset="">
-                    <br>
-                    <div class="file">
+                <label class="mudar-nome" for="nome"><strong>Editar foto do perfil</strong></Label>
+                
+                    <div class="file">      
                         <input  type="file" name="imagem">
-                        <input  class="salvar" type="submit" name="submit" id="submit" value="Salvar">
+                        <br>
+                        <input  class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto">
                     </div>
             
                 </form>
                 <br>
-                <hr>
+            
+
+             
+               
                 <form class="editar-dados" method="POST">
                     <br>
                     <div class="dados">
-                        <label for="nome">Nome Completo</Label>
+                        <label for="nome"><strong>Nome Completo</strong></Label>
                         <br>
                         <input type="text" name="nome" id="nome" value="<?= $_SESSION['nome'] ?>" required>
                     </div>
                     <br>
                     <div class="dados">
-                        <label for="telefone">Telefone</Label>
+                        <label for="telefone"><strong>Telefone</strong></Label>
                         <br>
                         <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
                     </div>
@@ -71,8 +81,11 @@
                     </div>
             
                 </form>
+                
                 <br>
+                <hr>
                 <br>
+                
                 <form class="sair-tela" action="sair.php" method="post">
                     <input type="submit" value="Sair">
                 </form>

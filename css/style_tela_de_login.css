@@ -5,58 +5,119 @@
   box-sizing:border-box;
 list-style-type: none;
 text-decoration: none;
+
 }
-#teladeperfil{
-  
-    background-color: rgb(233, 233, 233);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    align-items: center;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    padding: 150px;
-    border-radius: 10px;
-    color: rgb(24, 24, 24);
-  }
-
-#teladeperfil,h2{
+.page {
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
-  font-size: 25px;
-}  
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  flex-wrap: wrap;
+}
 
-  #perfil {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, #000000,#5623A9);
-  }
-#email{
-    border-radius: 10px;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    margin-bottom: 10px;
-    align-items: center;
-    }
-    #senha{
-    border-radius: 10px;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    align-items: center;
-    margin-bottom: 10px;
-    }
-    #submit{
-    background-color: rgb(39, 126, 240);
-    border: none;
-    height: 25px;
-    text-align: center;
-    font-weight: 800;
-    color: white;
-    max-width: 100%;
-    width: 180px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    }
-  
+
+
+.page,.pagefoto{
+  border-radius: 0px;
+align-items: center;
+flex-direction: row;
+}
+
+.pagefoto .formLogin{
+  border-top-right-radius : 7px;
+  border-bottom-right-radius : 7px;
+  border-top-left-radius : 0px;
+  border-bottom-left-radius : 0px;
+  border-left: 10px solid #3498db ;
+
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  border-top-right-radius : 0px;
+  border-bottom-right-radius : 0px;
+}
+
+.areaLogin img {
+  width: 420px;
+}
+
+.formLogin h1 {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.3em;
+}
+
+.formLogin p {
+  display: inline-block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.formLogin input {
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 4px;
+  transition: all linear 160ms;
+  outline: none;
+}
+
+
+.formLogin input:focus {
+  border: 1px solid #1659a7;
+}
+
+.formLogin label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.formLogin a {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #555;
+  transition: all linear 160ms;
+}
+
+.formLogin a:hover {
+  color: #2587f7;
+}
+
+.btn {
+  background-color: #2587f7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none !important;
+  transition: all linear 160ms;
+  cursor: pointer;
+  margin: 0 !important;
+
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-color: #1659a7;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+.pagefoto{
+  display: none;
+}
+
+
+}
