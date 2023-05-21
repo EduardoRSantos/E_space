@@ -23,7 +23,7 @@
           </div>
         <div class="rental-buttons">
           <button type="button" class="button-with-image" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>"></button>
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">Imagens</button>
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalFotos<?= $anuncio['id'] ?>">Imagens</button>
           <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Descrição</button>
         </div>
       </div>
@@ -82,7 +82,7 @@
     </div>
 
 
-    <div class="modal fade galeria-anuncios" id="modal<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal fade galeria-anuncios" id="modalFotos<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="slide-modal">
           <div class="body">

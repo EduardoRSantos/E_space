@@ -76,7 +76,7 @@
                   <h4 class="limite-chars postado">Anúncio postado!</h4>
                 <?php } ?>
                 <h2 class="limite-chars-titulo"><?= $anuncio['titulo'] ?></h2>
-:
+      <!-- <p class="limite-chars-descricao" ><?= $anuncio['descricao'] ?></p> -->
   
       <div class="rental-price">
           <div class="localizacao d-flex w-100" >
