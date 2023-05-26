@@ -878,9 +878,19 @@ margin-right: 2rem;
       background-color: white;
       color: #1a8596;
     }
+    
+    .button-container>button>a{
+            color: #fcfcfc;
+
+    }
+
+    .button-container>button>a:hover{
+      color: #1a8596;
+      text-decoration: none;
+    }
 
     .button-container>.principal{
-      background: none;
+      background: #1a8596;
       color: rgb(94, 94, 94);
       border: 1px solid #1a8596;
     }

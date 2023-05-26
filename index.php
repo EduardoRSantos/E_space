@@ -51,7 +51,7 @@
 
     <nav class="navbarheader wrapper">
       <div class="logo">
-        <a href="../index.php"><img src="./img/logo.png" alt="Logo" /></a>
+        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
       </div>
       <form class="searchbar" method="post">
         <div class="pesquisar">
@@ -122,7 +122,9 @@
 
   <main class="main-home">
     <section class="conteudo wrapper">
-      
+      <div>
+
+      </div>
       <div class="imagem">
         <img src="./img/arte1.png" alt="Descrição da imagem">
       </div>
@@ -156,13 +158,14 @@
             <button>Enviar</button>
           </div>
           <button type="button" class="share-button">Compartilhar nas redes sociais</button>
-
+    </div>
+     </div>
 
 </section>
     <!-- DESKTOP -->
     <section class="campo-itens wrapper">
       <div class="button-container">
-        <button class="principal"><a class="" href="http://localhost/E_space/routes/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
+        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
