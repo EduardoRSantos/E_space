@@ -73,7 +73,7 @@
                 <?php } else { ?>
                   <h4 class="limite-chars postado">Anúncio postado!</h4>
                 <?php } ?>
-                <h2><?= $anuncio['titulo'] ?></h2>
+                <h2 class="limite-chars-titulo"><?= $anuncio['titulo'] ?></h2>
       <p class="limite-chars-descricao" ><?= $anuncio['descricao'] ?></p>
   
       <div class="rental-price">
@@ -112,23 +112,33 @@
                       <input type="hidden" value="salvar" name="fazer">
                       <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
                       <br>
-                      <p>Titulo: <input type="text" name="titulo" value="<?= $anuncio['titulo'] ?>"></p>
+
+
+                      <h5>Publicado</h5> <?= $anuncio['criado_em'] ?>
+                      <h5>Ultima atualização</h5> <?= $anuncio['atualizado_em'] ?>
+                      <hr>
+
+                      <h5>Titulo</h5>
+                      <input type="text" name="titulo" value="<?= $anuncio['titulo'] ?>">
                       <br>
-                      <p>Preco: <input type="number" name="preco" value="<?= $anuncio['preco'] ?>"></p>
+            
+                      <h5>Preço</h5>
+                      <input type="number" name="preco" value="<?= $anuncio['preco'] ?>">
                       <br>
-                      <p>Localizacao: <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>"></p>
+                      <h5>Localização</h5>
+                      <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>">
                       <br>
-                      <p>Cep: <input type="text"name="cep" id="cep" value="<?= $anuncio['cep'] ?>" ></p>
+                      <h5>Cep</h5>
+                      <input type="text"name="cep" id="cep" value="<?= $anuncio['cep'] ?>" >
                       <br>
-                      <p>Numero: <input type="number" name="numero" value="<?= $anuncio['numero'] ?>"></p>
+                      <h5>Nº</h5>
+                      <input type="number" name="numero" value="<?= $anuncio['numero'] ?>">
                       <br>
-                      <p>Quantida de Pessoas: <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>"></p>
+                      <h5>Pessoas</h5>
+                      <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>">
                       <br>
-                      <p>Criado: <?= $anuncio['criado_em'] ?></p>
-                      <br>
-                      <p>Ultima atualização: <?= $anuncio['atualizado_em'] ?></p>
-                      <br>
-                      <p>Descricao: <input class="descricao-meus" type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"></p>
+                      <h5>Descricao</h5>
+                      <textarea class="descricao-meus" type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"> </textarea>
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-success">Salvar</button>

@@ -691,7 +691,7 @@ div.desc {
     width: 100%;
     height: auto;
     width: 350px; /* Largura fixa */
-    height: 190px; /* Altura fixa */
+    height: 150px; /* Altura fixa */
     object-fit: cover;
   }
   
@@ -721,6 +721,15 @@ div.desc {
     max-width: 300px;
   }
 
+  .limite-chars-modal{
+    width: 100%;
+
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 450px;
+  }
+
   .limite-destaques{
     width: 100%;
 
@@ -734,6 +743,16 @@ div.desc {
     width: 100%;
 
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+  }
+
+  
+  .limite-chars-title-modal{
+    width: 100%;
+
+    white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 350px;
@@ -1014,9 +1033,12 @@ border-left: 8px solid #3498db ;
 
 
   
+  .body-modal{
+    margin: 15px;
+  }
 
   .body-modal, .footer-modal{
-    margin: 5px;
+    margin: 10px;
     background-color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
@@ -1249,6 +1271,7 @@ margin-right: 2rem;
 
 
   @media only screen and (max-width: 768px) {
+    
     .container {
       flex-direction: column;
     }
@@ -1269,31 +1292,31 @@ margin-right: 2rem;
 @media screen and (max-width: 768px) {
   
 
-  .rental-ad img {
-    width: 100%;
-    height: auto;
-    width: 320px; /* Largura fixa */
-    height: 280px; /* Altura fixa */
-    object-fit: cover;
-  }
+    .rental-ad img {
+      width: 100%;
+      height: auto;
+      width: 220px; /* Largura fixa */
+      height: 220px; /* Altura fixa */
+      object-fit: cover;
+    }
 
-  .pos-f-t-mobile{
-    display: block;
-  }
-    .menu-icon {
+    .pos-f-t-mobile{
       display: block;
     }
-  .logo-desktop{
-    display: none;
+      .menu-icon {
+        display: block;
+      }
+    .logo-desktop{
+      display: none;
+    }
+
+  .botaopequisar{
+    width: 35px;
+    height: 35px;
   }
 
-.botaopequisar{
-  width: 35px;
-  height: 35px;
-}
-
-  .menu-icon {
-    display: block;
+    .menu-icon {
+      display: block;
 
   }
 

@@ -8,7 +8,7 @@
     </div>
     <div class="rental-details">
       <h2 class="limite-chars-title" ><?= $anuncio['titulo'] ?></h2>
-      <p class="limite-chars" ><?= $anuncio['descricao'] ?></p>
+      <!-- <p class="limite-chars" ><?= $anuncio['descricao'] ?></p> -->
       <div class="rental-price">
           <div class="localizacao d-flex w-100" >
           <img  src="./img/localizacao.png" alt="" srcset="">
@@ -40,14 +40,17 @@
             </button>
           </div> -->
           <div class="body-modal">
-            <h4><strong>NOME:</strong> <?= $anuncio['nome'] ?></h4>
-            <h4><strong>TEL:</strong> <?= $anuncio['telefone'] ?></h4>
-            <h4><strong>CEP:</strong> <?= $anuncio['cep'] ?></h4>
-            <h4><?= $anuncio['criado_em'] ?></h4>
+            <h4><strong>Anunciante</strong> <?= $anuncio['nome'] ?></h4>
+            <br>
+            <h3 class="limite-chars-title-modal"><?= $anuncio['titulo'] ?></h3>
+            <h4>Publicado: <?= $anuncio['criado_em'] ?></h4>
+            <hr>
+            <h4 class="limite-chars-modal" >Descrição <br> <?= $anuncio['descricao'] ?></h4>
+            <br>
+            <h4><strong>Tel</strong> <br> <?= $anuncio['telefone'] ?></h4>
+            <h4><strong>Cep</strong> <br> <?= $anuncio['cep'] ?></h4>
           </div>
           <div class="footer-modal">
-        
-            <button type="button" class="btn btn-success">Fechar</button>
           </div>
         </div>
       </div>

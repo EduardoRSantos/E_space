@@ -61,4 +61,3 @@ imagens.forEach(imagem => {
 });
 
 
-**********
