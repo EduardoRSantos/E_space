@@ -217,7 +217,13 @@
             <div class="box">
               <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
               <h2 class="limite-destaques"><?= $anuncio['titulo'] ?></h2>
-              <p>Preço: R$ <?= $anuncio['preco'] ?></p>
+              <div class="rental-details">
+              <div class="dinheiro d-flex w-100 " >
+                <img style="width: 30px; height: 30px; margin-left: 15px; object-fit: cover;" src="./img/dinheiro.png" alt="">
+                <p ><?= $anuncio['preco'] ?></p>
+              </div>
+              </div>
+      
             </div>
         <?php
           endforeach;
@@ -237,8 +243,13 @@
         ?>
           <div class="box">
             <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
-            <h2><?= $anuncio['titulo'] ?></h2>
-            <p>Preço: R$ <?= $anuncio['preco'] ?></p>
+            <h2 class="limite-chars-box"><?= $anuncio['titulo'] ?></h2>
+            <div class="rental-details">
+              <div class="dinheiro d-flex w-100 " >
+                <img style="width: 30px; height: 30px; margin-left: 15px; object-fit: cover;" src="./img/dinheiro.png" alt="">
+                <p ><?= $anuncio['preco'] ?></p>
+              </div>
+              </div>
           </div>
         <?php
         endforeach; 

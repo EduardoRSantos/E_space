@@ -21,7 +21,7 @@
         <div class="rental-buttons">
           <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo <?= $anuncio['id'] ?>">Mensagem</button>
           <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">Imagens</button>
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>"><a href="./pages/mais_informacoes.php">+ Informações</a></button>
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">+ Informações</button>
         </div>
       </div>
     </div>

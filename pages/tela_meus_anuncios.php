@@ -138,7 +138,7 @@
                       <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>">
                       <br>
                       <h5>Descricao</h5>
-                      <textarea class="descricao-meus" type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"> </textarea>
+                      <input class="descricao-meus" type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"> </input>
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-success">Salvar</button>

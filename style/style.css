@@ -969,6 +969,8 @@ border-left: 8px solid #3498db ;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s ease;
+  font-family: Poppins;
+  font-weight: 700;
 }
 
 .box:hover {
@@ -982,18 +984,36 @@ border-left: 8px solid #3498db ;
   object-fit: cover;
 }
 
+.box>.dinheiro{
+ margin-top: 15px;
+}
+
 /* Configurações dos títulos dos anúncios */
 .box h2 {
   margin: 20px;
-  font-size: 24px;
+  font-size: 18px;
   color: #333;
 }
 
 /* Configurações dos preços dos anúncios */
 .box p {
-  margin: 20px;
-  font-size: 15px;
+  margin: 2px;
+  font-size: 20px;
   color: #333;
+}
+
+.itens-box{
+  width: 6px;
+  display: flex;
+}
+
+.limite-chars-box{
+  width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
 }
 
 /* Configurações da animação de carregamento infinito */
@@ -1282,6 +1302,16 @@ margin-right: 2rem;
     .footer-social {
       margin-bottom: 20px;
     }
+
+    
+.limite-chars-box{
+  width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
   }
    
 
@@ -1404,3 +1434,45 @@ width: 100%;
 
 }
   
+
+
+@media only screen and (max-width: 1440px) {
+
+  .campo-itens{
+    padding-top: 55px;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    .chat{
+      display: flex;
+      width: 100%;
+      margin-left: 20px;
+   
+    }
+
+    .campo-itens-mobile{
+      justify-content: center;
+      display: flex;
+      max-width: 500px;
+      width: 100%;
+      margin-left: 70px;
+      align-items: center;
+    }
+
+    .button-container{
+      width: 100%;
+      padding: 0px;
+      display:flex;
+    }
+
+    .button-container>.principal{
+      align-items: center;
+      
+      width: 100%;
+      padding: 10px;
+    }
+}
+
