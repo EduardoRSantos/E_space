@@ -137,11 +137,33 @@ p {
 /* NAVBAR */
 
 .navbarheader {
-  height: 120px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding-top: 15px;
+  box-shadow: 0px 0px 8px 0px;
+  -webkit-box-shadow: 0px 0px 8px 0px;
+  -moz-box-shadow: 0px 0px 8px 0px;
+  width: 100%;
+  z-index: 100;
+background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 10px;
+
+  /* height: 70px;
   display: flex;
   justify-content: space-between;
   background-color: #ffffff;
-  padding: 0 10px;
+  padding: 0 10px; */
+}
+
+.navbarheader>.menu{
+  height: 120px;
 }
 
 .searchbarmobile{
@@ -282,6 +304,23 @@ logo-desktop{
 /* NAVBAR MOBILE */
 
 .pos-f-t-mobile{
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding-top: 15px;
+  box-shadow: 0px 0px 8px 0px;
+  -webkit-box-shadow: 0px 0px 8px 0px;
+  -moz-box-shadow: 0px 0px 8px 0px;
+  width: 100%;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 10px;
   background: none;
   background-color: none;
   display: none;
@@ -442,7 +481,7 @@ position: relative;
 /* CONTEUDO */
 
 .main-home{
-  padding-bottom: 15px;
+  padding-top:55px;
 
 }
 
@@ -516,6 +555,7 @@ position: relative;
 }
 
 @media only screen and (max-width: 768px) {
+  
 
   .pos-f-t-mobile{
     display: block;
@@ -1292,6 +1332,10 @@ margin-right: 2rem;
 
   @media only screen and (max-width: 768px) {
     
+    .navbarheader{
+      display: none;
+    }
+
     .container {
       flex-direction: column;
     }

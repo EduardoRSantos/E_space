@@ -37,6 +37,9 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="logo">
+        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
+      </div>
   </nav>
 </div>
  

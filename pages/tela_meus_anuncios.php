@@ -61,7 +61,7 @@
    if (!empty($data)) {
         foreach ($data as $anuncio) :
           $imagens = explode(';', $anuncio['imagens']); ?>
-            <div class="anuncios " >
+            <div class="anuncios" >
 <section class="rental-section wrapper">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
