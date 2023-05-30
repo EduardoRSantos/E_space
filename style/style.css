@@ -370,8 +370,6 @@ position: relative;
   margin-bottom: 150px;
   width: 400px;
   height: 310px;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -382,12 +380,15 @@ position: relative;
 .chat-header {
   background: rgb(129,240,212);
   background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
-  color: #414141;
-  padding: 10px;
+  color: #5c5959;
+  padding: 5px;
   font-size: 20px;
   font-weight: 450;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 15px;
+}
+
+.chat-header>span{
+  padding-left: 15px;
 }
 
 .chat-body {
@@ -453,7 +454,7 @@ position: relative;
   flex: 1;
   padding: 10px 20px 5px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-right: 10px;
   
 }
