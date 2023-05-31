@@ -75,6 +75,7 @@
         <?php } ?>
 
 
+
         <?php
         if (!empty($_SESSION)) {
           $id = $_SESSION['id'];
@@ -83,6 +84,7 @@
             'id' => $id,
           ];
 
+          
           $json = json_encode($body, true);
 
           $curl = curl_init();
