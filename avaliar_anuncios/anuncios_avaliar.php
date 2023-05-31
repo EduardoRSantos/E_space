@@ -16,7 +16,10 @@
 </head>
 
 <body>
+  <header>
 <?php include '../navbar.php'; ?>
+  </header>
+
   <?php
   $curl = curl_init();
   curl_setopt_array($curl, [
