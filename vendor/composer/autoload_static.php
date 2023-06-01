@@ -38,6 +38,7 @@ class ComposerStaticInit733c852f201014d5024d67c239732e61
             'React\\Cache\\' => 12,
             'Ratchet\\RFC6455\\' => 16,
             'Ratchet\\' => 8,
+            'Rafa\\' => 5,
         ),
         'P' => 
         array (
@@ -119,10 +120,14 @@ class ComposerStaticInit733c852f201014d5024d67c239732e61
         array (
             0 => __DIR__ . '/..' . '/cboden/ratchet/src/Ratchet',
         ),
+        'Rafa\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib/RafaelCapoani',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (
