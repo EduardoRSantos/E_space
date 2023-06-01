@@ -63,10 +63,10 @@ flex-direction: row;
 }
 
 .formLogin input {
-  padding: 15px;
+  padding: 12px;
   font-size: 14px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   margin-top: 5px;
   border-radius: 4px;
   transition: all linear 160ms;
@@ -85,7 +85,7 @@ flex-direction: row;
 
 .formLogin a {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 13px;
   color: #555;
   transition: all linear 160ms;

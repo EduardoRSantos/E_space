@@ -21,7 +21,9 @@
             <input type="email" placeholder="Digite o seu e-mail" name="email" id="email" class="inputUser" required autofocus="true" />
             <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" />
             <input type="submit" name="submit" id="submit" value="Acessar" class="btn" />
+            <a href="/">Esqueci minha senha</a>
             <br>
+         
            <label for="login">Não tem conta ? <a href="../pages/tela_de_registro.php">Registra-se</a></label>
         </form>
     </div>

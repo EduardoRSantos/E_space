@@ -43,11 +43,11 @@ list-style-type: none;
 }
 
 .formRegistro input {
-  padding: 15px;
+  padding: 12px;
   font-size: 14px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
-  margin-top: 5px;
+  margin-bottom: 12px;
+  margin-top: 1px;
   border-radius: 4px;
   transition: all linear 160ms;
   outline: none;
@@ -65,7 +65,7 @@ list-style-type: none;
 
 .formRegistro a {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 13px;
   color: #555;
   transition: all linear 160ms;
@@ -91,4 +91,34 @@ list-style-type: none;
   transform: scale(1.05);
   background-color:#1659a7;
 
+}
+
+.checkbox-label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.checkbox-input {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000;
+  margin-right: 5px;
+}
+
+.checkbox-input:checked {
+  background-color: #000;
+}
+
+.checkbox-input:checked:after {
+  content: '\2713';
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  display: block;
+}
+
+.checkbox-input:focus {
+  outline: none;
 }
