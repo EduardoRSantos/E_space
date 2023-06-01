@@ -14,13 +14,13 @@ final class AnuncioController
     public function anunciosById(Request $request, Response $response, $args): Response{
 
         $anuncioDAO = new AnuncioDAO();
-        $anuncio_destaque0 = $anuncioDAO->anunciosById(0);
-        $anuncio_destaque1 = $anuncioDAO->anunciosById(1);
-        $anuncio_destaque2 = $anuncioDAO->anunciosById(2);
-        $anuncio_destaque3 = $anuncioDAO->anunciosById(3);
-        $anuncio_destaque4 = $anuncioDAO->anunciosById(4);
-        $anuncio_destaque5 = $anuncioDAO->anunciosById(5);
-        $anuncio_destaque6 = $anuncioDAO->anunciosById(6);
+        $anuncio_destaque0 = $anuncioDAO->anunciosById(19);
+        $anuncio_destaque1 = $anuncioDAO->anunciosById(20);
+        $anuncio_destaque2 = $anuncioDAO->anunciosById(21);
+        $anuncio_destaque3 = $anuncioDAO->anunciosById(22);
+        $anuncio_destaque4 = $anuncioDAO->anunciosById(23);
+        $anuncio_destaque5 = $anuncioDAO->anunciosById(24);
+        $anuncio_destaque6 = $anuncioDAO->anunciosById(25);
 
         $body = array_merge($anuncio_destaque0, $anuncio_destaque1, $anuncio_destaque2, $anuncio_destaque3, $anuncio_destaque4, $anuncio_destaque5, $anuncio_destaque6);
 

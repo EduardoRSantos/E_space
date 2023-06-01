@@ -11,49 +11,44 @@
 
 namespace Symfony\Component\Routing\Loader\Configurator\Traits;
 
-use Symfony\Component\Routing\Loader\Configurator\AliasConfigurator;
-use Symfony\Component\Routing\Loader\Configurator\CollectionConfigurator;
 use Symfony\Component\Routing\Loader\Configurator\RouteConfigurator;
+use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
-/**
- * @author Nicolas Grekas <p@tchwork.com>
- */
 trait AddTrait
 {
-    use LocalizedRouteTrait;
-
     /**
      * @var RouteCollection
      */
-    protected $collection;
-    protected $name = '';
-    protected $prefixes;
+    private $collection;
+
+    private $name = '';
 
     /**
      * Adds a route.
      *
-     * @param string|array $path the path, or the localized paths of the route
+     * @param string $name
+     * @param string $path
+     *
+     * @return RouteConfigurator
      */
-    public function add(string $name, string|array $path): RouteConfigurator
+    final public function add($name, $path)
     {
-        $parentConfigurator = $this instanceof CollectionConfigurator ? $this : ($this instanceof RouteConfigurator ? $this->parentConfigurator : null);
-        $route = $this->createLocalizedRoute($this->collection, $name, $path, $this->name, $this->prefixes);
+        $parentConfigurator = $this instanceof RouteConfigurator ? $this->parentConfigurator : null;
+        $this->collection->add($this->name.$name, $route = new Route($path));
 
-        return new RouteConfigurator($this->collection, $route, $this->name, $parentConfigurator, $this->prefixes);
-    }
-
-    public function alias(string $name, string $alias): AliasConfigurator
-    {
-        return new AliasConfigurator($this->collection->addAlias($name, $alias));
+        return new RouteConfigurator($this->collection, $route, '', $parentConfigurator);
     }
 
     /**
      * Adds a route.
      *
-     * @param string|array $path the path, or the localized paths of the route
+     * @param string $name
+     * @param string $path
+     *
+     * @return RouteConfigurator
      */
-    public function __invoke(string $name, string|array $path): RouteConfigurator
+    final public function __invoke($name, $path)
     {
         return $this->add($name, $path);
     }

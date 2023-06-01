@@ -12,13 +12,11 @@ class Message implements \IteratorAggregate, MessageInterface {
      */
     private $len;
 
-    #[\ReturnTypeWillChange]
     public function __construct() {
         $this->_frames = new \SplDoublyLinkedList;
         $this->len = 0;
     }
 
-    #[\ReturnTypeWillChange]
     public function getIterator() {
         return $this->_frames;
     }
@@ -26,7 +24,6 @@ class Message implements \IteratorAggregate, MessageInterface {
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
     public function count() {
         return count($this->_frames);
     }
@@ -34,7 +31,6 @@ class Message implements \IteratorAggregate, MessageInterface {
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
     public function isCoalesced() {
         if (count($this->_frames) == 0) {
             return false;
@@ -120,17 +116,5 @@ class Message implements \IteratorAggregate, MessageInterface {
         }
 
         return Frame::OP_BINARY === $this->_frames->bottom()->getOpcode();
-    }
-
-    /**
-     * @return boolean
-     */
-    public function getRsv1() {
-        if ($this->_frames->isEmpty()) {
-            return false;
-            //throw new \UnderflowException('Not enough data has been received to determine if message is binary');
-        }
-
-        return $this->_frames->bottom()->getRsv1();
     }
 }

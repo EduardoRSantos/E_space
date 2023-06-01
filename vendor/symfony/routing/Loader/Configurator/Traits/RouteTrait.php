@@ -19,14 +19,14 @@ trait RouteTrait
     /**
      * @var RouteCollection|Route
      */
-    protected $route;
+    private $route;
 
     /**
      * Adds defaults.
      *
      * @return $this
      */
-    final public function defaults(array $defaults): static
+    final public function defaults(array $defaults)
     {
         $this->route->addDefaults($defaults);
 
@@ -38,7 +38,7 @@ trait RouteTrait
      *
      * @return $this
      */
-    final public function requirements(array $requirements): static
+    final public function requirements(array $requirements)
     {
         $this->route->addRequirements($requirements);
 
@@ -50,7 +50,7 @@ trait RouteTrait
      *
      * @return $this
      */
-    final public function options(array $options): static
+    final public function options(array $options)
     {
         $this->route->addOptions($options);
 
@@ -58,23 +58,13 @@ trait RouteTrait
     }
 
     /**
-     * Whether paths should accept utf8 encoding.
-     *
-     * @return $this
-     */
-    final public function utf8(bool $utf8 = true): static
-    {
-        $this->route->addOptions(['utf8' => $utf8]);
-
-        return $this;
-    }
-
-    /**
      * Sets the condition.
      *
+     * @param string $condition
+     *
      * @return $this
      */
-    final public function condition(string $condition): static
+    final public function condition($condition)
     {
         $this->route->setCondition($condition);
 
@@ -84,9 +74,11 @@ trait RouteTrait
     /**
      * Sets the pattern for the host.
      *
+     * @param string $pattern
+     *
      * @return $this
      */
-    final public function host(string $pattern): static
+    final public function host($pattern)
     {
         $this->route->setHost($pattern);
 
@@ -101,7 +93,7 @@ trait RouteTrait
      *
      * @return $this
      */
-    final public function schemes(array $schemes): static
+    final public function schemes(array $schemes)
     {
         $this->route->setSchemes($schemes);
 
@@ -116,7 +108,7 @@ trait RouteTrait
      *
      * @return $this
      */
-    final public function methods(array $methods): static
+    final public function methods(array $methods)
     {
         $this->route->setMethods($methods);
 
@@ -126,49 +118,13 @@ trait RouteTrait
     /**
      * Adds the "_controller" entry to defaults.
      *
-     * @param callable|string|array $controller a callable or parseable pseudo-callable
+     * @param callable|string $controller a callable or parseable pseudo-callable
      *
      * @return $this
      */
-    final public function controller(callable|string|array $controller): static
+    final public function controller($controller)
     {
         $this->route->addDefaults(['_controller' => $controller]);
-
-        return $this;
-    }
-
-    /**
-     * Adds the "_locale" entry to defaults.
-     *
-     * @return $this
-     */
-    final public function locale(string $locale): static
-    {
-        $this->route->addDefaults(['_locale' => $locale]);
-
-        return $this;
-    }
-
-    /**
-     * Adds the "_format" entry to defaults.
-     *
-     * @return $this
-     */
-    final public function format(string $format): static
-    {
-        $this->route->addDefaults(['_format' => $format]);
-
-        return $this;
-    }
-
-    /**
-     * Adds the "_stateless" entry to defaults.
-     *
-     * @return $this
-     */
-    final public function stateless(bool $stateless = true): static
-    {
-        $this->route->addDefaults(['_stateless' => $stateless]);
 
         return $this;
     }

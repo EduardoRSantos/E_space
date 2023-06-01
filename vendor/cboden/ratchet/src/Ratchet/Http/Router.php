@@ -5,7 +5,7 @@ use Psr\Http\Message\RequestInterface;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use GuzzleHttp\Psr7\Query;
+use GuzzleHttp\Psr7 as gPsr;
 
 class Router implements HttpServerInterface {
     use CloseResponseTrait;
@@ -15,11 +15,8 @@ class Router implements HttpServerInterface {
      */
     protected $_matcher;
 
-    private $_noopController;
-
     public function __construct(UrlMatcherInterface $matcher) {
         $this->_matcher = $matcher;
-        $this->_noopController = new NoOpHttpServerController;
     }
 
     /**
@@ -30,8 +27,6 @@ class Router implements HttpServerInterface {
         if (null === $request) {
             throw new \UnexpectedValueException('$request can not be null');
         }
-
-        $conn->controller = $this->_noopController;
 
         $uri = $request->getUri();
 
@@ -61,9 +56,9 @@ class Router implements HttpServerInterface {
                 $parameters[$key] = $value;
             }
         }
-        $parameters = array_merge($parameters, Query::parse($uri->getQuery() ?: ''));
+        $parameters = array_merge($parameters, gPsr\parse_query($uri->getQuery() ?: ''));
 
-        $request = $request->withUri($uri->withQuery(Query::build($parameters)));
+        $request = $request->withUri($uri->withQuery(gPsr\build_query($parameters)));
 
         $conn->controller = $route['_controller'];
         $conn->controller->onOpen($conn, $request);
@@ -72,14 +67,14 @@ class Router implements HttpServerInterface {
     /**
      * {@inheritdoc}
      */
-    public function onMessage(ConnectionInterface $from, $msg) {
+    function onMessage(ConnectionInterface $from, $msg) {
         $from->controller->onMessage($from, $msg);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function onClose(ConnectionInterface $conn) {
+    function onClose(ConnectionInterface $conn) {
         if (isset($conn->controller)) {
             $conn->controller->onClose($conn);
         }
@@ -88,7 +83,7 @@ class Router implements HttpServerInterface {
     /**
      * {@inheritdoc}
      */
-    public function onError(ConnectionInterface $conn, \Exception $e) {
+    function onError(ConnectionInterface $conn, \Exception $e) {
         if (isset($conn->controller)) {
             $conn->controller->onError($conn, $e);
         }

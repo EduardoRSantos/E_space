@@ -18,8 +18,13 @@
             <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" />
             <input type="password" placeholder="Confirme a sua senha" name="senha_confirmar" id="senha" class="inputUser" />
             <input type="tel" placeholder="Telefone" name="telefone" id="telefone" class="inputUser" />
-            <a href="/">Esqueci minha senha</a>
-            <input type="submit" name="submit" id="submit" value="Acessar" class="btn" />
+        
+            <input type="submit" name="submit" id="submit" value="Registrar" class="btn" />
+            <br>
+            <label class="checkbox-label">
+  <input type="checkbox" class="checkbox-input" id="terms-checkbox" />
+  <span style="color: black;">Li e concordo com os termos de uso</span>
+</label>
             <br>
            <label for="registrar">Já tem conta ? <a href="../pages/tela_de_login.php">Fazer Login</a></label>
         </form>
