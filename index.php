@@ -52,7 +52,7 @@
     </form> -->  
 
 
-    <nav class="navbarheader wrapper">
+    <nav class="navbarheader">
       <div class="logo">
         <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
       </div>
@@ -126,10 +126,11 @@
 
 
   <main class="main-home">
+  <div class="main-espace" >
     <section class="conteudo wrapper">
-      <div>
+ 
 
-      </div>
+  
       <div class="imagem">
         <img src="./img/arte1.png" alt="Descrição da imagem">
       </div>
@@ -167,6 +168,7 @@
      </div>
 
 </section>
+</div>
     <!-- DESKTOP -->
     <section class="campo-itens wrapper">
       <div class="button-container">
