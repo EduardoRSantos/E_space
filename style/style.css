@@ -145,14 +145,13 @@ p {
   height: 70px;
   padding-top: 15px;
   box-shadow: 0px 0px 3px 0px;
-  -webkit-box-shadow: 0px 0px 2px 0px;
-  -moz-box-shadow: 0px 0px 5px 0px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   width: 100%;
   z-index: 100;
 background-color: white;
   display: flex;
   justify-content: space-between;
-
   padding: 0 10px;
 
   /* height: 70px;
@@ -311,9 +310,9 @@ logo-desktop{
   right: 0;
   height: 70px;
   padding-top: 15px;
-  box-shadow: 0px 0px 8px 0px;
-  -webkit-box-shadow: 0px 0px 8px 0px;
-  -moz-box-shadow: 0px 0px 8px 0px;
+  box-shadow: 0px 0px 3px 0px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   width: 100%;
   z-index: 100;
 
@@ -511,7 +510,7 @@ position: relative;
 .imagem {
   align-items: center;
   flex: 2.0;
-  margin-bottom: 120px;
+  margin-bottom: 130px;
 }
 
 .imagem img {
@@ -567,6 +566,8 @@ position: relative;
   
 
   .pos-f-t-mobile{
+    padding: 0;
+    background: none;
     display: block;
   }
 

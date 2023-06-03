@@ -14,8 +14,11 @@ body {
 header {
   color: #fff;
 }
-
+.meus-anuncios{
+  padding-top: 6rem;
+}
 section.anuncios {
+  padding-top: 6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -307,7 +310,8 @@ margin-right: 2rem;
   padding-top: 15px;
     padding: 5px 20px;
   text-align: start;
-border-left: 8px solid #3498db ;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   color: #15415f;
   font-size: 1.4rem;
 

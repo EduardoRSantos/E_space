@@ -5,18 +5,24 @@
   text-decoration: none;
 }
 
+.estrutura_da_tela{
+  padding-top: 6rem;
+}
+
 /* Estilos básicos para o layout do formulário */
 .estrutura_da_tela .inserir, .form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 .titulo{
+  border-radius: 5px;
   padding-top: 15px;
     padding: 5px 20px;
   text-align: start;
-border-left: 8px solid #3498db ;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   color: #15415f;
   font-size: 1.4rem;
   font-family: Montserrat;

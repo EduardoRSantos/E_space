@@ -21,7 +21,14 @@
 <?php include '../navbar.php';?>
     <?php if (!empty($_SESSION)) { ?>
         <div class="formulario-de-dados wrapper" >
-            <h2 class="titulo wrapper">Dados cadastrados</h2>
+        <h2 class="titulo wrapper">Informações do perfil</h2>
+            <div class="dados-user d-flex" >
+            <button class="" type="button"><a href="./tela_de_perfil.php">Dados cadastrados</a></button>
+            <button class="" type="button"><a href="./tela_de_editar.php">Editar dados</a></button>
+               
+                
+
+            </div>
 
             <div class="tela-perfil">
      
@@ -41,55 +48,11 @@
                     <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
                 </div>
                 </fieldset>
-            </div>
-            <hr>
-<br>
-            <h2 class="titulo wrapper">Editar dados</h2>
-            
-            <div class="editar-foto">
-            <br>
-                <form  class="file"  method="POST" enctype="multipart/form-data">
-                <label class="mudar-nome" for="nome"><strong>Editar foto do perfil</strong></Label>
-                
-                    <div class="file">      
-                        <input  type="file" name="imagem">
-                        <br>
-                        <input  class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto">
-                    </div>
-            
-                </form>
-                <br>
-            
-
-             
-               
-                <form class="editar-dados" method="POST">
-                    <br>
-                    <div class="dados">
-                        <label for="nome"><strong>Nome Completo</strong></Label>
-                        <br>
-                        <input type="text" name="nome" id="nome" value="<?= $_SESSION['nome'] ?>" required>
-                    </div>
-                    <br>
-                    <div class="dados">
-                        <label for="telefone"><strong>Telefone</strong></Label>
-                        <br>
-                        <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
-                    </div>
-                    <br>
-                    <div class="salvar-dados" >
-                    <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
-                    </div>
-            
-                </form>
-                
-                <br>
-                <hr>
-                <br>
-                
                 <form class="sair-tela" action="sair.php" method="post">
                     <input type="submit" value="Sair">
                 </form>
+            </div>
+            
         </div>
 
         <?php } else { ?>

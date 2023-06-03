@@ -21,12 +21,12 @@
 
 <body>
 <?php include '../navbar.php'; ?>
-  <header>
-  <h2 class="titulo wrapper">Meus anuncios</h2>
-  </header>
 
 
-  <main class="meus-anuncios">
+<main class="meus-anuncios">
+    <header>
+    <h2 class="titulo wrapper">Meus anuncios</h2>
+    </header>
 
     <?php
   

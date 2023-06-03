@@ -31,7 +31,7 @@
                 <label for="titulo"></Label>
             </div>
             <div class="campotexto ">
-                <input type="number" placeholder=" R$" name="preco" id="preco" class="inputUser" required>
+                <input type="number" placeholder="Valor" name="preco" id="preco" class="inputUser" required>
                 <label for="preco"></Label>
             </div>
             <div class="campotexto">
@@ -39,19 +39,19 @@
                 <label for="localizacao"></Label>
             </div>
             <div class="campotexto">
-                <input type="text" placeholder="Cep" name="cep" id="cep" class="inputUser" required>
+                <input type="text" placeholder="Digite o CEP" name="cep" id="cep" class="inputUser" required>
                 <label for="cep"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder=" Número" name="numero" id="numero" class="inputUser" required>
+                <input type="number" placeholder="Nº" name="numero" id="numero" class="inputUser" required>
                 <label for="numero"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder=" Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
+                <input type="number" placeholder="Capacidade de Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
-                <textarea class="descricao limite-chars" type="text" placeholder="Descricao" name="descricao" id="info" maxlength="450" required></textarea>
+                <textarea class="descricao limite-chars" type="text" placeholder=" Descricao" name="descricao" id="info" maxlength="450" required></textarea>
                 <label for="info"></Label>
             </div>
             <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">
@@ -92,6 +92,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../js/js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 </body>
 <?php
 
