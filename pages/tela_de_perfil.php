@@ -25,8 +25,8 @@
         <div class="formulario-de-dados wrapper" >
         <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex" >
-            <button class="" type="button"><a href="./tela_de_perfil.php">Dados cadastrados</a></button>
-            <button class="" type="button"><a href="./tela_de_editar.php">Editar dados</a></button>
+            <button class="" type="button"><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
+            <button class="" type="button"><a href="./tela_de_editar.php">Editar Perfil</a></button>
             </div>
 
             <div class="tela-perfil">

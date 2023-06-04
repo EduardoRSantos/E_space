@@ -25,8 +25,8 @@
         <div class="formulario-de-dados wrapper" >
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex" >
-            <button class="" ><a href="./tela_de_perfil.php">Dados cadastrados</a></button>
-            <button class=""><a href="./tela_de_editar.php">Editar dados</a></button>
+            <button class="" ><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
+            <button class=""><a href="./tela_de_editar.php">Editar Perfil</a></button>
             </div>
             
             <div class="editar-foto">
@@ -48,12 +48,12 @@
                
                 <form class="editar-dados" method="POST">
                     <br>
-                    <div class="dados">
+                    <!-- <div class="dados">
                         <label for="nome"><strong>Email</strong></Label>
                         <br>
                         <input type="text" name="email" id="email" value="<?= $_SESSION['email'] ?>" required>
                     </div>
-                    <br>    
+                    <br>     -->
                     <div class="dados">
                         <label for="nome"><strong>Nome Completo</strong></Label>
                         <br>
