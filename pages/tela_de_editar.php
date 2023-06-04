@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
            <?php include '../css/navbar.css'; ?>
+           <?php include '../css/footer.css';?>
+        <?php include '../css/ionicons.min.css';?>
     </style>
 </head> 
 
@@ -228,30 +230,7 @@
 
         <br>
 
-        <footer>
-    <div class="container main-footer">
-      <div class="footer-logo">
-        <img src="../img/arte1.png " alt="Logo da empresa">
-      </div>
-      <div class="footer-links">
-        <h3>Links úteis</h3>
-        <ul>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h3>Redes sociais</h3>
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
+        <?php include '../footer.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

@@ -60,7 +60,7 @@ display: block;
 background-image: url("../img/logo.png");
 background-position: center right;
 background-repeat: no-repeat;
-background-size: contain;
+background-size: 450px;
 font-family: Montserrat;
 box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
   color: rgb(32, 32, 32);
@@ -123,6 +123,7 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
 .file>.salvar{
   max-width: 140px;
   border:none;
+  padding: 0;
   background: rgb(129,240,212);
   background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   cursor: pointer;
@@ -135,6 +136,7 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .salvar-dados>.salvar{
+  padding: 0;
   font-weight: 450;
   background: rgb(129,240,212);
   background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
@@ -146,6 +148,7 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
 
 
 .sair-tela>input{
+  padding: 0;
   font-weight: 450;
   max-width: 100px;
   cursor: pointer;

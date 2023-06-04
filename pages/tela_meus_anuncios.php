@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
         <?php include '../css/navbar.css'; ?>
+        <?php include '../css/footer.css';?>
+        <?php include '../css/ionicons.min.css';?>
     </style>
 
 </head>
@@ -193,29 +195,7 @@
     <?php  } ?>
   </main>
 
-  <footer>
-    <div class="container main-footer">
-      <div class="footer-logo">
-        <img src="../img/arte1.png " alt="Logo da empresa">
-      </div>
-      <div class="footer-links">
-        <h3>Links úteis</h3>
-        <ul>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h3>Redes sociais</h3>
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <?php include '../footer.php'; ?>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>

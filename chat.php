@@ -7,6 +7,11 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+    <style>
+        <?php include '../css/footer.css';?>
+        <?php include '../css/ionicons.min.css';?>
+    </style>
+
 </head>
 <body>
     <aside>
@@ -24,6 +29,7 @@
         
     </section>
 
+    <?php include '../footer.php'; ?>
     <script src='assets/js/script.js'></script>
     
 </body>

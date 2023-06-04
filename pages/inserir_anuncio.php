@@ -12,6 +12,10 @@
     <title>Inserir Anúncio</title>
     <style>
         <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?>
+        <?php include '../css/footer.css';?>
+        <?php include '../css/ionicons.min.css';?>
+        
+
     </style>
 </head>
 
@@ -27,27 +31,27 @@
                 <div id="preview"></div>
             </div>
             <div class="campotexto">
-                <input type="text" placeholder="Título" name="titulo" id="titulo" class="inputUser" required>
+                <input type="text" placeholder=" Título" name="titulo" id="titulo" class="inputUser" required>
                 <label for="titulo"></Label>
             </div>
             <div class="campotexto ">
-                <input type="number" placeholder="Valor" name="preco" id="preco" class="inputUser" required>
+                <input type="number" placeholder=" Valor" name="preco" id="preco" class="inputUser" required>
                 <label for="preco"></Label>
             </div>
             <div class="campotexto">
-                <input type="text" placeholder="Localização" name="localizacao" id="localizacao" class="inputUser" required>
+                <input type="text" placeholder=" Localização" name="localizacao" id="localizacao" class="inputUser" required>
                 <label for="localizacao"></Label>
             </div>
             <div class="campotexto">
-                <input type="text" placeholder="Digite o CEP" name="cep" id="cep" class="inputUser" required>
+                <input type="text" placeholder=" Digite o CEP" name="cep" id="cep" class="inputUser" required>
                 <label for="cep"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder="Nº" name="numero" id="numero" class="inputUser" required>
+                <input type="number" placeholder=" Nº" name="numero" id="numero" class="inputUser" required>
                 <label for="numero"></Label>
             </div>
             <div class="campotexto">
-                <input type="number" placeholder="Capacidade de Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
+                <input type="number" placeholder=" Capacidade de Pessoas" name="quantidade_pessoas" id="quantidadedepessoas" class="inputUser" required>
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
@@ -59,30 +63,7 @@
     </section>
 
 
-    <footer>
-        <div class="container main-footer">
-            <div class="footer-logo">
-                <img src="../img/arte1.png " alt="Logo da empresa">
-            </div>
-            <div class="footer-links">
-                <h3>Links úteis</h3>
-                <ul>
-                    <li><a href="#">Sobre nós</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Redes sociais</h3>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
+    <?php include '../footer.php'; ?>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

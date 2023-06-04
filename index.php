@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="./pages/modal/modal_carousel.css" />
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -332,31 +335,56 @@
 
   </main>
 
-  <footer>
-    <div class="container main-footer">
-      <div class="footer-logo">
-        <img src="./img/arte1.png " alt="Logo da empresa">
-      </div>
-      <div class="footer-links">
-        <h3>Links úteis</h3>
-        <ul>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h3>Redes sociais</h3>
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
 
+  <!-- FOOTER -->
 
+  <section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-6 text-center">
+					
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer-07">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12 text-center">
+          <img style="object-fit: contain; padding: -150px; bottom: 0; width: 100%;"  width="150px"  height="150px" src="./img/logo.png" class="logo"></img>
+						<p style="margin-top: -50px;" class="menu">
+							<a href="#">Home</a>
+							<a href="#">Agent</a>
+							<a href="#">About</a>
+							<a href="#">Listing</a>
+							<a href="#">Blog</a>
+							<a href="#">Contact</a>
+						</p>
+            <br>
+            <br>
+						<ul  class="ftco-footer-social  p-0">
+              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
+            </ul>
+					</div>
+				</div>
+      
+				<div class="row mt-5">
+					<div class="col-md-12  text-center">
+						<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+					  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+
+  <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

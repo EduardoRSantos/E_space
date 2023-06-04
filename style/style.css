@@ -1037,12 +1037,15 @@ margin-right: 2rem;
 }
 
 .texto-destaque{
-  padding: 5px 20px;
+  padding: 10px 20px;
   text-align: start;
-border-left: 8px solid #3498db ;
-  color: #15415f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
+  padding-top: 15px;
   font-size: 1.4rem;
-  font-family: Montserrat;
+  font-family: Poppins;
 }
 
 .container {
@@ -1136,12 +1139,16 @@ border-left: 8px solid #3498db ;
 }
 
 .text-recentes{
-  padding: 5px 20px;
+  padding: 10px 20px;
   text-align: start;
-border-left: 8px solid #3498db ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
+  padding-top: 15px;
   color: #15415f;
   font-size: 1.4rem;
-  font-family: Montserrat;
+  font-family: Poppins;
 }
 
 /* TELA RECENTES */
@@ -1155,7 +1162,7 @@ border-left: 8px solid #3498db ;
 
   .body-modal, .footer-modal{
     margin: 10px;
-    background-color: #ffffff;
+    background-color: #161616;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
@@ -1187,60 +1194,7 @@ border-left: 8px solid #3498db ;
 
   /* ANUNCIOS  */
 
-  /* FOOTER */
-
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 0;
-  }
   
-  .main-footer   {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-        background-color: #333;
-        
-  }
-  
-  .footer-logo img {
-    max-width: 100%;
-    height: auto;
-    width: 150px;
-  }
-  
-  .footer-links h3,
-  .footer-social h3 {
-    margin-bottom: 10px;
-  }
-  
-  .footer-links ul,
-  .footer-social ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .footer-links li,
-  .footer-social li {
-    margin-bottom: 5px;
-  }
-  
-  .footer-links a,
-  .footer-social a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-social i {
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-/* FOOTER  */
 
 
 /* AVALIAR ANUNCIOS */
@@ -1387,6 +1341,10 @@ margin-right: 2rem;
 
 
   @media only screen and (max-width: 768px) {
+
+    .texto-destaque{
+      max-width: 400px;
+    }
     
     .navbarheader{
       display: none;
