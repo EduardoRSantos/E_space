@@ -22,6 +22,7 @@
 <?php include '../navbar.php'; ?>
   </header>
 
+
   <?php
   $curl = curl_init();
   curl_setopt_array($curl, [
@@ -40,12 +41,18 @@
     foreach ($data as $anuncio) :
       $imagens = explode(';', $anuncio['imagens']);
   ?>
-      <section class="conteudoan-section ">
+  
+  <section class="conteudoan-section wrapper">
+        <h2 class="titulo ">Avaliar Anúncio</h2>
+        <div class="text-avaliar wrapper">
+        <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
+        </div>
+
   <div class="conteudoan-container wrapper">
   <a target="_blank" href="img_5terre.jpg">
-            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre" width="300" height="200">
+            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre"">
           </a>
-    <div class="conteudoan-details ">
+    <div class="conteudoan-details">
     <h4><?= $anuncio['titulo'] ?></h4>
           <h4><?= $anuncio['preco'] ?></h4>
           <h4><?= $anuncio['cep'] ?></h4>
@@ -60,7 +67,7 @@
             <p ><?= $anuncio['preco'] ?></p>
           </div> -->
         <div class="conteudoan-buttons">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Chat</button>
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Chat</button> -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
@@ -70,7 +77,7 @@
   </div>
 </section>
       <!-- usuario -->
-      <div class="modal fade" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade janela-avaliar" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -96,13 +103,13 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Anuncios de <?= $anuncio['nome'] ?></h5>
+              <p class="modal-title" id="exampleModalLongTitle"><strong>Anunciante</strong> <?= $anuncio['nome'] ?></p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <h4>Certeza que deseja aceitar o anuncio</h4>
+              <h4>Certeza que deseja aceitar o anúncio ?</h4>
             </div>
             <div class="modal-footer">
               <form method="post">
@@ -120,7 +127,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Anúncios de <?= $anuncio['nome'] ?></h5>
+              <p class="modal-title modal-title" id="exampleModalLongTitle"><strong>Anunciante</strong><?= $anuncio['nome'] ?></p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

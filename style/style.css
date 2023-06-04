@@ -379,7 +379,7 @@ position: relative;
 .chat-header {
   background: rgb(129,240,212);
   background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
-  color: #5c5959;
+  color: #185b88;
   padding: 5px;
   font-size: 20px;
   font-weight: 450;
@@ -1037,6 +1037,7 @@ margin-right: 2rem;
 }
 
 .texto-destaque{
+  font-weight: 600;
   padding: 10px 20px;
   text-align: start;
   border-top-left-radius: 15px;
@@ -1045,6 +1046,7 @@ margin-right: 2rem;
   background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   padding-top: 15px;
   font-size: 1.4rem;
+  color: #185b88;
   font-family: Poppins;
 }
 
@@ -1139,6 +1141,7 @@ margin-right: 2rem;
 }
 
 .text-recentes{
+  font-weight: 600;
   padding: 10px 20px;
   text-align: start;
   border-top-left-radius: 15px;
@@ -1146,7 +1149,7 @@ margin-right: 2rem;
   background: rgb(129,240,212);
   background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   padding-top: 15px;
-  color: #15415f;
+  color: #185b88;
   font-size: 1.4rem;
   font-family: Poppins;
 }
@@ -1161,14 +1164,27 @@ margin-right: 2rem;
   }
 
   .body-modal, .footer-modal{
+    color: white;
     margin: 10px;
     background-color: #161616;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .body-modal, h4>strong{
-    font-size: 21px;
+    padding-left: 5px;
+    font-size: 1.2rem;
     font-weight: 700;
+  }
+
+  .body-modal>.anunciante{
+   border-radius: 5px;
+    background-color: #ffffff;
+    color: #1284ff;
+  }
+
+  .body-modal>h4{
+    color: white;
+    font-size: 1.0rem;
   }
 
   .anuncio-modal{
@@ -1188,8 +1204,15 @@ margin-right: 2rem;
 .slide-modal{
   margin: 0.5rem;
   width: 100%;
+  padding: 30px;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #161616;
+
+}
+
+.img-size{
+  width: 540px;
+  height: 350px;;
 }
 
   /* ANUNCIOS  */
@@ -1200,9 +1223,14 @@ margin-right: 2rem;
 /* AVALIAR ANUNCIOS */
 
 .conteudoan-details{
+  padding-left: 15px;
   flex: 1 1 300px;
   text-align: start;
   width: 40px;
+}
+
+.conteudoan-details>h4{
+  padding-left: 5px;
 }
 
 
@@ -1210,7 +1238,7 @@ margin-right: 2rem;
   display: block;
   justify-content: start;
   height: auto;
-  padding: 120px 20px;
+  padding: 100px 20px;
   object-fit: cover;
 }
 
@@ -1225,6 +1253,14 @@ margin-right: 2rem;
   max-width: 800px;
 }
 
+.conteudoan-container>a>img{
+  width: 100%;   
+  height: auto;
+  width:300px; /* Largura fixa */
+  height: 220px; /* Altura fixa */
+  object-fit: cover;
+}
+
 .conteudoan-ad {
   flex: 1 1 300px;
   margin-right: 20px;
@@ -1237,22 +1273,26 @@ margin-right: 2rem;
 }
 
 .conteudoan-details {
-
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
   flex: 1 1 300px;
   text-align: start;
   font-family: Poppins;
+  max-width: min-content;
+  padding: 0px 0px 0px 0px;
 }
 
-.conteudoan-details>h4 {
-  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.2);
+.conteudoan-details> {
+
   margin-left: 5px;
   padding-left: 10px;
-border-left: 8px solid black;
   text-align: start;
   font-size: 24px;
-width:330px;
-  margin-bottom: 10px;
+
 }
+
+
 
 .conteudoan-details p {
   text-align: start;
@@ -1292,6 +1332,32 @@ white-space: nowrap;
 
 
 
+
+.modal-header, .modal-title, .modal-body, .modal-footer{
+  background-color: #161616; 
+  border: none;
+}
+
+.modal-body>h4{
+  font-size: 1.1rem;
+  color: white;
+}
+
+.modal-header>.modal-title{
+ 
+  font-size: 1.1rem;
+ border-radius: 5px;
+ color: #e0e0e0;
+}
+
+.modal-title>strong{
+  font-size: 1.3rem;
+  color: #1284ff;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+
 .localizacao img, p{
   object-fit: contain;
 }
@@ -1326,6 +1392,22 @@ margin-right: 2rem;
   margin: 0 2px;
 }
 
+.titulo{
+  border-radius: 5px;
+    padding: 5px 20px;
+  text-align: start;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
+  color: #15415f;
+  font-size: 1.4rem;
+  font-family: Montserrat;
+  text-align: start;
+}
+
+.text-avaliar>p{
+  text-align: start;
+  font-size: 1.2rem;
+}
 
 /* AVALIAR ANUNCIOS */
 
@@ -1378,7 +1460,17 @@ margin-right: 2rem;
 
 
 @media screen and (max-width: 768px) {
+
+  .conteudoan-buttons>button{
+    padding: 5px;
+    width: 100%;
+    min-width: 70px;
+
+  }
   
+    .conteudoan-section, .conteudoan-details{
+      max-width: 300px;
+    }
 
     .rental-ad img {
       width: 100%;
