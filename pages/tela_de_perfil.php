@@ -25,13 +25,16 @@
             <div class="dados-user d-flex" >
             <button class="" type="button"><a href="./tela_de_perfil.php">Dados cadastrados</a></button>
             <button class="" type="button"><a href="./tela_de_editar.php">Editar dados</a></button>
-               
-                
-
             </div>
 
             <div class="tela-perfil">
-     
+                <div>
+                <h3>Olá! Bem-vindo, <strong><?= $_SESSION['nome'] ?></strong></h3>
+                    <p>
+                        Essa tela mostra os dados do usuário cadastrado.
+                    </p>
+                </div>
+                <hr>
                 <br>  
                 <label for="nome"><strong>Nome Completo</strong></Label>
                 <div class="dados">
