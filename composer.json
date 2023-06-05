@@ -1,12 +1,10 @@
 {
     "require": {
-        "slim/slim": "^3.0",
-        "cboden/ratchet": "0.4"
+        "slim/slim": "^3.0"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "App",
-            "Rafa\\": "lib/RafaelCapoani"
+            "App\\": "App"
         }
     }
     

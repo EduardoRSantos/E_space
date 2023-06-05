@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Inserir Anúncio</title>
     <style>
-        <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?>
-        <?php include '../css/footer.css';?>
-        <?php include '../css/ionicons.min.css';?>
-        
-
+        <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?><?php include '../css/footer.css'; ?><?php include '../css/ionicons.min.css'; ?>
     </style>
 </head>
 
@@ -75,7 +71,7 @@
     <script src="../js/js.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 </body>
 <?php
@@ -164,8 +160,9 @@ if (!empty($_SESSION)) {
             </script>
     <?php }
     }
-} else { ?>
+} else {
 
+    ?>
     <script type="text/javascript">
         Swal.fire({
             title: 'Ops!',
@@ -178,7 +175,8 @@ if (!empty($_SESSION)) {
             }
         })
     </script>
+<?php
 
-<?php } ?>
+} ?>
 
 </html>
