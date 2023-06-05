@@ -9,25 +9,71 @@ text-decoration: none;
 }
 
 .titulo{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   padding-top: 15px;
-    padding: 5px 20px;
+    padding: 10px 20px;
   text-align: start;
-border-left: 8px solid #3498db ;
-  color: #15415f;
+  color: #5e5e5e;
+  margin-top: 15px;
   font-size: 1.4rem;
 font-weight: 500px;
 }
 
+.dados-user>button{
+  border: none;
+  text-decoration: none;
+  padding-top: 55px;
+  border-radius: 0px 0px 6px 6px;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 5px 10px 5px;
+  animation: both;
+  transform-style: flat;
+  transition-duration: 550ms;
+  background-color: #696969;
+}
+
+
+.dados-user>button>a{
+
+  text-decoration: none;
+  color: rgb(228, 228, 228);
+  font-size: 15px;  
+}
+
+.dados-user>button:hover{
+    color: rgb(114, 114, 114);
+      animation: both;
+    transform-style: flat;
+    transition-duration: 550ms;
+    background-color: #1a8596;
+}
+
 .formulario-de-dados{
+  margin-top: 6rem !important;
   align-self: center;
 display: block;
+background-image: url("../img/logo.png");
+background-position: center right;
+background-repeat: no-repeat;
+background-size: 450px;
 font-family: Montserrat;
-
+box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
   color: rgb(32, 32, 32);
   border-radius: 15px;
 }
 
+.dados-user,.titulo-dados{
+  display: flex;
+ gap: 15px;
+}
+
  .tela-perfil{
+  color: #5e5e5e;
   align-items: center;
   text-align: center;
   padding: 15px;
@@ -44,7 +90,7 @@ font-family: Montserrat;
 
   padding: 0.5rem;
   align-items: center;
-  color: black;
+  color: rgb(104, 104, 104)
 }
 
 .editar-foto{
@@ -52,16 +98,22 @@ font-family: Montserrat;
   text-align: start;
   padding: 15px;
   justify-content: center;
+  color: rgb(255, 255, 255);
 }
 
-.editar-foto ,input{
+.editar-foto,input{
 
   width: 100%;
   font-size: 1.0rem;
   align-items: center;
-  color: black;
+  color: rgb(71, 71, 71);
 }
 
+.editar-foto,.file>input{
+  font-weight: 450;
+  max-width: 450px;
+  color: #5e5e5e;
+}
 
 
 .file>input{
@@ -71,8 +123,9 @@ font-family: Montserrat;
 .file>.salvar{
   max-width: 140px;
   border:none;
-background: #15415f;
-color: rgb(247, 247, 247);
+  padding: 0;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   cursor: pointer;
 }
 
@@ -83,25 +136,90 @@ color: rgb(247, 247, 247);
 }
 
 .salvar-dados>.salvar{
-  background: #15415f;
+  padding: 0;
+  font-weight: 450;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   max-width: 100px;
-  color: rgb(247, 247, 247);
   cursor: pointer;
+  border: none;
 }
 
 
 
 .sair-tela>input{
+  padding: 0;
+  font-weight: 450;
   max-width: 100px;
-  color: rgb(247, 247, 247);
   cursor: pointer;
-  background: #15415f;
+  border: none;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
 }
 
 .dados>input{
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   border: none;
   max-width: 300px;
 }
+
+
+  /* FOOTER */
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+  }
+  
+  .main-footer   {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+        background-color: #333;
+        
+  }
+  
+  .footer-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+  }
+  
+  .footer-links h3,
+  .footer-social h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul,
+  .footer-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li,
+  .footer-social li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a,
+  .footer-social a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-social i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+/* FOOTER  */
+
 
 
 
@@ -114,6 +232,10 @@ hr{
 @media only screen and (max-width: 768px) {
   .formulario-de-dados{
     display: block;
+  }
+
+  .formulario-de-dados{
+    background-image: none;
   }
 
 }

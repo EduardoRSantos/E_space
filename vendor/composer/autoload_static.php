@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit733c852f201014d5024d67c239732e61
+class ComposerStaticInit5f011f18a1695b91764a7ee699b53c89
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
@@ -34,6 +34,7 @@ class ComposerStaticInit733c852f201014d5024d67c239732e61
             'React\\Cache\\' => 12,
             'Ratchet\\RFC6455\\' => 16,
             'Ratchet\\' => 8,
+            'Rafa\\' => 5,
         ),
         'P' => 
         array (
@@ -107,6 +108,10 @@ class ComposerStaticInit733c852f201014d5024d67c239732e61
         array (
             0 => __DIR__ . '/..' . '/cboden/ratchet/src/Ratchet',
         ),
+        'Rafa\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib/RafaelCapoani',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -153,10 +158,10 @@ class ComposerStaticInit733c852f201014d5024d67c239732e61
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit733c852f201014d5024d67c239732e61::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit733c852f201014d5024d67c239732e61::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit733c852f201014d5024d67c239732e61::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit733c852f201014d5024d67c239732e61::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5f011f18a1695b91764a7ee699b53c89::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5f011f18a1695b91764a7ee699b53c89::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5f011f18a1695b91764a7ee699b53c89::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5f011f18a1695b91764a7ee699b53c89::$classMap;
 
         }, null, ClassLoader::class);
     }

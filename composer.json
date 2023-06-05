@@ -5,7 +5,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "App"
+            "App\\": "App",
+            "Rafa\\": "lib/RafaelCapoani"
         }
     }
     

@@ -5,18 +5,24 @@
   text-decoration: none;
 }
 
+.estrutura_da_tela{
+  padding-top: 6rem;
+}
+
 /* Estilos básicos para o layout do formulário */
 .estrutura_da_tela .inserir, .form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 .titulo{
+  border-radius: 5px;
   padding-top: 15px;
     padding: 5px 20px;
   text-align: start;
-border-left: 8px solid #3498db ;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
   color: #15415f;
   font-size: 1.4rem;
   font-family: Montserrat;
@@ -49,9 +55,13 @@ label {
 [type="submit"] {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   border: none;
   border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  text-align: center;
   background-color: #0066cc;
   color: #fff;
   font-size: 16px;
@@ -80,7 +90,7 @@ label {
 }
 
 .inputUser{
-  padding: 5px;
+  padding: 1px;
   width: 500px;
   max-width: 100%;
 }
@@ -96,6 +106,15 @@ label {
   height: 12.5rem;
   max-width: 100%;
   border-radius: 0px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.campotexto>input{
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
 }
 
 
@@ -107,6 +126,7 @@ label {
 }
 
 .inserir-imagem ,.inputUserArquivos input{
+  
 float: right;
 width: 27.5rem;
 max-width: 100%;
@@ -120,7 +140,9 @@ max-width: 100%;
   margin: 4px;
   overflow-x: scroll;
   height: 200px;
-    border: 1px solid black ;  
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
   height: 15rem;
   max-width: 100%;
   background-color:rgb(255, 255, 255);	
@@ -185,55 +207,5 @@ max-width: 100%;
 
  /* FOOTER */
 
- footer {
-  background-color: #333;
-  color: #fff;
-  padding: 130px 0;
-}
-
-.main-footer   {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-      background-color: #333;
-      
-}
-
-.footer-logo img {
-  max-width: 100%;
-  height: auto;
-  width: 150px;
-}
-
-.footer-links h3,
-.footer-social h3 {
-  margin-bottom: 10px;
-}
-
-.footer-links ul,
-.footer-social ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-links li,
-.footer-social li {
-  margin-bottom: 5px;
-}
-
-.footer-links a,
-.footer-social a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-social i {
-  font-size: 24px;
-  margin-right: 10px;
-}
 
 /* FOOTER  */

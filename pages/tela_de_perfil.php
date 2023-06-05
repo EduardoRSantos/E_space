@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
            <?php include '../css/navbar.css'; ?>
+           <?php include '../css/footer.css';?>
+        <?php include '../css/ionicons.min.css';?>
     </style>
 </head>
 
@@ -21,10 +23,20 @@
 <?php include '../navbar.php';?>
     <?php if (!empty($_SESSION)) { ?>
         <div class="formulario-de-dados wrapper" >
-            <h2 class="titulo wrapper">Dados cadastrados</h2>
+        <h2 class="titulo wrapper">Informações do perfil</h2>
+            <div class="dados-user d-flex" >
+            <button class="" type="button"><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
+            <button class="" type="button"><a href="./tela_de_editar.php">Editar Perfil</a></button>
+            </div>
 
             <div class="tela-perfil">
-     
+                <div>
+                <h3>Bem-vindo, <strong><?= $_SESSION['nome'] ?></strong></h3>
+                    <p>
+                  Para visualizar seus dados cadastrados, clique no botão 'Visualizar Perfil'.<br>Para fazer alterações nos seus dados, clique no botão 'Editar Perfil'.
+                    </p>
+                </div>
+                <hr>
                 <br>  
                 <label for="nome"><strong>Nome Completo</strong></Label>
                 <div class="dados">
@@ -41,55 +53,11 @@
                     <label for="telefone"><?= $_SESSION['telefone'] ?></Label>
                 </div>
                 </fieldset>
-            </div>
-            <hr>
-<br>
-            <h2 class="titulo wrapper">Editar dados</h2>
-            
-            <div class="editar-foto">
-            <br>
-                <form  class="file"  method="POST" enctype="multipart/form-data">
-                <label class="mudar-nome" for="nome"><strong>Editar foto do perfil</strong></Label>
-                
-                    <div class="file">      
-                        <input  type="file" name="imagem">
-                        <br>
-                        <input  class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto">
-                    </div>
-            
-                </form>
-                <br>
-            
-
-             
-               
-                <form class="editar-dados" method="POST">
-                    <br>
-                    <div class="dados">
-                        <label for="nome"><strong>Nome Completo</strong></Label>
-                        <br>
-                        <input type="text" name="nome" id="nome" value="<?= $_SESSION['nome'] ?>" required>
-                    </div>
-                    <br>
-                    <div class="dados">
-                        <label for="telefone"><strong>Telefone</strong></Label>
-                        <br>
-                        <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
-                    </div>
-                    <br>
-                    <div class="salvar-dados" >
-                    <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
-                    </div>
-            
-                </form>
-                
-                <br>
-                <hr>
-                <br>
-                
                 <form class="sair-tela" action="sair.php" method="post">
                     <input type="submit" value="Sair">
                 </form>
+            </div>
+            
         </div>
 
         <?php } else { ?>
@@ -239,6 +207,8 @@
     } ?>
         </div>
 
+
+        <?php include '../footer.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

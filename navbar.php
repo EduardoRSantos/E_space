@@ -27,7 +27,7 @@
   </nav>
 </div>
 
-      <nav class="navbarheader wrapper" >
+      <nav class="navbarheader" >
     <div class="logo">
       <a href="../index.php"><img  src="../img/logo.png" alt="Logo" /></a>
     </div>

@@ -17,6 +17,8 @@
     <style>
         <?php include '../css/mais_informacoes.css'; ?>
         <?php include '../css/navbar.css'; ?>
+        <?php include '../css/footer.css';?>
+        <?php include '../css/ionicons.min.css';?>
     </style>
 </head>
 
@@ -83,6 +85,9 @@
                 </div>
         </form>
     </section>
+
+
+    <?php include '../footer.php'; ?>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>

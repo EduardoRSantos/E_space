@@ -32,25 +32,29 @@
 </section>
 </div>
 
+ 
+
+
+
 
     <div class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-dark">
           <!-- <div class=".header-modal">
             <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div> -->
-          <div class="body-modal">
-            <h4><strong>Anunciante</strong> <?= $anuncio['nome'] ?></h4>
+          <div class="body-modal bg-dark">
+            <h4 class="anunciante" ><strong>Anunciante</strong> <?= $anuncio['nome'] ?></h4>
             <br>
             <h3 class="limite-chars-title-modal"><?= $anuncio['titulo'] ?></h3>
             <h4>Publicado: <?= $anuncio['criado_em'] ?></h4>
             <hr>
             <h4 class="limite-chars-modal" >Descrição <br> <?= $anuncio['descricao'] ?></h4>
             <br>
-            <h4><strong>Tel</strong> <br> <?= $anuncio['telefone'] ?></h4>
+            <h4><strong>Telefone</strong> <br> <?= $anuncio['telefone'] ?></h4>
             <h4><strong>Cep</strong> <br> <?= $anuncio['cep'] ?></h4>
           </div>
           <div class="footer-modal">
@@ -60,7 +64,7 @@
     </div>
 
 
-    <div class="modal fade" id="modal<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal fade galeria-anuncios" id="modal<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="slide-modal">
           <div class="body">
