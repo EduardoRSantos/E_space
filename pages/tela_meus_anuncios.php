@@ -76,7 +76,7 @@
                   <h4 class="limite-chars postado">Anúncio postado!</h4>
                 <?php } ?>
                 <h2 class="limite-chars-titulo"><?= $anuncio['titulo'] ?></h2>
-:
+      <!-- <p class="limite-chars-descricao" ><?= $anuncio['descricao'] ?></p> -->
   
       <div class="rental-price">
           <div class="localizacao d-flex w-100" >
@@ -195,6 +195,10 @@
     <?php  } ?>
   </main>
 
+
+  
+  <br><br>
+        <br><br>
   <?php include '../footer.php'; ?>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

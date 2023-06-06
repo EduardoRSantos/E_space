@@ -27,22 +27,17 @@
       <button class=""><a class="text-white" href="../E_space/pages/tela_meus_anuncios.php">Inserir anuncio</a></button>
       <button class=""><a  class="text-white" href="../E_space/pages/tela_de_perfil.php">Perfil</a></button>
 
-      <form class="searchbarmobile" method="post">
+  
+
+    </div>
+  </div>
+  <nav class="navbar navbar-light bg-white">
+    <form class="searchbarmobile" method="post">
       <div class="pesquisar">
         <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
         <button class="botaopequisar" type="submit"><img  class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
       </div>
     </form>
-
-    </div>
-  </div>
-  <nav class="navbar navbar-light bg-white">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="logo">
-        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
-      </div>
   </nav>
 </div>
  
@@ -268,9 +263,9 @@
       </div>
     </section>
 
-    <h3 class=" wrapper text-recentes">Anúncio Recentes</h3>
     <div class="anuncios wrapper">
       <div class="anuncios-recentes">
+        <h3 class=" text-recentes">Anúncio Recentes</h3>
 
         <?php
         if (empty($_POST['pesquisar'])) {
@@ -335,50 +330,67 @@
 
   </main>
 
+  
+        <br><br>
+        <br><br>
 
   <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>© 2023 E-space, Inc.</p>
+        <p><a href="#">Privacidade</a><span> | </span><a href="#">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
+      </div>
+    </div>
+    <div class="footer-buttons">
+    <ul>
+  <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
+    <li><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+  <?php } ?>
 
-  <section class="ftco-section">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-6 text-center">
-					
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer class="footer-07">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-12 text-center">
-          <img style="object-fit: contain; padding: -150px; bottom: 0; width: 100%;"  width="150px"  height="150px" src="./img/logo.png" class="logo"></img>
-						<p style="margin-top: -50px;" class="menu">
-							<a href="#">Home</a>
-							<a href="#">Agent</a>
-							<a href="#">About</a>
-							<a href="#">Listing</a>
-							<a href="#">Blog</a>
-							<a href="#">Contact</a>
-						</p>
-            <br>
-            <br>
-						<ul  class="ftco-footer-social  p-0">
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
-            </ul>
-					</div>
-				</div>
-      
-				<div class="row mt-5">
-					<div class="col-md-12  text-center">
-						<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-					  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-					</div>
-				</div>
-			</div>
-		</footer>
+  <li><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
+  <li><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+  <li><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+  <?php if (empty($_SESSION)) { ?>
+    <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+  <?php } ?>
+  <?php
+        if (!empty($_SESSION)) {
+          $id = $_SESSION['id'];
+
+          $body = [
+            'id' => $id,
+          ];
+
+          
+          $json = json_encode($body, true);
+
+          $curl = curl_init();
+          curl_setopt_array($curl, [
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => $json,
+            CURLOPT_HTTPHEADER => [
+              'Content-Type: application/json'
+            ]
+          ]);
+
+          $response = curl_exec($curl);
+
+          $data = json_decode($response, true);
+
+          curl_close($curl);
+
+          if (!empty($data)) { ?>
+            <li><img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt=""></li>
+        <?php }
+        } ?>
+</ul>
+    </div>
+  </footer>
+
+  
 		
 
   <script src="js/jquery.min.js"></script>

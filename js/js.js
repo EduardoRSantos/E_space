@@ -61,3 +61,7 @@ imagens.forEach(imagem => {
 });
 
 
+function toggleAdditionalInfo() {
+  const additionalInfo = document.querySelector('.additional-info');
+  additionalInfo.style.display = additionalInfo.style.display === 'none' ? 'block' : 'none';
+}

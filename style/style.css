@@ -589,7 +589,7 @@ position: relative;
   margin-bottom: 4px;
 background-color: #f3f3f3;
 margin-top: 0.5rem;
-overflow-y: scroll;
+
 }
 
 
@@ -934,16 +934,41 @@ margin-right: 2rem;
 
   @media (max-width: 600px) {
     .rental-container {
-      flex-direction: column;
+      width: 100%;
+      flex-direction: row;
+      margin-left: 20px;
     }
   
     .rental-ad {
-      margin-right: 0;
-      margin-bottom: 20px;
+      margin-left: -25px;
+      margin-bottom: 24px;
     }
   
-    .rental-details {
-      margin-bottom: 20px;
+    .rental-details>h2 {
+      font-size: 20px;
+      margin-top: -18px;
+    }
+
+    .rental-details{
+      padding-left: 5px;
+    }
+
+    .rental-ad .img{
+      width: 100%;   
+      height: auto;
+      width: 30px; /* Largura fixa */
+      height: 180px; /* Altura fixa */
+      object-fit: cover;
+    }
+
+    .rental-price>.localizacao{
+      margin-top: 0;
+   
+    }
+
+    .rental-price>.dinheiro{
+      margin-top: -20px;
+      padding-top: -50px;
     }
   }
   
@@ -1475,8 +1500,8 @@ margin-right: 2rem;
     .rental-ad img {
       width: 100%;
       height: auto;
-      width: 220px; /* Largura fixa */
-      height: 220px; /* Altura fixa */
+      width: 182px; /* Largura fixa */
+      height: 200px; /* Altura fixa */
       object-fit: cover;
     }
 
