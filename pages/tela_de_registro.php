@@ -108,7 +108,7 @@ if (!empty($_POST['email'])) {
                   <script type="text/javascript">
                         Swal.fire({
                               icon: 'error',
-                              title: 'Triste',
+                              title: 'Erro',
                               text: 'Email ja cadastrado!',
                               confirmButtonText: 'Ok'
                         }).then((result) => {

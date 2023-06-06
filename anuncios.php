@@ -22,8 +22,8 @@
             <p ><?= $anuncio['preco'] ?></p>
           </div>
         <div class="rental-buttons">
-          <button type="button" class="button-with-image" data-toggle="modal" data-target="#modalInfo <?= $anuncio['id'] ?>"></button>
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">Imagens</button>
+          <button type="button" class="button-with-image" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>"></button>
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalFotos<?= $anuncio['id'] ?>">Imagens</button>
           <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Descrição</button>
         </div>
       </div>
@@ -35,6 +35,24 @@
  
 
 
+<div class="modal fade anuncio-modal" id="modal<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+          <div>
+            <h4>Deseja comecar a conversar no whats</h4>
+
+            <form method="post" action="conversar.php">
+              <input type="hidden" name="telefone" id="telefone" value="<?= $anuncio['telefone']  ?>">
+
+              <button type="submit" name="button">Abrir conversa</button>
+            </form>
+          </div>
+          
+          <div class="footer-modal">
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <div class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -64,7 +82,7 @@
     </div>
 
 
-    <div class="modal fade galeria-anuncios" id="modal<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal fade galeria-anuncios" id="modalFotos<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="slide-modal">
           <div class="body">

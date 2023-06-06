@@ -1,6 +1,6 @@
 <?php
 
-require_once './routes/index.php';
+// require_once './routes/index.php';
 
 // $host = "mysql.espace.kinghost.net";
 // $port = "3306";
@@ -46,3 +46,5 @@ require_once './routes/index.php';
 //     curl_close($curl);
 
 // var_dump($data);
+
+
