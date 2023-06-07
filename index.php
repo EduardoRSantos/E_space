@@ -341,7 +341,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="#">Privacidade</a><span> | </span><a href="#">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
+        <p><a href="#">Privacidade</a><span> | </span><a href="http://localhost/E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">

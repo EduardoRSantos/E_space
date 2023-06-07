@@ -207,7 +207,7 @@ section.anuncios {
     width: 100%;
     height: auto;
     width: 350px; /* Largura fixa */
-    height: 235px; /* Altura fixa */
+    height: 185px; /* Altura fixa */
     object-fit: cover;
   }
   

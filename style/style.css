@@ -271,7 +271,9 @@ transition: 800ms;
   margin: 0.5rem;
   background-color:white;
   border-radius: 2rem;
-  border: 1px solid rgb(1, 90, 206);
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border-style: none;
+
 }
 
 .lupa{
@@ -286,9 +288,11 @@ button{
 }
 
 input{
-  border: 0.1rem solid rgb(1, 90, 206);
+  border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
   border-radius: 2rem;
-  border-style: inset;
+  border-style: none;
 }
 
 
@@ -489,7 +493,6 @@ position: relative;
   width: 100vw;
  background-size: cover;
   padding: 0;
-background-image: url(../img/back.jpg);
 }
 
 
@@ -718,14 +721,6 @@ div.desc {
 
   /* TELA ANUNCIOS  */
 
-  .rental-section {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: auto;
-    padding: 10px 20px;
-  }
-  
   .rental-container {
 
     display: flex;
@@ -892,7 +887,7 @@ margin-right: 2rem;
     animation: both;
     transform-style: flat;
     transition-duration: 550ms;
-    background-color: #1a8596;
+
   }
 
 
@@ -920,11 +915,12 @@ margin-right: 2rem;
   .rental-buttons>.button-with-image {
     margin-right: 12px;
     padding: 25px 20px; /* Ajuste o preenchimento conforme necessário */
-    background-image: url(../img/bate-papo.png);
+    background-image: url(../img/bater-papo.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; /* ou "contain" */
     border: none;
+    outline: none;
     cursor: pointer;
     /* Estilos adicionais conforme necessário */
   }
@@ -993,21 +989,22 @@ margin-right: 2rem;
 
 .button-container {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-evenly;
       flex-wrap: nowrap;
       display: flex;
       padding:2rem;
       margin-bottom: 5.5rem;
       border-radius: 5px;
       border-radius: 5px;
-      box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    
       border: none;
 		}
 
 		.button-container>button {
-      background-color: #1a8596;
-      border-radius: 6px;
-      color: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+      border-style: none;
+      color: #1a8596;
       font-weight: 700;
       cursor: pointer;
 			padding: 10px 40px 10px;
@@ -1023,7 +1020,7 @@ margin-right: 2rem;
     }
     
     .button-container>button>a{
-            color: #fcfcfc;
+      color: #1a8596;
 
     }
 
@@ -1033,9 +1030,10 @@ margin-right: 2rem;
     }
 
     .button-container>.principal{
-      background: #1a8596;
-      color: rgb(94, 94, 94);
-      border: 1px solid #1a8596;
+      border-radius: 2rem;
+      box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+      border-style: none;
+      color: #1a8596;
     }
 
 
@@ -1523,8 +1521,8 @@ margin-right: 2rem;
     }
 
   .botaopequisar{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 
     .menu-icon {
@@ -1609,7 +1607,7 @@ width: 100%;
   }
 
   .button-container>button{
-    margin: 5px;
+    margin: 10px;
     width: 100%;
   }
   

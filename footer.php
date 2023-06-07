@@ -15,7 +15,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="#">Privacidade</a><span> | </span><a href="#">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
+        <p><a href="#">Privacidade</a><span> | </span><a href="http://localhost/routes/E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
@@ -59,7 +59,7 @@
           curl_close($curl);
 
           if (!empty($data)) { ?>
-            <li><img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt=""></li>
+            <li><img style="border-radius: 50%;" width="35" height="35" src=".<?= $data[0]['path'] ?>" alt=""></li>
         <?php }
         } ?>
 </ul>

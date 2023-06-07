@@ -15,8 +15,9 @@
             <p>Digite os seus dados de cadastro no campo.</p>
             <input type="text" placeholder="Nome Completo" name="nome" id="nome" class="inputUser"  autofocus="true" required/>
             <input type="email" placeholder="Digite o seu e-mail" name="email" id="email" class="inputUser"  autofocus="true" required/>
-            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" />
-            <input type="password" placeholder="Confirme a sua senha" name="senha_confirmar" id="senha" class="inputUser" />
+            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" minlength="6" maxlength="12" onKeyUp="verificaForcaSenha();"/>
+            <span id="password-status"></span>
+            <input type="password" placeholder="Confirme a sua senha" name="senha_confirmar" id="senha" class="inputUser"/>
             <input type="tel" placeholder="Telefone" name="telefone" id="telefone" class="inputUser" />
         
             <input type="submit" name="submit" id="submit" value="Registrar" class="btn" />
@@ -32,8 +33,8 @@
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <script src="js/custom.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="../js/custom.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
       <script src="../js/mascaras.js"></script>
