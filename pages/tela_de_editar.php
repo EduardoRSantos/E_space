@@ -25,6 +25,7 @@
         <div class="formulario-de-dados wrapper" >
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex" >
+                <img class="config" src="../img/configuracoes.gif" alt="Configuraçõs"  srcset="">
             <button class="" ><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
             <button class=""><a href="./tela_de_editar.php">Editar Perfil</a></button>
             </div>
@@ -67,17 +68,18 @@
                     </div>
                     <br>
                     <div class="salvar-dados" >
-                    <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
+                        <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
                     </div>
-            
+                    
                 </form>
-        
-        
+                
+                
                 <br>
                 
                 <form class="sair-tela" action="sair.php" method="post">
                     <input type="submit" value="Sair">
                 </form>
+              
                 
         </div>
 
