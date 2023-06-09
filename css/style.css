@@ -66,7 +66,7 @@ font-weight: 500px;
   margin-top: 6rem !important;
   align-self: center;
 display: block;
-background-image: url("../img/logo.png");
+background-image: url("");
 background-position: center right;
 background-repeat: no-repeat;
 background-size: 450px;
@@ -173,8 +173,25 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
   max-width: 300px;
 }
 
+.formulario-de-dados .foto-perfil{
+  padding: 15px;
+}
 
 
+
+.e-space-user{
+  box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.dados-user .config{
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  align-items: start;
+  display: flex;
+  justify-content:start;
+}
 
 hr{
   width: 120px;  
