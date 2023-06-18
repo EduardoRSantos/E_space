@@ -67,7 +67,7 @@
 <section class="rental-section wrapper">
   <div class="rental-container">
     <div target="_blank" class="rental-ad">
-      <img src="../img/casa3.jfif" alt="Cinque Terre">
+      <img src=".<?= $imagens[0] ?>" alt="Cinque Terre">
     </div>
     <div class="rental-details">
     <?php if ($anuncio['autorizacao'] == 0) { ?>

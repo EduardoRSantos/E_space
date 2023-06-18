@@ -441,6 +441,13 @@
     });
   });
 </script>
+<<<<<<< HEAD
+=======
+
+</body>
+</html>
+
+>>>>>>> f5c571e77735bae202c6ddce9c44af95f35b5232
 <!-- MODAL QR CODE -->
 
 
