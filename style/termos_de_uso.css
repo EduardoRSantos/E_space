@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    margin-bottom: 20px;
+}
+.item{
+    margin-bottom: 30px;
+}
+#termosDeUso{
+    margin-bottom: 100px;
+}
+.atalhos{
+    margin: 75px 0 0 50px;
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+    background: aquamarine;
+    margin: 100px auto;
+    padding: 50px;
+}
+
+.observation{
+    background: #87CEFA;
+    padding: 15px;
+    border-radius: 2px;
+}
+
+.obs{
+    color: red;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.item ul,
+.item li {
+    padding-right: 35px;
+    width: 100%;
+  display: block;
+}
+
+
+.wrapper {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+@media screen and (min-width: 768px){
+
+
+    
+    .description{
+        width: 100%;
+
+    }
+
+
+}

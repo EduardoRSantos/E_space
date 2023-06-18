@@ -11,9 +11,11 @@
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-	
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/ionicons.min.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+
 </head>
 
 <body>
@@ -133,37 +135,52 @@
         <img src="./img/arte1.png" alt="Descrição da imagem">
       </div>
      <div class="texto">
-    <div class="chat">
-          <div class="chat-header">
-            <?php if (!empty($_SESSION)) { ?>
-              <span><?= $_SESSION['nome'] ?></span>
-            <?php } else { ?>
-              <span>E-space</span>
-            <?php } ?>
-          </div>
-          <div class="chat-body">
-            <div class="message">
-              <p>Já olhou no E-SPACE?</p>
-            </div>
-            <div class="message">
-              <p>Seu espaço está aqui!</p>
-            </div>
-            <div class="message">
-              <p>em Feira de Santana-Ba</p>
-            </div>
-            <div class="typing-indicator">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div class="chat-footer">
-            <input type="text" placeholder="Digite sua mensagem...">
-            <button>Enviar</button>
-          </div>
-          <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+     <div class="chat">
+  <div class="chat-header">
+    <?php if (!empty($_SESSION)) { ?>
+      <span><?= $_SESSION['nome'] ?></span>
+    <?php } else { ?>
+      <span>E-space</span>
+    <?php } ?>
+  </div>
+  <div class="chat-body">
+    <div class="message">
+      <p>Já olhou no E-SPACE?</p>
     </div>
-     </div>
+    <div class="message">
+      <p>Seu espaço está aqui!</p>
+    </div>
+    <div class="message">
+      <p>em Feira de Santana-Ba</p>
+    </div>
+    <div class="typing-indicator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" id="mensagem-input" placeholder="Digite sua mensagem...">
+    <button>Enviar</button>
+  </div>
+  <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Como você está?</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img width="450px" height="450px" style="width: 100%; " src="./img/qr.png" id="qrcode-img">
+      </div>
+    </div>
+  </div>
+</div>
 
 </section>
 </div>
@@ -394,6 +411,38 @@
 
   
 		
+
+
+
+
+
+<!-- MODAL QR CODE -->
+<!-- Inclua os arquivos JavaScript do Bootstrap e qrcode.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('mensagem-input');
+    const modal = new bootstrap.Modal(document.getElementById('myModal'));
+    const qrCodeImg = document.getElementById('qrcode-img');
+
+    input.addEventListener('keyup', function(event) {
+      if (event.target.value.toLowerCase() === 'e-space') {
+        const qrCode = new QRCode(qrCodeImg, {
+          text: 'https://example.com', // Substitua pelo conteúdo desejado
+          width: 200,
+          height: 200
+        });
+        modal.show();
+      }
+    });
+  });
+</script>
+<!-- MODAL QR CODE -->
+
 
   <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
