@@ -36,7 +36,7 @@ font-weight: 500px;
   transform-style: flat;
   transition-duration: 550ms;
   border-radius: 0.5rem;
-  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
   border-style: none;
 }
 
@@ -177,6 +177,19 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
   padding: 15px;
 }
 
+.foto-perfil {
+  padding: 15px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.1);
+}
+
 
 
 .e-space-user{
@@ -210,5 +223,47 @@ hr{
 
 }
 
+
+@media only screen and (max-width: 320px) {
+  .titulo{
+    font-size: 11px;
+  }
+
+  .dados-user>button>a{
+    font-size: 11px;
+  }
+
+  .tela-perfil h3{
+    font-size: 15px;
+  }
+
+  
+  .tela-perfil p{
+    font-size: 12px;
+  }
+
+  .tela-perfil label{
+    font-size: 12px;
+  }
+  .e-space-user .foto-perfil{
+    width: 85px;
+    height: 85px;
+  }
+
+  .e-space-user .user-space{
+    width: 170px;
+    height: 45px;
+  }
+  
+  .sair-tela{
+    font-size: 12px;
+  }
+
+
+
+.footer{
+  width: 50px;
+}
+}
 
 

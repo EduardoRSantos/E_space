@@ -27,7 +27,7 @@
             </div>
             <div class="container e-space-user">
                 <img class="foto-perfil" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="150" height="150">
-                <img width="320" height="80" src="../img/space-user.png" alt="">
+                <img class="user-space" width="320" height="80" src="../img/space-user.png" alt="">
             </div>
 
             <div class="tela-perfil">

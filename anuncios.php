@@ -2,7 +2,7 @@
 <div class="anuncios wrapper" >
 <section class="rental-section">
   <div class="rental-container">
-    <div target="_blank" class="rental-ad">
+    <div data-aos="zoom-out-right" target="_blank" class="rental-ad">
       <?php $img = explode(';', $anuncio['imagens']); ?>
       <img src="<?= $img[0] ?>" alt="Cinque Terre" width="800" height="600">
     </div>
@@ -55,7 +55,7 @@
     </div>
 
 
-    <div class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div  class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content bg-dark">
           <!-- <div class=".header-modal">

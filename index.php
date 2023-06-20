@@ -15,10 +15,14 @@
   <link rel="stylesheet" href="css/ionicons.min.css">
   <link rel="stylesheet" href="css/footer.css">
   <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  
 
 </head>
 
 <body>
+  
   <header>
   <div class="pos-f-t-mobile">
   <div class="collapse" id="navbarToggleExternalContent">
@@ -64,14 +68,14 @@
       </form>
       <ul class="menu">
         <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
-          <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+          <li class=""><a title="Avaliar" href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt=""></a></li>
         <?php } ?>
 
-        <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-        <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-        <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <li class=""><a title="Inserir Anuncio" href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li class=""><a title="Meus Anuncios" href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li class=""><a title="Perfil" href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+          <li class="cadastro"><a title="Login" href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
         <?php } ?>
 
 
@@ -126,7 +130,7 @@
 
 
   <main class="main-home">
-  <div class="main-espace" >
+  <div  class="main-espace" >
     <section class="conteudo wrapper">
  
 
@@ -135,7 +139,7 @@
         <img src="./img/arte1.png" alt="Descrição da imagem">
       </div>
      <div class="texto">
-     <div class="chat">
+     <div  class="chat">
   <div class="chat-header">
     <?php if (!empty($_SESSION)) { ?>
       <span><?= $_SESSION['nome'] ?></span>
@@ -227,16 +231,16 @@
     <!-- MOBILE -->
 
     <h3 class="texto-destaque wrapper">Anúncios em Destaque</h3>
-    <section class="anuncios-destaque wrapper">
+    <section  class="anuncios-destaque wrapper">
 
-      <div class="container">
+      <div  class="container">
         <?php
 
         if (!empty($data)) {
           foreach ($data as $anuncio) :
             $img = explode(';', $anuncio['imagens']);
         ?>
-            <div class="box">
+            <div data-aos="zoom-in" class="box">
               <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
               <h2 class="limite-destaques"><?= $anuncio['titulo'] ?></h2>
               <div class="rental-details">
@@ -441,13 +445,6 @@
     });
   });
 </script>
-<<<<<<< HEAD
-=======
-
-</body>
-</html>
-
->>>>>>> f5c571e77735bae202c6ddce9c44af95f35b5232
 <!-- MODAL QR CODE -->
 
 
@@ -459,7 +456,11 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="./js/js.js"></script>
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  
 </body>
 
 </html>

@@ -1638,11 +1638,31 @@ width: 100%;
 }
 
 @media only screen and (max-width: 320px) {
+  .imagem img{
+    margin-left: 35px;
+  }
+  .rental-ad img {
+    width: 100%;
+    height: auto;
+    width: 200px; /* Largura fixa */
+    height: 200px; /* Altura fixa */
+    object-fit: cover;
+  }
+
+  .capacity-button{
+    font-size: 15px;
+  }
+
+    .anuncios{
+      display:flex;
+      min-width: 350px;
+      width: 100%;
+    }
 
     .chat{
       display: flex;
       width: 100%;
-      margin-left: 20px;
+      margin-left: 25px;
    
     }
 
@@ -1651,6 +1671,7 @@ width: 100%;
       display: flex;
       max-width: 500px;
       width: 100%;
+      font-size: 15px;
       margin-left: 70px;
       align-items: center;
     }
@@ -1667,5 +1688,43 @@ width: 100%;
       width: 100%;
       padding: 10px;
     }
+
+    .rental-details h2{
+      font-size: 15px;
+    }
+
+    .rental-buttons .btn-outline-info{
+      font-size: 11px;
+    }
+
+    .rental-price p{
+      width: 10px;
+      font-size: 12px;
+    }
+
+    .rental-price img{
+      width: 20px;
+    }
+
+    .anuncios-destaque-mobile{
+      display: inline-flex;
+      min-width: 471px;
+      width: 100%;
+    }
+
+    .texto-destaque{
+      width: 100%;
+      min-width: 470px;
+    }
+
+    
 }
+
+
+@media only screen and (min-width: 320px) {
+
+
+}
+
+
 

@@ -506,3 +506,55 @@ textarea{
 }
 
   /* FOOTER */
+
+
+  @media only screen and (max-width: 320px) {
+  
+      .rental-ad img{
+        width: 100%;
+        height: auto;
+        width: 230px; /* Largura fixa */
+        height: 185px; /* Altura fixa */
+        object-fit: cover;
+    }
+
+    .meus-anuncios{
+
+      width: 100%;
+      font-size: 15px;
+     }
+
+    .meus-anuncios h2{
+     width: 100%;
+     font-size: 15px;
+    }
+
+    .rental-details h4{
+      font-size: 10px;
+    }
+
+    .rental-price p{
+      font-size: 15px;
+    }
+
+    .rental-price img{
+    width: 20px;
+    }
+
+    .rental-buttons .btn-primary{
+      text-align: center;
+      font-size: 9px;
+    }
+
+    .rental-buttons button{
+      padding: 5px 15px 5px 15px;
+    }
+
+    .rental-section{
+      padding: 10px 15px 0px;
+    }
+    
+    .modal-body>input{
+      padding: 0px 5px 0px 5px;
+    }
+  }
