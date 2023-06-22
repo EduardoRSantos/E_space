@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="./pages/modal/modal_carousel.css" />
   <link rel="stylesheet" href="../css/tela_meus_anuncios.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
   <style>
         <?php include '../css/navbar.css'; ?>
         <?php include '../css/footer.css';?>
@@ -29,6 +31,7 @@
     <header>
     <h2 class="titulo wrapper">Meus anuncios</h2>
     </header>
+    
 
     <?php
   
@@ -64,12 +67,12 @@
         foreach ($data as $anuncio) :
           $imagens = explode(';', $anuncio['imagens']); ?>
             <div class="anuncios" >
-<section class="rental-section wrapper">
-  <div class="rental-container">
-    <div target="_blank" class="rental-ad">
+<section data-aos="zoom-out-right"  class="rental-section wrapper">
+  <div data-aos="fade-up-right"  class="rental-container">
+    <div  target="_blank" class="rental-ad">
       <img src=".<?= $imagens[0] ?>" alt="Cinque Terre">
     </div>
-    <div class="rental-details">
+    <div  class="rental-details">
     <?php if ($anuncio['autorizacao'] == 0) { ?>
                   <h4 class="aguardar limite-chars" >Aguarde a avaliação, logo seu anúncio sera postado!</h4>
                 <?php } else { ?>
@@ -78,8 +81,8 @@
                 <h2 class="limite-chars-titulo"><?= $anuncio['titulo'] ?></h2>
       <!-- <p class="limite-chars-descricao" ><?= $anuncio['descricao'] ?></p> -->
   
-      <div class="rental-price">
-          <div class="localizacao d-flex w-100" >
+      <div  class="rental-price">
+          <div  class="localizacao d-flex w-100" >
           <img  src="../img/localizacao.png" alt="" srcset="">
           <p ><?= $anuncio['localizacao'] ?></p>
           </div>
@@ -87,15 +90,44 @@
             <img width="50px" src="../img/dinheiro.png" alt="">
             <p ><?= $anuncio['preco'] ?></p>
           </div>
-        <div class="rental-buttons">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditar<?= $anuncio['id'] ?>">Editar</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEcluir<?= $anuncio['id'] ?>">Excluir</button>
-        </div>
+        <div  class="rental-buttons">
+        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Descrição</button>
+            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalEditar<?= $anuncio['id'] ?>">Editar</button>
+                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalEcluir<?= $anuncio['id'] ?>">Excluir</button>
+                
+          </div>
       </div>
     </div>
   </div>
 </section>
 </div>
+
+<div   class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+          <!-- <div class=".header-modal">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+          <div  class="body-modal bg-dark">
+            <h4 class="anunciante" ><strong>Anunciante</strong> <?= $anuncio['nome'] ?></h4>
+            <br>
+            <h3 class="limite-chars-title-modal"><?= $anuncio['titulo'] ?></h3>
+            <h4>Publicado: <?= $anuncio['criado_em'] ?></h4>
+            <hr>
+            <h4 class="limite-chars-modal" >Descrição <br> <?= $anuncio['descricao'] ?></h4>
+            <br>
+            <h4><strong>Telefone</strong> <br> <?= $anuncio['telefone'] ?></h4>
+            <h4><strong>Cep</strong> <br> <?= $anuncio['cep'] ?></h4>
+          </div>
+          <div class="footer-modal">
+          </div>
+        </div>
+      </div>
+    </div>
+
 
             
   
@@ -127,7 +159,7 @@
                       <h5>Preço</h5>
                       <input type="number" name="preco" value="<?= $anuncio['preco'] ?>">
                       <br>
-                      <h5>Localização</h5>
+                      <h5>Bairro</h5>
                       <input type="text" name="localizacao" value="<?= $anuncio['localizacao'] ?>">
                       <br>
                       <h5>Cep</h5>
@@ -139,8 +171,10 @@
                       <h5>Pessoas</h5>
                       <input type="text" name="quantidade_pessoas" value="<?= $anuncio['quantidade_pessoas'] ?>">
                       <br>
+
                       <h5>Descricao</h5>
-                      <input class="descricao-meus" type="text" name="descricao" value="<?= $anuncio['descricao'] ?>"> </input>
+                      <textarea class="descricao-meus" maxlength="25" name="descricao"><?= $anuncio['descricao'] ?></textarea>
+
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-success">Salvar</button>
@@ -207,6 +241,10 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 <?php
 

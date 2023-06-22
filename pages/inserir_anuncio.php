@@ -35,7 +35,7 @@
                 <label for="preco"></Label>
             </div>
             <div class="campotexto">
-                <input type="text" placeholder=" Localização" name="localizacao" id="localizacao" class="inputUser" required>
+                <input type="text" placeholder=" Bairro" name="localizacao" id="localizacao" class="inputUser" required>
                 <label for="localizacao"></Label>
             </div>
             <div class="campotexto">
