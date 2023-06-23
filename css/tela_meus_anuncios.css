@@ -207,7 +207,7 @@ section.anuncios {
     width: 100%;
     height: auto;
     width: 350px; /* Largura fixa */
-    height: 235px; /* Altura fixa */
+    height: 185px; /* Altura fixa */
     object-fit: cover;
   }
   
@@ -287,6 +287,7 @@ text-align: center;
 
 
 
+
   .rental-buttons {
     display: flex;
     justify-content: center;
@@ -295,15 +296,27 @@ margin: 0.2rem;
 margin-right: 2rem;
   }
   
-  .rental-buttons button {
-    background-color: #333;
+  .rental-buttons>button {
+  
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    font-weight: 700;
+    padding: 5px 5px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
-    margin: 0 2px;
+    font-size: 15px;
+    margin: 0 3px;
+    border: 1px solid black;
+    background: none;
+    color: rgb(94, 94, 94);
+    border: 1px solid #1a8596;
+  }
+
+  .rental-buttons>button:hover{
+    animation: both;
+    transform-style: flat;
+    transition-duration: 550ms;
+
   }
 
   .titulo{
@@ -484,8 +497,9 @@ width: 0px;
 }
 
 .modal-body>input{
-  padding-right: 150px;
-  border-color: black;
+  border: none;
+  width: 100%;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px;
 }
 
@@ -501,63 +515,128 @@ width: 0px;
 
 
 textarea{
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 250px;
+  height: 0;
+}
+
+.campotexto>input{
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.campotexto .descricao{
+  padding-bottom: 180px;
+  
+  width: 31.1rem;
+  height: 12.5rem;
+  max-width: 100%;
+  border-radius: 0px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.descricao-meus {
+  height: 100px; /* Defina a altura desejada aqui */
 }
 
   /* FOOTER */
 
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 0;
-  }
   
-  .main-footer   {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-        background-color: #333;
-        
-  }
   
-  .footer-logo img {
-    max-width: 100%;
-    height: auto;
-    width: 150px;
+  .body-modal{
+    margin: 15px;
   }
-  
-  .footer-links h3,
-  .footer-social h3 {
-    margin-bottom: 10px;
+
+  .body-modal, .footer-modal{
+    color: white;
+    margin: 10px;
+    background-color: #161616;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  
-  .footer-links ul,
-  .footer-social ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+  .body-modal, h4>strong{
+    padding-left: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
   }
-  
-  .footer-links li,
-  .footer-social li {
-    margin-bottom: 5px;
+
+  .body-modal>.anunciante{
+   border-radius: 5px;
+    background-color: #ffffff;
+    color: #1284ff;
   }
-  
-  .footer-links a,
-  .footer-social a {
-    color: #fff;
-    text-decoration: none;
+
+  .body-modal>h4{
+    color: white;
+    font-size: 1.0rem;
   }
-  
-  .footer-social i {
-    font-size: 24px;
-    margin-right: 10px;
+
+  .anuncio-modal{
+    background: #0000009f;
   }
-  
-/* FOOTER  */
+
+  .footer-modal>button{
+    color: black;
+    font-weight: 700;
+    border: 1px solid dodgerblue;
+    background: none;
+    border-radius: 25px;
+  }
+
+  /* MODAL FOOTER DESCRIÇÃO */
 
 
+  @media only screen and (max-width: 320px) {
+  
+      .rental-ad img{
+        width: 100%;
+        height: auto;
+        width: 230px; /* Largura fixa */
+        height: 185px; /* Altura fixa */
+        object-fit: cover;
+    }
+
+    .meus-anuncios{
+
+      width: 100%;
+      font-size: 15px;
+     }
+
+    .meus-anuncios h2{
+     width: 100%;
+     font-size: 15px;
+    }
+
+    .rental-details h4{
+      font-size: 10px;
+    }
+
+    .rental-price p{
+      font-size: 15px;
+    }
+
+    .rental-price img{
+    width: 20px;
+    }
+
+    .rental-buttons .btn-primary{
+      text-align: center;
+      font-size: 9px;
+    }
+
+    .rental-buttons button{
+      padding: 5px 15px 5px 15px;
+    }
+
+    .rental-section{
+      padding: 10px 15px 0px;
+    }
+    
+    .modal-body>input{
+      padding: 0px 5px 0px 5px;
+    }
+  }

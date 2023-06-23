@@ -61,3 +61,28 @@ imagens.forEach(imagem => {
 });
 
 
+function toggleAdditionalInfo() {
+  const additionalInfo = document.querySelector('.additional-info');
+  additionalInfo.style.display = additionalInfo.style.display === 'none' ? 'block' : 'none';
+}
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('mensagem-input');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementsByClassName('close-modal')[0];
+
+    input.addEventListener('keyup', function(event) {
+      if (event.target.value.toLowerCase() === 'e-space') {
+        modal.style.display = 'block';
+      }
+    });
+
+    closeModal.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  });
+
+
+  

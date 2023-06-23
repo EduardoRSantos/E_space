@@ -24,6 +24,7 @@ font-weight: 500px;
 
 .dados-user>button{
   border: none;
+  margin: 5px;
   text-decoration: none;
   padding-top: 55px;
   border-radius: 0px 0px 6px 6px;
@@ -34,16 +35,24 @@ font-weight: 500px;
   animation: both;
   transform-style: flat;
   transition-duration: 550ms;
-  background-color: #696969;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  border-style: none;
 }
 
 
 .dados-user>button>a{
 
   text-decoration: none;
-  color: rgb(228, 228, 228);
+  color: rgb(100, 100, 100);
   font-size: 15px;  
 }
+
+
+.dados-user>button>a:hover{
+  color: rgb(255, 255, 255);
+}
+
 
 .dados-user>button:hover{
     color: rgb(114, 114, 114);
@@ -57,7 +66,7 @@ font-weight: 500px;
   margin-top: 6rem !important;
   align-self: center;
 display: block;
-background-image: url("../img/logo.png");
+background-image: url("");
 background-position: center right;
 background-repeat: no-repeat;
 background-size: 450px;
@@ -164,64 +173,38 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
   max-width: 300px;
 }
 
+.formulario-de-dados .foto-perfil{
+  padding: 15px;
+}
 
-  /* FOOTER */
+.foto-perfil {
+  padding: 15px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
 
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 0;
-  }
-  
-  .main-footer   {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-        background-color: #333;
-        
-  }
-  
-  .footer-logo img {
-    max-width: 100%;
-    height: auto;
-    width: 150px;
-  }
-  
-  .footer-links h3,
-  .footer-social h3 {
-    margin-bottom: 10px;
-  }
-  
-  .footer-links ul,
-  .footer-social ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .footer-links li,
-  .footer-social li {
-    margin-bottom: 5px;
-  }
-  
-  .footer-links a,
-  .footer-social a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-social i {
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-/* FOOTER  */
+.foto-perfil:hover {
+  transform: scale(1.1);
+}
 
 
 
+.e-space-user{
+  box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.dados-user .config{
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  align-items: start;
+  display: flex;
+  justify-content:start;
+}
 
 hr{
   width: 120px;  
@@ -240,5 +223,47 @@ hr{
 
 }
 
+
+@media only screen and (max-width: 320px) {
+  .titulo{
+    font-size: 11px;
+  }
+
+  .dados-user>button>a{
+    font-size: 11px;
+  }
+
+  .tela-perfil h3{
+    font-size: 15px;
+  }
+
+  
+  .tela-perfil p{
+    font-size: 12px;
+  }
+
+  .tela-perfil label{
+    font-size: 12px;
+  }
+  .e-space-user .foto-perfil{
+    width: 85px;
+    height: 85px;
+  }
+
+  .e-space-user .user-space{
+    width: 170px;
+    height: 45px;
+  }
+  
+  .sair-tela{
+    font-size: 12px;
+  }
+
+
+
+.footer{
+  width: 50px;
+}
+}
 
 

@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <title>Tela de Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/mascaras.js"></script>
@@ -22,8 +21,13 @@
         <div class="formulario-de-dados wrapper">
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex">
+            <img class="config" src="../img/configuracoes.gif" alt="" srcset="">
                 <button class="" type="button"><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
                 <button class="" type="button"><a href="./tela_de_editar.php">Editar Perfil</a></button>
+            </div>
+            <div class="container e-space-user">
+                <img class="foto-perfil" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="150" height="150">
+                <img class="user-space" width="320" height="80" src="../img/space-user.png" alt="">
             </div>
 
             <div class="tela-perfil">
@@ -203,6 +207,9 @@
     <?php }
     } ?>
     </div>
+
+        <br><br>
+        <br><br>
 
 
     <?php include '../footer.php'; ?>

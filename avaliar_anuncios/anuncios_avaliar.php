@@ -43,39 +43,47 @@
   ?>
   
   <section class="conteudoan-section wrapper">
-        <h2 class="titulo ">Avaliar Anúncio</h2>
+        <h2 class="titulo ">Avaliar Anúncio - Painel Administrativo</h2>
         <div class="text-avaliar wrapper">
         <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
         </div>
-
-  <div class="conteudoan-container wrapper">
-  <a target="_blank" href="img_5terre.jpg">
-            <img src=".<?= $imagens[0] ?>" alt="Cinque Terre"">
-          </a>
-    <div class="conteudoan-details">
-    <h4><?= $anuncio['titulo'] ?></h4>
-          <h4><?= $anuncio['preco'] ?></h4>
-          <h4><?= $anuncio['cep'] ?></h4>
-          <h4><?= $anuncio['criado_em'] ?></h4>
-      <div class="conteudoan-price">
-          <!-- <div class="localizacao d-flex w-100" >
-          <img  src="../img/localizacao.png" alt="" srcset="">
-          <p ><?= $anuncio['localizacao'] ?></p>
+        
+        <div class="anuncios wrapper" >
+        <section class="rental-section ">
+          <div class="rental-container">
+            <div data-aos="zoom-out-right" target="_blank" class="rental-ad">
+              <?php $img = explode(';', $anuncio['imagens']); ?>
+              <a target="_blank" href="img_5terre.jpg">
+                    <img src=".<?= $imagens[0] ?>" alt="Cinque Terre"">
+                  </a>
+            </div>
+            <div  data-aos="fade-up-right" class="rental-details">
+              <h2 class="limite-chars-title" ><?= $anuncio['titulo'] ?></h2>
+              <button class="capacity-button">
+          <span class="capacity-icon"><img src="../img/pessoas.png" alt="" srcset=""><?= $anuncio['quantidade_pessoas'] ?></span>
+        </button>
+        <!-- <p class="limite-chars" ><?= $anuncio['descricao'] ?></p> -->
+        <div data-aos="fade-up-right" class="rental-price">
+          <div class="localizacao d-flex w-100" >
+            <img  src="../img/localizacao.png" alt="" srcset="">
+            <p ><?= $anuncio['localizacao'] ?></p>
           </div>
           <div class="dinheiro d-flex w-100" >
             <img width="50px" src="../img/dinheiro.png" alt="">
             <p ><?= $anuncio['preco'] ?></p>
-          </div> -->
-        <div class="conteudoan-buttons">
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Chat</button> -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
+          </div>
+          <div  class="rental-buttons">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
+          </div>
+              </div>
+            </div>
+          </div>
+        </section>
         </div>
-      </div>
-    </div>
-  </div>
 </section>
+
       <!-- usuario -->
       <div class="modal fade janela-avaliar" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

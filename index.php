@@ -11,12 +11,18 @@
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-	
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/ionicons.min.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  
+
 </head>
 
 <body>
+  
   <header>
   <div class="pos-f-t-mobile">
   <div class="collapse" id="navbarToggleExternalContent">
@@ -27,22 +33,17 @@
       <button class=""><a class="text-white" href="../E_space/pages/tela_meus_anuncios.php">Inserir anuncio</a></button>
       <button class=""><a  class="text-white" href="../E_space/pages/tela_de_perfil.php">Perfil</a></button>
 
-      <form class="searchbarmobile" method="post">
+  
+
+    </div>
+  </div>
+  <nav class="navbar navbar-light bg-white">
+    <form class="searchbarmobile" method="post">
       <div class="pesquisar">
         <input type="search" name="pesquisar" id="" size="50" placeholder="Realizar Pesquisa" required />
         <button class="botaopequisar" type="submit"><img  class="lupa" src="./img/lupa.png" alt="" srcset=""></button>
       </div>
     </form>
-
-    </div>
-  </div>
-  <nav class="navbar navbar-light bg-white">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="logo">
-        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
-      </div>
   </nav>
 </div>
  
@@ -67,14 +68,14 @@
       </form>
       <ul class="menu">
         <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
-          <li class=""><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+          <li class=""><a title="Avaliar" href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt=""></a></li>
         <?php } ?>
 
-        <li class=""><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-        <li class=""><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-        <li class=""><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <li class=""><a title="Inserir Anuncio" href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li class=""><a title="Meus Anuncios" href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li class=""><a title="Perfil" href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+          <li class="cadastro"><a title="Login" href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
         <?php } ?>
 
 
@@ -129,7 +130,7 @@
 
 
   <main class="main-home">
-  <div class="main-espace" >
+  <div  class="main-espace" >
     <section class="conteudo wrapper">
  
 
@@ -138,37 +139,52 @@
         <img src="./img/arte1.png" alt="Descrição da imagem">
       </div>
      <div class="texto">
-    <div class="chat">
-          <div class="chat-header">
-            <?php if (!empty($_SESSION)) { ?>
-              <span><?= $_SESSION['nome'] ?></span>
-            <?php } else { ?>
-              <span>E-space</span>
-            <?php } ?>
-          </div>
-          <div class="chat-body">
-            <div class="message">
-              <p>Já olhou no E-SPACE?</p>
-            </div>
-            <div class="message">
-              <p>Seu espaço está aqui!</p>
-            </div>
-            <div class="message">
-              <p>em Feira de Santana-Ba</p>
-            </div>
-            <div class="typing-indicator">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div class="chat-footer">
-            <input type="text" placeholder="Digite sua mensagem...">
-            <button>Enviar</button>
-          </div>
-          <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+     <div  class="chat">
+  <div class="chat-header">
+    <?php if (!empty($_SESSION)) { ?>
+      <span><?= $_SESSION['nome'] ?></span>
+    <?php } else { ?>
+      <span>E-space</span>
+    <?php } ?>
+  </div>
+  <div class="chat-body">
+    <div class="message">
+      <p>Já olhou no E-SPACE?</p>
     </div>
-     </div>
+    <div class="message">
+      <p>Seu espaço está aqui!</p>
+    </div>
+    <div class="message">
+      <p>em Feira de Santana-Ba</p>
+    </div>
+    <div class="typing-indicator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" id="mensagem-input" placeholder="Digite sua mensagem...">
+    <button>Enviar</button>
+  </div>
+  <button type="button" class="share-button">Compartilhar nas redes sociais</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Como você está?</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img width="450px" height="450px" style="width: 100%; " src="./img/qr.png" id="qrcode-img">
+      </div>
+    </div>
+  </div>
+</div>
 
 </section>
 </div>
@@ -215,16 +231,16 @@
     <!-- MOBILE -->
 
     <h3 class="texto-destaque wrapper">Anúncios em Destaque</h3>
-    <section class="anuncios-destaque wrapper">
+    <section  class="anuncios-destaque wrapper">
 
-      <div class="container">
+      <div  class="container">
         <?php
 
         if (!empty($data)) {
           foreach ($data as $anuncio) :
             $img = explode(';', $anuncio['imagens']);
         ?>
-            <div class="box">
+            <div data-aos="zoom-in" class="box">
               <img src="<?= $img[0] ?>" alt="Imagem do anúncio">
               <h2 class="limite-destaques"><?= $anuncio['titulo'] ?></h2>
               <div class="rental-details">
@@ -270,9 +286,9 @@
       </div>
     </section>
 
-    <h3 class=" wrapper text-recentes">Anúncio Recentes</h3>
     <div class="anuncios wrapper">
       <div class="anuncios-recentes">
+        <h3 class=" text-recentes">Anúncio Recentes</h3>
 
         <?php
         if (empty($_POST['pesquisar'])) {
@@ -337,51 +353,100 @@
 
   </main>
 
+  
+        <br><br>
+        <br><br>
 
   <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>© 2023 E-space, Inc.</p>
+        <p><a href="#">Privacidade</a><span> | </span><a href="http://localhost/E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
+      </div>
+    </div>
+    <div class="footer-buttons">
+    <ul>
+  <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
+    <li><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+  <?php } ?>
 
-  <section class="ftco-section">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-6 text-center">
-					
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer class="footer-07">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-12 text-center">
-          <img style="object-fit: contain; padding: -150px; bottom: 0; width: 100%;"  width="150px"  height="150px" src="./img/logo.png" class="logo"></img>
-						<p style="margin-top: -50px;" class="menu">
-							<a href="#">Home</a>
-							<a href="#">Agent</a>
-							<a href="#">About</a>
-							<a href="#">Listing</a>
-							<a href="#">Blog</a>
-							<a href="#">Contact</a>
-						</p>
-            <br>
-            <br>
-						<ul  class="ftco-footer-social  p-0">
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
-            </ul>
-					</div>
-				</div>
-      
-				<div class="row mt-5">
-					<div class="col-md-12  text-center">
-						<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-					  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-					</div>
-				</div>
-			</div>
-		</footer>
+  <li><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
+  <li><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+  <li><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+  <?php if (empty($_SESSION)) { ?>
+    <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+  <?php } ?>
+  <?php
+        if (!empty($_SESSION)) {
+          $id = $_SESSION['id'];
+
+          $body = [
+            'id' => $id,
+          ];
+
+          
+          $json = json_encode($body, true);
+
+          $curl = curl_init();
+          curl_setopt_array($curl, [
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => $json,
+            CURLOPT_HTTPHEADER => [
+              'Content-Type: application/json'
+            ]
+          ]);
+
+          $response = curl_exec($curl);
+
+          $data = json_decode($response, true);
+
+          curl_close($curl);
+
+          if (!empty($data)) { ?>
+            <li><img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt=""></li>
+        <?php }
+        } ?>
+</ul>
+    </div>
+  </footer>
+
+  
 		
+
+
+
+
+
+<!-- MODAL QR CODE -->
+<!-- Inclua os arquivos JavaScript do Bootstrap e qrcode.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('mensagem-input');
+    const modal = new bootstrap.Modal(document.getElementById('myModal'));
+    const qrCodeImg = document.getElementById('qrcode-img');
+
+    input.addEventListener('keyup', function(event) {
+      if (event.target.value.toLowerCase() === 'e-space') {
+        const qrCode = new QRCode(qrCodeImg, {
+          text: 'https://example.com', // Substitua pelo conteúdo desejado
+          width: 200,
+          height: 200
+        });
+        modal.show();
+      }
+    });
+  });
+</script>
+<!-- MODAL QR CODE -->
+
 
   <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
@@ -391,8 +456,10 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="./js/js.js"></script>
-
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   
 </body>
 

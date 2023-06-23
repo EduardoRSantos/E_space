@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title>Tela de Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/mascaras.js"></script>
@@ -25,6 +25,7 @@
         <div class="formulario-de-dados wrapper" >
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex" >
+                <img class="config" src="../img/configuracoes.gif" alt="Configuraçõs"  srcset="">
             <button class="" ><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
             <button class=""><a href="./tela_de_editar.php">Editar Perfil</a></button>
             </div>
@@ -67,17 +68,18 @@
                     </div>
                     <br>
                     <div class="salvar-dados" >
-                    <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
+                        <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
                     </div>
-            
+                    
                 </form>
-        
-        
+                
+                
                 <br>
                 
                 <form class="sair-tela" action="sair.php" method="post">
                     <input type="submit" value="Sair">
                 </form>
+              
                 
         </div>
 
@@ -228,8 +230,8 @@
     } ?>
         </div>
 
-        <br>
-
+        <br><br>
+        <br><br>
         <?php include '../footer.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

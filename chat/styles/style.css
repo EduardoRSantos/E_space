@@ -1,0 +1,75 @@
+.chat-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+width: 100%;
+max-width: 1140px;
+margin: 0 auto;
+}   
+
+
+.conversation-window {
+  flex: 2;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.conversation-window .message {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.conversation-window .message.sender {
+  background-color: #d4eaf7;
+}
+
+.profile-window {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.profile hr {
+  margin: 10px 0;
+}
+
+.profile .name {
+  font-weight: bold;
+}
+
+.profile .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    flex-direction: column;
+  }
+
+  .profile-window {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+  }
+
+  .conversation-window {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+  }
+}
+

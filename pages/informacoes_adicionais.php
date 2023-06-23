@@ -70,20 +70,8 @@
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <p>Copyright © 2023
-      <a href="#">Seu Nome</a>. Todos os direitos reservados.</p>
-  </div>
-</footer>
 
-</body>
-</html>
-</body>
 
-</html>
-  </body>
-</html>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>

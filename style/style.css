@@ -41,6 +41,15 @@ p {
 	margin: 0;
 }
 
+#qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
 .carousel{
   display: flex;
   align-items: center;
@@ -271,7 +280,9 @@ transition: 800ms;
   margin: 0.5rem;
   background-color:white;
   border-radius: 2rem;
-  border: 1px solid rgb(1, 90, 206);
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border-style: none;
+
 }
 
 .lupa{
@@ -286,9 +297,11 @@ button{
 }
 
 input{
-  border: 0.1rem solid rgb(1, 90, 206);
+  border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
   border-radius: 2rem;
-  border-style: inset;
+  border-style: none;
 }
 
 
@@ -366,10 +379,13 @@ position: relative;
 
 
 .chat {
+  background-color: white;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 150px;
   width: 400px;
   height: 310px;
-  border-radius: 5px;
+  border-top-left-radius: 5px; 
+  border-top-right-radius: 5px;  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -383,7 +399,8 @@ position: relative;
   padding: 5px;
   font-size: 20px;
   font-weight: 450;
-  border-radius: 15px;
+  border-top-right-radius: 5px;  
+  border-top-left-radius: 5px;  
 }
 
 .chat-header>span{
@@ -486,10 +503,9 @@ position: relative;
 }
 
 .main-espace{
+
   width: 100vw;
- background-size: cover;
   padding: 0;
-  background-color: #eeeeee;
 }
 
 
@@ -585,11 +601,13 @@ position: relative;
 /* CONTEUDO */
 
 .anuncios-recentes{
-  border-radius: 5px;
   margin-bottom: 4px;
-background-color: #f3f3f3;
+  border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
 margin-top: 0.5rem;
-overflow-y: scroll;
+
 }
 
 
@@ -716,14 +734,6 @@ div.desc {
 
   /* TELA ANUNCIOS  */
 
-  .rental-section {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: auto;
-    padding: 10px 20px;
-  }
-  
   .rental-container {
 
     display: flex;
@@ -890,7 +900,7 @@ margin-right: 2rem;
     animation: both;
     transform-style: flat;
     transition-duration: 550ms;
-    background-color: #1a8596;
+
   }
 
 
@@ -918,11 +928,12 @@ margin-right: 2rem;
   .rental-buttons>.button-with-image {
     margin-right: 12px;
     padding: 25px 20px; /* Ajuste o preenchimento conforme necessário */
-    background-image: url(../img/bate-papo.png);
+    background-image: url(../img/bater-papo.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; /* ou "contain" */
     border: none;
+    outline: none;
     cursor: pointer;
     /* Estilos adicionais conforme necessário */
   }
@@ -934,16 +945,41 @@ margin-right: 2rem;
 
   @media (max-width: 600px) {
     .rental-container {
-      flex-direction: column;
+      width: 100%;
+      flex-direction: row;
+      margin-left: 20px;
     }
   
     .rental-ad {
-      margin-right: 0;
-      margin-bottom: 20px;
+      margin-left: -25px;
+      margin-bottom: 24px;
     }
   
-    .rental-details {
-      margin-bottom: 20px;
+    .rental-details>h2 {
+      font-size: 20px;
+      margin-top: -18px;
+    }
+
+    .rental-details{
+      padding-left: 5px;
+    }
+
+    .rental-ad .img{
+      width: 100%;   
+      height: auto;
+      width: 30px; /* Largura fixa */
+      height: 180px; /* Altura fixa */
+      object-fit: cover;
+    }
+
+    .rental-price>.localizacao{
+      margin-top: 0;
+   
+    }
+
+    .rental-price>.dinheiro{
+      margin-top: -20px;
+      padding-top: -50px;
     }
   }
   
@@ -955,6 +991,7 @@ margin-right: 2rem;
 /* Configurações da div principal */
 
 .campo-itens{
+
   display: block;
   flex-wrap: wrap;
 }
@@ -965,19 +1002,22 @@ margin-right: 2rem;
 
 .button-container {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-evenly;
       flex-wrap: nowrap;
       display: flex;
       padding:2rem;
       margin-bottom: 5.5rem;
       border-radius: 5px;
-       box-shadow: 0 0 1px rgba(0, 0, 0, 1.1);
+      border-radius: 5px;
+    
+      border: none;
 		}
 
 		.button-container>button {
-      background-color: #1a8596;
-      border-radius: 6px;
-      color: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+      border-style: none;
+      color: #1a8596;
       font-weight: 700;
       cursor: pointer;
 			padding: 10px 40px 10px;
@@ -993,7 +1033,7 @@ margin-right: 2rem;
     }
     
     .button-container>button>a{
-            color: #fcfcfc;
+      color: #1a8596;
 
     }
 
@@ -1003,9 +1043,10 @@ margin-right: 2rem;
     }
 
     .button-container>.principal{
-      background: #1a8596;
-      color: rgb(94, 94, 94);
-      border: 1px solid #1a8596;
+      border-radius: 2rem;
+      box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+      border-style: none;
+      color: #1a8596;
     }
 
 
@@ -1015,7 +1056,9 @@ margin-right: 2rem;
 
 .anuncios-destaque{
   border-radius: 5px;
-  background-color: #f3f3f3;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  border: none;
   margin-bottom: 4rem;
   margin-top: 0.5rem;
   flex-wrap: nowrap;
@@ -1475,8 +1518,8 @@ margin-right: 2rem;
     .rental-ad img {
       width: 100%;
       height: auto;
-      width: 220px; /* Largura fixa */
-      height: 220px; /* Altura fixa */
+      width: 182px; /* Largura fixa */
+      height: 200px; /* Altura fixa */
       object-fit: cover;
     }
 
@@ -1491,8 +1534,8 @@ margin-right: 2rem;
     }
 
   .botaopequisar{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 
     .menu-icon {
@@ -1577,7 +1620,7 @@ width: 100%;
   }
 
   .button-container>button{
-    margin: 5px;
+    margin: 10px;
     width: 100%;
   }
   
@@ -1595,11 +1638,31 @@ width: 100%;
 }
 
 @media only screen and (max-width: 320px) {
+  .imagem img{
+    margin-left: 35px;
+  }
+  .rental-ad img {
+    width: 100%;
+    height: auto;
+    width: 200px; /* Largura fixa */
+    height: 200px; /* Altura fixa */
+    object-fit: cover;
+  }
+
+  .capacity-button{
+    font-size: 15px;
+  }
+
+    .anuncios{
+      display:flex;
+      min-width: 350px;
+      width: 100%;
+    }
 
     .chat{
       display: flex;
       width: 100%;
-      margin-left: 20px;
+      margin-left: 25px;
    
     }
 
@@ -1608,6 +1671,7 @@ width: 100%;
       display: flex;
       max-width: 500px;
       width: 100%;
+      font-size: 15px;
       margin-left: 70px;
       align-items: center;
     }
@@ -1624,5 +1688,43 @@ width: 100%;
       width: 100%;
       padding: 10px;
     }
+
+    .rental-details h2{
+      font-size: 15px;
+    }
+
+    .rental-buttons .btn-outline-info{
+      font-size: 11px;
+    }
+
+    .rental-price p{
+      width: 10px;
+      font-size: 12px;
+    }
+
+    .rental-price img{
+      width: 20px;
+    }
+
+    .anuncios-destaque-mobile{
+      display: inline-flex;
+      min-width: 471px;
+      width: 100%;
+    }
+
+    .texto-destaque{
+      width: 100%;
+      min-width: 470px;
+    }
+
+    
 }
+
+
+@media only screen and (min-width: 320px) {
+
+
+}
+
+
 
