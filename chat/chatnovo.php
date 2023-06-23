@@ -16,7 +16,7 @@
     <div class="profile-window">
       <div class="profile" onclick="loadChat('perfil1')">
         <img class="avatar" src="../img/perfil.png" alt="Avatar">
-        <span class="name">Nome do Perfil 1</span>
+        <span class="name">Nome do Perfil 15</span>
       </div>
       <hr>
       <div class="profile" onclick="loadChat('perfil2')">
