@@ -1,33 +1,32 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
+-- version 4.3.7
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Tempo de geração: 16-Maio-2023 às 23:06
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Host: mysql25-farm10.kinghost.net
+-- Tempo de geração: 08/06/2023 às 22:39
+-- Versão do servidor: 10.6.11-MariaDB-log
+-- Versão do PHP: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Banco de dados: `e_space`
+-- Banco de dados: `espace`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `anuncios`
+-- Estrutura para tabela `anuncios`
 --
 
-CREATE TABLE `anuncios` (
+CREATE TABLE IF NOT EXISTS `anuncios` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `titulo` varchar(255) DEFAULT NULL,
@@ -40,155 +39,182 @@ CREATE TABLE `anuncios` (
   `criado_em` datetime DEFAULT NULL,
   `atualizado_em` datetime DEFAULT NULL,
   `autorizacao` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Extraindo dados da tabela `anuncios`
+-- Fazendo dump de dados para tabela `anuncios`
 --
 
 INSERT INTO `anuncios` (`id`, `id_usuario`, `titulo`, `descricao`, `preco`, `localizacao`, `cep`, `numero`, `quantidade_pessoas`, `criado_em`, `atualizado_em`, `autorizacao`) VALUES
-(1, 2, 'Villa dos Sonhos', 'A Villa dos Sonhos é uma elegante mansão colonial, cercada por jardins exuberantes e uma piscina deslumbrante. Com espaçosos salões de festas, um terraço coberto e um gazebo ao ar livre, é o local perfeito para casamentos, festas de aniversário e eventos corporativos de prestígio', '540.00', 'Cidade Nova', '44.033-087', 254, 300, '2023-05-16 01:43:35', '2023-05-16 01:43:35', 1),
-(2, 2, 'Loft Urbano', 'Descrição: Localizado no coração da cidade, o Loft Urbano é um espaço industrial chique, com paredes de tijolos expostos, piso de concreto polido e uma decoração moderna. É o local ideal para eventos descolados, como lançamentos de produtos, exposições de arte e festas temáticas. Acomoda até 150 pessoas e oferece uma atmosfera urbana única.', '880.00', 'Sobradinho', '55.055-05', 448, 150, '2023-05-16 01:49:25', '2023-05-16 01:49:25', 1),
-(4, 2, 'Salão Praia Dourada', 'Com vista para as areias douradas e o mar azul-turquesa, o Salão Praia Dourada é um espaço elegante em um resort beira-mar. Com interiores sofisticados, um terraço com vista para o oceano e acesso direto à praia, é o local perfeito para casamentos na praia, festas de fim de ano e eventos corporativos exclusivos. Acomoda até 250 pessoas e oferece uma experiência tropical.', '700.00', 'Aviário', '05.495-466', 668, 250, '2023-05-16 01:56:29', '2023-05-16 01:56:29', 1),
-(5, 2, 'Mansão Jardim Encantado', 'Descrição: A Mansão Jardim Encantado é um local deslumbrante com jardins exuberantes, fontes e uma arquitetura clássica. Com salões espaçosos, um pátio ao ar livre e uma sala de baile elegante, é perfeito para casamentos glamorosos, recepções de gala e eventos corporativos requintados. Acomoda até 400 pessoas e oferece um ambiente encantador e romântico.', '1500.00', 'George Américo', '44.055-078', 275, 400, '2023-05-16 01:59:48', '2023-05-16 01:59:48', 1),
-(7, 2, 'Avelanida', 'Avelanida oferece um amplo salão principal com uma capacidade flexível, permitindo acomodar desde pequenas reuniões íntimas até grandes celebrações. Seu design elegante e moderno, combinado com uma iluminação cuidadosamente planejada, cria uma atmosfera envolvente e agradável para seus convidados.', '1800.00', 'Terra Nova', '44.085-000', 455, 150, '2023-05-16 15:41:10', '2023-05-16 15:41:10', 1);
+(19, 2, 'O SalÃ£o das Estrelas', 'O SalÃ£o das Estrelas Ã© um espaÃ§o para eventos moderno e elegante, perfeito para ocasiÃµes especiais. Com sua decoraÃ§Ã£o sofisticada, iluminaÃ§Ã£o ambiente e pista de danÃ§a espaÃ§osa, o local oferece o cenÃ¡rio ideal para festas animadas e memorÃ¡veis. Com capacidade para atÃ© 150 pessoas, Ã© perfeito para casamentos, aniversÃ¡rios e eventos corporativos.', '800.00', 'Campo Limpo', '44.555-058', 280, 2023, '2023-05-31 02:29:53', '2023-06-08 02:51:41', 1),
+(20, 2, 'O PalÃ¡cio dos Sonhos', 'O PalÃ¡cio dos Sonhos Ã© um espaÃ§o para eventos luxuoso e imponente, projetado para cativar seus convidados. Com seus grandes salÃµes ricamente decorados, lustres de cristal e mÃ³veis clÃ¡ssicos, o local proporciona uma atmosfera majestosa para ocasiÃµes especiais. Com capacidade para atÃ© 300 pessoas, Ã© ideal para casamentos elegantes, bailes de gala e eventos de grande porte.', '800.00', 'Sobradinho', '44.800-551', 540, 300, '2023-05-31 03:11:05', '2023-05-31 03:11:05', 1),
+(21, 2, 'A Casa dos Encantos ', 'A Casa dos Encantos Ã© um espaÃ§o para eventos charmoso e aconchegante, perfeito para celebraÃ§Ãµes intimistas. Com sua arquitetura rÃºstica e detalhes encantadores, o local transmite uma sensaÃ§Ã£o acolhedora e familiar. Com capacidade para atÃ© 80 pessoas, Ã© ideal para chÃ¡s de bebÃª, festas de noivado e encontros sociais pequenos.', '1500.00', 'Tomba', '44.881-55', 801, 80, '2023-05-31 03:12:17', '2023-05-31 03:12:17', 1),
+(22, 2, 'O SalÃ£o das Maravilhas', 'O SalÃ£o das Maravilhas Ã© um espaÃ§o para eventos versÃ¡til e contemporÃ¢neo, projetado para se adaptar a diferentes estilos de celebraÃ§Ã£o. Com sua decoraÃ§Ã£o minimalista e ambiente moderno, o local oferece um cenÃ¡rio elegante e sofisticado para casamentos, aniversÃ¡rios e eventos corporativos. Com capacidade para atÃ© 200 pessoas, Ã© ideal para eventos de mÃ©dio porte.', '350.00', 'Cidade Nova', '44.088-088', 150, 200, '2023-05-31 03:13:22', '2023-05-31 03:13:22', 1),
+(23, 2, 'A MansÃ£o dos Sonhos', ' Ã© um espaÃ§o para eventos exclusivo e requintado, situado em um cenÃ¡rio deslumbrante. Com seus jardins paisagÃ­sticos, piscina de borda infinita e terraÃ§o com vista panorÃ¢mica, o local oferece um ambiente Ãºnico para casamentos, festas de aniversÃ¡rio e eventos de luxo. Com capacidade para atÃ© 250 pessoas, Ã© perfeito para aqueles que buscam uma experiÃªncia excepcional.', '650.00', 'Vila Nova', '55.055-05', 404, 250, '2023-05-31 03:14:24', '2023-05-31 03:14:24', 1),
+(24, 2, 'O SalÃ£o das Flores', 'O SalÃ£o das Flores Ã© um espaÃ§o para eventos romÃ¢ntico e encantador, cercado por um jardim exuberante e perfumado. Com sua decoraÃ§Ã£o floral e ambiente sereno, o local transmite uma atmosfera delicada e serena. Com capacidade para atÃ© 100 pessoas, Ã© perfeito para casamentos ao ar livre, batizados e eventos Ã­ntimos em meio Ã  natureza.', '400.00', 'Cidade Nova', '44.033-087', 350, 2023, '2023-05-31 03:15:41', '2023-06-08 02:44:08', 1),
+(26, 2, 'Street Space', 'O SalÃ£o das Estrelas Ã© um espaÃ§o para eventos moderno e elegante, perfeito para ocasiÃµes especiais. Com sua decoraÃ§Ã£o sofisticada, iluminaÃ§Ã£o ambiente e pista de danÃ§a espaÃ§osa, o local oferece o cenÃ¡rio ideal para festas animadas e memorÃ¡veis. Com capacidade para atÃ© 150 pessoas, Ã© perfeito para casamentos, aniversÃ¡rios e eventos corporativos.', '350.00', 'Terra Nova', '44.033-087', 245, 150, '2023-06-06 02:48:08', '2023-06-06 02:48:08', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imagens_de_anuncios`
+-- Estrutura para tabela `imagens_de_anuncios`
 --
 
-CREATE TABLE `imagens_de_anuncios` (
+CREATE TABLE IF NOT EXISTS `imagens_de_anuncios` (
   `id` int(11) NOT NULL,
   `id_anuncio` int(11) NOT NULL,
   `path` varchar(255) DEFAULT NULL,
   `data_upload` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Extraindo dados da tabela `imagens_de_anuncios`
+-- Fazendo dump de dados para tabela `imagens_de_anuncios`
 --
 
 INSERT INTO `imagens_de_anuncios` (`id`, `id_anuncio`, `path`, `data_upload`) VALUES
-(1, 1, './imagens/646309f7ac8bc.jfif', '2023-05-16 01:43:35'),
-(2, 1, './imagens/646309f7acef8.jpg', '2023-05-16 01:43:35'),
-(3, 1, './imagens/646309f7ad187.jfif', '2023-05-16 01:43:35'),
-(4, 2, './imagens/64630b5526a18.jpg', '2023-05-16 01:49:25'),
-(5, 2, './imagens/64630b5526c18.jpg', '2023-05-16 01:49:25'),
-(6, 2, './imagens/64630b5526dac.jfif', '2023-05-16 01:49:25'),
-(10, 4, './imagens/64630cfd57399.jfif', '2023-05-16 01:56:29'),
-(11, 4, './imagens/64630cfd575d6.jpg', '2023-05-16 01:56:29'),
-(12, 4, './imagens/64630cfd5787d.jfif', '2023-05-16 01:56:29'),
-(13, 5, './imagens/64630dc46c875.jfif', '2023-05-16 01:59:48'),
-(14, 5, './imagens/64630dc46ca72.jfif', '2023-05-16 01:59:48'),
-(15, 5, './imagens/64630dc46cc8d.png', '2023-05-16 01:59:48'),
-(17, 7, './imagens/6463ce4637f7f.jfif', '2023-05-16 15:41:10');
+(49, 19, './imagens/6476db518b465.jfif', '2023-05-31 02:29:53'),
+(50, 19, './imagens/6476db518b68e.jfif', '2023-05-31 02:29:53'),
+(51, 19, './imagens/6476db518b7ef.jfif', '2023-05-31 02:29:53'),
+(52, 20, './imagens/6476e4f9b5586.jpg', '2023-05-31 03:11:05'),
+(53, 20, './imagens/6476e4f9b578a.jpg', '2023-05-31 03:11:05'),
+(54, 20, './imagens/6476e4f9b594e.jpg', '2023-05-31 03:11:05'),
+(55, 21, './imagens/6476e5410659b.jfif', '2023-05-31 03:12:17'),
+(56, 21, './imagens/6476e541067ab.jpg', '2023-05-31 03:12:17'),
+(57, 21, './imagens/6476e5410691f.jpg', '2023-05-31 03:12:17'),
+(58, 22, './imagens/6476e58257e0e.jfif', '2023-05-31 03:13:22'),
+(59, 22, './imagens/6476e582581c4.jpg', '2023-05-31 03:13:22'),
+(60, 22, './imagens/6476e5825ac47.jfif', '2023-05-31 03:13:22'),
+(61, 23, './imagens/6476e5c09c8b0.png', '2023-05-31 03:14:24'),
+(62, 23, './imagens/6476e5c09caf1.jfif', '2023-05-31 03:14:24'),
+(63, 23, './imagens/6476e5c09cd4f.jfif', '2023-05-31 03:14:24'),
+(64, 23, './imagens/6476e5c09cfd1.jfif', '2023-05-31 03:14:24'),
+(65, 24, './imagens/6476e60d19dd3.jfif', '2023-05-31 03:15:41'),
+(66, 24, './imagens/6476e60d19fde.jfif', '2023-05-31 03:15:41'),
+(67, 24, './imagens/6476e60d1c9d7.jfif', '2023-05-31 03:15:41'),
+(69, 26, './imagens/647ec89830689.jpg', '2023-06-06 02:48:08'),
+(70, 26, './imagens/647ec89830f36.jpg', '2023-06-06 02:48:08'),
+(71, 26, './imagens/647ec898311af.jpg', '2023-06-06 02:48:08');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imagens_de_usuarios`
+-- Estrutura para tabela `imagens_de_usuarios`
 --
 
-CREATE TABLE `imagens_de_usuarios` (
+CREATE TABLE IF NOT EXISTS `imagens_de_usuarios` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `path` varchar(255) DEFAULT NULL,
   `data_upload` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Extraindo dados da tabela `imagens_de_usuarios`
+-- Fazendo dump de dados para tabela `imagens_de_usuarios`
 --
 
 INSERT INTO `imagens_de_usuarios` (`id`, `id_usuario`, `path`, `data_upload`) VALUES
-(1, 2, './imagens/6462fc88dd02e.png', '2023-05-16 00:46:16'),
-(2, 2, './imagens/6463078980efa.png', '2023-05-16 01:33:13'),
-(3, 2, './imagens/6463eb2291f0e.png', '2023-05-16 17:44:18');
+(5, 2, './imagens/6470217b238df.png', '2023-05-26 00:03:23'),
+(6, 3, './imagens/64711b3046280.jpeg', '2023-05-26 17:48:48'),
+(7, 3, './imagens/64726f72a2943.jpg', '2023-05-27 18:00:34'),
+(8, 2, './imagens/647794b31081c.png', '2023-05-31 15:40:51'),
+(9, 2, './imagens/64795ba9e5562.png', '2023-06-02 00:02:02'),
+(10, 2, './imagens/64796b08d6603.png', '2023-06-02 01:07:37'),
+(11, 2, './imagens/647ab4c7d856e.jfif', '2023-06-03 00:34:32'),
+(12, 2, './imagens/647ab4db7027c.png', '2023-06-03 00:34:51'),
+(13, 2, './imagens/647ab56b08b71.png', '2023-06-03 00:37:15'),
+(14, 2, './imagens/647ab5a1131ed.png', '2023-06-03 00:38:09'),
+(15, 2, './imagens/647ab5f2be3f3.png', '2023-06-03 00:39:30'),
+(16, 2, './imagens/647ab639a8d16.png', '2023-06-03 00:40:41'),
+(17, 9, './imagens/648131642fc18.png', '2023-06-07 22:39:48'),
+(18, 2, './imagens/64814a31e89a8.png', '2023-06-08 00:25:38'),
+(19, 2, './imagens/64814a3c4acdf.png', '2023-06-08 00:25:48'),
+(20, 2, './imagens/64814b1e39723.png', '2023-06-08 00:29:34'),
+(21, 2, './imagens/64814bb154923.png', '2023-06-08 00:32:01'),
+(22, 2, './imagens/64815ed94f708.png', '2023-06-08 01:53:45'),
+(23, 2, './imagens/64815ee8e8b3c.png', '2023-06-08 01:54:01');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `telefone` varchar(255) NOT NULL,
   `tipo_de_conta` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Fazendo dump de dados para tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `telefone`, `tipo_de_conta`) VALUES
 (1, 'Kelvin', 'kelvin@gmail.com', '$2y$10$ywk.pjQmkXTzBrL7mqqQy.1NcPOVyb10Dnl6BtBzKfaujmgJHS9oW', '(11) 11111-1111', 'adm'),
-(2, 'Joabe', 'joabe@gmail.com', '$2y$10$P4oBBUzcUx8qxiXAQwn79O69cwjPBvGQzVjJoXVbAnWbDDrj4DGV6', '(11) 11111-1111', 'adm'),
-(3, 'Eduardo Santos', 'edu@gmail.com', '$2y$10$JIoZZMWqUy0tDgrxw3gmLe9gicUWlLHqkEFV9LO85I2IZz0hLlSHi', '(11) 11111-1111', 'adm'),
-(4, 'Maria', 'maria@gmail.com', '$2y$10$3jdGRHYrwLFmm28JF1JiReLwRtc5x1vBk.axgRCZwIuL1CSbrF24K', '(75) 99999-9991', 'usuario');
+(2, 'Joabe Fonseca do Nascimento', 'joabe@gmail.com', '$2y$10$P4oBBUzcUx8qxiXAQwn79O69cwjPBvGQzVjJoXVbAnWbDDrj4DGV6', '(75) 99101-6263', 'adm'),
+(3, 'Eduardo Santos', 'edu@gmail.com', '$2y$10$JIoZZMWqUy0tDgrxw3gmLe9gicUWlLHqkEFV9LO85I2IZz0hLlSHi', '(99) 99999-9999', 'adm'),
+(4, 'Maria', 'maria@gmail.com', '$2y$10$3jdGRHYrwLFmm28JF1JiReLwRtc5x1vBk.axgRCZwIuL1CSbrF24K', '(75) 99999-9991', 'usuario'),
+(5, 'joabe fonseca do nascimento', 'joabe14ff@gmail.com', '$2y$10$pZgCOgfCRl.Mx/edbwK1Me8zc6b8HfQeGZ23pD1Z0fWjTzROr8C0.', '(75) 99101-5895', 'usuario'),
+(6, 'Joabe Fonseca do Nascimento', 'joabeteste1@gmail.com', '$2y$10$Mxuic8utKW/n5rsuaWMF3OMNvcKN3zgavjt7LA24qmmgduLQkkdFS', '(75) 99101-6263', 'usuario'),
+(7, 'joabe fonseca do nascimento', 'joabe1s4@gmail.com', '$2y$10$DIWgjl6AU8ExH.MlEzhyvOMfRlm4iguUB4Yi5FxrsikVzCQUcySIi', '(75) 99101-0526', 'usuario'),
+(8, 'joabe', 'senai@gmail.com', '$2y$10$ssNEfRHoLPGQ9ULvfJcIQe0jVJu2G4OifneYSJvb931F2siIRjLPa', '(75) 99191-0263', 'usuario'),
+(9, 'Teste', 'teste@gmail.com', '$2y$10$Slhu9o/y1M5BcBY6NZgiJuRnuo4YvffjL5N8CLqlvh3FAlaplz60q', '(75) 99105-2525', 'usuario');
 
 --
--- Índices para tabelas despejadas
+-- Índices de tabelas apagadas
 --
 
 --
--- Índices para tabela `anuncios`
+-- Índices de tabela `anuncios`
 --
 ALTER TABLE `anuncios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `imagens_de_anuncios`
+-- Índices de tabela `imagens_de_anuncios`
 --
 ALTER TABLE `imagens_de_anuncios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `imagens_de_usuarios`
+-- Índices de tabela `imagens_de_usuarios`
 --
 ALTER TABLE `imagens_de_usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `anuncios`
 --
 ALTER TABLE `anuncios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT de tabela `imagens_de_anuncios`
 --
 ALTER TABLE `imagens_de_anuncios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT de tabela `imagens_de_usuarios`
 --
 ALTER TABLE `imagens_de_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
