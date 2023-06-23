@@ -1,18 +1,25 @@
+<?php session_start();
+
+if (empty($_SESSION)) {
+
+    header('Location: http://localhost/E_space/pages/tela_de_login.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php session_start(); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../js/imagens.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Inserir Anúncio</title>
-    <style>
-        <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?><?php include '../css/footer.css'; ?><?php include '../css/ionicons.min.css'; ?>
-    </style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/imagens.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Inserir Anúncio</title>
+<style>
+    <?php include '../css/style_tela_inserir_anuncio.css'; ?><?php include '../css/navbar.css'; ?><?php include '../css/footer.css'; ?><?php include '../css/ionicons.min.css'; ?>
+</style>
 </head>
 
 <body>
@@ -60,7 +67,7 @@
 
 
     <br><br>
-        <br><br>
+    <br><br>
     <?php include '../footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -160,25 +167,10 @@ if (!empty($_SESSION)) {
                     }
                 })
             </script>
-    <?php }
+<?php }
     }
-} else {
+}
 
-    ?>
-    <script type="text/javascript">
-        Swal.fire({
-            title: 'Ops!',
-            text: 'Antes faça login',
-            icon: 'error',
-            confirmButtonText: 'Ok'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = "../index.php";
-            }
-        })
-    </script>
-<?php
-
-} ?>
+?>
 
 </html>
