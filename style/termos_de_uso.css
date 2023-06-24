@@ -13,10 +13,16 @@ li{
 #termosDeUso{
     margin-bottom: 100px;
 }
+
+
+
 .atalhos{
+    padding: 8px;
+    margin: 5px;
     width: 100%;
-    max-width: 390px;
-    background-color: #87CEFA;
+    border-radius: 5px;
+    max-width: 400px;
+    background-color: #ceecff;
     margin: 75px 0 0 50px;
     text-decoration: none;
 }
@@ -64,7 +70,15 @@ li{
 
 @media screen and (min-width: 768px){
 
-
+    .atalhos{
+        margin: 5px;
+        width: 100%;
+        padding-right: 120px;
+        max-width: 800px;
+        background-color: #ceecff;
+        margin: 75px 0 0 50px;
+        text-decoration: none;
+    }
     
     .description{
         width: 100%;

@@ -20,25 +20,33 @@
         <br><br>
         <br><br>
 <?php include '../navbar.php'; ?>
-<h2 class="wrapper" >Chat</h2>
+<h2 class="titulo wrapper">Chat</h2>
 <div class="chat-container wrapper">
-    <div class="profile-window">
-      <div class="profile" onclick="loadChat('perfil1')">
-      <img class="avatar" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="50" height="50">
-      <span><strong class="name" ><?= $_SESSION['nome'] ?></strong></span> 
+    <div class="profile-window" style="overflow: auto; max-height: 300px;">
+      <div class="scrollable-content">
+        <div class="profile" onclick="loadChat('perfil1')">
+          <img class="avatar" style="border-radius: 50%;" src=".<?= $data[0]['path'] ?>" alt="" width="50" height="50">
+          <span><strong class="name"><?= $_SESSION['nome'] ?></strong></span>
+        </div>
+        <hr>
+        <div class="profile" onclick="loadChat('perfil2')">
+          <img class="avatar" style="border-radius: 50%;" src=".<?= $data[0]['path'] ?>" alt="" width="50" height="50">
+          <span><strong class="name"><?= $_SESSION['nome'] ?></strong></span>
+        </div>
+        <hr>
+        <div class="profile" onclick="loadChat('perfil3')">
+          <img class="avatar" style="border-radius: 50%;" src=".<?= $data[0]['path'] ?>" alt="" width="50" height="50">
+          <span><strong class="name"><?= $_SESSION['nome'] ?></strong></span>
+        </div>
+        <hr>
+        <div class="profile" onclick="loadChat('perfil3')">
+          <img class="avatar" style="border-radius: 50%;" src=".<?= $data[0]['path'] ?>" alt="" width="50" height="50">
+          <span><strong class="name"><?= $_SESSION['nome'] ?></strong></span>
+        </div>
+        <hr>
       </div>
-      <hr>
-      <div class="profile" onclick="loadChat('perfil2')">
-      <img class="avatar" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="50" height="50">
-      <span><strong class="name" ><?= $_SESSION['nome'] ?></strong></span> 
-      </div>
-      <hr>
-      <div class="profile" onclick="loadChat('perfil3')">
-      <img class="avatar" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="50" height="50">
-      <span><strong class="name" ><?= $_SESSION['nome'] ?></strong></span> 
-      </div>
-      <hr>
     </div>
+
     <div class="conversation-window" id="conversation-window">
    <!-- Mensagens da conversa serão adicionadas aqui dinamicamente -->
     </div>
@@ -59,6 +67,29 @@
 
   // Adicionar campo de texto e botão de envio
   conversationWindow.innerHTML += '<div class="input-container"><input type="text" id="message-input" placeholder="Digite sua mensagem"><button onclick="sendMessage()">Enviar</button></div>';
+}
+
+
+  </script>
+
+<script>
+   function loadChat(profileName) {
+  // Lógica para carregar o chat correspondente ao perfil selecionado
+  var conversationWindow = document.getElementById('conversation-window');
+  conversationWindow.innerHTML = ''; // Limpa as mensagens atuais
+
+  // Adicione aqui a lógica para carregar as mensagens do chat correspondente ao perfil selecionado
+
+  // Exemplo de adição de mensagens
+  conversationWindow.innerHTML += '<div class="message sender">Olá! Como você está?</div>';
+  conversationWindow.innerHTML += '<div class="message">Oi! Estou bem, obrigado. E você?</div>';
+  conversationWindow.innerHTML += '<div class="message sender">Também estou bem, obrigado!</div>';
+
+  // Adicionar campo de texto e botão de envio
+  conversationWindow.innerHTML += '<div class="input-container"><input type="text" id="message-input" placeholder="Digite sua mensagem"><button onclick="sendMessage()">Enviar</button></div>';
+
+  // Scroll para o final da conversa
+  conversationWindow.scrollTop = conversationWindow.scrollHeight;
 }
   </script>
 </body>

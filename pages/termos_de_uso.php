@@ -22,10 +22,10 @@
 <body>
     <?php include '../navbar.php'; ?>
 
-    <section class="content">
-        <div class="atalhos">
-            <div class="links">
-                <a href="../index.php">Página Inicial > </a>
+    <section class="content wrapper">
+        <div class="atalhos ">
+            <div class="links ">
+                <a href="../index.php" class="home" >Página Inicial > </a>
                 <a href="#termosDeUso">Termos de uso > </a>
                 <a href="#usoAdequado">Uso adequado > </a>
                 <a href="#dicasDeSeguranca">Dicas de segurança ></a>  

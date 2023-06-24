@@ -49,7 +49,7 @@ class AnuncioDAO extends Conexao
             'localizacao' => $anuncio_model->getLocalizacao(),
             'cep' => $anuncio_model->getCep(),
             'numero' => $anuncio_model->getNumero(),
-            'quantidade_pessoas' => $anuncio_model->getAtualizadoEm(),
+            'quantidade_pessoas' => $anuncio_model->getQuantidadePessoas(),
             'atualizado_em' => $anuncio_model->getAtualizadoEm(),
             'id' => $anuncio_model->getId()
         ]);

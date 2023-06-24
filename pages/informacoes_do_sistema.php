@@ -20,7 +20,7 @@ session_start();?>
 <body>
     <?php include '../navbar.php'; ?>
 
-    <section class="content">
+    <section class="content wrapper">
         <div class="atalhos">
             <div class="links">
             <a href="../index.php">Página Inicial > </a>

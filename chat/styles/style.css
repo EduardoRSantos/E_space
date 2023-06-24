@@ -43,6 +43,20 @@ margin: 0 auto;
   margin: 10px 0;
 }
 
+.titulo{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: rgb(129,240,212);
+  background: linear-gradient(100deg, rgba(129,240,212,1) 0%, rgba(129,216,226,1) 100%);
+  padding-top: 15px;
+    padding: 10px 20px;
+  text-align: start;
+  color: #5e5e5e;
+  margin-top: 15px;
+  font-size: 1.4rem;
+font-weight: 500px;
+}
+
 .profile .name {
   font-weight: bold;
 }
@@ -54,6 +68,48 @@ margin: 0 auto;
   margin-right: 10px;
   object-fit: cover;
 }
+
+.conversation-window {
+  position: relative;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.input-container input[type="text"] {
+  width: 80%;
+  padding: 5px;
+}
+
+.profile-window {
+  overflow-x: auto;
+}
+
+.input-container button {
+  width: 18%;
+  padding: 5px;
+  margin-left: 2%;
+}
+
+.profile-window::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.profile-window::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.profile-window::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+
 
 @media (max-width: 768px) {
   .chat-container {

@@ -149,6 +149,18 @@ max-width: 100%;
   z-index: 6;
 }
 
+.descricao::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.descricao::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.descricao::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
 .inputUserArquivos {
   border: none;
 }
