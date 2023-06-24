@@ -4,7 +4,8 @@
   	<title>Footer 07</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" type="image/jpg" href="./img/logo-ConversImagem.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 	
 		<link rel="stylesheet" href="css/ionicons.min.css">
@@ -15,7 +16,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="#">Privacidade</a><span> | </span><a href="http://localhost/routes/E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
+        <p><a href="../pages/privacidade.php">Privacidade</a><span> | </span><a href="../pages/termos_de_uso.php">Termos</a><span> | </span><a href="../pages/mapa_do_site.php">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema.php">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">

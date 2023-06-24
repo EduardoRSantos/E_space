@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E-space</title>
+  <link rel="shortcut icon" type="image/jpg" href="./img/logo-ConversImagem.ico"/>
   <link rel="stylesheet" href="./pages/modal/modal_carousel.css" />
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -362,7 +363,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="#">Privacidade</a><span> | </span><a href="http://localhost/E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="#">Mapa do site</a><span> | </span><a href="#">Informações da empresa</a></p>
+        <p><a href="../E_space/pages/privacidade.php">Privacidade</a><span> | </span><a href="../E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="../E_space/pages/mapa_do_site.php">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema.php">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">

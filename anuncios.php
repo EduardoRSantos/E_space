@@ -71,9 +71,12 @@
             <h4>Publicado: <?= $anuncio['criado_em'] ?></h4>
             <hr>
             <h4 class="limite-chars-modal" >Descrição <br> <?= $anuncio['descricao'] ?></h4>
+            <span class="capacity-icon"><img src="./img/pessoas.png" alt="" srcset=""><?= $anuncio['quantidade_pessoas'] ?></span>
+            <br>
             <br>
             <h4><strong>Telefone</strong> <br> <?= $anuncio['telefone'] ?></h4>
             <h4><strong>Cep</strong> <br> <?= $anuncio['cep'] ?></h4>
+            
           </div>
           <div class="footer-modal">
           </div>

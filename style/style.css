@@ -1518,7 +1518,8 @@ margin-right: 2rem;
     .rental-ad img {
       width: 100%;
       height: auto;
-      width: 182px; /* Largura fixa */
+      max-width: 300px;
+      width: 190px; /* Largura fixa */
       height: 200px; /* Altura fixa */
       object-fit: cover;
     }
@@ -1595,6 +1596,10 @@ width: 100%;
   }
 
   .anuncios-destaque{
+    display: none;
+  }
+
+  .capacity-button{
     display: none;
   }
 

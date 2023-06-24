@@ -2,12 +2,13 @@
 <html lang="pt-br">
 <?php 
   session_start();
-  $_SESSION = array();
+
   ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico"/>
     <link rel="stylesheet" href="../style/termos_de_uso.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Termos de Uso</title>
@@ -24,9 +25,10 @@
     <section class="content">
         <div class="atalhos">
             <div class="links">
-                <a href="#termosDeUso">termos de uso/</a>
-                <a href="#usoAdequado">uso adequado/</a>
-                <a href="#dicasDeSeguranca">dicas de segurança/</a>  
+                <a href="../index.php">Página Inicial > </a>
+                <a href="#termosDeUso">Termos de uso > </a>
+                <a href="#usoAdequado">Uso adequado > </a>
+                <a href="#dicasDeSeguranca">Dicas de segurança ></a>  
             </div>
         </div>
 
