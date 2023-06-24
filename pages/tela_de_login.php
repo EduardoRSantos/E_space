@@ -17,12 +17,15 @@
 </script>
 
   <style>
+    <?php include '../css/navbar_login.css'; ?>
         <?php include '../css/style_tela_de_login.css'; ?>
     </style>
 
 </head>
 
 <body>
+
+    <?php include '../navbar-login.php'; ?>
 <div class="page">
         <form method="POST" class="formLogin">
             <h1>Login</h1>

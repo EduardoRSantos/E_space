@@ -8,10 +8,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" type="text/css" href="../css/style_tela_de_registro.css">
       <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico"/>
-
 </head>
 
+
+<style>
+      <?php include '../css/navbar_login.css'; ?>
+</style>
+
 <body id="perfil">
+<?php include '../navbar-login.php'; ?>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="page">
         <form method="POST" class="formRegistro">
             <h1>Registra-se</h1>
