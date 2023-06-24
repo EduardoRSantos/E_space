@@ -1,6 +1,13 @@
+<?php session_start();
+
+if (empty($_SESSION)) {
+
+    header('Location: http://localhost/E_space/pages/tela_de_login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php session_start(); ?>
 
 <head>
     <meta charset="utf-8">
@@ -29,7 +36,11 @@
                 <button class="" type="button"><a href="./tela_de_editar.php">Editar Perfil</a></button>
             </div>
             <div class="container e-space-user">
+                <?php if(empty($data[0]['path'])){  ?> 
+                    <img class="foto-perfil" style="border-radius: 50%;"  src="../img/perfil.png" alt=""  width="150" height="150">
+                <?php }else { ?> 
                 <img class="foto-perfil" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="150" height="150">
+                <?php } ?>
                 <img class="user-space" width="320" height="80" src="../img/space-user.png" alt="">
             </div>
 

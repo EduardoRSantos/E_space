@@ -1,9 +1,14 @@
 
+<?php session_start();
 
+if (empty($_SESSION)) {
+
+    header('Location: http://localhost/E_space/pages/tela_de_login.php');
+}
+?>
 
 <!DOCTYPE html>
 <html>
-<?php session_start(); ?>
 
 <head>
   <meta charset="UTF-8">

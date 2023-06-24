@@ -1,6 +1,14 @@
+<?php session_start();
+
+if (empty($_SESSION)) {
+
+    header('Location: http://localhost/E_space/pages/tela_de_login.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php session_start(); ?>
 
 <head>
     <meta charset="UTF-8">
@@ -61,7 +69,7 @@
 
 
     <br><br>
-        <br><br>
+    <br><br>
     <?php include '../footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -161,25 +169,10 @@ if (!empty($_SESSION)) {
                     }
                 })
             </script>
-    <?php }
+<?php }
     }
-} else {
+}
 
-    ?>
-    <script type="text/javascript">
-        Swal.fire({
-            title: 'Ops!',
-            text: 'Antes faça login',
-            icon: 'error',
-            confirmButtonText: 'Ok'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = "../index.php";
-            }
-        })
-    </script>
-<?php
-
-} ?>
+?>
 
 </html>
