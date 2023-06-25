@@ -209,7 +209,7 @@
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-      CURLOPT_URL => 'http://localhost/E_space/anuncios/destaque',
+      CURLOPT_URL => 'http://www.espace.kinghost.net/E_space/anuncios/destaque',
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_RETURNTRANSFER => true,
     ]);
