@@ -28,16 +28,16 @@
             <p>Digite os seus dados de cadastro no campo.</p>
             <input type="text" placeholder="Nome Completo" name="nome" id="nome" class="inputUser"  autofocus="true" required/>
             <input type="email" placeholder="Digite o seu e-mail" name="email" id="email" class="inputUser"  autofocus="true" required/>
-            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" minlength="6" maxlength="12" onKeyUp="verificaForcaSenha();"/>
-            <span id="password-status"></span>
-            <input type="password" placeholder="Confirme a sua senha" name="senha_confirmar" id="senha" class="inputUser"/>
-            <input type="tel" placeholder="Telefone" name="telefone" id="telefone" class="inputUser" />
+            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" minlength="6" maxlength="12" onKeyUp="verificaForcaSenha();" />
+            <span id="password-status" required></span>
+            <input type="password" placeholder="Confirme a sua senha" name="senha_confirmar" id="senha" class="inputUser" required/>
+            <input type="tel" placeholder="Telefone" name="telefone" id="telefone" class="inputUser" required/>
         
             <input type="submit" name="submit" id="submit" value="Registrar" class="btn" />
             <br>
             <label class="checkbox-label">
-  <input type="checkbox" class="checkbox-input" id="terms-checkbox" />
-  <span style="color: black;">Li e concordo com os termos de uso</span>
+  <input type="checkbox" class="checkbox-input" id="terms-checkbox" required/>
+  <span style="color: black;" required>Li e concordo com os termos de uso</span>
 </label>
             <br>
            <label for="registrar">Já tem conta ? <a href="../pages/tela_de_login.php">Fazer Login</a></label>

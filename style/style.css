@@ -1,7 +1,3 @@
-/* @font-face {
-  font-family:Deli;
-  src: url(../fonts/Deli.ttf);
-} */
 
 *{
   padding: 0;
@@ -16,9 +12,7 @@ body{
 	font-family: Poppins;
 }
 
-html{
 
-}
 
 
 /* CARROSEL */

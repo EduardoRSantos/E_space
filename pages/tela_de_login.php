@@ -31,7 +31,7 @@
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <input type="email" placeholder="Digite o seu e-mail" name="email" id="email" class="inputUser" required autofocus="true" />
-            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser" />
+            <input type="password" placeholder="Digite a sua senha" name="senha" id="senha" class="inputUser"  required/>
             <input type="submit" name="submit" id="submit" value="Acessar" class="btn" />
             <a href="/">Esqueci minha senha</a>
             <br>
