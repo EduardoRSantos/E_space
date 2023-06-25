@@ -94,7 +94,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://www.espace.kinghost.net/E_space/routes/index.php/imagem',
+            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/imagem',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $json,
@@ -217,10 +217,9 @@
     $response = curl_exec($curl);
 
     $data = json_decode($response, true);
-    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     
     curl_close($curl);
-    var_dump($status);
+ 
 
     ?>
 
