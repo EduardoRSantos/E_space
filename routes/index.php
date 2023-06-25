@@ -11,6 +11,9 @@ use App\Controllers\{UsuarioController, AnuncioController};
 $app = new \Slim\App(SlimConfiguration());
 
 // ==============================================================================
+$app->get('/', function(){
+    require './home.php';
+});
 
 $app->get('/imagem', UsuarioController::class . ':getImagenPerfil');
 
@@ -34,6 +37,8 @@ $app->put('/anuncios/atualizar', AnuncioController::class . ':anuncioAtualizar')
 $app->post('/anuncios/delete', AnuncioController::class . ':deletarAnuncio');
 
 $app->get('/anuncios/destaque', AnuncioController::class . ':anunciosById');
+
+
 
 // ==============================================================================
 
