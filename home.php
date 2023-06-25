@@ -289,7 +289,7 @@
 
           $curl = curl_init();
           curl_setopt_array($curl, [
-            CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
+            CURLOPT_URL => 'http://localhost/E_space/anuncios',
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_RETURNTRANSFER => true,
           ]);
