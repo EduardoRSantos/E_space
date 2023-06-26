@@ -1,7 +1,7 @@
 <header>
       <nav class="navbarheader" >
     <div class="logo">
-      <a href="../index.php"><img  src="../img/logo.png" alt="Logo" /></a>
+      <a href="../"><img  src="../img/logo.png" alt="Logo" /></a>
     </div>
     <!-- <form class="searchbar" method="post">
     <div class="pesquisar">

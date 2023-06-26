@@ -28,7 +28,7 @@
   </div>
   <nav class="navbarheader">
     <div class="logo">
-      <a href="../"><img src="../img/logo.png" alt="Logo" /></a>
+      <a href="../E_space"><img src="../img/logo.png" alt="Logo" /></a>
     </div>
     <!-- <form class="searchbar" method="post">
     <div class="pesquisar">
@@ -45,7 +45,7 @@
       <li class=""><a href="../pages/tela_meus_anuncios"><img width="30" src="../img/anuncio.png" alt=""></a></li>
       <li class=""><a href="../pages/tela_de_perfil"><img width="30" src="../img/perfil.png" alt=""></a></li>
       <?php if (empty($_SESSION)) { ?>
-        <li class="cadastro"><a href="../pages/tela_de_login">Fazer Login </a></li>
+        <li class="cadastro"><a href="../pages/login">Fazer Login </a></li>
       <?php } ?>
 
       <?php

@@ -2,7 +2,7 @@
 
 if (empty($_SESSION)) {
 
-  header('Location: http://localhost/E_space/pages/tela_de_login');
+  header('Location: http://localhost/E_space/pages/login');
 }
 ?>
 

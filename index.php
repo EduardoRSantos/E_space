@@ -76,7 +76,7 @@
         <li class=""><a title="Meus Anuncios" href="../E_space/pages/tela_meus_anuncios"><img width="30" src="./img/anuncio.png" alt=""></a></li>
         <li class=""><a title="Perfil" href="../E_space/pages/tela_de_perfil"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a title="Login" href="../E_space/pages/tela_de_login">Fazer Login </a></li>
+          <li class="cadastro"><a title="Login" href="../E_space/pages/login">Fazer Login </a></li>
         <?php } ?>
 
 

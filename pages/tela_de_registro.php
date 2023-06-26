@@ -40,7 +40,7 @@
                         <span style="color: black;" required>Li e concordo com os termos de uso</span>
                   </label>
                   <br>
-                  <label for="registrar">Já tem conta ? <a href="../pages/tela_de_login">Fazer Login</a></label>
+                  <label for="registrar">Já tem conta ? <a href="../pages/login">Fazer Login</a></label>
             </form>
       </div>
 
@@ -112,7 +112,7 @@ if (!empty($_POST['email'])) {
                               confirmButtonText: 'Ok'
                         }).then((result) => {
                               if (result.isConfirmed) {
-                                    location.href = "../pages/tela_de_login";
+                                    location.href = "../pages/login";
                               }
                         })
                   </script>

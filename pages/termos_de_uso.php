@@ -26,7 +26,7 @@ session_start();
     <section class="content wrapper">
         <div class="atalhos ">
             <div class="links ">
-                <a href="../index.php" class="home">Página Inicial > </a>
+                <a href="../" class="home">Página Inicial > </a>
                 <a href="#termosDeUso">Termos de uso > </a>
                 <a href="#usoAdequado">Uso adequado > </a>
                 <a href="#dicasDeSeguranca">Dicas de segurança ></a>
