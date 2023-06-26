@@ -1,8 +1,14 @@
+<?php session_start();
 
+if (empty($_SESSION)) {
+
+    header('Location: http://localhost/E_space/pages/tela_de_login');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php session_start(); ?>
+
 <head>
     <meta charset="utf-8">
     <title>Tela de Login</title>
@@ -10,45 +16,43 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/mascaras.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-           <?php include '../css/navbar.css'; ?>
-           <?php include '../css/footer.css';?>
-        <?php include '../css/ionicons.min.css';?>
+        <?php include '../css/navbar.css'; ?><?php include '../css/footer.css'; ?><?php include '../css/ionicons.min.css'; ?>
     </style>
-</head> 
+</head>
 
 <body>
-<?php include '../navbar.php';?>
+    <?php include '../navbar.php'; ?>
     <?php if (!empty($_SESSION)) { ?>
-        <div class="formulario-de-dados wrapper" >
+        <div class="formulario-de-dados wrapper">
             <h2 class="titulo wrapper">Informações do perfil</h2>
-            <div class="dados-user d-flex" >
-                <img class="config" src="../img/configuracoes.gif" alt="Configuraçõs"  srcset="">
-            <button class="" ><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
-            <button class=""><a href="./tela_de_editar.php">Editar Perfil</a></button>
+            <div class="dados-user d-flex">
+                <img class="config" src="../img/configuracoes.gif" alt="Configuraçõs" srcset="">
+                <button class=""><a href="./tela_de_perfil">Visualizar Perfil</a></button>
+                <button class=""><a href="./tela_de_editar">Editar Perfil</a></button>
             </div>
-            
+
             <div class="editar-foto">
-            <br>
-                <form  class="file"  method="POST" enctype="multipart/form-data">
-                <label class="mudar-nome" for="nome"><strong>Editar foto do perfil</strong></Label>
-                
-                    <div class="file">      
+                <br>
+                <form class="file" method="POST" enctype="multipart/form-data">
+                    <label class="mudar-nome" for="nome"><strong>Editar foto do perfil</strong></Label>
+
+                    <div class="file">
                         <input type="file" name="imagem">
                         <br>
-                        <input  class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto">
+                        <input class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto">
                     </div>
-            
+
                 </form>
                 <br>
-            
 
-             
-               
+
+
+
                 <form class="editar-dados" method="POST">
                     <br>
                     <!-- <div class="dados">
@@ -69,21 +73,21 @@
                         <input type="text" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" required>
                     </div>
                     <br>
-                    <div class="salvar-dados" >
+                    <div class="salvar-dados">
                         <input class="salvar" type="submit" name="submit" id="submit" value="Salvar">
                     </div>
-                    
+
                 </form>
-                
-                
+
+
                 <br>
-                
+
                 <form class="sair-tela" action="sair.php" method="post">
                     <input type="submit" value="Sair">
                 </form>
-              
-                
-        </div>
+
+
+            </div>
 
         <?php } else { ?>
             <script type="text/javascript">
@@ -94,7 +98,7 @@
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../index.php";
+                        location.href = "../";
                     }
                 })
             </script>
@@ -146,7 +150,7 @@
                             confirmButtonText: 'Ok'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                location.href = "../pages/tela_de_perfil.php";
+                                location.href = "../pages/tela_de_perfil";
                             }
                         })
                     </script>
@@ -160,7 +164,7 @@
                             confirmButtonText: 'Ok'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                location.href = "../pages/tela_de_perfil.php";
+                                location.href = "../pages/tela_de_perfil";
                             }
                         })
                     </script>
@@ -209,34 +213,34 @@
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil.php";
+                            location.href = "../pages/tela_de_perfil";
                         }
                     })
                 </script>
 
             <?php }
-            if ($http_code == 403){ ?>
-            <script type="text/javascript">
-                Swal.fire({
-                    title: 'Ops!',
-                    text: 'Ocorreu um error, tente novamente',
-                    icon: 'error',
-                    confirmButtonText: 'Ok'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        location.href = "../pages/tela_de_perfil.php";
-                    }
-                })
-            </script>
+            if ($http_code == 403) { ?>
+                <script type="text/javascript">
+                    Swal.fire({
+                        title: 'Ops!',
+                        text: 'Ocorreu um error, tente novamente',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "../pages/tela_de_perfil";
+                        }
+                    })
+                </script>
         <?php }
-    } ?>
+        } ?>
         </div>
 
         <br><br>
         <br><br>
         <?php include '../footer.php'; ?>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
