@@ -137,6 +137,7 @@
           <div class="chat">
             <div class="chat-header">
               <?php if (!empty($_SESSION)) { ?>
+                <img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt="">
                 <span><?= $_SESSION['nome'] ?></span>
               <?php } else { ?>
                 <span>E-space</span>
