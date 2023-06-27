@@ -124,6 +124,15 @@ box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2);
   color: #5e5e5e;
 }
 
+.inputUserArquivos{
+  display: none;
+}
+
+.img-inserir{
+  align-items: center;
+  width: 50px;
+}
+
 
 .file>input{
   border:none;

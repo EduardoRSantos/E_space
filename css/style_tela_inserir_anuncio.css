@@ -163,6 +163,12 @@ max-width: 100%;
 
 .inputUserArquivos {
   border: none;
+  display: none;
+}
+
+.img-inserir{
+  align-items: center;
+  width: 50px;
 }
 
 
