@@ -2,7 +2,7 @@
 
 if (empty($_SESSION)) {
 
-    header('Location: http://localhost/E_space/pages/tela_de_login.php');
+    header('Location: http://localhost/E_space/pages/login');
 }
 ?>
 
@@ -16,7 +16,7 @@ if (empty($_SESSION)) {
     <title>Tela de Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/mascaras.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -31,15 +31,15 @@ if (empty($_SESSION)) {
         <div class="formulario-de-dados wrapper">
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex">
-            <img class="config" src="../img/configuracoes.gif" alt="" srcset="">
-                <button class="" type="button"><a href="./tela_de_perfil.php">Visualizar Perfil</a></button>
-                <button class="" type="button"><a href="./tela_de_editar.php">Editar Perfil</a></button>
+                <img class="config" src="../img/configuracoes.gif" alt="" srcset="">
+                <button class="" type="button"><a href="./tela_de_perfil">Visualizar Perfil</a></button>
+                <button class="" type="button"><a href="./tela_de_editar">Editar Perfil</a></button>
             </div>
             <div class="container e-space-user">
-                <?php if(empty($data[0]['path'])){  ?> 
-                    <img class="foto-perfil" style="border-radius: 50%;"  src="../img/perfil.png" alt=""  width="150" height="150">
-                <?php }else { ?> 
-                <img class="foto-perfil" style="border-radius: 50%;"  src=".<?= $data[0]['path'] ?>" alt=""  width="150" height="150">
+                <?php if (empty($data[0]['path'])) {  ?>
+                    <img class="foto-perfil" style="border-radius: 50%;" src="../img/perfil.png" alt="" width="150" height="150">
+                <?php } else { ?>
+                    <img class="foto-perfil" style="border-radius: 50%;" src=".<?= $data[0]['path'] ?>" alt="" width="150" height="150">
                 <?php } ?>
                 <img class="user-space" width="320" height="80" src="../img/space-user.png" alt="">
             </div>
@@ -84,7 +84,7 @@ if (empty($_SESSION)) {
                 confirmButtonText: 'Ok'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    location.href = "../index.php";
+                    location.href = "../";
                 }
             })
         </script>
@@ -136,7 +136,7 @@ if (empty($_SESSION)) {
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil.php";
+                            location.href = "../pages/tela_de_perfil";
                         }
                     })
                 </script>
@@ -150,7 +150,7 @@ if (empty($_SESSION)) {
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil.php";
+                            location.href = "../pages/tela_de_perfil";
                         }
                     })
                 </script>
@@ -199,7 +199,7 @@ if (empty($_SESSION)) {
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../pages/tela_de_perfil.php";
+                        location.href = "../pages/tela_de_perfil";
                     }
                 })
             </script>
@@ -214,7 +214,7 @@ if (empty($_SESSION)) {
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../pages/tela_de_perfil.php";
+                        location.href = "../pages/tela_de_perfil";
                     }
                 })
             </script>
@@ -222,8 +222,8 @@ if (empty($_SESSION)) {
     } ?>
     </div>
 
-        <br><br>
-        <br><br>
+    <br><br>
+    <br><br>
 
 
     <?php include '../footer.php'; ?>

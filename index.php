@@ -29,10 +29,10 @@
       <div class="collapse" id="navbarToggleExternalContent">
 
         <div class="mobile-button  bg-white p-4">
-          <button class=""><a class="text-light" href="../E_space/avaliar_anuncios/anuncios_avaliar.php">Avaliar anuncios</a></button>
-          <button class=""><a class="text-white" href="../E_space/pages/inserir_anuncio.php">Meus anuncios</a></button>
-          <button class=""><a class="text-white" href="../E_space/pages/tela_meus_anuncios.php">Inserir anuncio</a></button>
-          <button class=""><a class="text-white" href="../E_space/pages/tela_de_perfil.php">Perfil</a></button>
+          <button class=""><a class="text-light" href="../E_space/avaliar_anuncios/anuncios_avaliar">Avaliar anuncios</a></button>
+          <button class=""><a class="text-white" href="../E_space/pages/inserir_anuncio">Meus anuncios</a></button>
+          <button class=""><a class="text-white" href="../E_space/pages/tela_meus_anuncios">Inserir anuncio</a></button>
+          <button class=""><a class="text-white" href="../E_space/pages/tela_de_perfil">Perfil</a></button>
 
 
 
@@ -59,7 +59,7 @@
 
     <nav class="navbarheader">
       <div class="logo">
-        <a href="../E_space/index.php"><img src="./img/logo.png" alt="Logo" /></a>
+        <a href="../E_space"><img src="./img/logo.png" alt="Logo" /></a>
       </div>
       <form class="searchbar" method="post">
         <div class="pesquisar">
@@ -69,14 +69,14 @@
       </form>
       <ul class="menu">
         <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
-          <li class=""><a title="Avaliar" href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt=""></a></li>
+          <li class=""><a title="Avaliar" href="../E_space/avaliar_anuncios/anuncios_avaliar"><img width="30" src="./img/avaliacao.png" alt=""></a></li>
         <?php } ?>
 
-        <li class=""><a title="Inserir Anuncio" href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-        <li class=""><a title="Meus Anuncios" href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-        <li class=""><a title="Perfil" href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <li class=""><a title="Inserir Anuncio" href="../E_space/pages/inserir_anuncio"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li class=""><a title="Meus Anuncios" href="../E_space/pages/tela_meus_anuncios"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li class=""><a title="Perfil" href="../E_space/pages/tela_de_perfil"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a title="Login" href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+          <li class="cadastro"><a title="Login" href="../E_space/pages/login">Fazer Login </a></li>
         <?php } ?>
 
 
@@ -187,7 +187,7 @@
     <!-- DESKTOP -->
     <section class="campo-itens wrapper">
       <div class="button-container">
-        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
+        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
@@ -377,20 +377,20 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="../E_space/pages/privacidade.php">Privacidade</a><span> | </span><a href="../E_space/pages/termos_de_uso.php">Termos</a><span> | </span><a href="../E_space/pages/mapa_do_site.php">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema.php">Informações da empresa</a></p>
+        <p><a href="../E_space/pages/privacidade">Privacidade</a><span> | </span><a href="../E_space/pages/termos_de_uso">Termos</a><span> | </span><a href="../E_space/pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema.php">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
       <ul>
         <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
-          <li><a href="../E_space/avaliar_anuncios/anuncios_avaliar.php"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
+          <li><a href="../E_space/avaliar_anuncios/anuncios_avaliar"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
 
-        <li><a href="../E_space/pages/inserir_anuncio.php"><img width="30" src="./img/inserir.png" alt=""></a></li>
-        <li><a href="../E_space/pages/tela_meus_anuncios.php"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-        <li><a href="../E_space/pages/tela_de_perfil.php"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <li><a href="../E_space/pages/inserir_anuncio"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li><a href="../E_space/pages/tela_meus_anuncios"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li><a href="../E_space/pages/tela_de_perfil"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a href="../E_space/pages/tela_de_login.php">Fazer Login </a></li>
+          <li class="cadastro"><a href="../E_space/pages/tela_de_login">Fazer Login </a></li>
         <?php } ?>
         <?php
         if (!empty($_SESSION)) {
