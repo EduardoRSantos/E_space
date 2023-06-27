@@ -27,11 +27,11 @@
           <li><a href="../pages/avaliar_anuncios/anuncios_avaliar"><img width="30" src="../img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
 
-        <li><a href="../pages/inserir_anuncio"><img width="30" src="../img/inserir.png" alt=""></a></li>
-        <li><a href="../pages/tela_meus_anuncios"><img width="30" src="../img/anuncio.png" alt=""></a></li>
-        <li><a href="../pages/tela_de_perfil"><img width="30" src="../img/perfil.png" alt=""></a></li>
+        <li><a href="../pages/anuncio"><img width="30" src="../img/inserir.png" alt=""></a></li>
+        <li><a href="../pages/anuncios"><img width="30" src="../img/anuncio.png" alt=""></a></li>
+        <li><a href="../pages/perfil"><img width="30" src="../img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
-          <li class="cadastro"><a href="../pages/tela_de_login">Fazer Login </a></li>
+          <li class="cadastro"><a href="../pages/login">Fazer Login </a></li>
         <?php } ?>
         <?php
         if (!empty($_SESSION)) {

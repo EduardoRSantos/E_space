@@ -25,7 +25,7 @@
     <section class="content wrapper">
         <div class="atalhos">
             <div class="links">
-                <a href="../index.php">Página Inicial ></a>
+                <a href="../">Página Inicial ></a>
                 <a href="#Privacidade">Privacidade</a>
             </div>
         </div>

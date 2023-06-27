@@ -4,9 +4,9 @@
 
       <div class="mobile-button bg-white p-4">
         <button class=""><a class="text-light" href="../avaliar_anuncios/anuncios_avaliar">Avaliar anuncios</a></button>
-        <button class=""><a class="text-white" href="../pages/inserir_anuncio">Meus anuncios</a></button>
-        <button class=""><a class="text-white" href="../pages/tela_meus_anuncios">Inserir anuncio</a></button>
-        <button class=""><a class="text-white" href="../pages/tela_de_perfil">Perfil</a></button>
+        <button class=""><a class="text-white" href="../pages/anuncio">Meus anuncios</a></button>
+        <button class=""><a class="text-white" href="../pages/anuncios">Inserir anuncio</a></button>
+        <button class=""><a class="text-white" href="../pages/perfil">Perfil</a></button>
 
         <form class="searchbarmobile" method="post">
           <div class="pesquisar">
@@ -28,7 +28,7 @@
   </div>
   <nav class="navbarheader">
     <div class="logo">
-      <a href="../E_space"><img src="../img/logo.png" alt="Logo" /></a>
+      <a href="../"><img src="../img/logo.png" alt="Logo" /></a>
     </div>
     <!-- <form class="searchbar" method="post">
     <div class="pesquisar">
@@ -41,9 +41,9 @@
         <li class=""><a href="../avaliar_anuncios/anuncios_avaliar"><img width="30" src="../img/avaliacao.png" alt="Avaliar"></a></li>
       <?php } ?>
 
-      <li class=""><a href="../pages/inserir_anuncio"><img width="30" src="../img/inserir.png" alt=""></a></li>
-      <li class=""><a href="../pages/tela_meus_anuncios"><img width="30" src="../img/anuncio.png" alt=""></a></li>
-      <li class=""><a href="../pages/tela_de_perfil"><img width="30" src="../img/perfil.png" alt=""></a></li>
+      <li class=""><a href="../pages/anuncio"><img width="30" src="../img/inserir.png" alt=""></a></li>
+      <li class=""><a href="../pages/anuncios"><img width="30" src="../img/anuncio.png" alt=""></a></li>
+      <li class=""><a href="../pages/perfil"><img width="30" src="../img/perfil.png" alt=""></a></li>
       <?php if (empty($_SESSION)) { ?>
         <li class="cadastro"><a href="../pages/login">Fazer Login </a></li>
       <?php } ?>

@@ -214,7 +214,7 @@ if (empty($_SESSION)) {
           </div>
         <?php endforeach;
       } else {
-        echo "Para criar anuncios "; ?> <a href="../pages/inserir_anuncio.php">Clique aqui!</a> <?php
+        echo "Para criar anuncios "; ?> <a href="../pages/anuncio">Clique aqui!</a> <?php
                                                                                               }
                                                                                             } else { ?>
       <script type="text/javascript">
@@ -293,7 +293,7 @@ if (!empty($_POST['fazer'])) {
           confirmButtonText: 'Ok'
         }).then((result) => {
           if (result.isConfirmed) {
-            location.href = "../pages/tela_meus_anuncios";
+            location.href = "../pages/anuncios";
           }
         })
       </script>
@@ -306,7 +306,7 @@ if (!empty($_POST['fazer'])) {
           confirmButtonText: 'Ok'
         }).then((result) => {
           if (result.isConfirmed) {
-            location.href = "../pages/tela_de_meus_anuncios";
+            location.href = "../pages/anuncios";
           }
         })
       </script>

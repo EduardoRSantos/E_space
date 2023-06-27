@@ -73,7 +73,7 @@ if (!empty($_POST['email'])) {
                         confirmButtonText: 'Ok'
                   }).then((result) => {
                         if (result.isConfirmed) {
-                              location.href = "../pages/tela_de_registro";
+                              location.href = "../pages/registro";
                         }
                   })
             </script>
@@ -127,7 +127,7 @@ if (!empty($_POST['email'])) {
                               confirmButtonText: 'Ok'
                         }).then((result) => {
                               if (result.isConfirmed) {
-                                    location.href = "../pages/tela_de_registro";
+                                    location.href = "../pages/registro";
                               }
                         })
                   </script>

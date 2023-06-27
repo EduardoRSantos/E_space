@@ -33,7 +33,7 @@ $_SESSION = array();
       <a href="/">Esqueci minha senha</a>
       <br>
 
-      <label for="login">Não tem conta ? <a href="../pages/tela_de_registro">Registra-se</a></label>
+      <label for="login">Não tem conta ? <a href="../pages/registro">Registra-se</a></label>
     </form>
   </div>
 
@@ -103,7 +103,7 @@ if (!empty($_POST['email'])) {
         confirmButtonText: 'Ok'
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = "../pages/tela_de_login";
+          location.href = "../pages/login";
         }
       })
     </script>
@@ -116,7 +116,7 @@ if (!empty($_POST['email'])) {
         confirmButtonText: 'Ok'
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = "../pages/tela_de_login";
+          location.href = "../pages/login";
         }
       })
     </script>

@@ -32,8 +32,8 @@ if (empty($_SESSION)) {
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex">
                 <img class="config" src="../img/configuracoes.gif" alt="" srcset="">
-                <button class="" type="button"><a href="./tela_de_perfil">Visualizar Perfil</a></button>
-                <button class="" type="button"><a href="./tela_de_editar">Editar Perfil</a></button>
+                <button class="" type="button"><a href="./perfil">Visualizar Perfil</a></button>
+                <button class="" type="button"><a href="./editar">Editar Perfil</a></button>
             </div>
             <div class="container e-space-user">
                 <?php if (empty($data[0]['path'])) {  ?>
@@ -136,7 +136,7 @@ if (empty($_SESSION)) {
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil";
+                            location.href = "../pages/perfil";
                         }
                     })
                 </script>
@@ -150,7 +150,7 @@ if (empty($_SESSION)) {
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil";
+                            location.href = "../pages/perfil";
                         }
                     })
                 </script>
@@ -199,7 +199,7 @@ if (empty($_SESSION)) {
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../pages/tela_de_perfil";
+                        location.href = "../pages/perfil";
                     }
                 })
             </script>
@@ -214,7 +214,7 @@ if (empty($_SESSION)) {
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../pages/tela_de_perfil";
+                        location.href = "../pages/perfil";
                     }
                 })
             </script>

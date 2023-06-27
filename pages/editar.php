@@ -32,8 +32,8 @@ if (empty($_SESSION)) {
             <h2 class="titulo wrapper">Informações do perfil</h2>
             <div class="dados-user d-flex">
                 <img class="config" src="../img/configuracoes.gif" alt="Configuraçõs" srcset="">
-                <button class=""><a href="./tela_de_perfil">Visualizar Perfil</a></button>
-                <button class=""><a href="./tela_de_editar">Editar Perfil</a></button>
+                <button class=""><a href="./perfil">Visualizar Perfil</a></button>
+                <button class=""><a href="./editar">Editar Perfil</a></button>
             </div>
 
             <div class="editar-foto">
@@ -150,7 +150,7 @@ if (empty($_SESSION)) {
                             confirmButtonText: 'Ok'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                location.href = "../pages/tela_de_perfil";
+                                location.href = "../pages/perfil";
                             }
                         })
                     </script>
@@ -164,7 +164,7 @@ if (empty($_SESSION)) {
                             confirmButtonText: 'Ok'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                location.href = "../pages/tela_de_perfil";
+                                location.href = "../pages/perfil";
                             }
                         })
                     </script>

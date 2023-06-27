@@ -152,7 +152,7 @@ if (!empty($_SESSION)) {
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../index.php";
+                        location.href = "../";
                     }
                 })
             </script>
@@ -165,7 +165,7 @@ if (!empty($_SESSION)) {
                     confirmButtonText: 'Ok'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "../pages/inserir_anuncio.php";
+                        location.href = "../pages/anuncio";
                     }
                 })
             </script>

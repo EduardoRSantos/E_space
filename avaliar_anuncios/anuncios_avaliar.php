@@ -215,7 +215,7 @@ if (isset($_POST['id'])) {
 
   if ($http_code != 404) { ?>
       <script type="text/javascript">
-        location.href = "../avaliar_anuncios/anuncios_avaliar.php"
+        location.href = "../avaliar_anuncios/anuncios_avaliar"
       </script>
   <?php }
 }
