@@ -213,7 +213,7 @@ if (empty($_SESSION)) {
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil";
+                            location.href = "../pages/perfil";
                         }
                     })
                 </script>
@@ -228,7 +228,7 @@ if (empty($_SESSION)) {
                         confirmButtonText: 'Ok'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            location.href = "../pages/tela_de_perfil";
+                            location.href = "../pages/perfil";
                         }
                     })
                 </script>
