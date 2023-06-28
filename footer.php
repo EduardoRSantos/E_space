@@ -18,13 +18,13 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="../pages/privacidade.php">Privacidade</a><span> | </span><a href="../pages/termos_de_uso.php">Termos</a><span> | </span><a href="../pages/mapa_do_site.php">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema.php">Informações da empresa</a></p>
+        <p><a href="../pages/privacidade">Privacidade</a><span> | </span><a href="../pages/termos_de_uso">Termos</a><span> | </span><a href="../pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
       <ul>
         <?php if (!empty($_SESSION['tipo_conta']) && $_SESSION['tipo_conta'] == 'adm') { ?>
-          <li><a href="../pages/avaliar_anuncios/anuncios_avaliar"><img width="30" src="../img/avaliacao.png" alt="Avaliar"></a></li>
+          <li><a href="../avaliar_anuncios/anuncios_avaliar"><img width="30" src="../img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
 
         <li><a href="../pages/anuncio"><img width="30" src="../img/inserir.png" alt=""></a></li>
