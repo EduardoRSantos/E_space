@@ -287,7 +287,7 @@ if (!empty($_POST['fazer'])) {
       <script type="text/javascript">
         Swal.fire({
           title: 'Sucesso',
-          text: 'Atualizado feita, por favor agurde uma nova avaliacao',
+          text: 'Atualizado feita, por favor aguarde uma nova avaliação',
           icon: 'success',
           confirmButtonText: 'Ok'
         }).then((result) => {
@@ -328,7 +328,7 @@ if (!empty($_POST['fazer'])) {
     <script type="text/javascript">
       Swal.fire({
         title: 'Sucesso',
-        text: 'Anuncio apagado, va com deus',
+        text: 'Anúncio apagado com sucesso!',
         icon: 'success',
         confirmButtonText: 'Ok'
       }).then((result) => {
