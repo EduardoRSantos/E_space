@@ -19,10 +19,10 @@ final class AnuncioController
         $anuncio_destaque2 = $anuncioDAO->anunciosById(21);
         $anuncio_destaque3 = $anuncioDAO->anunciosById(22);
         $anuncio_destaque4 = $anuncioDAO->anunciosById(23);
-        $anuncio_destaque5 = $anuncioDAO->anunciosById(24);
-        $anuncio_destaque6 = $anuncioDAO->anunciosById(25);
+        $anuncio_destaque5 = $anuncioDAO->anunciosById(26);
+        
 
-        $body = array_merge($anuncio_destaque0, $anuncio_destaque1, $anuncio_destaque2, $anuncio_destaque3, $anuncio_destaque4, $anuncio_destaque5, $anuncio_destaque6);
+        $body = array_merge($anuncio_destaque0, $anuncio_destaque1, $anuncio_destaque2, $anuncio_destaque3, $anuncio_destaque4, $anuncio_destaque5);
 
         $response = $response->withJson($body);
         return $response;
