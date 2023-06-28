@@ -137,7 +137,11 @@
           <div class="chat">
             <div class="chat-header">
               <?php if (!empty($_SESSION)) { ?>
-                <img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt="">
+                <?php if (empty($data[0]['path'])) {  ?>
+                    <img class="foto-perfil" style="border-radius: 50%;" src="./img/perfil.png" alt="" width="35" height="35">
+                <?php } else { ?>
+                    <img class="foto-perfil" style="border-radius: 50%;" src="<?= $data[0]['path'] ?>" alt="" width="35" height="35">
+                <?php } ?>
                 <span><?= $_SESSION['nome'] ?></span>
               <?php } else { ?>
                 <span>E-space</span>
@@ -166,6 +170,7 @@
             <button type="button" class="share-button">Compartilhar nas redes sociais</button>
           </div>
 
+          
 
           <!-- Modal -->
           <div class="modal" id="myModal">
@@ -185,24 +190,24 @@
       </section>
     </div>
     <!-- DESKTOP -->
-    <section class="campo-itens wrapper">
+    <!-- <section class="campo-itens wrapper">
       <div class="button-container">
         <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
-    </section>
+    </section> -->
 
     <!-- DESKTOP -->
 
     <!-- MOBILE -->
-    <section class="campo-itens-mobile">
+    <!-- <section class="campo-itens-mobile">
       <div class="button-container wrapper">
-        <button class="principal"> informações adicionais</button>
+        <button class="principal"> Informações adicionais</button>
         <button>Tour virtual</button>
         <button>Redes Sociais</button>
       </div>
-    </section>
+    </section> -->
 
 
     <?php
@@ -284,7 +289,7 @@
 
     <div class="anuncios wrapper">
       <div class="anuncios-recentes">
-        <h3 id="resultado-pesquisa" class="text-recentes">Anúncio Recentes</h3>
+        <h3 id="resultado-pesquisa" class="text-recentes">Anúncios Recentes</h3>
         <?php
         if (empty($_POST['pesquisar'])) {
 
@@ -386,9 +391,9 @@
           <li><a href="../E_space/avaliar_anuncios/anuncios_avaliar"><img width="30" src="./img/avaliacao.png" alt="Avaliar"></a></li>
         <?php } ?>
 
-        <li><a href="../E_space/pages/inserir_anuncio"><img width="30" src="./img/inserir.png" alt=""></a></li>
-        <li><a href="../E_space/pages/tela_meus_anuncios"><img width="30" src="./img/anuncio.png" alt=""></a></li>
-        <li><a href="../E_space/pages/tela_de_perfil"><img width="30" src="./img/perfil.png" alt=""></a></li>
+        <li><a href="../E_space/pages/anuncio"><img width="30" src="./img/inserir.png" alt=""></a></li>
+        <li><a href="../E_space/pages/anuncios"><img width="30" src="./img/anuncio.png" alt=""></a></li>
+        <li><a href="../E_space/pages/perfil"><img width="30" src="./img/perfil.png" alt=""></a></li>
         <?php if (empty($_SESSION)) { ?>
           <li class="cadastro"><a href="../E_space/pages/login">Fazer Login </a></li>
         <?php } ?>

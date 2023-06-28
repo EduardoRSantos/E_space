@@ -45,7 +45,7 @@
                     <div class="item">
                         <h6 class="subTitle">2.Coleta e uso de informações:</h6>
                         <p>
-                        <strong>2.1</strong> Coletamos informações pessoais, como nome, endereço de e-mail, número de telefone e dados de pagamento, apenas quando necessário para facilitar o processo de reserva e fornecer suporte ao cliente. As informações coletadas são usadas exclusivamente para fins relacionados à locação de espaços e para melhorar a experiência dos usuários em nosso sistema. Não compartilhamos suas informações com terceiros sem o seu consentimento explícito, a menos que seja exigido por lei.
+                        <strong>2.1</strong> Coletamos informações pessoais, como nome, endereço de e-mail, número de telefone, apenas quando necessário para facilitar o processo de reserva e fornecer suporte ao cliente. As informações coletadas são usadas exclusivamente para fins relacionados à locação de espaços e para melhorar a experiência dos usuários em nosso sistema. Não compartilhamos suas informações com terceiros sem o seu consentimento explícito, a menos que seja exigido por lei.
                         </p>
                         <h6 class="subTitle">3.Cookies:</h6>
                         <p>

@@ -60,10 +60,10 @@ if (empty($_SESSION)) {
                 <label for="quantidadedepessoas"></Label>
             </div>
             <div class="campotexto">
-                <textarea class="descricao limite-chars" type="text" placeholder=" Descricao" name="descricao" id="info" maxlength="450" required></textarea>
+                <textarea class="descricao limite-chars" type="text" placeholder="  Descrição" name="descricao" id="info" maxlength="450" required></textarea>
                 <label for="info"></Label>
             </div>
-            <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anunciar">
+            <input class="anunciar" type="submit" name="submit" id="button_anuncio" value="Anúnciar">
         </form>
     </section>
 

@@ -44,7 +44,7 @@
   ?>
   
   <section class="conteudoan-section wrapper">
-        <h2 class="titulo ">Avaliar Anúncio - Painel Administrativo</h2>
+        <h2 class="titulo ">Anúncios Postados - Painel Administrativo</h2>
         <div class="text-avaliar wrapper">
         <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
         </div>
@@ -74,9 +74,7 @@
             <p ><?= $anuncio['preco'] ?></p>
           </div>
           <div  class="rental-buttons">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Excluir anúncios</button>
           </div>
               </div>
             </div>
@@ -98,7 +96,6 @@
             <div class="modal-body">
               <h4><?= $anuncio['nome'] ?></h4>
               <h4><?= $anuncio['telefone'] ?></h4>
-              <h4><?= $anuncio['descricao'] ?></h4>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -142,13 +139,13 @@
               </button>
             </div>
             <div class="modal-body">
-              <h4>Certeza que deseja negar o anúncio</h4>
+              <h4>Certeza que deseja excluir o anúncio ?</h4>
             </div>
             <div class="modal-footer">
               <form method="post">
                 <input type="hidden" value="delete" name="avaliacao">
                 <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
-                <button type="submit" class="btn btn-danger">Deletar</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
               </form>
             </div>
           </div>

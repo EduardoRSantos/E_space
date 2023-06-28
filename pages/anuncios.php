@@ -30,7 +30,7 @@ if (empty($_SESSION)) {
   <?php include '../navbar.php'; ?>
 
 
-  <main class="meus-anuncios">
+  <main class="meus-anuncios wrapper">
     <header>
       <h2 class="titulo wrapper">Meus anuncios</h2>
     </header>
@@ -94,7 +94,6 @@ if (empty($_SESSION)) {
                       <p><?= $anuncio['preco'] ?></p>
                     </div>
                     <div class="rental-buttons">
-                      <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>">Descrição</button>
                       <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalEditar<?= $anuncio['id'] ?>">Editar</button>
                       <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalEcluir<?= $anuncio['id'] ?>">Excluir</button>
 
@@ -214,7 +213,7 @@ if (empty($_SESSION)) {
           </div>
         <?php endforeach;
       } else {
-        echo "Para criar anuncios "; ?> <a href="../pages/anuncio">Clique aqui!</a> <?php
+        echo "Para criar anuncios"; ?> <a href="../pages/anuncio">Clique aqui!</a> <?php
                                                                                               }
                                                                                             } else { ?>
       <script type="text/javascript">

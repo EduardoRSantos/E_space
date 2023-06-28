@@ -1209,14 +1209,17 @@ margin-right: 2rem;
 
   .body-modal, h4>strong{
     padding-left: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     font-weight: 700;
+  }
+
+  .anunciante>img{
+    width: 30px;
   }
 
   .body-modal>.anunciante{
    border-radius: 5px;
-    background-color: #ffffff;
-    color: #1284ff;
+    color: #ffffff;
   }
 
   .body-modal>h4{

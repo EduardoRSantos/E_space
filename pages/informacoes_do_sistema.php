@@ -47,16 +47,11 @@ session_start(); ?>
                         <h6 class="subTitle">2.Nossos serviços:</h6>
                         <p>
                             <strong>2.1</strong>
-                            Nosso sistema simplifica o processo de reserva. Basta seguir três passos simples: pesquisar, selecionar e reservar. Utilize nossos filtros de pesquisa para encontrar espaços com base na localização, capacidade, tipo de evento e outras preferências. Visualize os detalhes dos espaços, incluindo fotos, descrição, comodidades e disponibilidade. Após escolher o espaço ideal, basta selecionar as datas desejadas e fazer a reserva. Forneceremos todas as informações necessárias para garantir que seu evento seja um sucesso.
-                        <h6 class="subTitle">3.Preços e políticas de pagamento:</h6>
+                            Nosso sistema simplifica o processo de reserva. Basta seguir três passos simples: pesquisar, selecionar e reservar. Utilize nossos filtros de pesquisa para encontrar espaços com base na localização, capacidade, tipo de evento e outras preferências. Visualize os detalhes dos espaços, incluindo fotos, descrição, comodidades e disponibilidade. Forneceremos todas as informações necessárias para garantir que seu evento seja um sucesso.
+                        <h6 class="subTitle">3.Requisitos e restrições:</h6>
                         <p>
                             <strong>3.1</strong>
-                            Nossos preços de aluguel são competitivos e variam de acordo com o tipo de espaço e sua localização. Oferecemos opções flexíveis de pagamento, como depósitos e parcelamentos, para atender às suas necessidades. Certifique-se de ler nossas políticas de pagamento para obter detalhes adicionais sobre reembolsos, taxas adicionais e políticas de cancelamento.
-                        </p>
-                        <h6 class="subTitle">4.Requisitos e restrições:</h6>
-                        <p>
-                            <strong>4.1</strong>
-                            Para alugar um espaço através do e-space, é importante observar alguns requisitos e restrições. Alguns espaços podem ter uma idade mínima exigida ou solicitar documentação específica. Certifique-se de revisar as informações do espaço antes de fazer sua reserva. Além disso, nossas políticas de cancelamento e reembolso podem variar de acordo com cada espaço. Recomendamos ler atentamente as políticas individuais de cada local antes de finalizar sua reserva.
+                            Para alugar um espaço através do e-space, é importante observar alguns requisitos e restrições. Alguns espaços podem ter uma idade mínima exigida ou solicitar documentação específica. Certifique-se de revisar as informações do espaço antes de fazer sua reserva. Recomendamos ler atentamente as políticas individuais de cada local antes de finalizar sua reserva.
                         </p>
                     </div>
                 </div>
@@ -70,7 +65,7 @@ session_start(); ?>
                         </div>
 
                         <div class="item">
-                            <p><strong>Estamos aqui para ajudar! Se você tiver alguma dúvida, precisar de suporte ou quiser mais informações, entre em contato conosco através dos seguintes canais:</strong></p>
+                            <p><strong>Estamos aqui para ajudar! Se você tiver alguma dúvida entre em contato com nosso suporte ou se precisar de mais informações, entre em contato conosco através dos seguintes canais:</strong></p>
                             <ul>
                                 <li> Telefone: (75) 99101-6263
                                 </li>

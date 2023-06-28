@@ -62,7 +62,8 @@
             </button>
           </div> -->
           <div  class="body-modal bg-dark">
-            <h4 class="anunciante" ><strong>Anunciante</strong> <?= $anuncio['nome'] ?></h4>
+         
+            <h4 class="anunciante" > <img src="./img/do-utilizador.png" alt="" srcset=""><strong> ANUNCIANTE: </strong> <?= $anuncio ['nome'] ?></h4>
             <br>
             <h3 class="limite-chars-title-modal"><?= $anuncio['titulo'] ?></h3>
             <h4>Publicado: <?= $anuncio['criado_em'] ?></h4>
