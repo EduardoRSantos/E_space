@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 
 
@@ -382,7 +383,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="../E_space/pages/privacidade">Privacidade</a><span> | </span><a href="../E_space/pages/termos_de_uso">Termos</a><span> | </span><a href="../E_space/pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema">Informações da empresa</a></p>
+        <p><a id="privacidade" href="../E_space/pages/privacidade">Privacidade</a><span> | </span><a href="../E_space/pages/termos_de_uso">Termos</a><span> | </span><a href="../E_space/pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
@@ -429,6 +430,18 @@
             <li><img style="border-radius: 50%;" width="35" height="35" src="<?= $data[0]['path'] ?>" alt=""></li>
         <?php }
         } ?>
+      <div class="btn-group dropup">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Configurações
+  </button>
+  <ul class="dropdown-menu" style="background-color: white;">
+    <li><a class="dropdown-item" href="./pages/privacidade">Privacidade</a></li>
+    <li><a class="dropdown-item" href="./pages/termos_de_uso">Termos de uso</a></li>
+    <li><a class="dropdown-item" href="./pages/mapa_do_site">Mapa do site</a></li>
+    <li><a class="dropdown-item" href="./pages/informacoes_do_sistema">Informações da empresa</a></li>
+  </ul>
+</div>
+
       </ul>
     </div>
   </footer>

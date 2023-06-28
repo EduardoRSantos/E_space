@@ -65,6 +65,17 @@
             <li><img style="border-radius: 50%;" width="35" height="35" src=".<?= $data[0]['path'] ?>" alt=""></li>
         <?php }
         } ?>
+         <div class="btn-group dropup">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Configurações
+  </button>
+  <ul class="dropdown-menu" style="background-color: white;">
+    <li><a class="dropdown-item" href="./pages/privacidade">Privacidade</a></li>
+    <li><a class="dropdown-item" href="./pages/termos_de_uso">Termos de uso</a></li>
+    <li><a class="dropdown-item" href="./pages/mapa_do_site">Mapa do site</a></li>
+    <li><a class="dropdown-item" href="./pages/informacoes_do_sistema">Informações da empresa</a></li>
+  </ul>
+</div>
       </ul>
     </div>
   </footer>

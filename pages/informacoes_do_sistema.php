@@ -9,8 +9,10 @@ session_start(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="../img/logo-ConversImagem.ico" />
     <link rel="stylesheet" href="../style/termos_de_uso.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Termos de Uso</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <title>Informações do sistema</title>
 
     <style>
         <?php include '../css/navbar.css'; ?><?php include '../css/footer.css'; ?>
@@ -63,6 +65,9 @@ session_start(); ?>
                         <div class="item">
                             <h4>Contato:</h4>
                         </div>
+                        <div class="container">
+
+</div>
 
                         <div class="item">
                             <p><strong>Estamos aqui para ajudar! Se você tiver alguma dúvida entre em contato com nosso suporte ou se precisar de mais informações, entre em contato conosco através dos seguintes canais:</strong></p>
