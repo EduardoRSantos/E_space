@@ -32,7 +32,7 @@
     </header>
 
     <section class="conteudoan-section wrapper">
-      <h class="titulo">Anúncios Postados - Painel Administrativo</h>
+      <h2 class="titulo">Anúncios Postados - Painel Administrativo</h2>
       <div class="text-avaliar wrapper">
         <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
         </div>

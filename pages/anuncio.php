@@ -31,7 +31,7 @@ if (empty($_SESSION)) {
         <br>
         <form class="form wrapper" method="POST" enctype="multipart/form-data">
             <div class="inserir-imagem">
-                <label for="images"> <img title="Inserir Imagem" style="cursor: pointer;" class="img-inserir" src="../img/adicionar-imagem.png" for="images">Adicionar Fotos</img></label>
+                <label for="images"> <img title="Inserir Imagem" class="img-inserir" src="../img/adicionar-imagem.png" for="images">Adicionar Fotos</img></label>
                 <input accept="image/png, image/jpeg" class="inputUserArquivos" type="file" id="images" name="imagens[]" multiple onchange="previewImages(this);" required>
                 <div id="preview"></div>
             </div>

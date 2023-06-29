@@ -42,10 +42,14 @@ if (empty($_SESSION)) {
                     <label class="mudar-nome" for="nome"><strong>Editar foto do perfil</strong></Label>
 
                     <div class="file">
-                        <input type="file" name="imagem">
-                        <br>
-                        <input class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto" required>
-                    </div>
+    <label for="imagem" class="imagem-label">
+        <img class="img-editar" src="../img/adicionar-imagem.gif" alt="Selecione uma imagem">Adicionar Fotos
+    </label>
+    <input type="file" name="imagem" id="imagem" accept="image/*" style="display: none;">
+    <br>
+    <input class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto" required>
+</div>
+
 
                 </form>
                 <br>

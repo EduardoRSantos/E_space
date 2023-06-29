@@ -168,8 +168,11 @@ max-width: 100%;
 
 .img-inserir{
   align-items: center;
-  width: 50px;
+  width: 40px;
+  cursor: pointer;
 }
+
+
 
 
 /* Estilos para o layout responsivo */
