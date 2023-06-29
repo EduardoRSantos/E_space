@@ -8,6 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="shortcut icon" type="image/jpg" href="./img/logo-ConversImagem.ico" />
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 
   <link rel="stylesheet" href="css/ionicons.min.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -18,7 +20,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="../pages/privacidade">Privacidade</a><span> | </span><a href="../pages/termos_de_uso">Termos</a><span> | </span><a href="../pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema">Informações da empresa</a></p>
+        <p><a href="../pages/privacidade">Privacidade</a><span> |  | </span><a href="../pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
@@ -66,14 +68,12 @@
         <?php }
         } ?>
          <div class="btn-group dropup">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Configurações
+  <button type="button" class="btn bg-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
   </button>
   <ul class="dropdown-menu" style="background-color: white;">
-    <li><a class="dropdown-item" href="./pages/privacidade">Privacidade</a></li>
-    <li><a class="dropdown-item" href="./pages/termos_de_uso">Termos de uso</a></li>
-    <li><a class="dropdown-item" href="./pages/mapa_do_site">Mapa do site</a></li>
-    <li><a class="dropdown-item" href="./pages/informacoes_do_sistema">Informações da empresa</a></li>
+    <li><a class="dropdown-item" href="../pages/privacidade">Privacidade</a></li>
+    <li><a class="dropdown-item" href="../pages/mapa_do_site">Mapa do site</a></li>
+    <li><a class="dropdown-item" href="../pages/informacoes_do_sistema">Informações da empresa</a></li>
   </ul>
 </div>
       </ul>

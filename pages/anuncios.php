@@ -77,9 +77,9 @@ if (empty($_SESSION)) {
                 </div>
                 <div class="rental-details">
                   <?php if ($anuncio['autorizacao'] == 0) { ?>
-                    <h4 class="aguardar limite-chars">Aguarde a avaliação, logo seu anúncio sera postado!</h4>
+                    <h4 title="Aguarde a avaliação, logo seu anúncio sera postado!" class="aguardar limite-chars">Aguarde a avaliação, logo seu anúncio sera postado!</h4>
                   <?php } else { ?>
-                    <h4 class="limite-chars postado">Anúncio postado!</h4>
+                    <h4 title="Anúncio postado!" class="limite-chars postado">Anúncio postado!</h4>
                   <?php } ?>
                   <h2 class="limite-chars-titulo"><?= $anuncio['titulo'] ?></h2>
                   <!-- <p class="limite-chars-descricao" ><?= $anuncio['descricao'] ?></p> -->
@@ -175,7 +175,7 @@ if (empty($_SESSION)) {
                     <br>
 
                     <h5>Descricao</h5>
-                    <textarea class="descricao-meus" maxlength="25" name="descricao"><?= $anuncio['descricao'] ?></textarea>
+                    <textarea class="descricao-meus" maxlength="780"  name="descricao"><?= $anuncio['descricao'] ?></textarea>
 
                   </div>
                   <div class="modal-footer">

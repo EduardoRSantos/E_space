@@ -44,7 +44,7 @@ if (empty($_SESSION)) {
                     <div class="file">
                         <input type="file" name="imagem">
                         <br>
-                        <input class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto">
+                        <input class="salvar" type="submit" name="submit" id="submit" value="Salvar Foto" required>
                     </div>
 
                 </form>

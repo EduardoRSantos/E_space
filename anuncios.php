@@ -33,23 +33,27 @@
 </div>
 
 <div class="modal fade anuncio-modal" id="modal<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content bg-dark">
-          <div>
-            <h4>Deseja comecar a conversar no whats</h4>
-
-            <form method="post" action="conversar.php">
-              <input type="hidden" name="telefone" id="telefone" value="<?= $anuncio['telefone']  ?>">
-
-              <button type="submit" name="button">Abrir conversa</button>
-            </form>
-          </div>
-          
-          <div class="footer-modal">
-          </div>
-        </div>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-white">
+      <div class="modal-header">
+        <h4 class="modal-title">Deseja começar a conversar no WhatsApp?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="conversar.php">
+          <input type="hidden" name="telefone" id="telefone" value="<?= $anuncio['telefone'] ?>">
+          <img width="35" height="35" src="./img/whatsapp.png" alt="" srcset="" class="animated-image">
+          <button type="submit" class="btn btn-success"> Abrir conversa</button>
+        </form>
       </div>
     </div>
+  </div>
+</div>
+
+
+
 
 
     <div   class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

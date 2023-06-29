@@ -190,14 +190,13 @@
 
       </section>
     </div>
-    <!-- DESKTOP -->
-    <!-- <section class="campo-itens wrapper">
+
+    <section class="campo-itens wrapper">
       <div class="button-container">
-        <button class="principal"><a class="" href="http://localhost/E_space/pages/informacoes_adicionais.php" target="_blank" rel="noopener noreferrer">informações adicionais</a></button>
-        <button>Tour virtual</button>
-        <button>Redes Sociais</button>
+        <button class="principal"><a class="" href="" target="_blank" rel="noopener noreferrer"></a></button>
+  
       </div>
-    </section> -->
+    </section>
 
     <!-- DESKTOP -->
 
@@ -383,7 +382,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a id="privacidade" href="../E_space/pages/privacidade">Privacidade</a><span> | </span><a href="../E_space/pages/termos_de_uso">Termos</a><span> | </span><a href="../E_space/pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema">Informações da empresa</a></p>
+        <p><a id="privacidade" href="../E_space/pages/privacidade">Privacidade</a><span> | </span><a href="../E_space/pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../E_space/pages/informacoes_do_sistema">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
@@ -431,12 +430,10 @@
         <?php }
         } ?>
       <div class="btn-group dropup">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Configurações
+  <button type="button" class="btn bg-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
   </button>
   <ul class="dropdown-menu" style="background-color: white;">
     <li><a class="dropdown-item" href="./pages/privacidade">Privacidade</a></li>
-    <li><a class="dropdown-item" href="./pages/termos_de_uso">Termos de uso</a></li>
     <li><a class="dropdown-item" href="./pages/mapa_do_site">Mapa do site</a></li>
     <li><a class="dropdown-item" href="./pages/informacoes_do_sistema">Informações da empresa</a></li>
   </ul>
