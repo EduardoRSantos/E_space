@@ -27,7 +27,7 @@
         <div class="text-avaliar wrapper">
         <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
         </div>
-
+  
   <?php
   $curl = curl_init();
   curl_setopt_array($curl, [
@@ -47,7 +47,6 @@
       $imagens = explode(';', $anuncio['imagens']);
   ?>
   
- 
         
         <div class="anuncios wrapper" >
         <section class="rental-section ">
@@ -142,7 +141,7 @@
               <h4>Certeza que deseja excluir o anúncio ?</h4>
             </div>
             <div class="modal-footer">
-              <form method="post" action="deletar_anuncio.php">
+              <form method="post" action="deletar_anuncio">
                 <input type="hidden" value="delete" name="avaliacao">
                 <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
                 <button type="submit" class="btn btn-danger">Excluir</button>

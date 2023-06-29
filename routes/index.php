@@ -32,6 +32,7 @@ $app->get('/anuncios/pesquisa' , AnuncioController::class . ':pesquisa');
 $app->get('/anuncios/usuario', AnuncioController::class . ':getAnuncioUsuario');
 $app->put('/anuncios/atualizar', AnuncioController::class . ':anuncioAtualizar');
 $app->post('/anuncios/delete', AnuncioController::class . ':deletarAnuncio');
+
 $app->get('/anuncios/destaque', AnuncioController::class . ':anunciosById');
 
 // ==============================================================================
