@@ -47,6 +47,7 @@
         <h2 class="titulo ">Avaliar Anúncio - Painel Administrativo</h2>
         <div class="text-avaliar wrapper">
         <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
+        <button type="button" class="btn btn-outline-info" id="btnAnuncios">Ver Anúncios Postados</button>
         </div>
         
         <div class="anuncios wrapper" >
@@ -77,7 +78,6 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
-            <button type="button" class="btn btn-danger" id="btnAnuncios"></button>
 
           </div>
               </div>
