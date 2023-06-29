@@ -11,6 +11,8 @@ use DateTimeZone;
 
 final class AnuncioController
 {
+
+    
     public function anunciosById(Request $request, Response $response, $args): Response{
 
         $anuncioDAO = new AnuncioDAO();

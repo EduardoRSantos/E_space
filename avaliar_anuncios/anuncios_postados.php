@@ -22,12 +22,16 @@
   <header>
 <?php include '../navbar.php'; ?>
   </header>
-
+  <section class="conteudoan-section wrapper">
+        <h2 class="titulo ">Anúncios Postados - Painel Administrativo</h2>
+        <div class="text-avaliar wrapper">
+        <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
+        </div>
 
   <?php
   $curl = curl_init();
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/avaliar',
+    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios',
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_RETURNTRANSFER => true,
   ]);
@@ -43,11 +47,7 @@
       $imagens = explode(';', $anuncio['imagens']);
   ?>
   
-  <section class="conteudoan-section wrapper">
-        <h2 class="titulo ">Anúncios Postados - Painel Administrativo</h2>
-        <div class="text-avaliar wrapper">
-        <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
-        </div>
+ 
         
         <div class="anuncios wrapper" >
         <section class="rental-section ">
@@ -142,7 +142,7 @@
               <h4>Certeza que deseja excluir o anúncio ?</h4>
             </div>
             <div class="modal-footer">
-              <form method="post">
+              <form method="post" action="deletar_anuncio.php">
                 <input type="hidden" value="delete" name="avaliacao">
                 <input type="hidden" value="<?= $anuncio['id'] ?>" name="id">
                 <button type="submit" class="btn btn-danger">Excluir</button>
@@ -180,42 +180,5 @@
 
 </body>
 
-<?php
-
-if (isset($_POST['id'])) {
-  $avaliacao = $_POST['avaliacao'];
-  $id = $_POST['id'];
-
-  $body = [
-    'id' => $id,
-    'avaliacao' => $avaliacao
-  ];
-
-  $json = json_encode($body, true);
-
-  $curl = curl_init();
-  curl_setopt_array($curl, [
-    CURLOPT_URL => 'http://localhost/E_space/routes/index.php/anuncios/avaliacao',
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => $json,
-    CURLOPT_HTTPHEADER => [
-      'Content-Type: application/json'
-    ]
-  ]);
-
-  curl_exec($curl);
-
-  $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-
-  curl_close($curl);
-
-  if ($http_code != 404) { ?>
-      <script type="text/javascript">
-        location.href = "../avaliar_anuncios/anuncios_avaliar"
-      </script>
-  <?php }
-}
-?>
 
 </html>
