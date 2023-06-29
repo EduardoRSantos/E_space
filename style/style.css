@@ -932,6 +932,31 @@ margin-right: 2rem;
     /* Estilos adicionais conforme necessário */
   }
 
+  .rental-buttons>.btn-lixeira{
+    margin-right: 12px;
+    padding: 25px 20px; /* Ajuste o preenchimento conforme necessário */
+    background-image: url(../img/lixeira-de-reciclagem.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* ou "contain" */
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .rental-buttons>.btn-outline-mais{
+    margin-right: 12px;
+    padding: 22px 18px; /* Ajuste o preenchimento conforme necessário */
+    background-image: url(../img/mais.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* ou "contain" */
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+
 
 
  

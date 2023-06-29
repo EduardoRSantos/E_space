@@ -23,6 +23,12 @@
 <?php include '../navbar.php'; ?>
   </header>
 
+  <section class="conteudoan-section wrapper">
+        <h2 class="titulo ">Avaliar Anúncios - Painel Administrativo</h2>
+        <div class="text-avaliar wrapper">
+        <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
+        <button type="button" class="btn btn-outline-info" id="btnAnuncios">Ver Anúncios Postados</button>
+        </div>
 
   <?php
   $curl = curl_init();
@@ -43,12 +49,7 @@
       $imagens = explode(';', $anuncio['imagens']);
   ?>
   
-  <section class="conteudoan-section wrapper">
-        <h2 class="titulo ">Avaliar Anúncio - Painel Administrativo</h2>
-        <div class="text-avaliar wrapper">
-        <p>Compartilhe sua experiência e avalie os anúncios de espaços para eventos para ajudar a melhorar a qualidade e satisfação dos nossos clientes.</p>
-        <button type="button" class="btn btn-outline-info" id="btnAnuncios">Ver Anúncios Postados</button>
-        </div>
+
         
         <div class="anuncios wrapper" >
         <section class="rental-section ">
@@ -78,7 +79,7 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $anuncio['id'] ?>">imagens</button>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAceita<?= $anuncio['id'] ?>">Aceitar</button>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalNegar<?= $anuncio['id'] ?>">Negar</button>
-
+            <button type="button" class="btn btn-outline-mais" data-toggle="modal" data-target="#modalInfo<?= $anuncio['id'] ?>"></button>
           </div>
               </div>
             </div>
@@ -88,27 +89,35 @@
 </section>
 
       <!-- usuario -->
-      <div class="modal fade janela-avaliar" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h4><?= $anuncio['nome'] ?></h4>
-              <h4><?= $anuncio['telefone'] ?></h4>
-              <h4><?= $anuncio['descricao'] ?></h4>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+      <div   class="modal fade anuncio-modal" id="modalInfo<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+          <!-- <div class=".header-modal">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+          <div  class="body-modal bg-dark">
+         
+            <h4 class="anunciante" > <img src="./img/do-utilizador.png" alt="" srcset=""><strong> ANUNCIANTE: </strong> <?= $anuncio ['nome'] ?></h4>
+            <br>
+            <h3 class="limite-chars-title-modal"><?= $anuncio['titulo'] ?></h3>
+            <h4>Publicado: <?= $anuncio['criado_em'] ?></h4>
+            <hr>
+            <h4 class="limite-chars-modal" >Descrição <br> <?= $anuncio['descricao'] ?></h4>
+            <span class="capacity-icon"><img src="../img/pessoas.png" alt="" srcset=""><?= $anuncio['quantidade_pessoas'] ?></span>
+            <br>
+            <br>
+            <h4><strong>Telefone</strong> <br> <?= $anuncio['telefone'] ?></h4>
+            <h4><strong>Cep</strong> <br> <?= $anuncio['cep'] ?></h4>
+            
+          </div>
+          <div class="footer-modal">
           </div>
         </div>
       </div>
+    </div>
       <!-- aceitar -->
       <div class="modal fade" id="modalAceita<?= $anuncio['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -188,11 +197,6 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-  document.getElementById('btnAnuncios').addEventListener('click', function() {
-    window.location.href = '../avaliar_anuncios/anuncios_postados.php';
-  });
-</script>
 </body>
 
 <?php
