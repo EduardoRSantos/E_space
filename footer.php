@@ -20,7 +20,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <p>© 2023 E-space, Inc.</p>
-        <p><a href="../pages/privacidade">Privacidade</a><span> |  | </span><a href="../pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema">Informações da empresa</a></p>
+        <p><a href="../pages/privacidade">Privacidade</a><span> | </span><a href="../pages/mapa_do_site">Mapa do site</a><span> | </span><a href="../pages/informacoes_do_sistema">Informações da empresa</a></p>
       </div>
     </div>
     <div class="footer-buttons">
